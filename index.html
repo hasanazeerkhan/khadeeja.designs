@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Khadeeja Designs | Aari Embroidery</title>
+  <link rel="icon" type="image/png" href="/public/shortLogo.png">
+
+  <!-- 1. Load Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- 2. Load Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+
+  <!-- 3. Configure Tailwind with your theme -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            amber: {
+              100: '#FEF3C7',
+              200: '#FDE68A',
+              300: '#FCD34D',
+              400: '#FBBF24', // Main gold accent
+              500: '#F59E0B',
+              600: '#D97706',
+            },
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* This is our new "page" routing system */
+    /* All pages are hidden by default */
+    .page {
+      display: none;
+      /* Add a fade-in animation */
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    /* The active page is shown */
+    .page.active {
+      display: block;
+    }
+
+    /* Define the fade-in animation */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Custom styles for Q&A section */
+    .qa-section {
+      /* Full height on large screens, auto on small */
+      height: auto;
+      min-height: 80vh;
+      /* Ensure it's not too short */
+      padding: 6rem 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid;
+      /* Light and dark mode borders */
+      border-color: #374151;
+      /* neutral-700 */
+    }
+
+    /* No border for the last section */
+    .qa-section:last-child {
+      border-bottom: none;
+    }
+
+    /* === Animated Luxury Background === */
+    #animated-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      pointer-events: none;
+      overflow: hidden;
+      background: radial-gradient(1200px 600px at 50% 110%, rgba(245, 158, 11, 0.12), transparent 60%),
+        radial-gradient(1000px 500px at 10% -10%, rgba(245, 158, 11, 0.08), transparent 60%),
+        linear-gradient(180deg, #000, #0a0a0a 60%, #000);
+    }
+
+    #animated-bg .gold-wave {
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      height: 60%;
+      top: 40%;
+      filter: blur(18px);
+      opacity: .5;
+      background: conic-gradient(from 210deg, rgba(245, 158, 11, .0), rgba(245, 158, 11, .35), rgba(245, 158, 11, .0));
+      animation: swirl 12s linear infinite;
+      transform: translateY(0) translateZ(0);
+    }
+
+    #animated-bg .glow {
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(600px 300px at 60% 70%, rgba(245, 158, 11, .25), transparent 70%);
+      animation: pulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes swirl {
+      to {
+        transform: rotate(360deg) translateY(0);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: .35
+      }
+
+      100% {
+        opacity: .55
+      }
+    }
+    /* === Live Animated Background & Reveal === */
+    .page {
+      background: transparent !important;
+    }
+
+    main,
+    section {
+      position: relative;
+      z-index: 10;
+    }
+
+    #animated-bg {
+      position: fixed;
+      inset: 0;
+      z-index: -9999;
+      pointer-events: none;
+      overflow: hidden;
+      background: radial-gradient(1200px 600px at 50% 110%, rgba(245, 158, 11, .12), transparent 60%),
+        radial-gradient(1000px 500px at 10% -10%, rgba(245, 158, 11, .08), transparent 60%),
+        linear-gradient(180deg, #000, #0a0a0a 60%, #000);
+    }
+
+    #animated-bg .gold-wave {
+      position: absolute;
+      left: -10%;
+      right: -10%;
+      height: 60%;
+      top: 40%;
+      filter: blur(22px);
+      opacity: .5;
+      background: conic-gradient(from 210deg, rgba(245, 158, 11, 0), rgba(245, 158, 11, .45), rgba(245, 158, 11, 0));
+      animation: swirl 10s linear infinite, float 6s ease-in-out infinite alternate;
+    }
+
+    #animated-bg .glow {
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(600px 300px at 60% 70%, rgba(245, 158, 11, .25), transparent 70%);
+      animation: pulse 8s ease-in-out infinite alternate;
+    }
+
+    @keyframes swirl {
+      to {
+        transform: rotate(360deg) translateY(0);
+      }
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(-20px);
+      }
+
+      100% {
+        transform: translateY(20px);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        opacity: .35
+      }
+
+      100% {
+        opacity: .55
+      }
+    }
+
+    /* Scroll reveal */
+    [data-reveal] {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    [data-reveal].is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Landing fade animation */
+    #landing {
+      opacity: 1;
+      transition: opacity .8s ease;
+    }
+
+    #landing.hide {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body class="relative text-neutral-100 font-sans overflow-x-hidden">
+  <!--bg-start-->
+  <div id="animated-bg">
+    <div class="glow"></div>
+    <div class="gold-wave parallax"></div>
+  </div>
+  <nav class="fixed top-5 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-lg rounded-full p-2 shadow-xl z-50">
+    <ul class="flex items-center gap-1">
+      <li>
+        <a href="#about"
+          class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium">
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+          </svg>
+          About
+        </a>
+      </li>
+      <li>
+        <a href="#portfolio"
+          class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium">
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5m-16.5 4.5h16.5m-16.5 4.5H12" />
+          </svg>
+          Work
+        </a>
+      </li>
+      <li>
+        <a href="#blog"
+          class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium">
+          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round"
+              d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18V7.875c0-.621.504-1.125 1.125-1.125H6.75M16.5 6.75h-9v-3c0-.621.504-1.125 1.125-1.125h6.75C15.996 2.625 16.5 3.129 16.5 3.75v3Z" />
+          </svg>
+          Blog
+        </a>
+      </li>
+      <li>
+        <a href="#contact"
+          class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"
+            class="w-5 h-5">
+            <circle cx="12" cy="7" r="4" />
+            <path d="M5 21c0-4 3-7 7-7s7 3 7 7" />
+          </svg>
+          Contact
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <!-- === ABOUT PAGE (NOW WITH Q&A) === -->
+    <section id="landing" class="h-screen w-full flex flex-col items-center justify-center text-center relative"
+      class="h-screen w-full flex flex-col items-center justify-center text-center bg-black">
+      <img src="public/logo.png" alt="Khadeeja Designs Logo" class="w-auto h-auto max-w-sm md:max-w-md p-8">
+      <p class="text-lg md:text-2xl text-neutral-300 mt-4 tracking-wide">
+      </p>
+      <div class="absolute bottom-12 flex flex-col items-center gap-2 text-amber-400 animate-bounce">
+        <span class="text-sm">Scroll Down</span>
+        <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+          stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 13.5 12 21m0 0-7.5-7.5M12 21V3" />
+        </svg>
+      </div>
+    </section>
+    <section id="about" class="page min-h-screen py-24 px-8">
+      <div class="max-w-4xl mx-auto">
+      </div>
+      <div class="max-w-4xl mx-auto">
+        <!-- Question 1 -->
+        <div class="qa-section" data-reveal>
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm md:text-base font-bold uppercase tracking-widest text-amber-400 mb-4">
+              Who are we and what do we create?
+            </p>
+            <h2 class="text-4xl md:text-7xl font-bold text-neutral-100 mb-6">
+              We are Khadeeja Designs creators of handcrafted Aari embroidery.
+            </h2>
+            <p class="text-lg md:text-2xl text-neutral-300 leading-relaxed">
+              Every thread, every bead, every detail is crafted with patience, precision, and passion. We turn fabrics
+              into art.
+            </p>
+          </div>
+        </div>
+        <!-- Question 2 -->
+        <div class="qa-section" data-reveal>
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm md:text-base font-bold uppercase tracking-widest text-amber-400 mb-4">
+              What makes our Aari work special?
+            </p>
+            <h2 class="text-4xl md:text-7xl font-bold text-neutral-100 mb-6">
+              We don't just embellish clothes we bring emotions to life.
+            </h2>
+            <p class="text-lg md:text-2xl text-neutral-300 leading-relaxed">
+              Each piece is 100% hand-crafted, ensuring uniqueness, depth, and a richness no machine can ever recreate.
+            </p>
+          </div>
+        </div>
+        <!-- Question 3 -->
+        <div class="qa-section" data-reveal>
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm md:text-base font-bold uppercase tracking-widest text-amber-400 mb-4">
+              Do we customize designs?
+            </p>
+            <h2 class="text-4xl md:text-7xl font-bold text-neutral-100 mb-6">
+              Absolutely.
+            </h2>
+            <p class="text-lg md:text-2xl text-neutral-300 leading-relaxed">
+              Whether it's a sketch you saw on Pinterest or a design you dreamt of at 2 AM — we bring your idea to
+              reality, stitch by stitch.
+            </p>
+          </div>
+        </div>
+        <!-- Question 4 -->
+        <div class="qa-section" data-reveal>
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm md:text-base font-bold uppercase tracking-widest text-amber-400 mb-4">
+              Can you trust us with your bridal outfit?
+            </p>
+            <h2 class="text-4xl md:text-7xl font-bold text-neutral-100 mb-6">
+              With closed eyes.
+            </h2>
+            <p class="text-lg md:text-2xl text-neutral-300 leading-relaxed">
+              We understand the responsibility, the emotion, and the pressure. Your bridal blouse won’t just be perfect
+              it’ll be unforgettable.
+            </p>
+          </div>
+        </div>
+        <!-- Question 5 -->
+        <div class="qa-section" data-reveal>
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm md:text-base font-bold uppercase tracking-widest text-amber-400 mb-4">
+              How long does a typical project take?
+            </p>
+            <h2 class="text-4xl md:text-7xl font-bold text-neutral-100 mb-6">
+              Depending on the complexity, anywhere between 7–21 days.
+            </h2>
+            <p class="text-lg md:text-2xl text-neutral-300 leading-relaxed">
+              We don’t rush art we perfect it.
+            </p>
+          </div>
+        </div>
+        <!-- Question 6 -->
+        <div class="qa-section" data-reveal>
+          <div class="max-w-4xl mx-auto text-center">
+            <p class="text-sm md:text-base font-bold uppercase tracking-widest text-amber-400 mb-4">
+              What’s the price range of our Aari work?
+            </p>
+            <h2 class="text-4xl md:text-7xl font-bold text-neutral-100 mb-6">
+              Simple designs start from ₹1500, and bridal/advanced work starts from ₹5000.
+            </h2>
+            <p class="text-lg md:text-2xl text-neutral-300 leading-relaxed">
+              You’re not paying for thread you’re paying for craftsmanship.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === PORTFOLIO PAGE === -->
+    <section id="portfolio" class="page min-h-screen py-24 px-8">
+      <div class="max-w-6xl mx-auto text-center">
+        <p class="text-sm md:text-base font-bold uppercase tracking-widest text-amber-400 mb-4">Our Work</p>
+        <h2 class="text-4xl md:text-7xl font-bold text-neutral-100 mb-12">Portfolio Highlights</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Cards -->
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo1.webp"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div
+              class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo2.webp"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div
+              class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo3.webp"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div
+              class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo4.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div
+              class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo5.webp"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div
+              class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center">
+            </div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo6.webp"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo7.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo8.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo9.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo10.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo11.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo12.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo13.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo14.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo15.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo16.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo17.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+          <div class="relative group overflow-hidden rounded-xl shadow-lg aspect-square portfolio-item cursor-pointer" data-reveal>
+            <img src="public/demo18.jpg"
+              class="w-full h-full object-cover transition-transform duration-[900ms] group-hover:scale-110">
+            <div class="absolute inset-0/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-center justify-center"></div>
+          </div>
+        </div>
+        <div class="mt-14">
+          <a href="#contact"
+            class="px-8 py-4 rounded-full bg-amber-400 text-black font-bold text-lg hover:scale-105 transition-transform">
+            Book a Custom Design
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- === BLOG PAGE === -->
+    <section id="blog" class="page min-h-screen py-24 px-8">
+      <div class="max-w-6xl mx-auto">
+        <h1 class="text-4xl md:text-7xl font-bold text-neutral-100 mb-12 text-center">Our Blog & Updates</h1>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Blog Post 1 -->
+          <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105"
+            data-reveal>
+            <img src="blogs/images/aari-trends-2026.png" alt="Blog post image" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-amber-400">Feb 12, 2025</span>
+              <h2 class="text-2xl font-bold text-white mt-2 mb-4">Top 5 Bridal Aari Work Trends for 2026</h2>
+              <p class="text-neutral-300 mb-4">Discover the latest trends in bridal embroidery that are taking over this
+                wedding season...</p>
+              <a href="blogs/blogs.html?post=aari-trends-2026" target="_blank"
+                class="font-bold text-amber-400 hover:text-amber-500">Read More &rarr;</a>
+            </div>
+          </div>
+          <!-- Blog Post 2 -->
+          <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105"
+            data-reveal>
+            <img src="blogs/images/care-hand-embroidered-blouse.png" alt="Blog post image" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-amber-400">March 02, 2025</span>
+              <h2 class="text-2xl font-bold text-white mt-2 mb-4">How to Care for Your Hand-Embroidered Blouse</h2>
+              <p class="text-neutral-300 mb-4">Your Aari work is a piece of art. Learn how to preserve its beauty for
+                generations...</p>
+              <a href="blogs/blogs.html?post=care-hand-embroidered-blouse" target="_blank"
+                class="font-bold text-amber-400 hover:text-amber-500">Read More &rarr;</a>
+            </div>
+          </div>
+          <!-- Blog Post 3 -->
+          <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105"
+            data-reveal>
+            <img src="blogs/images/pinterest-to-reality-custom-design.png" alt="Blog post image" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-amber-400">April 08, 2025</span>
+              <h2 class="text-2xl font-bold text-white mt-2 mb-4">From Pinterest to Reality: A Custom Design Story</h2>
+              <p class="text-neutral-300 mb-4">See how we transformed a simple Pinterest sketch into a breathtaking
+                reality for one of our clients...</p>
+              <a href="blogs/blogs.html?post=pinterest-to-reality-custom-design" target="_blank"
+                class="font-bold text-amber-400 hover:text-amber-500">Read More &rarr;</a>
+            </div>
+          </div>
+          <!-- Blog Post 4 -->
+          <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105"
+            data-reveal>
+            <img src="blogs/images/art-of-aari-hand-vs-machine.png" alt="Blog post image" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-amber-400">May 11, 2025</span>
+              <h2 class="text-2xl font-bold text-white mt-2 mb-4">The Art of Aari: What Makes Hand Aari Work Different
+                from Machine Embroidery?</h2>
+              <p class="text-neutral-300 mb-4">Watch how every stitch transforms into a story where a single Aari needle
+                outshines an entire machine, and embroidery turns into heritage...</p>
+              <a href="blogs/blogs.html?post=art-of-aari-hand-vs-machine" target="_blank"
+                class="font-bold text-amber-400 hover:text-amber-500">Read More &rarr;</a>
+            </div>
+          </div>
+          <!-- Blog Post 5 -->
+          <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105"
+            data-reveal>
+            <img src="blogs/images/types-of-aari-stitches.png" alt="Blog post image" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-amber-400">June 15, 2025</span>
+              <h2 class="text-2xl font-bold text-white mt-2 mb-4">From Pinterest to Reality: A Custom Design Story</h2>
+              <p class="text-neutral-300 mb-4">Explore how tiny stitches create big magic from delicate knots to
+                shimmering cutdana, every detail adds life to the fabric...</p>
+              <a href="blogs/blogs.html?post=types-of-aari-stitches" target="_blank"
+                class="font-bold text-amber-400 hover:text-amber-500">Read More &rarr;</a>
+            </div>
+          </div>
+          <!-- Blog Post 6 -->
+          <div class="bg-neutral-900 rounded-lg shadow-lg overflow-hidden transition-transform hover:scale-105"
+            data-reveal>
+            <img src="blogs/images/handcrafted-aari-indian-heritage.png" alt="Blog post image" class="w-full h-48 object-cover">
+            <div class="p-6">
+              <span class="text-sm text-amber-400">July 15, 2025</span>
+              <h2 class="text-2xl font-bold text-white mt-2 mb-4">How Handcrafted Aari Work Preserves Indian Heritage
+                and Artisan Livelihoods</h2>
+              <p class="text-neutral-300 mb-4">Discover how every hand-embroidered blouse keeps a centuries-old craft
+                alive supporting real artisans and preserving tradition...</p>
+              <a href="blogs/blogs.html?post=handcrafted-aari-indian-heritage" target="_blank"
+                class="font-bold text-amber-400 hover:text-amber-500">Read More &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- === CONTACT DETAILS PAGE === -->
+    <section id="contact" class="page min-h-screen py-24 px-8 flex items-center justify-center">
+      <div class="max-w-5xl mx-auto w-full grid md:grid-cols-2 gap-10">
+
+        <div class="bg-neutral-900 p-8 rounded-lg shadow-lg" data-reveal>
+          <h2 class="text-3xl font-bold text-white mb-6">Visit Our Studio</h2>
+          <p class="text-lg text-neutral-300 mb-6">We are located in the heart of the city. Come by to see our work or
+            discuss your design.</p>
+          <div class="space-y-6">
+            <div>
+              <h3 class="text-2xl font-bold text-amber-400 mb-3">Our Address</h3>
+              <address class="text-lg text-neutral-300 not-italic space-y-2">
+                <p>Khadeeja Designs</p>
+                <p>17 East Sayakara Lane,</p>
+                <p>Jaffersha Street, Trichy - 620008</p>
+                <p>Tamil Nadu, India</p>
+              </address>
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-amber-400 mb-3">Hours</h3>
+              <div class="text-lg text-neutral-300 space-y-1">
+                <p><strong>Mon - Sat:</strong> 10:00 AM - 8:00 PM</p>
+                <p><strong>Sunday:</strong> By Appointment Only</p>
+              </div>
+            </div>
+            <div class="rounded-lg overflow-hidden mt-4">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3918.861776395237!2d78.69355207583871!3d10.821888258351901!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTDCsDQ5JzE4LjgiTiA3OMKwNDEnNDYuMSJF!5e0!3m2!1sen!2sin!4v1762435974958!5m2!1sen!2sin"
+                width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+          </div>
+        </div>
+        <div class="bg-neutral-900 p-8 rounded-lg shadow-lg" data-reveal data-reveal>
+          <h2 class="text-3xl font-bold text-white mb-6">Contact Details</h2>
+          <div class="space-y-4 text-lg text-neutral-300">
+            <p class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                  d="M21.75 6.75v10.5a2.25 2.25 0 0 1-2.25 2.25h-15a2.25 2.25 0 0 1-2.25-2.25V6.75m19.5 0A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25m19.5 0v.243a2.25 2.25 0 0 1-1.07 1.916l-7.5 4.615a2.25 2.25 0 0 1-2.36 0L3.32 8.91a2.25 2.25 0 0 1-1.07-1.916V6.75" />
+              </svg>
+              <strong>Email:</strong> hello@khadeejadesigns.com
+            </p>
+            <p class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                viewBox="0 0 24 24">
+                <path
+                  d="M6.62 10.79a15.053 15.053 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1-.24 11.72 11.72 0 0 1 3.68.59 1 1 0 0 1 .71.95v3.49a1 1 0 0 1-1 1A17 17 0 0 1 3 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 .71 11.72 11.72 0 0 1 .59 3.68 1 1 0 0 1-.24 1z" />
+              </svg>
+              <strong>Phone:</strong> <a href="tel:+910000000000" class="hover:underline">+91 00000 00000</a>
+            </p>
+            <p class="flex items-center gap-3">
+              <svg class="w-6 h-6 text-amber-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                stroke-width="1.5" stroke="currentColor">
+                <rect x="3" y="3" width="18" height="18" rx="5" ry="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17" cy="7" r="1.5" />
+              </svg>
+              <strong>Instagram:</strong>
+              <a href="https://instagram.com/khadeeja.designs" target="_blank"
+                class="text-amber-400 hover:underline">@khadeeja.designs</a>
+            </p>
+          </div>
+          <div class="bg-neutral-900 p-8 rounded-lg shadow-lg" data-reveal data-reveal>
+            <h2 class="text-3xl font-bold text-white mb-6">Send an Enquiry</h2>
+            <form class="space-y-6">
+              <div>
+                <label for="name-form" class="block text-sm font-medium text-neutral-300 mb-2">Your Name</label>
+                <input type="text" id="name-form"
+                  class="w-full px-4 py-3 rounded-lg bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  placeholder="What should we call you?" required>
+              </div>
+              <div>
+                <label for="email-form" class="block text-sm font-medium text-neutral-300 mb-2">Email Address</label>
+                <input type="email" id="email-form"
+                  class="w-full px-4 py-3 rounded-lg bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  placeholder="Where can we reply to you?" required>
+              </div>
+              <div>
+                <label for="message-form" class="block text-sm font-medium text-neutral-300 mb-2">Your Idea</label>
+                <textarea id="message-form" rows="5"
+                  class="w-full px-4 py-3 rounded-lg bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-amber-400"
+                  placeholder="Describe your design, attach Pinterest links, or just say hi!" required></textarea>
+              </div>
+              <button type="submit"
+                class="w-full px-6 py-4 rounded-lg bg-amber-400 text-black text-lg font-bold transition-transform hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-500 focus:ring-offset-2 focus:ring-offset-black">
+                Send Enquiry
+              </button>
+            </form>
+          </div>
+        </div>
+    </section>
+  </main>
+  <script>
+    const cards = document.querySelectorAll('.group');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('opacity-100', 'translate-y-0');
+        }
+      });
+    }, { threshold: 0.2 });
+
+    cards.forEach(card => {
+      card.classList.add("opacity-0", "translate-y-6", "transition-all", "duration-700");
+      observer.observe(card);
+    });
+  </script>
+  <script>
+    // Smooth Router: landing shows for About/initial only; no splash, no forced scroll
+    document.addEventListener('DOMContentLoaded', () => {
+      const pages = document.querySelectorAll('.page');
+      const navLinks = document.querySelectorAll('.nav-link');
+      const landing = document.getElementById('landing');
+
+      function setActive(hash) {
+        const id = (hash || '#about').replace('#', '');
+        pages.forEach(p => p.classList.remove('active'));
+        const target = document.getElementById(id);
+        if (target) target.classList.add('active');
+
+        // Landing visible only for About (or initial without hash)
+        const showLanding = (!hash || hash === '#about');
+        if (landing) landing.style.display = showLanding ? 'flex' : 'none';
+
+        // Nav active state
+        navLinks.forEach(link => link.classList.toggle('bg-neutral-700', link.getAttribute('href') === '#' + id));
+      }
+
+      // Click -> switch without jump; no manual scrollTo to avoid splash
+      navLinks.forEach(link => link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const h = link.getAttribute('href');
+        history.pushState(null, '', h);
+        setActive(h);
+      }));
+
+      // Back/forward
+      window.addEventListener('popstate', () => setActive(location.hash));
+
+      // Initial
+      setActive(location.hash || '#about');
+    });
+  </script>
+  <!-- Lightbox Modal -->
+  <div id="lightbox"
+    class="fixed inset-0/90 hidden opacity-0 transition-opacity duration-200 z-50 flex items-center justify-center">
+    <button id="lightbox-prev"
+      class="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 p-3 rounded-full bg-neutral-800/70 hover:bg-neutral-700 text-white">&larr;</button>
+    <img id="lightbox-img" src="" alt="Preview" class="max-h-[90vh] max-w-[90vw] rounded-lg shadow-2xl">
+    <button id="lightbox-next"
+      class="absolute right-4 md:right-10 top-1/2 -translate-y-1/2 p-3 rounded-full bg-neutral-800/70 hover:bg-neutral-700 text-white">&rarr;</button>
+    <button id="lightbox-close"
+      class="absolute top-6 right-6 p-2 rounded-full bg-neutral-800/70 hover:bg-neutral-700 text-white">✕</button>
+  </div>
+  <script>
+    // Scroll reveal for sections/cards
+    document.addEventListener('DOMContentLoaded', () => {
+      const els = document.querySelectorAll('[data-reveal]');
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.15 });
+
+      els.forEach(el => io.observe(el));
+    });
+  </script>
+  <script>
+    // fade landing on scroll
+    document.addEventListener("scroll", () => {
+      const landing = document.getElementById("landing");
+      if (window.scrollY > 80) landing.classList.add("hide");
+      else landing.classList.remove("hide");
+    });
+  </script>
+  <a href="https://wa.me/919000000000" target="_blank"
+    class="fixed bottom-6 right-6 bg-green-500 text-white rounded-full shadow-lg p-4 flex items-center justify-center hover:scale-110 transition-transform z-[9999]">
+    <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="w-6 h-6" viewBox="0 0 16 16">
+      <path
+        d="M13.601 2.326A7.89 7.89 0 0 0 7.994.002C3.627.002.138 3.49.138 7.858c0 1.385.36 2.736 1.042 3.93L.003 16l4.31-1.133a7.868 7.868 0 0 0 3.682.937h.004c4.368 0 7.856-3.488 7.856-7.856a7.82 7.82 0 0 0-2.254-5.622zM7.996 14.4a6.5 6.5 0 0 1-3.316-.896l-.238-.141-2.558.673.684-2.49-.155-.255A6.52 6.52 0 0 1 1.5 7.858c0-3.584 2.915-6.5 6.496-6.5a6.43 6.43 0 0 1 4.611 1.913 6.43 6.43 0 0 1 1.89 4.587c0 3.585-2.915 6.501-6.501 6.501zm3.69-4.93c-.2-.1-1.18-.583-1.364-.65-.183-.067-.317-.1-.45.1-.133.2-.517.65-.634.783-.117.133-.233.15-.433.05-.2-.1-.842-.31-1.602-.99-.592-.527-.992-1.177-1.109-1.377-.117-.2-.013-.308.088-.408.09-.09.2-.233.3-.35.1-.117.133-.2.2-.333.067-.133.033-.25-.017-.35-.05-.1-.45-1.083-.616-1.483-.162-.39-.327-.338-.45-.345l-.383-.007c-.133 0-.35.05-.533.25-.183.2-.7.683-.7 1.666 0 .983.717 1.933.816 2.066.1.133 1.41 2.155 3.415 3.016.478.206.85.33 1.14.423.477.152.91.13 1.253.079.383-.057 1.18-.48 1.347-.945.167-.467.167-.867.117-.95-.05-.083-.183-.133-.383-.233z" />
+    </svg>
+  </a>
+  <script>
+    document.getElementById("enquiryForm").addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const name = e.target[0].value;
+      const email = e.target[1].value;
+      const idea = e.target[2].value;
+      const msg = `Hello, I am ${name}. My email is ${email}. Here is my design idea: ${idea}`;
+      const encoded = encodeURIComponent(msg);
+
+      // ✅ WhatsApp Autofill
+      window.open(`https://wa.me/919000000000?text=${encoded}`, "_blank");
+
+      // ✅ Button animation
+      const btn = document.getElementById("enquiryBtn");
+      const success = document.getElementById("successMsg");
+
+      btn.innerText = "Sending...";
+      btn.classList.add("scale-95", "opacity-50");
+
+      setTimeout(() => {
+        btn.innerText = "Sent ✅";
+        success.classList.remove("hidden");
+        btn.classList.add("bg-green-500");
+      }, 600);
+    });
+  </script>
+  <div id="image-modal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/80 p-4">
+  <div class="relative w-full max-w-4xl max-h-[90vh]">
+    <button id="modal-close" class="absolute -top-12 right-0 z-10 text-white text-4xl font-bold transition-transform hover:scale-125">&times;</button>
+    <img id="modal-img" src="" alt="Portfolio Preview" class="w-full h-full object-contain max-h-[90vh]">
+  </div>
+</div>
+  <script>
+  // Get all the elements we need
+  const modal = document.getElementById('image-modal');
+  const modalImg = document.getElementById('modal-img');
+  const closeBtn = document.getElementById('modal-close');
+  const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+  // Function to open the modal
+  const openModal = (imgSrc) => {
+    modalImg.src = imgSrc;
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+  };
+
+  // Function to close the modal
+  const closeModal = () => {
+    modal.classList.add('hidden');
+    modal.classList.remove('flex');
+    modalImg.src = ""; // Clear the src
+  };
+
+  // Add click listener to every portfolio item
+  portfolioItems.forEach(item => {
+    item.addEventListener('click', () => {
+      // Find the img tag inside the clicked item
+      const img = item.querySelector('img');
+      if (img) {
+        openModal(img.src);
+      }
+    });
+  });
+
+  // Close the modal when the 'x' button is clicked
+  closeBtn.addEventListener('click', closeModal);
+
+  // Also close the modal when clicking on the background overlay
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      closeModal();
+    }
+  });
+</script>
+</body>
+</html>
