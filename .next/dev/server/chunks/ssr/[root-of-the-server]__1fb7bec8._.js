@@ -1,0 +1,575 @@
+module.exports = [
+"[project]/components/Navigation.tsx [ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Navigation
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/react/jsx-dev-runtime [external] (react/jsx-dev-runtime, cjs)");
+;
+function Navigation() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("nav", {
+        className: "fixed top-5 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-lg rounded-full p-2 shadow-xl z-50",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("ul", {
+            className: "flex items-center gap-1",
+            children: [
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                        href: "#about",
+                        className: "nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("svg", {
+                                className: "w-5 h-5",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                strokeWidth: "1.5",
+                                stroke: "currentColor",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("path", {
+                                        strokeLinecap: "round",
+                                        strokeLinejoin: "round",
+                                        d: "M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/Navigation.tsx",
+                                        lineNumber: 11,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("path", {
+                                        strokeLinecap: "round",
+                                        strokeLinejoin: "round",
+                                        d: "M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/Navigation.tsx",
+                                        lineNumber: 12,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/Navigation.tsx",
+                                lineNumber: 10,
+                                columnNumber: 13
+                            }, this),
+                            "About"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/Navigation.tsx",
+                        lineNumber: 6,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/Navigation.tsx",
+                    lineNumber: 5,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                        href: "#portfolio",
+                        className: "nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("svg", {
+                                className: "w-5 h-5",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                strokeWidth: "1.5",
+                                stroke: "currentColor",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("path", {
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    d: "M3.75 6.75h16.5m-16.5 4.5h16.5m-16.5 4.5H12"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/Navigation.tsx",
+                                    lineNumber: 23,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/Navigation.tsx",
+                                lineNumber: 22,
+                                columnNumber: 13
+                            }, this),
+                            "Work"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/Navigation.tsx",
+                        lineNumber: 18,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/Navigation.tsx",
+                    lineNumber: 17,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                        href: "/blog",
+                        className: "nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("svg", {
+                                className: "w-5 h-5",
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                strokeWidth: "1.5",
+                                stroke: "currentColor",
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("path", {
+                                    strokeLinecap: "round",
+                                    strokeLinejoin: "round",
+                                    d: "M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18V7.875c0-.621.504-1.125 1.125-1.125H6.75M16.5 6.75h-9v-3c0-.621.504-1.125 1.125-1.125h6.75C15.996 2.625 16.5 3.129 16.5 3.75v3Z"
+                                }, void 0, false, {
+                                    fileName: "[project]/components/Navigation.tsx",
+                                    lineNumber: 34,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/components/Navigation.tsx",
+                                lineNumber: 33,
+                                columnNumber: 13
+                            }, this),
+                            "Blog"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/Navigation.tsx",
+                        lineNumber: 29,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/Navigation.tsx",
+                    lineNumber: 28,
+                    columnNumber: 9
+                }, this),
+                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("li", {
+                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+                        href: "#contact",
+                        className: "nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("svg", {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                fill: "none",
+                                viewBox: "0 0 24 24",
+                                strokeWidth: "2",
+                                stroke: "currentColor",
+                                className: "w-5 h-5",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("circle", {
+                                        cx: "12",
+                                        cy: "7",
+                                        r: "4"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/Navigation.tsx",
+                                        lineNumber: 45,
+                                        columnNumber: 15
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("path", {
+                                        d: "M5 21c0-4 3-7 7-7s7 3 7 7"
+                                    }, void 0, false, {
+                                        fileName: "[project]/components/Navigation.tsx",
+                                        lineNumber: 46,
+                                        columnNumber: 15
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/components/Navigation.tsx",
+                                lineNumber: 44,
+                                columnNumber: 13
+                            }, this),
+                            "Contact"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/components/Navigation.tsx",
+                        lineNumber: 40,
+                        columnNumber: 11
+                    }, this)
+                }, void 0, false, {
+                    fileName: "[project]/components/Navigation.tsx",
+                    lineNumber: 39,
+                    columnNumber: 9
+                }, this)
+            ]
+        }, void 0, true, {
+            fileName: "[project]/components/Navigation.tsx",
+            lineNumber: 4,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/Navigation.tsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/components/AnimatedBackground.tsx [ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>AnimatedBackground
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/react/jsx-dev-runtime [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$jsx$2f$style$2e$js__$5b$external$5d$__$28$styled$2d$jsx$2f$style$2e$js$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/styled-jsx/style.js [external] (styled-jsx/style.js, cjs)");
+;
+;
+function AnimatedBackground() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+        id: "animated-bg",
+        style: {
+            background: `
+        radial-gradient(1200px 600px at 50% 110%, rgba(245, 158, 11, 0.12), transparent 60%),
+        radial-gradient(1000px 500px at 10% -10%, rgba(245, 158, 11, 0.08), transparent 60%),
+        linear-gradient(180deg, #000, #0a0a0a 60%, #000)
+      `
+        },
+        className: "jsx-d7e58bfe8eab908d" + " " + "fixed inset-0 z-[-1] pointer-events-none overflow-hidden",
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$jsx$2f$style$2e$js__$5b$external$5d$__$28$styled$2d$jsx$2f$style$2e$js$2c$__cjs$29$__["default"], {
+                id: "d7e58bfe8eab908d",
+                children: "@keyframes swirl{to{transform:rotate(360deg)translateY(0)}}@keyframes float{0%{transform:translateY(-20px)}to{transform:translateY(20px)}}@keyframes pulse{0%{opacity:.35}to{opacity:.55}}.gold-wave.jsx-d7e58bfe8eab908d{animation:10s linear infinite swirl,6s ease-in-out infinite alternate float}.glow.jsx-d7e58bfe8eab908d{animation:8s ease-in-out infinite alternate pulse}"
+            }, void 0, false, void 0, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                style: {
+                    background: 'radial-gradient(600px 300px at 60% 70%, rgba(245, 158, 11, 0.25), transparent 70%)'
+                },
+                className: "jsx-d7e58bfe8eab908d" + " " + "glow absolute inset-[-20%]"
+            }, void 0, false, {
+                fileName: "[project]/components/AnimatedBackground.tsx",
+                lineNumber: 39,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                style: {
+                    filter: 'blur(22px)',
+                    opacity: 0.5,
+                    background: 'conic-gradient(from 210deg, rgba(245, 158, 11, 0), rgba(245, 158, 11, 0.45), rgba(245, 158, 11, 0))'
+                },
+                className: "jsx-d7e58bfe8eab908d" + " " + "gold-wave absolute left-[-10%] right-[-10%] h-[60%] top-[40%]"
+            }, void 0, false, {
+                fileName: "[project]/components/AnimatedBackground.tsx",
+                lineNumber: 42,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/components/AnimatedBackground.tsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[project]/components/WhatsAppButton.tsx [ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>WhatsAppButton
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/react/jsx-dev-runtime [external] (react/jsx-dev-runtime, cjs)");
+;
+function WhatsAppButton() {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("a", {
+        href: "https://wa.me/919000000000",
+        target: "_blank",
+        rel: "noopener noreferrer",
+        className: "fixed bottom-6 right-6 bg-green-500 text-white rounded-full shadow-lg p-4 flex items-center justify-center hover:scale-110 transition-transform z-[9999]",
+        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("svg", {
+            xmlns: "http://www.w3.org/2000/svg",
+            fill: "currentColor",
+            className: "w-6 h-6",
+            viewBox: "0 0 16 16",
+            children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("path", {
+                d: "M13.601 2.326A7.89 7.89 0 0 0 7.994.002C3.627.002.138 3.49.138 7.858c0 1.385.36 2.736 1.042 3.93L.003 16l4.31-1.133a7.868 7.868 0 0 0 3.682.937h.004c4.368 0 7.856-3.488 7.856-7.856a7.82 7.82 0 0 0-2.254-5.622zM7.996 14.4a6.5 6.5 0 0 1-3.316-.896l-.238-.141-2.558.673.684-2.49-.155-.255A6.52 6.52 0 0 1 1.5 7.858c0-3.584 2.915-6.5 6.496-6.5a6.43 6.43 0 0 1 4.611 1.913 6.43 6.43 0 0 1 1.89 4.587c0 3.585-2.915 6.501-6.501 6.501zm3.69-4.93c-.2-.1-1.18-.583-1.364-.65-.183-.067-.317-.1-.45.1-.133.2-.517.65-.634.783-.117.133-.233.15-.433.05-.2-.1-.842-.31-1.602-.99-.592-.527-.992-1.177-1.109-1.377-.117-.2-.013-.308.088-.408.09-.09.2-.233.3-.35.1-.117.133-.2.2-.333.067-.133.033-.25-.017-.35-.05-.1-.45-1.083-.616-1.483-.162-.39-.327-.338-.45-.345l-.383-.007c-.133 0-.35.05-.533.25-.183.2-.7.683-.7 1.666 0 .983.717 1.933.816 2.066.1.133 1.41 2.155 3.415 3.016.478.206.85.33 1.14.423.477.152.91.13 1.253.079.383-.057 1.18-.48 1.347-.945.167-.467.167-.867.117-.95-.05-.083-.183-.133-.383-.233z"
+            }, void 0, false, {
+                fileName: "[project]/components/WhatsAppButton.tsx",
+                lineNumber: 10,
+                columnNumber: 9
+            }, this)
+        }, void 0, false, {
+            fileName: "[project]/components/WhatsAppButton.tsx",
+            lineNumber: 9,
+            columnNumber: 7
+        }, this)
+    }, void 0, false, {
+        fileName: "[project]/components/WhatsAppButton.tsx",
+        lineNumber: 3,
+        columnNumber: 5
+    }, this);
+}
+}),
+"[externals]/react-dom [external] (react-dom, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("react-dom", () => require("react-dom"));
+
+module.exports = mod;
+}),
+"[project]/pages/blog/index.tsx [ssr] (ecmascript)", ((__turbopack_context__) => {
+"use strict";
+
+__turbopack_context__.s([
+    "default",
+    ()=>Blog
+]);
+var __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/react/jsx-dev-runtime [external] (react/jsx-dev-runtime, cjs)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$jsx$2f$style$2e$js__$5b$external$5d$__$28$styled$2d$jsx$2f$style$2e$js$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/styled-jsx/style.js [external] (styled-jsx/style.js, cjs)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Navigation$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/Navigation.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$AnimatedBackground$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/AnimatedBackground.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$components$2f$WhatsAppButton$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/components/WhatsAppButton.tsx [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/image.js [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/node_modules/next/link.js [ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__ = __turbopack_context__.i("[externals]/react [external] (react, cjs)");
+;
+;
+;
+;
+;
+;
+;
+;
+function Blog() {
+    const [blogs, setBlogs] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])([]);
+    const [loading, setLoading] = (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useState"])(true);
+    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
+        const fetchBlogs = async ()=>{
+            try {
+                const res = await fetch('/blogs.json');
+                const data = await res.json();
+                setBlogs(data);
+            } catch (error) {
+                console.error('Error loading blogs:', error);
+            } finally{
+                setLoading(false);
+            }
+        };
+        fetchBlogs();
+    }, []);
+    (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react__$5b$external$5d$__$28$react$2c$__cjs$29$__["useEffect"])(()=>{
+        // Scroll reveal observer
+        const els = document.querySelectorAll('[data-reveal]');
+        const io = new IntersectionObserver((entries)=>{
+            entries.forEach((entry)=>{
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                    io.unobserve(entry.target);
+                }
+            });
+        }, {
+            threshold: 0.15
+        });
+        els.forEach((el)=>io.observe(el));
+        return ()=>io.disconnect();
+    }, [
+        blogs
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["Fragment"], {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$AnimatedBackground$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                fileName: "[project]/pages/blog/index.tsx",
+                lineNumber: 56,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$Navigation$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                fileName: "[project]/pages/blog/index.tsx",
+                lineNumber: 57,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("main", {
+                className: "jsx-548a2999fdfe2e58" + " " + "relative z-10",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
+                        className: "jsx-548a2999fdfe2e58" + " " + "pt-40 pb-12 text-center px-6",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h1", {
+                                className: "jsx-548a2999fdfe2e58" + " " + "text-5xl md:text-6xl font-bold text-amber-400 mb-4",
+                                children: "Our Blog"
+                            }, void 0, false, {
+                                fileName: "[project]/pages/blog/index.tsx",
+                                lineNumber: 61,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                className: "jsx-548a2999fdfe2e58" + " " + "text-neutral-400 text-lg max-w-2xl mx-auto",
+                                children: "Insights, trends, and stories about Aari embroidery, design inspiration, and our craft"
+                            }, void 0, false, {
+                                fileName: "[project]/pages/blog/index.tsx",
+                                lineNumber: 64,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/pages/blog/index.tsx",
+                        lineNumber: 60,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
+                        className: "jsx-548a2999fdfe2e58" + " " + "max-w-6xl mx-auto px-6 py-24",
+                        children: loading ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                            className: "jsx-548a2999fdfe2e58" + " " + "text-center text-neutral-400",
+                            children: "Loading blogs..."
+                        }, void 0, false, {
+                            fileName: "[project]/pages/blog/index.tsx",
+                            lineNumber: 72,
+                            columnNumber: 13
+                        }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                            className: "jsx-548a2999fdfe2e58" + " " + "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8",
+                            children: blogs.map((blog)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    href: `/blog/${blog.slug}`,
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                        className: "jsx-548a2999fdfe2e58" + " " + "bg-neutral-900 rounded-lg shadow-lg overflow-hidden transition-all hover:scale-105 hover:shadow-2xl cursor-pointer data-reveal",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                className: "jsx-548a2999fdfe2e58" + " " + "relative h-48 w-full overflow-hidden",
+                                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                                    src: blog.image,
+                                                    alt: blog.title,
+                                                    fill: true,
+                                                    className: "w-full h-full object-cover"
+                                                }, void 0, false, {
+                                                    fileName: "[project]/pages/blog/index.tsx",
+                                                    lineNumber: 79,
+                                                    columnNumber: 23
+                                                }, this)
+                                            }, void 0, false, {
+                                                fileName: "[project]/pages/blog/index.tsx",
+                                                lineNumber: 78,
+                                                columnNumber: 21
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                className: "jsx-548a2999fdfe2e58" + " " + "p-6",
+                                                children: [
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                        className: "jsx-548a2999fdfe2e58" + " " + "text-amber-400 text-sm font-semibold mb-2",
+                                                        children: [
+                                                            blog.date,
+                                                            " • ",
+                                                            blog.readTime
+                                                        ]
+                                                    }, void 0, true, {
+                                                        fileName: "[project]/pages/blog/index.tsx",
+                                                        lineNumber: 87,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h3", {
+                                                        className: "jsx-548a2999fdfe2e58" + " " + "text-xl font-bold text-white mb-3",
+                                                        children: blog.title
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/blog/index.tsx",
+                                                        lineNumber: 88,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                                        className: "jsx-548a2999fdfe2e58" + " " + "text-neutral-300 line-clamp-2",
+                                                        children: blog.excerpt
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/blog/index.tsx",
+                                                        lineNumber: 89,
+                                                        columnNumber: 23
+                                                    }, this),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                                                        className: "jsx-548a2999fdfe2e58" + " " + "mt-4 text-amber-400 font-semibold text-sm",
+                                                        children: "Read More →"
+                                                    }, void 0, false, {
+                                                        fileName: "[project]/pages/blog/index.tsx",
+                                                        lineNumber: 90,
+                                                        columnNumber: 23
+                                                    }, this)
+                                                ]
+                                            }, void 0, true, {
+                                                fileName: "[project]/pages/blog/index.tsx",
+                                                lineNumber: 86,
+                                                columnNumber: 21
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/pages/blog/index.tsx",
+                                        lineNumber: 77,
+                                        columnNumber: 19
+                                    }, this)
+                                }, blog.id, false, {
+                                    fileName: "[project]/pages/blog/index.tsx",
+                                    lineNumber: 76,
+                                    columnNumber: 17
+                                }, this))
+                        }, void 0, false, {
+                            fileName: "[project]/pages/blog/index.tsx",
+                            lineNumber: 74,
+                            columnNumber: 13
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/pages/blog/index.tsx",
+                        lineNumber: 70,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("section", {
+                        className: "jsx-548a2999fdfe2e58" + " " + "bg-neutral-900/70 py-16 my-24",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("div", {
+                            className: "jsx-548a2999fdfe2e58" + " " + "max-w-4xl mx-auto px-6 text-center",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("h2", {
+                                    className: "jsx-548a2999fdfe2e58" + " " + "text-3xl font-bold text-amber-400 mb-2",
+                                    children: "Want a Custom Bridal Design?"
+                                }, void 0, false, {
+                                    fileName: "[project]/pages/blog/index.tsx",
+                                    lineNumber: 104,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("p", {
+                                    className: "jsx-548a2999fdfe2e58" + " " + "text-neutral-300 mt-2 mb-6",
+                                    children: "Share your inspiration we'll make a masterpiece."
+                                }, void 0, false, {
+                                    fileName: "[project]/pages/blog/index.tsx",
+                                    lineNumber: 105,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {
+                                    href: "/#contact",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])("button", {
+                                        className: "jsx-548a2999fdfe2e58" + " " + "px-8 py-3 rounded-lg bg-amber-400 text-black font-semibold hover:bg-amber-500 transition",
+                                        children: "Contact Now"
+                                    }, void 0, false, {
+                                        fileName: "[project]/pages/blog/index.tsx",
+                                        lineNumber: 107,
+                                        columnNumber: 15
+                                    }, this)
+                                }, void 0, false, {
+                                    fileName: "[project]/pages/blog/index.tsx",
+                                    lineNumber: 106,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/pages/blog/index.tsx",
+                            lineNumber: 103,
+                            columnNumber: 11
+                        }, this)
+                    }, void 0, false, {
+                        fileName: "[project]/pages/blog/index.tsx",
+                        lineNumber: 102,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/pages/blog/index.tsx",
+                lineNumber: 58,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$components$2f$WhatsAppButton$2e$tsx__$5b$ssr$5d$__$28$ecmascript$29$__["default"], {}, void 0, false, {
+                fileName: "[project]/pages/blog/index.tsx",
+                lineNumber: 115,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$externals$5d2f$react$2f$jsx$2d$dev$2d$runtime__$5b$external$5d$__$28$react$2f$jsx$2d$dev$2d$runtime$2c$__cjs$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$externals$5d2f$styled$2d$jsx$2f$style$2e$js__$5b$external$5d$__$28$styled$2d$jsx$2f$style$2e$js$2c$__cjs$29$__["default"], {
+                id: "548a2999fdfe2e58",
+                children: "[data-reveal].jsx-548a2999fdfe2e58{opacity:0;transition:opacity .7s,transform .7s;transform:translateY(24px)}[data-reveal].is-visible.jsx-548a2999fdfe2e58{opacity:1;transform:translateY(0)}"
+            }, void 0, false, void 0, this)
+        ]
+    }, void 0, true);
+}
+}),
+"[externals]/next/dist/shared/lib/no-fallback-error.external.js [external] (next/dist/shared/lib/no-fallback-error.external.js, cjs)", ((__turbopack_context__, module, exports) => {
+
+const mod = __turbopack_context__.x("next/dist/shared/lib/no-fallback-error.external.js", () => require("next/dist/shared/lib/no-fallback-error.external.js"));
+
+module.exports = mod;
+}),
+];
+
+//# sourceMappingURL=%5Broot-of-the-server%5D__1fb7bec8._.js.map
