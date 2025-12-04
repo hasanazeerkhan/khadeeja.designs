@@ -1,6 +1,7 @@
 [
   {
     "title": "Top 5 Aari Trends for 2026",
+    "excerpt": "What brides and designers are asking for next season — color palettes, beadwork and silhouette pairings.",
     "slug": "aari-trends-2026",
     "date": "Feb 12, 2025",
     "readTime": "6 min read",
@@ -9,6 +10,7 @@
   },
   {
     "title": "How to Care for Your Hand-Embroidered Blouse",
+    "excerpt": "Simple steps to preserve your embroidered pieces so they last generations.",
     "slug": "care-hand-embroidered-blouse",
     "date": "March 02, 2025",
     "readTime": "5 min read",
@@ -17,6 +19,7 @@
   },
   {
     "title": "From Pinterest to Reality: A Custom Design Story",
+    "excerpt": "A behind-the-scenes look at turning inspiration into a finished embroidered piece.",
     "slug": "pinterest-to-reality-custom-design",
     "date": "April 08, 2025",
     "readTime": "5 min read",
@@ -24,7 +27,8 @@
     "content": "contents/pinterest-to-reality-custom-design.md"
   },
   {
-    "title": "The Art of Aari: What Makes Hand Aari Work Different from Machine Embroidery?",
+    "title": "The Art of Aari: Hand vs Machine",
+    "excerpt": "Why hand Aari work differs from machine embroidery and when to choose each.",
     "slug": "art-of-aari-hand-vs-machine",
     "date": "May 11, 2025",
     "readTime": "5 min read",
@@ -32,7 +36,8 @@
     "content": "contents/art-of-aari-hand-vs-machine.md"
   },
   {
-    "title": "Types of Aari Stitches and Their Uses (With Close-Up Examples)",
+    "title": "Types of Aari Stitches and Their Uses",
+    "excerpt": "Close-up examples and which stitches suit particular motifs and fabrics.",
     "slug": "types-of-aari-stitches",
     "date": "June 15, 2025",
     "readTime": "5 min read",
@@ -40,7 +45,8 @@
     "content": "contents/types-of-aari-stitches.md"
   },
   {
-    "title": "How Handcrafted Aari Work Preserves Indian Heritage and Artisan Livelihoods",
+    "title": "Handcrafted Aari: Preserving Indian Heritage",
+    "excerpt": "How handcrafted Aari work supports artisan livelihoods and cultural traditions.",
     "slug": "handcrafted-aari-indian-heritage",
     "date": "July 15, 2025",
     "readTime": "5 min read",
