@@ -1,0 +1,6 @@
+{
+  "version": 3,
+  "sources": [],
+  "sections": [
+    {"offset": {"line": 16, "column": 0}, "map": {"version":3,"sources":["file:///C:/userData/Git/khadeeja.designs/pages/_app.tsx"],"sourcesContent":["import type { AppProps } from 'next/app'\r\nimport '../styles/globals.css'\r\n\r\nexport default function App({ Component, pageProps }: AppProps) {\r\n  return (\r\n    <>\r\n      <style jsx global>{`\r\n        html {\r\n          scroll-behavior: smooth;\r\n        }\r\n        body {\r\n          font-family: 'Inter', sans-serif;\r\n        }\r\n      `}</style>\r\n      <Component {...pageProps} />\r\n    </>\r\n  )\r\n}\r\n"],"names":[],"mappings":";;;;;;;;;AAGe,SAAS,IAAI,EAAE,SAAS,EAAE,SAAS,EAAY;IAC5D,qBACE;;;;;;0BASE,qKAAC;gBAAW,GAAG,SAAS;2DAAT,aAAA,+BAAA;;;;;;;;AAGrB"}}]
+}
