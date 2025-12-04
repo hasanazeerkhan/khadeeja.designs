@@ -138,6 +138,8 @@ function applyThemeStyles(theme) {
     if (!document.getElementById('theme-dynamic-styles')) {
       document.head.appendChild(style);
     }
+    // Apply inline overrides to elements using Tailwind utilities that are hard to override
+    applyInlineThemeStyles('light');
   } else {
     document.body.classList.add('dark-theme');
     document.body.classList.remove('light-theme');
@@ -146,7 +148,159 @@ function applyThemeStyles(theme) {
     if (style) {
       style.innerHTML = '';
     }
+    // Remove inline overrides and restore dark defaults
+    applyInlineThemeStyles('dark');
   }
+}
+
+// Runtime inline style application to override Tailwind utilities when switching themes
+function applyInlineThemeStyles(theme) {
+  // Map of selectors -> style adjustments for light/dark
+  const groups = [
+    {
+      selectors: ['.bg-neutral-900', '.bg-neutral-800', '.bg-neutral-900\/40', '.bg-neutral-900\/70', '.bg-neutral-900\/80', '.bg-neutral-800\/50', '.bg-neutral-800\/50'],
+      prop: 'backgroundColor',
+      light: '#f5f5f5',
+      dark: ''
+    },
+    {
+      selectors: ['.text-neutral-300', '.text-neutral-400', '.text-gray-300', '.text-gray-400'],
+      prop: 'color',
+      light: '#666666',
+      dark: ''
+    },
+    {
+      selectors: ['.border-neutral-700', '.border-neutral-800'],
+      prop: 'borderColor',
+      light: '#d0d0d0',
+      dark: ''
+    },
+    {
+      selectors: ['.bg-amber-400', '.text-amber-400', '.text-amber-200'],
+      prop: 'color',
+      light: '#d97706',
+      dark: ''
+    },
+    {
+      selectors: ['nav', '.glass'],
+      prop: 'background',
+      light: 'rgba(245, 245, 245, 0.92)',
+      dark: ''
+    },
+    {
+      selectors: ['.whatsapp-btn'],
+      prop: 'backgroundColor',
+      light: '#25d366',
+      dark: ''
+    }
+  ];
+
+  groups.forEach(group => {
+    group.selectors.forEach(sel => {
+      let nodes = [];
+      try {
+        nodes = Array.from(document.querySelectorAll(sel));
+      } catch (e) {
+        // selector might be invalid due to missing escape - try escaping slashes
+        const safe = sel.replace(/\\/g, '\\\\');
+        try {
+          nodes = Array.from(document.querySelectorAll(safe));
+        } catch (_) {
+          nodes = [];
+        }
+      }
+
+      nodes.forEach(el => {
+        if (theme === 'light') {
+          // store previous inline value so we can restore later
+          const key = `data-prev-${group.prop}`;
+          if (!el.hasAttribute(key)) {
+            el.setAttribute(key, el.style[group.prop] || '');
+          }
+          el.style[group.prop] = group.light;
+        } else {
+          // restore previous value
+          const key = `data-prev-${group.prop}`;
+          if (el.hasAttribute(key)) {
+            const prev = el.getAttribute(key);
+            el.style[group.prop] = prev || '';
+            el.removeAttribute(key);
+          } else {
+            el.style[group.prop] = '';
+          }
+        }
+      });
+    });
+  });
+}
+
+// Aggressive sweep: strip Tailwind color utility classes and apply neutral inline styles
+function aggressiveClassSweep(theme) {
+  const selector = '[class*="bg-"] ,[class*="text-"] ,[class*="border-"]';
+  const nodes = Array.from(document.querySelectorAll(selector));
+
+  nodes.forEach(el => {
+    // skip if this is the theme script element itself
+    if (el.id === 'theme-dynamic-styles' || el.id === 'theme-toggle') return;
+
+    if (theme === 'light') {
+      // store original classes and inline styles
+      if (!el.hasAttribute('data-original-classes')) {
+        el.setAttribute('data-original-classes', el.className);
+      }
+      if (!el.hasAttribute('data-original-inline')) {
+        const prev = {
+          background: el.style.background || '',
+          backgroundColor: el.style.backgroundColor || '',
+          color: el.style.color || '',
+          borderColor: el.style.borderColor || ''
+        };
+        el.setAttribute('data-original-inline', JSON.stringify(prev));
+      }
+
+      // remove Tailwind color utility classes
+      const original = el.className;
+      const cleaned = original.split(/\s+/).filter(c => !/^(?:bg-|text-|border-)/.test(c)).join(' ');
+      el.className = cleaned;
+
+      // Apply neutral inline styles where appropriate
+      // If element previously had a bg- class, set a light bg
+      if (/\bbg-[^\s]+\b/.test(original)) {
+        el.style.background = '#f5f5f5';
+      }
+      // If element had text- class, set dark text
+      if (/\btext-[^\s]+\b/.test(original)) {
+        el.style.color = '#111111';
+      }
+      // If element had border- class, set light border
+      if (/\bborder-[^\s]+\b/.test(original)) {
+        el.style.borderColor = '#d0d0d0';
+      }
+    } else {
+      // restore original classes and inline styles
+      if (el.hasAttribute('data-original-classes')) {
+        el.className = el.getAttribute('data-original-classes');
+        el.removeAttribute('data-original-classes');
+      }
+      if (el.hasAttribute('data-original-inline')) {
+        try {
+          const prev = JSON.parse(el.getAttribute('data-original-inline'));
+          el.style.background = prev.background || '';
+          el.style.backgroundColor = prev.backgroundColor || '';
+          el.style.color = prev.color || '';
+          el.style.borderColor = prev.borderColor || '';
+        } catch (e) {
+          // ignore parse errors
+        }
+        el.removeAttribute('data-original-inline');
+      } else {
+        // clear styles applied by light mode
+        el.style.background = '';
+        el.style.color = '';
+        el.style.borderColor = '';
+      }
+    }
+  });
 }
 
 function updateThemeIcon(theme) {
