@@ -354,3 +354,151 @@ footer a:hover {
     color-scheme: dark;
   }
 }
+
+/* Shimmer Loading Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Light mode shimmer */
+body.light-theme .shimmer {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.05) 25%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.05) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Image placeholder with shimmer */
+img.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 25%,
+    rgba(255, 255, 255, 0.2) 50%,
+    rgba(255, 255, 255, 0.1) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+  min-height: 200px;
+  display: block;
+}
+
+body.light-theme img.loading {
+  background: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.05) 25%,
+    rgba(0, 0, 0, 0.1) 50%,
+    rgba(0, 0, 0, 0.05) 75%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s infinite;
+}
+
+/* Mobile navbar responsive improvements */
+@media (max-width: 768px) {
+  nav {
+    width: 90vw;
+    max-width: calc(100% - 2rem);
+  }
+
+  nav ul {
+    gap: 0;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  nav a,
+  nav button {
+    padding: 0.5rem 0.75rem !important;
+    font-size: 0.75rem !important;
+    flex: 0 1 auto;
+  }
+
+  nav a svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  nav a:hover,
+  nav a:focus,
+  nav button:hover,
+  nav button:focus {
+    background-color: var(--neutral-700);
+  }
+}
+
+@media (max-width: 480px) {
+  nav {
+    top: 0.5rem;
+    width: calc(100% - 1rem);
+    border-radius: 0.5rem;
+    padding: 0.25rem;
+  }
+
+  nav ul {
+    gap: 0;
+  }
+
+  nav li {
+    flex: 1 1 20%;
+    min-width: 0;
+  }
+
+  nav a,
+  nav button {
+    padding: 0.4rem 0.5rem !important;
+    font-size: 0.65rem !important;
+    border-radius: 0.375rem !important;
+    gap: 0.25rem !important;
+  }
+
+  nav a span,
+  nav button span {
+    display: none;
+  }
+
+  nav a svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  header {
+    z-index: 50;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0.5rem;
+  }
+
+  main {
+    margin-top: 4rem !important;
+  }
+
+  #landing-hero {
+    padding: 1rem 0.5rem !important;
+    min-height: auto !important;
+    margin-top: 1rem;
+  }
+}
+

@@ -140,6 +140,8 @@ function applyThemeStyles(theme) {
     }
     // Apply inline overrides to elements using Tailwind utilities that are hard to override
     applyInlineThemeStyles('light');
+    // Apply enhanced overrides for images, shadows, and WhatsApp button
+    enhancedLightModeOverrides('light');
   } else {
     document.body.classList.add('dark-theme');
     document.body.classList.remove('light-theme');
@@ -150,6 +152,8 @@ function applyThemeStyles(theme) {
     }
     // Remove inline overrides and restore dark defaults
     applyInlineThemeStyles('dark');
+    // Restore enhanced overrides for images, shadows, and WhatsApp button
+    enhancedLightModeOverrides('dark');
   }
 }
 
@@ -301,6 +305,45 @@ function aggressiveClassSweep(theme) {
       }
     }
   });
+}
+
+// Enhanced light mode: handle additional elements like images, shadows, and WhatsApp button
+function enhancedLightModeOverrides(theme) {
+  if (theme === 'light') {
+    // Remove box-shadow from images and figures
+    document.querySelectorAll('img, figure, .portfolio-img').forEach(el => {
+      if (!el.hasAttribute('data-prev-shadow')) {
+        el.setAttribute('data-prev-shadow', el.style.boxShadow || '');
+      }
+      el.style.boxShadow = 'none !important';
+    });
+
+    // Make WhatsApp button visible in light mode
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    if (whatsappBtn) {
+      if (!whatsappBtn.hasAttribute('data-prev-whatsapp')) {
+        whatsappBtn.setAttribute('data-prev-whatsapp', whatsappBtn.style.cssText || '');
+      }
+      whatsappBtn.style.backgroundColor = '#25d366 !important';
+      whatsappBtn.style.boxShadow = '0 4px 12px rgba(37, 211, 102, 0.3) !important';
+    }
+  } else {
+    // Restore shadows on dark mode
+    document.querySelectorAll('img, figure, .portfolio-img').forEach(el => {
+      if (el.hasAttribute('data-prev-shadow')) {
+        el.style.boxShadow = el.getAttribute('data-prev-shadow');
+        el.removeAttribute('data-prev-shadow');
+      }
+    });
+
+    // Restore WhatsApp button styling
+    const whatsappBtn = document.querySelector('.whatsapp-btn');
+    if (whatsappBtn && whatsappBtn.hasAttribute('data-prev-whatsapp')) {
+      const prev = whatsappBtn.getAttribute('data-prev-whatsapp');
+      whatsappBtn.style.cssText = prev;
+      whatsappBtn.removeAttribute('data-prev-whatsapp');
+    }
+  }
 }
 
 function updateThemeIcon(theme) {
