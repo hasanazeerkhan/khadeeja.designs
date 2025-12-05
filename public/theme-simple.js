@@ -315,7 +315,7 @@ function enhancedLightModeOverrides(theme) {
       if (!el.hasAttribute('data-prev-shadow')) {
         el.setAttribute('data-prev-shadow', el.style.boxShadow || '');
       }
-      el.style.boxShadow = 'none !important';
+      el.style.setProperty('box-shadow', 'none', 'important');
     });
 
     // Make WhatsApp button visible in light mode
@@ -324,8 +324,8 @@ function enhancedLightModeOverrides(theme) {
       if (!whatsappBtn.hasAttribute('data-prev-whatsapp')) {
         whatsappBtn.setAttribute('data-prev-whatsapp', whatsappBtn.style.cssText || '');
       }
-      whatsappBtn.style.backgroundColor = '#25d366 !important';
-      whatsappBtn.style.boxShadow = '0 4px 12px rgba(37, 211, 102, 0.3) !important';
+      whatsappBtn.style.setProperty('background-color', '#25d366', 'important');
+      whatsappBtn.style.setProperty('box-shadow', '0 4px 12px rgba(37, 211, 102, 0.3)', 'important');
     }
   } else {
     // Restore shadows on dark mode

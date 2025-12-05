@@ -91,7 +91,7 @@ function setupQuoteForm() {
     const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nProject details:\n${details}`);
     const subject = encodeURIComponent(`Quote request from ${name}`);
     
-    window.location.href = `mailto:hello@khadeejadesigns.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:khadeejadesigns@gmail.com?subject=${subject}&body=${body}`;
     
     if (noteEl) {
       showNotification("Thanks — we'll follow up via email within 48 hours.", 'success', noteEl);

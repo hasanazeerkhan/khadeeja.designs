@@ -32,7 +32,7 @@ function generateOrganizationSchema() {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
       "telephone": "+918667454391",
-      "email": "hello@khadeejadesigns.com"
+      "email": "khadeejadesigns@gmail.com"
     },
     "priceRange": "₹₹₹"
   };

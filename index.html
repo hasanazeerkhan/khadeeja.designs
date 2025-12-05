@@ -37,8 +37,11 @@
 </head>
 <body class="antialiased">
   <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[min(95%,1100px)]">
-    <nav class="fixed top-5 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-lg rounded-full p-2 shadow-xl z-50">
-      <ul class="flex items-center gap-1">
+    <nav class="fixed top-5 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-lg rounded-full p-2 shadow-xl z-50" aria-label="Main navigation">
+      <button id="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" class="mobile-nav-toggle" title="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul id="main-nav" class="flex items-center gap-1">
       <li>
         <a href="#about" class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium" title="Learn about Khadeeja Designs">
           <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -292,7 +295,7 @@
           <p class="text-neutral-300">Visit our studio by appointment only. We schedule design consultations on weekdays — bring your fabric swatches, pictures and deadline expectations.</p>
 
           <ul class="mt-4 text-sm space-y-2 text-neutral-300">
-            <li><strong>Email:</strong> hello@khadeejadesigns.com</li>
+            <li><strong>Email:</strong> khadeejadesigns@gmail.com</li>
             <li><strong>Phone:</strong> <a href="tel:+918667454391" class="hover:underline">+91 86674 54391</a></li>
             <li><strong>Instagram:</strong> <a href="https://instagram.com/khadeeja.designs" target="_blank" class="hover:underline">@khadeeja.designs</a></li>
             <li><strong>Address:</strong> 17 East Sayakara Lane, Jaffersha Street, Trichy - 620008</li>
@@ -365,6 +368,7 @@
   <script src="./public/schema-generator.js"></script>
   <script src="./public/newsletter.js"></script>
   <script src="./public/theme-simple.js"></script>
+  <script src="./public/mobile-nav.js"></script>
   <script src="./public/advanced-features.js"></script>
   
   <!-- Service Worker Registration -->

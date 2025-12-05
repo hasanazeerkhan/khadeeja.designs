@@ -20,6 +20,11 @@
   --glass-bg: rgba(17, 17, 17, 0.6);
 }
 
+/* Hide mobile nav toggle by default on desktop */
+.mobile-nav-toggle {
+  display: none;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -67,7 +72,7 @@ h3 {
 /* Navigation */
 nav {
   position: fixed;
-  top: 1.25rem;
+  top: 1rem; /* normalized top across pages */
   left: 50%;
   transform: translateX(-50%);
   background: rgba(23, 23, 23, 0.8);
@@ -454,6 +459,17 @@ body.light-theme img.loading {
     padding: 0.25rem;
   }
 
+  /* On very small screens, let the nav participate in document flow so
+     it doesn't overlay the hero content. When user opens the mobile menu
+     (`body.nav-open`) the nav becomes fixed/overlay as defined below. */
+  nav {
+    position: relative !important;
+    left: auto !important;
+    transform: none !important;
+    margin: 0.5rem auto !important;
+    width: calc(100% - 1rem) !important;
+  }
+
   nav ul {
     gap: 0;
   }
@@ -466,19 +482,29 @@ body.light-theme img.loading {
   nav a,
   nav button {
     padding: 0.4rem 0.5rem !important;
-    font-size: 0.65rem !important;
+    font-size: 0 !important; /* hide text labels on small screens for links */
     border-radius: 0.375rem !important;
     gap: 0.25rem !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
   }
 
-  nav a span,
-  nav button span {
-    display: none;
+  /* ensure SVG icons remain visible when font-size is zero */
+  nav a svg,
+  nav button svg {
+    width: 1.1rem;
+    height: 1.1rem;
+    display: inline-block;
   }
 
-  nav a svg {
-    width: 1rem;
-    height: 1rem;
+  /* Keep the theme toggle emoji visible and sized correctly */
+  #theme-toggle {
+    font-size: 1.05rem !important;
+    width: 2.4rem !important;
+    height: 2.4rem !important;
+    padding: 0.25rem !important;
+    line-height: 1 !important;
   }
 
   header {
@@ -491,14 +517,71 @@ body.light-theme img.loading {
     padding: 0.5rem;
   }
 
+  /* Increase top spacing to account for the nav height on small screens */
   main {
-    margin-top: 4rem !important;
+    margin-top: 6rem !important;
   }
 
   #landing-hero {
     padding: 1rem 0.5rem !important;
     min-height: auto !important;
     margin-top: 1rem;
+  }
+  /* Ensure mobile nav has space for the toggle button and hamburger is aligned */
+  nav {
+    padding-left: 3.25rem !important;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex !important;
+    position: absolute !important;
+    left: 0.6rem !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    background: transparent !important;
+    border: none !important;
+    color: inherit !important;
+    padding: 0.25rem !important;
+    z-index: 60 !important;
+  }
+
+  /* Mobile overlay nav when toggled */
+  body.nav-open nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 0 0 0.75rem 0.75rem;
+    background: #ffffff !important;
+    color: #111111 !important;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    padding: 0.5rem 0.75rem;
+  }
+
+  body.nav-open nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.5rem 0.5rem 0.75rem 3rem; /* keep space for toggle */
+    margin: 0;
+  }
+
+  body.nav-open nav a,
+  body.nav-open nav button {
+    font-size: 1rem !important;
+    padding: 0.75rem 1rem !important;
+    color: #111111 !important;
+    background: transparent !important;
+    border-radius: 0.5rem !important;
+    text-align: left;
+  }
+
+  body.nav-open nav a svg,
+  body.nav-open nav button svg {
+    margin-right: 0.5rem;
   }
 }
 
