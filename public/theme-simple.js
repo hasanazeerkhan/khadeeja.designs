@@ -17,10 +17,14 @@ if (document.readyState === 'loading') {
 }
 
 function initTheme() {
-  // Get saved theme or use dark as default
-  const savedTheme = localStorage.getItem('khadeeja-theme') || 'dark';
-  applyTheme(savedTheme);
-  updateThemeIcon(savedTheme);
+  // Check if on mobile
+  const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  // Force dark theme on mobile, otherwise use saved theme or dark as default
+  let theme = isMobile ? 'dark' : (localStorage.getItem('khadeeja-theme') || 'dark');
+  
+  applyTheme(theme);
+  updateThemeIcon(theme);
 }
 
 function applyTheme(theme) {
@@ -357,6 +361,15 @@ function updateThemeIcon(theme) {
 function setupThemeToggle() {
   const toggle = document.getElementById('theme-toggle');
   if (!toggle) return;
+  
+  // Check if on mobile
+  const isMobile = window.innerWidth <= 768 || /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  
+  // Hide toggle on mobile
+  if (isMobile) {
+    toggle.style.display = 'none';
+    return;
+  }
   
   toggle.addEventListener('click', function(e) {
     e.preventDefault();
