@@ -18,8 +18,11 @@
 <body class="antialiased relative font-sans">
   <div id="progressBar"></div>
   
-  <nav role="navigation" aria-label="Main navigation" class="fixed top-5 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-lg rounded-full p-2 shadow-xl z-50">
-    <ul class="flex items-center gap-1">
+    <nav role="navigation" aria-label="Main navigation" class="fixed top-5 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-lg rounded-full p-2 shadow-xl z-50">
+      <button id="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" class="mobile-nav-toggle" title="Open menu">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <ul id="main-nav" class="flex items-center gap-1">
       <li>
         <a href="/index.html#about" class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium" title="Learn about Khadeeja Designs">
           <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
@@ -142,6 +145,7 @@
   <script src="../public/table-of-contents.js"></script>
   <script src="../public/related-posts.js"></script>
   <script src="../public/theme-simple.js"></script>
+  <script src="../public/mobile-nav.js"></script>
   <script src="../public/advanced-features.js"></script>
   
   <!-- Service Worker Registration -->
