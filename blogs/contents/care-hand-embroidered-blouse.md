@@ -1,13 +1,13 @@
 # How to Care for Your Hand-Embroidered Blouse
 
-Hand-embroidered blouses are not just outfits — they’re art. Each stitch holds hours of craftsmanship and tradition.  
+Hand-embroidered blouses are not just outfits they're art. Each stitch holds hours of craftsmanship and tradition.
 To keep that beauty intact for years, these care tips will help you preserve the embroidery, fabric, and shine.
 
 ---
 
 ## 1. Always Use Gentle Hand-Wash
 
-Avoid machine wash — the agitation can pull threads and damage delicate embroidery.  
+Avoid machine wash the agitation can pull threads and damage delicate embroidery.  
 Use cold water and a mild detergent (preferably a liquid meant for silks).
 
 **How to wash safely:**
@@ -24,7 +24,7 @@ Instead, place the blouse on a clean towel and press gently to remove excess wat
 
 ---
 
-## 3. Dry in Shade — Not Direct Sunlight
+## 3. Dry in Shade Not Direct Sunlight
 
 Sunlight can fade both thread and fabric colors.
 
@@ -46,7 +46,7 @@ Always use a pressing cloth (a thin cotton fabric) over the blouse before ironin
 
 ## 5. Store with Tissue Paper
 
-Avoid plastic covers — moisture can get trapped and cause fungus or discoloration.
+Avoid plastic covers moisture can get trapped and cause fungus or discoloration.
 
 **For best storage:**
 - Wrap the blouse in acid-free tissue paper
@@ -69,13 +69,13 @@ A small quick fix now avoids bigger damage later.
 ## 7. Avoid Perfume & Makeup Contact
 
 Spraying perfume or mist directly on the embroidery can stain the threads.  
-Apply perfume **before** wearing your blouse — let it dry, then slip into your masterpiece.
+Apply perfume **before** wearing your blouse let it dry, then slip into your masterpiece.
 
 ---
 
 ### Final Thought
 
-A hand-embroidered blouse deserves the same care you give to anything precious in life —  
+A hand-embroidered blouse deserves the same care you give to anything precious in life  
 *gentle hands, patience, and attention to detail.*
 
 When you care for your embroidery with love,  

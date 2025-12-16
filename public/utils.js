@@ -94,7 +94,7 @@ function setupQuoteForm() {
     window.location.href = `mailto:khadeejadesigns@gmail.com?subject=${subject}&body=${body}`;
     
     if (noteEl) {
-      showNotification("Thanks — we'll follow up via email within 48 hours.", 'success', noteEl);
+      showNotification("Thanks we'll follow up via email within 48 hours.", 'success', noteEl);
       setTimeout(() => {
         form.reset();
         noteEl.classList.add('hidden');

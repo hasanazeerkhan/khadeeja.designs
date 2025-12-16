@@ -1,6 +1,6 @@
 # How Handcrafted Aari Work Preserves Indian Heritage and Artisan Livelihoods
 
-Aari work is more than embroidery — it is a living heritage that passes from one generation to another.
+Aari work is more than embroidery it is a living heritage that passes from one generation to another.
 
 ---
 
@@ -27,7 +27,7 @@ Every blouse you purchase keeps the craft alive and supports real people.
 ## 🌼 Slow Fashion > Fast Fashion
 
 Machine embroidery can produce bulk pieces quickly.  
-But handcrafted Aari represents **slow fashion** — thoughtful, intentional, ethical.
+But handcrafted Aari represents **slow fashion** thoughtful, intentional, ethical.
 
 You aren’t just paying for embroidery.  
 You are paying for:
@@ -41,6 +41,6 @@ You are paying for:
 ## 💛 Final Thought
 
 When you choose handcrafted Aari,
-you don’t just wear beauty —  
+you don't just wear beauty
 you protect it.
 

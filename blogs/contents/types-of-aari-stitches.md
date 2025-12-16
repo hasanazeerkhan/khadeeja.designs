@@ -1,6 +1,6 @@
 # Types of Aari Stitches and Their Uses (With Close-Up Examples)
 
-Aari embroidery isn’t just a single stitch — it’s an entire language of threads and beads.  
+Aari embroidery isn't just a single stitch it's an entire language of threads and beads.
 Each stitch adds character, texture, and elegance to the design.
 
 ---
@@ -24,7 +24,7 @@ Using tube-shaped beads.
 - Adds sparkle and dimension.
 
 ### 5. Sequins Work
-Stitched one by one — not glued.
+Stitched one by one not glued.
 - Used to highlight bridal motifs and add glam.
 
 ---

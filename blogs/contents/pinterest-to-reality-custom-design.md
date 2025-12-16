@@ -1,10 +1,10 @@
 # From Pinterest to Reality: A Custom Design Story
 
-Every bride begins her dream outfit journey with a saved folder —  
+Every bride begins her dream outfit journey with a saved folder
 Pinterest boards filled with colors, motifs, sleeve patterns, and embroidery inspiration.
 
 But translating a dream into a wearable reality?
-That’s where the magic — and craftsmanship — begins.
+That's where the magic and craftsmanship begins.
 
 ---
 
@@ -14,7 +14,7 @@ She walked in with excitement in her eyes and a screenshot in her hand.
 
 > “Can you make this for my big day?”
 
-The picture was gorgeous — a stunning Aari-embroidered blouse loaded with florals and delicate bead detailing.
+The picture was gorgeous a stunning Aari-embroidered blouse loaded with florals and delicate bead detailing.
 
 But like most Pinterest images:
 - the fit wasn't tailored to her body
@@ -53,7 +53,7 @@ We handpicked:
 - Pearls and cut beads for shimmer  
 - Fabric that could hold embroidery without wrinkling
 
-Because details matter — especially when it’s for someone’s big moment.
+Because details matter especially when it's for someone's big moment.
 
 ---
 
@@ -66,8 +66,8 @@ Every stitch was:
 - balanced
 - intentional
 
-Hand-embroidered pieces aren’t just made.  
-They are **felt** — slowly.
+Hand-embroidered pieces aren't just made.  
+They are **felt** slowly.
 
 She visited midway, and her eyes sparkled.
 
@@ -75,7 +75,7 @@ She visited midway, and her eyes sparkled.
 
 ---
 
-## Step 5: Final Fitting — Her Dream Came Alive
+## Step 5: Final Fitting Her Dream Came Alive
 
 The moment she tried it on…
 

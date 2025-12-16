@@ -1,6 +1,6 @@
 # The Art of Aari: What Makes Hand Aari Work Different from Machine Embroidery?
 
-Aari work has existed for centuries, but today it’s having a renaissance. Brides and fashion lovers prefer Aari because it celebrates something that machines simply cannot replicate — the touch of a skilled artisan.
+Aari work has existed for centuries, but today it's having a renaissance. Brides and fashion lovers prefer Aari because it celebrates something that machines simply cannot replicate the touch of a skilled artisan.
 
 ---
 
@@ -19,7 +19,7 @@ It’s workmanship… one precise stitch at a time.
 | Feature | Handcrafted Aari Work | Machine Embroidery |
 |--------|------------------------|--------------------|
 | Stitch Quality | Fine, detailed, flexible | Uniform but rigid |
-| Customization | Unlimited — artisan can modify patterns | Limited — follows a digital design |
+| Customization | Unlimited artisan can modify patterns | Limited follows a digital design |
 | Finish | Rich, dimensional, luxurious | Flat and repetitive |
 | Emotional Value | Pure art, human creativity | Mechanically produced |
 
@@ -43,7 +43,7 @@ Hand Aari creates emotions.
 
 ## 💛 Final Thought
 
-If you want something that tells a story — choose **handcrafted Aari**.
+If you want something that tells a story choose **handcrafted Aari**.
 
 When something is crafted with patience and passion, you don’t just wear it…  
 you *feel* it.
