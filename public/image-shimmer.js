@@ -1,6 +1,7 @@
 /**
  * Image Shimmer Loader
  * Adds shimmer effect to images while they load
+ * The image itself is hidden during loading, showing only the shimmer placeholder
  */
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -11,23 +12,38 @@ function initImageShimmer() {
   const images = document.querySelectorAll('img');
   
   images.forEach(img => {
-    // Add loading class initially
+    // Skip images that are already complete (cached)
+    if (img.complete) {
+      return;
+    }
+    
+    // Create shimmer placeholder
+    const shimmerDiv = createShimmerPlaceholder(img);
+    
+    // Insert shimmer div before the image
+    img.parentNode.insertBefore(shimmerDiv, img);
+    
+    // Hide the actual image while loading
+    img.style.display = 'none';
     img.classList.add('loading');
     
-    // Remove loading class when image loads
+    // When image loads, show it and remove shimmer
     img.addEventListener('load', function() {
+      this.style.display = '';
       this.classList.remove('loading');
+      if (shimmerDiv.parentNode) {
+        shimmerDiv.remove();
+      }
     });
     
-    // Also remove on error
+    // On error, show error state
     img.addEventListener('error', function() {
+      this.style.display = '';
       this.classList.remove('loading');
+      if (shimmerDiv.parentNode) {
+        shimmerDiv.remove();
+      }
     });
-    
-    // Handle cached images (check if already loaded)
-    if (img.complete) {
-      img.classList.remove('loading');
-    }
   });
 
   // For dynamically added images (like in blog posts), use MutationObserver
@@ -36,26 +52,11 @@ function initImageShimmer() {
       if (mutation.addedNodes.length) {
         mutation.addedNodes.forEach(function(node) {
           if (node.tagName === 'IMG') {
-            node.classList.add('loading');
-            node.addEventListener('load', function() {
-              this.classList.remove('loading');
-            });
-            node.addEventListener('error', function() {
-              this.classList.remove('loading');
-            });
+            processImage(node);
           } else if (node.nodeType === Node.ELEMENT_NODE) {
             // Look for images within added content
             const childImages = node.querySelectorAll('img');
-            childImages.forEach(img => {
-              if (!img.complete) {
-                img.classList.add('loading');
-                img.addEventListener('load', function() {
-                  this.classList.remove('loading');
-                });
-              } else {
-                img.classList.remove('loading');
-              }
-            });
+            childImages.forEach(processImage);
           }
         });
       }
@@ -66,4 +67,54 @@ function initImageShimmer() {
     childList: true,
     subtree: true
   });
+}
+
+function processImage(img) {
+  // Skip if already complete
+  if (img.complete) {
+    return;
+  }
+  
+  // Create shimmer placeholder
+  const shimmerDiv = createShimmerPlaceholder(img);
+  
+  // Insert shimmer div before the image
+  img.parentNode.insertBefore(shimmerDiv, img);
+  
+  // Hide the actual image while loading
+  img.style.display = 'none';
+  img.classList.add('loading');
+  
+  // When image loads, show it and remove shimmer
+  img.addEventListener('load', function() {
+    this.style.display = '';
+    this.classList.remove('loading');
+    if (shimmerDiv.parentNode) {
+      shimmerDiv.remove();
+    }
+  });
+  
+  // On error, show error state
+  img.addEventListener('error', function() {
+    this.style.display = '';
+    this.classList.remove('loading');
+    if (shimmerDiv.parentNode) {
+      shimmerDiv.remove();
+    }
+  });
+}
+
+function createShimmerPlaceholder(img) {
+  const shimmerDiv = document.createElement('div');
+  shimmerDiv.className = 'shimmer-placeholder';
+  
+  // Use image dimensions if available, otherwise use defaults
+  const width = img.width || img.dataset.width || '100%';
+  const height = img.height || img.dataset.height || '200px';
+  
+  shimmerDiv.style.width = typeof width === 'number' ? width + 'px' : width;
+  shimmerDiv.style.height = typeof height === 'number' ? height + 'px' : height;
+  shimmerDiv.style.display = 'block';
+  
+  return shimmerDiv;
 }

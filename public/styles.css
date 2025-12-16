@@ -393,8 +393,8 @@ body.light-theme .shimmer {
   animation: shimmer 2s infinite;
 }
 
-/* Image placeholder with shimmer */
-img.loading {
+/* Image placeholder shimmer div */
+.shimmer-placeholder {
   background: linear-gradient(
     90deg,
     rgba(255, 255, 255, 0.1) 25%,
@@ -403,11 +403,9 @@ img.loading {
   );
   background-size: 1000px 100%;
   animation: shimmer 2s infinite;
-  min-height: 200px;
-  display: block;
 }
 
-body.light-theme img.loading {
+body.light-theme .shimmer-placeholder {
   background: linear-gradient(
     90deg,
     rgba(0, 0, 0, 0.05) 25%,
@@ -416,6 +414,11 @@ body.light-theme img.loading {
   );
   background-size: 1000px 100%;
   animation: shimmer 2s infinite;
+}
+
+/* Loading state for images (keeps them hidden) */
+img.loading {
+  display: none;
 }
 
 /* Mobile navbar responsive improvements */
