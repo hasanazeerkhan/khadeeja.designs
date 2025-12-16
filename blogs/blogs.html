@@ -10,8 +10,14 @@
   <title>Blog | Khadeeja Designs Aari Embroidery Studio</title>
   <link rel="icon" type="image/png" href="../public/shortLogo.png">
   <link rel="shortcut icon" href="../public/shortLogo.png">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  
+  <!-- Preconnect to CDN resources -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  
+  <!-- Load async to prevent render blocking -->
+  <script async src="https://cdn.tailwindcss.com"></script>
+  <script async src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   <link rel="stylesheet" href="../public/styles.css">
   <link rel="stylesheet" href="./blogs-specific.css">
 </head>
@@ -136,17 +142,17 @@
       });
   </script>
 
-  <!-- Feature Scripts -->
-  <script src="../public/utils.js"></script>
-  <script src="../public/image-optimizer.js"></script>
-  <script src="../public/image-shimmer.js"></script>
-  <script src="../public/analytics.js"></script>
-  <script src="../public/schema-generator.js"></script>
-  <script src="../public/table-of-contents.js"></script>
-  <script src="../public/related-posts.js"></script>
-  <script src="../public/theme-simple.js"></script>
-  <script src="../public/mobile-nav.js"></script>
-  <script src="../public/advanced-features.js"></script>
+  <!-- Feature Scripts - Async to prevent render blocking -->
+  <script async src="../public/utils.js"></script>
+  <script async src="../public/image-optimizer.js"></script>
+  <script async src="../public/image-shimmer.js"></script>
+  <script async src="../public/analytics.js"></script>
+  <script async src="../public/schema-generator.js"></script>
+  <script async src="../public/table-of-contents.js"></script>
+  <script async src="../public/related-posts.js"></script>
+  <script async src="../public/theme-simple.js"></script>
+  <script async src="../public/mobile-nav.js"></script>
+  <script async src="../public/advanced-features.js"></script>
   
   <!-- Service Worker Registration -->
   <script>

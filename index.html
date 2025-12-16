@@ -15,9 +15,14 @@
   <link rel="shortcut icon" href="./public/shortLogo.png" />
   <link rel="apple-touch-icon" href="./public/shortLogo.png" />
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <!-- Preconnect to external resources for faster DNS resolution -->
+  <link rel="preconnect" href="https://cdn.tailwindcss.com">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <!-- Tailwind CDN - Async to prevent render blocking -->
+  <script async src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'"">
   
   <!-- Shared Styles -->
   <link rel="stylesheet" href="./public/styles.css">
@@ -109,7 +114,7 @@
         </div>
 
         <div>
-          <img src="./public/logo.png" alt="Studio and hand-stitched sample" class="w-full rounded-xl shadow-lg object-cover" style="aspect-ratio:4/3;">
+          <img src="./public/logo.png" alt="Studio and hand-stitched sample" class="w-full rounded-xl shadow-lg object-cover" loading="lazy" style="aspect-ratio:4/3;">
         </div>
       </div>
     </section>
@@ -188,36 +193,36 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <figure class="group">
-            <img src="./public/demo7.jpg" alt="Bridal blouse with gold aari motifs" class="portfolio-img group-hover:scale-105 transition-transform" />
+            <img src="./public/demo7.jpg" alt="Bridal blouse with gold aari motifs" class="portfolio-img group-hover:scale-105 transition-transform" loading="lazy" />
             <figcaption class="mt-3 text-sm text-neutral-300">Bridal blouse gold motifs & beadwork</figcaption>
           </figure>
 
           <figure class="group">
-            <img src="./public/demo8.jpg" alt="Custom saree pallu embroidery" class="portfolio-img" />
+            <img src="./public/demo8.jpg" alt="Custom saree pallu embroidery" class="portfolio-img" loading="lazy" />
             <figcaption class="mt-3 text-sm text-neutral-300">Custom saree pallu floral chain-stitch</figcaption>
           </figure>
 
           <figure class="group">
-            <img src="./public/demo9.jpg" alt="Velvet jacket with dense aari embroidery" class="portfolio-img" />
+            <img src="./public/demo9.jpg" alt="Velvet jacket with dense aari embroidery" class="portfolio-img" loading="lazy" />
             <figcaption class="mt-3 text-sm text-neutral-300">Velvet jacket dense texture for stage wear</figcaption>
           </figure>
           <figure class="group">
-            <img src="./public/demo10.jpg" alt="Sample swatch and close-up" class="portfolio-img" />
+            <img src="./public/demo10.jpg" alt="Sample swatch and close-up" class="portfolio-img" loading="lazy" />
             <figcaption class="mt-3 text-sm text-neutral-300">Close-up sample stitch detail</figcaption>
           </figure>
 
           <figure class="group">
-            <img src="./public/demo11.jpg" alt="Bridal lehenga border" class="portfolio-img" />
+            <img src="./public/demo11.jpg" alt="Bridal lehenga border" class="portfolio-img" loading="lazy" />
             <figcaption class="mt-3 text-sm text-neutral-300">Lehenga border sequins and French knots</figcaption>
           </figure>
 
           <figure class="group">
-            <img src="./public/demo12.jpg" alt="Contemporary motif set" class="portfolio-img" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Contemporary motif set modern silhouettes</figcaption>
+            <img src="./public/demo12.jpg" alt="Contemporary motif set" class="portfolio-img" loading="lazy" />
+            <figcaption class="mt-3 text-sm text-neutral-300">Contemporary motif floral geometric designs</figcaption>
           </figure>
           <figure class="group">
-            <img src="./public/demo13.jpg" alt="Hand-stitched cuff detail" class="portfolio-img" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Hand-stitched cuff intricate bead placement</figcaption>
+            <img src="./public/demo13.jpg" alt="Hand-stitched cuff detail" class="portfolio-img" loading="lazy" />
+            <figcaption class="mt-3 text-sm text-neutral-300">Hand-stitched cuff detail elegant patterns</figcaption>
           </figure>
 
           <figure class="group">
@@ -358,18 +363,18 @@
   </main>
 
   <!-- Shared Utilities -->
-  <script src="./public/utils.js"></script>
+  <script async src="./public/utils.js"></script>
   
-  <!-- Feature Scripts -->
-  <script src="./public/formspree-handler.js"></script>
-  <script src="./public/image-optimizer.js"></script>
-  <script src="./public/image-shimmer.js"></script>
-  <script src="./public/analytics.js"></script>
-  <script src="./public/schema-generator.js"></script>
-  <script src="./public/newsletter.js"></script>
-  <script src="./public/theme-simple.js"></script>
-  <script src="./public/mobile-nav.js"></script>
-  <script src="./public/advanced-features.js"></script>
+  <!-- Feature Scripts - Deferred to prevent render blocking -->
+  <script async src="./public/formspree-handler.js"></script>
+  <script async src="./public/image-optimizer.js"></script>
+  <script async src="./public/image-shimmer.js"></script>
+  <script async src="./public/analytics.js"></script>
+  <script async src="./public/schema-generator.js"></script>
+  <script async src="./public/newsletter.js"></script>
+  <script async src="./public/theme-simple.js"></script>
+  <script async src="./public/mobile-nav.js"></script>
+  <script async src="./public/advanced-features.js"></script>
   
   <!-- Service Worker Registration -->
   <script>
