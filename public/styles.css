@@ -1,3 +1,135 @@
+/* --- Base Typography & Responsive Improvements --- */
+html {
+  font-size: 14px;
+  line-height: 1.75;
+  letter-spacing: 0.3px;
+}
+
+/* --- Guided Onboarding Section: Order Steps --- */
+.order-steps-list {
+  gap: 2.5rem;
+  padding-left: 0;
+  list-style: none;
+  position: relative;
+}
+.order-step {
+  background: rgba(255,255,255,0.015);
+  border-radius: 1.1rem;
+  padding: 2.2rem 1.6rem 1.5rem 2.6rem; /* increased padding for better spacing */
+  box-shadow: 0 2px 16px 0 rgba(0,0,0,0.03);
+  border: 1px solid rgba(255,255,255,0.03);
+  margin-bottom: 0;
+  min-height: 90px;
+  transition: box-shadow 0.2s;
+  position: relative;
+}
+.order-step:not(:last-child) {
+  margin-bottom: 0.5rem;
+}
+.order-step-number.no-tracker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #F59E0B 60%, #D97706 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px 0 rgba(245,158,11,0.10);
+  z-index: 2;
+  flex-shrink: 0;
+  margin-top: -2.2rem;
+  margin-left: -3.2rem;
+  border: 3px solid #18181b;
+  letter-spacing: 0.01em;
+  font-family: inherit;
+}
+.order-steps-list {
+  counter-reset: step;
+}
+.order-step {
+  list-style: none;
+}
+.order-step-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.8;
+  color: #F59E0B;
+  margin-bottom: 0.2rem;
+}
+.order-step-main {
+  color: #e5e5e5;
+  font-size: 1rem;
+  line-height: 1.8;
+  font-weight: 400;
+  margin-bottom: 0.2rem;
+  opacity: 0.92;
+}
+.order-step-support {
+  color: #b3b3b3;
+  font-size: 0.93rem;
+  opacity: 0.65;
+  margin-top: 0.1rem;
+}
+.order-step-number.no-tracker {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 2.1rem;
+  font-weight: 800;
+  color: #fff;
+  background: linear-gradient(135deg, #F59E0B 60%, #D97706 100%);
+  border-radius: 50%;
+  box-shadow: 0 2px 8px 0 rgba(245,158,11,0.10);
+  flex-shrink: 0;
+  border: 3px solid #18181b;
+  letter-spacing: 0.01em;
+  font-family: inherit;
+}
+/* Subtle vertical line for progression */
+.order-steps-list::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 0.16rem;
+  height: 100%;
+  background: repeating-linear-gradient(
+    to bottom,
+    #F59E0B 0 12px,
+    transparent 12px 24px
+  );
+  opacity: 0.22;
+  z-index: 0;
+  pointer-events: none;
+}
+/* Progressive emphasis for steps 3 and 4 */
+
+@media (max-width: 600px) {
+  .order-step {
+    padding: 1.1rem 0.5rem 0.8rem 1.5rem;
+    min-height: 60px;
+  }
+  .order-step-number.no-tracker {
+    width: 2.1rem;
+    height: 2.1rem;
+    font-size: 1.3rem;
+    left: -0.5rem;
+  }
+  .order-steps-list::before {
+    left: 0;
+    width: 0.09rem;
+  }
+}
 /* Shared Styles - Khadeeja Designs */
 
 :root {
@@ -78,7 +210,7 @@ nav {
   background: rgba(23, 23, 23, 0.8);
   backdrop-filter: blur(12px);
   border-radius: 9999px;
-  padding: 0.5rem;
+  padding: 0.25rem;
   box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
   z-index: 50;
 }
@@ -94,10 +226,10 @@ nav a {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.625rem 1.25rem;
+  padding: 0.35rem 0.75rem;
   border-radius: 9999px;
   color: var(--neutral-200);
-  font-size: 0.875rem;
+  font-size: 0.7rem;
   font-weight: 500;
   text-decoration: none;
   transition: background-color 0.2s ease;
@@ -115,8 +247,8 @@ nav a:focus {
 
 /* SVG in nav */
 nav svg {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1rem;
+  height: 1rem;
   flex-shrink: 0;
 }
 
@@ -137,12 +269,24 @@ nav svg {
   aspect-ratio: 4 / 3;
   object-fit: cover;
   width: 100%;
+  height: auto;
+  max-width: 100%;
   border-radius: 0.75rem;
+  display: block;
   transition: transform 0.3s ease;
+  margin: 0;
+  padding: 0;
 }
 
 .portfolio-img:hover {
   transform: scale(1.05);
+}
+
+/* Ensure images don't overflow */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
 
 /* QA Block */
@@ -172,11 +316,18 @@ nav svg {
 
 /* Hero Section */
 #landing-hero {
-  min-height: calc(100vh - 3.5rem);
+  min-height: calc(100vh - 4rem);
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 2.25rem;
+  padding: 2rem 1rem;
+  gap: 3rem;
+}
+
+@media (min-width: 768px) {
+  #landing-hero {
+    padding: 4rem 1rem;
+  }
 }
 
 /* Progress Bar */
@@ -309,7 +460,8 @@ footer a:hover {
 /* Responsive Design */
 @media (max-width: 640px) {
   #landing-hero {
-    padding: 1rem;
+    padding: 1.5rem 1rem;
+    gap: 2rem;
   }
 
   nav {

@@ -41,15 +41,23 @@
   </script>
 </head>
 <body class="antialiased">
-  <header class="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[min(95%,1100px)]">
-    <nav class="fixed top-5 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-lg rounded-full p-2 shadow-xl z-50" aria-label="Main navigation">
+  <header class="fixed top-2 left-1/2 -translate-x-1/2 z-50 w-[min(95%,1100px)]">
+    <nav class="fixed top-3 left-1/2 -translate-x-1/2 bg-neutral-900/80 backdrop-blur-lg rounded-full p-2 shadow-xl z-50" aria-label="Main navigation">
       <button id="mobile-nav-toggle" aria-controls="main-nav" aria-expanded="false" class="mobile-nav-toggle" title="Open menu">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 7h16M4 12h16M4 17h16"/></svg>
       </button>
       <ul id="main-nav" class="flex items-center gap-1">
       <li>
-        <a href="#about" class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium" title="Learn about Khadeeja Designs">
-          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <a href="/" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-xs font-medium" title="Home">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M12 7.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3Z" />
+          </svg>
+          Home
+        </a>
+      </li>
+      <li>
+        <a href="#about" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-xs font-medium" title="Learn about Khadeeja Designs">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
             <path stroke-linecap="round" stroke-linejoin="round" d="M4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
           </svg>
@@ -57,24 +65,24 @@
         </a>
       </li>
       <li>
-        <a href="#portfolio" class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium" title="View our portfolio">
-          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+        <a href="#portfolio" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-xs font-medium" title="View our portfolio">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
             <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5m-16.5 4.5h16.5m-16.5 4.5H12" />
           </svg>
           Work
         </a>
       </li>
       <li>
-        <a href="#articles" class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium" title="Read our blog articles">
-          <svg class="w-5 h-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18V7.875c0-.621.504-1.125 1.125-1.125H6.75M16.5 6.75h-9v-3c0-.621.504-1.125 1.125-1.125h6.75C15.996 2.625 16.5 3.129 16.5 3.75v3Z" />
+        <a href="#how-to-start-order" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-xs font-medium" title="How to start your order">
+          <svg class="w-4 h-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
           </svg>
-          Blog
+          Order
         </a>
       </li>
       <li>
-        <a href="#contact" class="nav-link flex items-center gap-2 px-5 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium" title="Get in touch">
-          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5" aria-hidden="true">
+        <a href="#contact" class="nav-link flex items-center gap-2 px-3 py-1.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-xs font-medium" title="Get in touch">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-4 h-4" aria-hidden="true">
             <circle cx="12" cy="7" r="4" />
             <path d="M5 21c0-4 3-7 7-7s7 3 7 7" />
           </svg>
@@ -82,262 +90,625 @@
         </a>
       </li>
       <li>
-        <button id="theme-toggle" class="flex items-center justify-center px-3 py-2.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium" title="Toggle theme" aria-label="Toggle theme">
-          🌙
-        </button>
+        <button id="theme-toggle" class="flex items-center justify-center px-2 py-1.5 rounded-full text-neutral-200 hover:bg-neutral-700 transition-colors text-sm font-medium" title="Toggle theme" aria-label="Toggle theme">🌙</button>
       </li>
     </ul>
     </nav>
   </header>
 
-  <main class="mt-20">
+  <main class="pt-20">
 
     <!-- HERO / LANDING: filled Q&A intro and summary -->
-    <section id="landing-hero" class="px-4">
-      <div class="max-w-6xl mx-auto grid gap-8 md:grid-cols-2 items-center">
-        <div>
-          <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Khadeeja Designs Hand-stitched Aari Embroidery</h1>
-          <p class="mt-4 text-neutral-300 max-w-xl">We design and handcraft Aari embroidery for bridal, couture, and bespoke orders. We pair traditional techniques with modern motifs every stitch is inspected for durability, symmetry and finish.</p>
+    <section id="landing-hero" class="px-4 py-12 md:py-16 lg:py-20">
+      <div class="max-w-7xl mx-auto">
+        <!-- Two-Column Layout: Logo+Content Left, USP Right -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-start relative">
+          
+          <!-- Subtle vertical divider between columns -->
+          <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-amber-500/0 via-amber-400/20 to-amber-500/0 transform -translate-x-1/2"></div>
+          
+          <!-- LEFT: Logo + Content Stack -->
+          <div class="order-1 md:order-1">
+            <!-- SECTION A: LOGO ZONE -->
+            <div class="pt-8 md:pt-10 pb-8 md:pb-12">
+              <div class="flex justify-center md:justify-center">
+                <div class="w-42 md:w-48">
+                  <img src="./public/shortLogo.png" alt="Khadeeja Designs logo" class="w-full" loading="lazy">
+                </div>
+              </div>
+            </div>
 
-          <div class="mt-6 flex flex-col sm:flex-row gap-3">
-            <a href="#portfolio" class="inline-flex items-center gap-2 px-5 py-3 rounded-full bg-brand-500 text-black font-semibold">View Portfolio</a>
-            <a href="#contact" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-neutral-700 text-neutral-200">Request Quote</a>
+            <!-- SECTION B: CONTENT ZONE -->
+            <div class="text-center md:text-left">
+              <h1 class="text-2xl md:text-3xl font-extrabold leading-tight text-white mb-4">Handcrafted Aari Work, Planned Around Your Event Date</h1>
+              <p class="text-neutral-100 text-xs md:text-sm leading-relaxed mt-6 mb-6">At Khadeeja Designs, handcrafted Aari work follows a structured, thoughtful process. Clear timelines, transparent pricing, curated designs, defined service tiers, quality checks, and after-care guidance are all built in — so you know exactly what to expect at every stage.</p>
+              <div class="flex flex-col sm:flex-row gap-4 justify-center md:justify-start mt-8 md:mt-10">
+                <a href="/design-library.html" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full bg-amber-500 text-black font-semibold hover:bg-amber-600 transition-colors text-sm">Explore Designs</a>
+                <a href="/pricing-guide.html" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-amber-400/50 text-neutral-100 hover:border-amber-400 hover:bg-amber-400/10 transition-colors text-sm">Check Pricing</a>
+              </div>
+            </div>
           </div>
 
-          <!-- key facts (compact, visible on all screens) -->
-          <ul class="mt-6 grid grid-cols-2 gap-3 text-sm">
-            <li class="bg-neutral-900 p-3 rounded-lg"><strong>Est. Turnaround:</strong><br>7–21 days</li>
-            <li class="bg-neutral-900 p-3 rounded-lg"><strong>Custom Work:</strong><br>Yes sketches to finish</li>
-            <li class="bg-neutral-900 p-3 rounded-lg"><strong>Minimum Order:</strong><br>Single piece (bridal & couture)</li>
-            <li class="bg-neutral-900 p-3 rounded-lg"><strong>Shipping:</strong><br>India & international</li>
-          </ul>
-        </div>
+          <!-- RIGHT: USP List Section -->
+          <div class="order-2 md:order-2 pt-8 md:pt-0">
+            <!-- USP Section: Single Column Vertical List - Reduced visual weight -->
+            <div class="bg-gradient-to-r from-amber-500/5 via-neutral-900/40 to-neutral-900 border border-amber-500/20 rounded-lg p-8 md:p-10 shadow-lg shadow-amber-500/5">
+              <!-- Section Label Inside USP Box -->
+              <h2 class="text-lg md:text-xl font-semibold text-neutral-100 mb-6 pb-2 border-b border-amber-500/20">Why Clients Choose Khadeeja Designs</h2>
+              <div class="flex flex-col space-y-7 mt-6">
+                <!-- USP 1 -->
+                <div class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-amber-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 7.5v11.25m-18 0A2.25 2.25 0 0 0 5.25 21h13.5A2.25 2.25 0 0 0 21 18.75m-18 0v-7.5A2.25 2.25 0 0 1 5.25 9h13.5A2.25 2.25 0 0 1 21 11.25v7.5" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-white text-sm md:text-base">Designed Around Your Event Date</h4>
+                    <p class="text-xs md:text-sm text-amber-300 mt-1 leading-snug">Structured timelines based on design complexity — not guesswork.</p>
+                  </div>
+                </div>
 
-        <div>
-          <img src="./public/logo.png" alt="Studio and hand-stitched sample" class="w-full rounded-xl shadow-lg object-cover" loading="lazy" style="aspect-ratio:4/3;">
+                <!-- USP 2 -->
+                <div class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-amber-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-white text-sm md:text-base">After-Care Guidance Included</h4>
+                    <p class="text-xs md:text-sm text-amber-300 mt-1 leading-snug">Expert care instructions to protect your handcrafted investment for years.</p>
+                  </div>
+                </div>
+
+                <!-- USP 3 -->
+                <div class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-amber-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.53 16.122a3 3 0 0 0-5.78 1.128A2.25 2.25 0 0 0 2.25 21h15A2.25 2.25 0 0 0 19.5 18.75 3 3 0 0 0 14.47 16.122M15 12.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-white text-sm md:text-base">Curated Aari Styles, Thoughtfully Customized</h4>
+                    <p class="text-xs md:text-sm text-amber-300 mt-1 leading-snug">Start from refined designs and personalize with clarity.</p>
+                  </div>
+                </div>
+
+                <!-- USP 4 -->
+                <div class="flex items-start gap-3">
+                  <div class="flex-shrink-0 w-8 h-8 rounded-lg bg-amber-500/15 flex items-center justify-center mt-0.5">
+                    <svg class="w-4 h-4 text-amber-300" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 9.75l4.5 4.5m0-5.25l-4.5 4.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <h4 class="font-semibold text-white text-sm md:text-base">Manufacturing Defects Covered</h4>
+                    <p class="text-xs md:text-sm text-amber-300 mt-1 leading-snug">Loose beads or stitches? We repair defects within 7 days of delivery.</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- CTA Section Inside USP Box -->
+              <div class="mt-8 pt-8 border-t border-amber-500/15 flex flex-col sm:flex-row items-center gap-4 text-center md:text-left">
+                <a href="/design-library.html" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-amber-400/50 text-neutral-200 text-sm font-medium hover:border-amber-400 hover:bg-amber-400/10 transition-colors">See Designs & Process</a>
+                <a href="/after-care.html" class="inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-full border border-amber-400/50 text-neutral-200 text-sm font-medium hover:border-amber-400 hover:bg-amber-400/10 transition-colors">View After-Care Guide →</a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ABOUT / FAQ: restored all key Q & A that were missing -->
-    <section id="about" class="pt-12 pb-16 px-4">
+    <!-- ABOUT: Clarity Before You Get Started -->
+    <section id="about" class="py-24 md:py-32 px-4 bg-neutral-950/50">
       <div class="max-w-6xl mx-auto">
-        <h2 class="text-2xl md:text-3xl font-bold text-amber-400 mb-4">About & FAQ</h2>
-        <p class="text-neutral-300 mb-6 max-w-3xl">Below are the common questions we kept getting no vague marketing talk. Straight answers so you can decide fast.</p>
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-300 mb-12">Clarity Before You Get Started</h2>
+        
+        <!-- Capacity Message Banner -->
+        <div class="bg-gradient-to-r from-amber-500/15 to-amber-400/5 border border-amber-400/40 rounded-xl p-8 mb-14 backdrop-blur-sm">
+          <p class="text-lg text-amber-200 font-semibold mb-2 flex items-center gap-2"><span class="text-2xl">✦</span> We Accept Limited Orders Per Week</p>
+          <p class="text-neutral-200 leading-relaxed">We intentionally limit weekly orders to maintain quality and ensure every piece receives dedicated attention. Availability is confirmed during enquiry based on design complexity and timelines.</p>
+        </div>
 
-        <div class="qa-grid">
-          <!-- Q/A 1 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">What is Aari embroidery?</h3>
-            <p class="mt-2 text-neutral-300">Aari is a hooked-needle technique producing chain stitch motifs. It's used for dense, textured embroidery with beads and sequins. We follow sourced materials and traditional methods adapted for durability.</p>
-          </div>
+        <!-- Key Pages Grid: Primary Cards (Top Row) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+          <!-- PRIMARY CARDS: Top Row -->
+          <a href="/delivery-timeline.html" class="group bg-amber-500/10 backdrop-blur-sm border border-amber-400/50 hover:border-amber-400/80 hover:bg-amber-500/15 rounded-lg p-7 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/20">
+            <h3 class="font-semibold text-amber-300 mb-3 group-hover:text-amber-200">Delivery Timelines</h3>
+            <p class="text-sm text-neutral-200">Transparent production schedules based on design complexity.</p>
+          </a>
 
-          <!-- Q/A 2 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">Do you take custom bridal orders?</h3>
-            <p class="mt-2 text-neutral-300">Yes. Bridal orders include a design consultation, sample swatch, stitching schedule, and mid-way quality check. Expect 2–3 rounds of revisions during the design stage.</p>
-          </div>
+          <a href="/pricing-guide.html" class="group bg-amber-500/10 backdrop-blur-sm border border-amber-400/50 hover:border-amber-400/80 hover:bg-amber-500/15 rounded-lg p-7 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/20">
+            <h3 class="font-semibold text-amber-300 mb-3 group-hover:text-amber-200">Pricing Guide</h3>
+            <p class="text-sm text-neutral-200">Understand pricing factors before planning your budget.</p>
+          </a>
 
-          <!-- Q/A 3 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">How long does a typical project take?</h3>
-            <p class="mt-2 text-neutral-300">Small bespoke pieces (1-2 panels): 7-10 days. Full bridal sets: 14-28 days depending on beadwork and bead density. Rush orders available at a surcharge ask first.</p>
-          </div>
+          <a href="/service-tiers.html" class="group bg-amber-500/10 backdrop-blur-sm border border-amber-400/50 hover:border-amber-400/80 hover:bg-amber-500/15 rounded-lg p-7 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/20">
+            <h3 class="font-semibold text-amber-300 mb-3 group-hover:text-amber-200">Service Tiers</h3>
+            <p class="text-sm text-neutral-200">Choose the package that fits your needs.</p>
+          </a>
 
-          <!-- Q/A 4 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">What materials do you use?</h3>
-            <p class="mt-2 text-neutral-300">We use high-twist silk threads, glass and crystal beads, and reinforced base fabrics (silk, velvet, organza). If you request alternative threads or eco-materials, we can source them on demand.</p>
-          </div>
+          <a href="/design-library.html" class="group bg-neutral-900/80 backdrop-blur-sm border border-neutral-700 hover:border-amber-400/60 hover:bg-neutral-900 rounded-lg p-7 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <h3 class="font-medium text-white mb-3 group-hover:text-amber-300">Design Library</h3>
+            <p class="text-sm text-neutral-300">Explore curated Aari design collections.</p>
+          </a>
+        </div>
 
-          <!-- Q/A 5 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">Can you match an existing design?</h3>
-            <p class="mt-2 text-neutral-300">Yes. Provide clear photos and fabric swatches. We produce a small sample swatch first to confirm thread color, density and bead placement before the main run.</p>
-          </div>
+        <!-- Supporting Cards (Bottom Row) -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <a href="/quality-promise.html" class="group bg-neutral-900/80 backdrop-blur-sm border border-neutral-700 hover:border-amber-400/60 hover:bg-neutral-900 rounded-lg p-7 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <h3 class="font-semibold text-white mb-3 group-hover:text-amber-300">Quality Promise</h3>
+            <p class="text-sm text-neutral-300">Our commitment to quality checks and craftsmanship.</p>
+          </a>
 
-          <!-- Q/A 6 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">Pricing & payment</h3>
-            <p class="mt-2 text-neutral-300">Pricing depends on stitch-density, bead count and fabric. Typical small custom pieces are priced per panel. We take 50% advance, remaining on completion and approval. International payments accepted via bank transfer or Stripe.</p>
-          </div>
+          <a href="/consultation.html" class="group bg-neutral-900/80 backdrop-blur-sm border border-neutral-700 hover:border-amber-400/60 hover:bg-neutral-900 rounded-lg p-7 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <h3 class="font-semibold text-white mb-3 group-hover:text-amber-300">Book Consultation</h3>
+            <p class="text-sm text-neutral-300">Get personalized design guidance from experts.</p>
+          </a>
 
-          <!-- Q/A 7 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">Quality assurance & returns</h3>
-            <p class="mt-2 text-neutral-300">Every piece is quality-inspected for stitch integrity and finish. We repair manufacturing defects within 30 days. We do not accept returns for custom work changed after approval; read the order terms before signing off.</p>
-          </div>
+          <a href="/after-care.html" class="group bg-neutral-900/80 backdrop-blur-sm border border-neutral-700 hover:border-amber-400/60 hover:bg-neutral-900 rounded-lg p-7 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <h3 class="font-semibold text-white mb-3 group-hover:text-amber-300">Care Instructions</h3>
+            <p class="text-sm text-neutral-300">Protect your handcrafted investment.</p>
+          </a>
 
-          <!-- Q/A 8 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">Do you offer bulk or production runs?</h3>
-            <p class="mt-2 text-neutral-300">Yes for designers and boutiques. Lead times and minimum quantities vary. Contact us to discuss sample-to-production timelines, pricing tiers and logistics.</p>
-          </div>
+          <a href="/aari-pricing-guide-pdf.html" class="group bg-neutral-900/80 backdrop-blur-sm border border-neutral-700 hover:border-amber-400/60 hover:bg-neutral-900 rounded-lg p-7 transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <h3 class="font-semibold text-white mb-3 group-hover:text-amber-300">Free PDF Guide</h3>
+            <p class="text-sm text-neutral-300">Download our Aari pricing guide.</p>
+          </a>
+        </div>
 
-          <!-- Q/A 9 -->
-          <div class="qa-block">
-            <h3 class="font-semibold text-lg">How do shipping & packaging work?</h3>
-            <p class="mt-2 text-neutral-300">We pack items with acid-free tissue and fabric-safe boxes. Domestic courier with tracking is included by default; international shipping is calculated separately and insured on request.</p>
+        <!-- Call-To-Action Below Cards -->
+        <div class="mt-14 pt-12">
+          <div class="bg-gradient-to-r from-amber-500/10 via-neutral-900 to-neutral-900 border border-amber-400/30 rounded-lg p-8 md:p-12 text-center">
+            <h3 class="text-2xl font-bold text-white mb-3">Ready to Explore Our Designs?</h3>
+            <p class="text-neutral-300 mb-6 max-w-2xl mx-auto">Browse our design library to find inspiration and discover the perfect style for your occasion.</p>
+            <a href="/design-library.html" class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-amber-500 text-black font-semibold hover:bg-amber-400 transition-colors">
+              Start With Designs
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
           </div>
         </div>
       </div>
     </section>
 
     <!-- PORTFOLIO: replaced generic placeholders with named sample assets and more items -->
-    <section id="portfolio" class="pb-16 px-4">
-      <div class="max-w-7xl mx-auto">
-        <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl md:text-3xl font-bold">Portfolio</h2>
-          <a href="#contact" class="text-sm bg-neutral-900 px-3 py-2 rounded">Book a Consultation</a>
+    <section id="portfolio" class="py-24 md:py-32 px-4">
+      <div class="max-w-6xl mx-auto">
+        <div class="flex items-center justify-between mb-12">
+          <div class="w-full flex flex-col items-center mb-6">
+        <h2 class="text-3xl md:text-4xl font-bold text-amber-300 mb-12">Aari Designs Crafted for Real Occasions</h2>
+            <p class="text-neutral-300 text-base text-left mb-2">Each piece below reflects our approach—thoughtful design, careful handwork, and finishing for your occasion.</p>
+          </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          <figure class="group">
-            <img src="./public/demo7.jpg" alt="Bridal blouse with gold aari motifs" class="portfolio-img group-hover:scale-105 transition-transform" loading="lazy" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Bridal blouse gold motifs & beadwork</figcaption>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <figure class="group overflow-hidden rounded-lg relative">
+            <img src="./public/demo7.jpg" alt="Bridal blouse with gold aari motifs" class="portfolio-img group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <!-- Signature Tag -->
+            <span class="absolute top-3 left-3 bg-amber-500/80 text-xs text-black font-semibold px-2 py-0.5 rounded shadow-sm" style="letter-spacing:0.02em;">Bridal Signature</span>
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Bridal blouse with dense gold motifs, balanced to highlight the neckline without overpowering the saree.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo8.jpg" alt="Custom saree pallu embroidery" class="portfolio-img" loading="lazy" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Custom saree pallu floral chain-stitch</figcaption>
+          <figure class="group overflow-hidden rounded-lg relative">
+            <img src="./public/demo8.jpg" alt="Custom saree pallu embroidery" class="portfolio-img group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <!-- Signature Tag -->
+            <span class="absolute top-3 left-3 bg-amber-500/80 text-xs text-black font-semibold px-2 py-0.5 rounded shadow-sm" style="letter-spacing:0.02em;">Custom Saree Work</span>
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Custom saree pallu featuring chain-stitch florals, designed for flow and movement during wear.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo9.jpg" alt="Velvet jacket with dense aari embroidery" class="portfolio-img" loading="lazy" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Velvet jacket dense texture for stage wear</figcaption>
-          </figure>
-          <figure class="group">
-            <img src="./public/demo10.jpg" alt="Sample swatch and close-up" class="portfolio-img" loading="lazy" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Close-up sample stitch detail</figcaption>
+          <figure class="group overflow-hidden rounded-lg relative">
+            <img src="./public/demo9.jpg" alt="Velvet jacket with dense aari embroidery" class="portfolio-img group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <!-- Signature Tag -->
+            <span class="absolute top-3 left-3 bg-amber-500/80 text-xs text-black font-semibold px-2 py-0.5 rounded shadow-sm" style="letter-spacing:0.02em;">Stage Wear</span>
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Velvet jacket with high-density texture, crafted to hold structure under stage lighting.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo11.jpg" alt="Bridal lehenga border" class="portfolio-img" loading="lazy" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Lehenga border sequins and French knots</figcaption>
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo10.jpg" alt="Sample swatch and close-up" class="portfolio-img group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Sample swatch showing close-up stitch detail, used for client approvals and color matching.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo12.jpg" alt="Contemporary motif set" class="portfolio-img" loading="lazy" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Contemporary motif floral geometric designs</figcaption>
-          </figure>
-          <figure class="group">
-            <img src="./public/demo13.jpg" alt="Hand-stitched cuff detail" class="portfolio-img" loading="lazy" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Hand-stitched cuff detail elegant patterns</figcaption>
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo11.jpg" alt="Bridal lehenga border" class="portfolio-img group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Bridal lehenga border with sequins and French knots, designed for visual impact in photos and ceremonies.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo14.jpg" alt="Embroidered neckline sample" class="portfolio-img" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Embroidered neckline delicate chain patterns</figcaption>
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo12.jpg" alt="Contemporary motif set" class="portfolio-img group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Contemporary motif set blending floral and geometric elements, ideal for modern festive wear.</figcaption>
+          </figure>
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo13.jpg" alt="Hand-stitched cuff detail" class="portfolio-img group-hover:scale-110 transition-transform duration-300" loading="lazy" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Hand-stitched cuff detail, tailored for subtle elegance on formal garments.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo15.jpg" alt="Bridal dupatta close-up" class="portfolio-img" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Bridal dupatta flowing motifs and sequins</figcaption>
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo14.jpg" alt="Embroidered neckline sample" class="portfolio-img group-hover:scale-110 transition-transform duration-300" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Embroidered neckline sample, designed to frame the face and complement jewelry choices.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo16.jpg" alt="Contrast stitch sample" class="portfolio-img" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Contrast stitch sample bold color accents</figcaption>
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo15.jpg" alt="Bridal dupatta close-up" class="portfolio-img group-hover:scale-110 transition-transform duration-300" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Bridal dupatta with flowing motifs and sequins, created for graceful drape and movement.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo17.jpg" alt="Handcrafted pocket detail" class="portfolio-img" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Handcrafted pocket small-scale motifs</figcaption>
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo16.jpg" alt="Contrast stitch sample" class="portfolio-img group-hover:scale-110 transition-transform duration-300" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Contrast stitch sample with bold color accents, used to add vibrancy to contemporary pieces.</figcaption>
           </figure>
 
-          <figure class="group">
-            <img src="./public/demo18.jpg" alt="Studio sample set" class="portfolio-img" />
-            <figcaption class="mt-3 text-sm text-neutral-300">Studio sample set curated design collection</figcaption>
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo17.jpg" alt="Handcrafted pocket detail" class="portfolio-img group-hover:scale-110 transition-transform duration-300" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Handcrafted pocket detail, designed for both function and decorative appeal.</figcaption>
           </figure>
+
+          <figure class="group overflow-hidden rounded-lg">
+            <img src="./public/demo18.jpg" alt="Studio sample set" class="portfolio-img group-hover:scale-110 transition-transform duration-300" />
+            <figcaption class="mt-4 text-sm text-neutral-200 font-medium">Studio sample set curated to demonstrate range, technique, and finishing options for client selection.</figcaption>
+          </figure>
+                <!-- Portfolio CTA below grid -->
+                 
+      </div>
+        
+        <!-- Portfolio CTA -->
+        <div class="mt-14 pt-12">
+          <div class="bg-gradient-to-r from-amber-500/10 via-neutral-900 to-neutral-900 border border-amber-400/30 rounded-lg p-8 md:p-12 text-center">
+            <h3 class="text-2xl font-bold text-white mb-3">Inspired by Our Work?</h3>
+            <p class="text-neutral-300 mb-6 max-w-2xl mx-auto">Explore more designs in our design library and see the full range of styles and techniques we offer.</p>
+            <a href="/design-library.html" class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-amber-500 text-black font-semibold hover:bg-amber-400 transition-colors">
+              Explore Design Library
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
         </div>
+      </div>
       </div>
     </section>
 
     <!-- ARTICLES / BLOG PREVIEW: ensure not empty -->
-    <section id="articles" class="py-12 px-4 bg-neutral-900/40">
+
+      <!-- HOW TO START YOUR ORDER: Comprehensive Onboarding Section -->
+      <section id="how-to-start-order" class="py-24 md:py-32 px-4 bg-neutral-950/60">
+        <div class="max-w-6xl mx-auto">
+          <h2 class="text-3xl md:text-4xl font-bold text-amber-300 mb-12">How to Start Your Order</h2>
+          
+          <div class="space-y-8 mb-16">
+            <!-- Step 1 -->
+            <div class="flex gap-6 p-8 bg-neutral-800/50 rounded-lg border border-neutral-700">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-amber-400/20 border border-amber-400/50">
+                  <span class="text-lg font-bold text-amber-400">1</span>
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-lg font-semibold text-white mb-2">Send Your Inquiry & Schedule Consultation</h3>
+                <p class="text-neutral-300 mb-3">Contact us with your requirements: type of blouse, design inspiration, color preferences, and event timeline. You can also book a 15-minute design consultation (optional) to refine your ideas with our experts who will help you choose the perfect design, neckline, and embroidery placement based on your saree and body type.</p>
+                <p class="text-sm text-neutral-400">📧 Email us, fill out our contact form, or schedule a consultation call. Consultation fee: ₹499 (redeemable against your order).</p>
+              </div>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="flex gap-6 p-8 bg-neutral-800/50 rounded-lg border border-neutral-700">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-amber-400/20 border border-amber-400/50">
+                  <span class="text-lg font-bold text-amber-400">2</span>
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-lg font-semibold text-white mb-2">Receive Design Mockup, Quote & Approve</h3>
+                <p class="text-neutral-300 mb-3">We'll send you a detailed design mockup and transparent pricing based on your specifications, including embroidery placement, stitch density, and material costs. Review everything and let us know if you'd like any changes or if you're ready to move forward.</p>
+                <p class="text-sm text-neutral-400">🎨 High-quality visual mockup of your custom design. Transparent pricing with no hidden charges.</p>
+              </div>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="flex gap-6 p-8 bg-neutral-800/50 rounded-lg border border-neutral-700">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-amber-400/20 border border-amber-400/50">
+                  <span class="text-lg font-bold text-amber-400">3</span>
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-lg font-semibold text-white mb-2">Secure Your Order with Booking Payment</h3>
+                <p class="text-neutral-300 mb-3">Once you approve the design, we'll collect a 50% booking payment to secure your spot and lock in your delivery timeline. This is when your production schedule officially begins.</p>
+                <p class="text-sm text-neutral-400">💳 Flexible payment options available. Timeline starts after booking confirmation.</p>
+              </div>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="flex gap-6 p-8 bg-neutral-800/50 rounded-lg border border-neutral-700">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-amber-400/20 border border-amber-400/50">
+                  <span class="text-lg font-bold text-amber-400">4</span>
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-lg font-semibold text-white mb-2">Expert Handcrafted Production</h3>
+                <p class="text-neutral-300 mb-3">Your blouse enters our production timeline with our expert artisans hand-stitching your custom design with precision and care. Timeline depends on complexity: 10-14 days for simple designs, 18-25 days for bridal work, and 25-35 days for heavy couture pieces. We provide progress updates throughout.</p>
+                <p class="text-sm text-neutral-400">⏱️ Transparent timelines based on complexity. Regular updates on your order status.</p>
+              </div>
+            </div>
+
+            <!-- Step 5 -->
+            <div class="flex gap-6 p-8 bg-neutral-800/50 rounded-lg border border-neutral-700">
+              <div class="flex-shrink-0">
+                <div class="flex items-center justify-center h-14 w-14 rounded-full bg-amber-400/20 border border-amber-400/50">
+                  <span class="text-lg font-bold text-amber-400">5</span>
+                </div>
+              </div>
+              <div class="flex-grow">
+                <h3 class="text-lg font-semibold text-white mb-2">Quality Check, Final Payment & Delivery</h3>
+                <p class="text-neutral-300 mb-3">We perform a thorough quality check before shipment. You'll receive photos of the finished blouse for your approval. Pay the remaining 50% and your custom piece is carefully packaged and shipped to you with detailed care instructions and lifetime after-care support.</p>
+                <p class="text-sm text-neutral-400">✅ Every stitch inspected. Secure packaging with tracking. Lifetime care consultation available.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Important Notes Section -->
+          <div class="mb-14">
+            <h3 class="text-2xl font-bold text-amber-300 mb-8">Important Notes</h3>
+            
+            <div class="space-y-4">
+              <div class="flex gap-4 p-4 bg-neutral-800/50 rounded-lg border border-neutral-700">
+                <svg class="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                </svg>
+                <div>
+                  <p class="text-neutral-200"><strong>Limited Capacity:</strong> We accept a limited number of orders per week to maintain our quality standards.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 p-4 bg-neutral-800/50 rounded-lg border border-neutral-700">
+                <svg class="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                </svg>
+                <div>
+                  <p class="text-neutral-200"><strong>Event-Date Assurance:</strong> If you have a specific event date, let us know early. We may be able to prioritize your order for an additional fee.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 p-4 bg-neutral-800/50 rounded-lg border border-neutral-700">
+                <svg class="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                </svg>
+                <div>
+                  <p class="text-neutral-200"><strong>Design Confirmations:</strong> Timelines begin only after you approve the design and make the booking payment.</p>
+                </div>
+              </div>
+
+              <div class="flex gap-4 p-4 bg-neutral-800/50 rounded-lg border border-neutral-700">
+                <svg class="w-6 h-6 text-amber-400 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M18 5v8a2 2 0 01-2 2h-5l-5 4v-4H4a2 2 0 01-2-2V5a2 2 0 012-2h12a2 2 0 012 2zm-11-1a1 1 0 11-2 0 1 1 0 012 0z" clip-rule="evenodd" />
+                </svg>
+                <div>
+                  <p class="text-neutral-200"><strong>Custom Work:</strong> Each blouse is handcrafted to order. No stock items—everything is made specifically for you.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- CTA Block -->
+          <div class="bg-gradient-to-r from-amber-500/10 via-neutral-900 to-neutral-900 border border-amber-400/30 rounded-lg p-8 md:p-12 text-center">
+            <h4 class="text-2xl font-bold text-white mb-3">Ready to Start Your Order?</h4>
+            <p class="text-neutral-300 mb-6 max-w-2xl mx-auto">Let's bring your custom Aari embroidery vision to life. Contact us today to begin the process.</p>
+            <a href="#contact" class="inline-flex items-center justify-center gap-2 px-8 py-3 rounded-full bg-amber-500 text-black font-semibold hover:bg-amber-400 transition-colors">
+              Get in Touch
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    <section id="articles" class="py-24 md:py-32 px-4 bg-gradient-to-b from-neutral-950 to-neutral-900/50">
       <div class="max-w-6xl mx-auto">
-        <div class="flex items-center justify-between mb-6">
-          <h2 class="text-2xl md:text-3xl font-bold text-amber-400">Articles & Guides</h2>
-          <a href="./blogs/index.html" class="text-sm border border-neutral-700 px-3 py-2 rounded">All blogs</a>
+        <div class="flex items-center justify-between mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-amber-300">Latest Articles & Guides</h2>
+          <a href="./blogs/index.html" class="text-sm bg-amber-400/10 border border-amber-400/40 px-5 py-2.5 rounded-lg text-amber-300 hover:bg-amber-400/20 transition-colors">All articles →</a>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <article class="bg-neutral-800 rounded-lg overflow-hidden">
-            <img src="./blogs/images/aari-trends-2026.png" alt="Aari trends 2026" class="w-full h-44 object-cover" />
-            <div class="p-4">
-              <h3 class="font-semibold">Top 5 Aari Trends for 2026</h3>
-              <p class="text-sm text-neutral-300 mt-2">What brides and designers are asking for next season color palettes, beadwork and silhouette pairings.</p>
-              <a href="/blogs/blogs.html?post=aari-trends-2026" class="mt-3 inline-block text-amber-400 font-semibold text-sm">Read →</a>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <article class="bg-neutral-900/80 backdrop-blur-sm border border-neutral-800 hover:border-amber-400/40 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <img src="./blogs/images/aari-trends-2026.png" alt="Aari trends 2026" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-7">
+              <h3 class="font-semibold text-white text-lg">Top 5 Aari Trends for 2026</h3>
+              <p class="text-sm text-neutral-300 mt-3 leading-relaxed">What brides and designers are asking for next season color palettes, beadwork and silhouette pairings.</p>
+              <a href="/blogs/blogs.html?post=aari-trends-2026" class="mt-4 inline-block text-amber-300 font-semibold text-sm hover:text-amber-200 transition-colors">Read Article →</a>
             </div>
           </article>
 
-          <article class="bg-neutral-800 rounded-lg overflow-hidden">
-            <img src="./blogs/images/care-hand-embroidered-blouse.png" alt="Care for hand-embroidered blouse" class="w-full h-44 object-cover" />
-            <div class="p-4">
-              <h3 class="font-semibold">How to Care for Your Hand-Embroidered Blouse</h3>
-              <p class="text-sm text-neutral-300 mt-2">Simple steps to preserve your embroidered pieces so they last generations.</p>
-              <a href="/blogs/blogs.html?post=care-hand-embroidered-blouse" class="mt-3 inline-block text-amber-400 font-semibold text-sm">Read →</a>
+          <article class="bg-neutral-900/80 backdrop-blur-sm border border-neutral-800 hover:border-amber-400/40 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <img src="./blogs/images/care-hand-embroidered-blouse.png" alt="Care for hand-embroidered blouse" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-7">
+              <h3 class="font-semibold text-white text-lg">How to Care for Your Hand-Embroidered Blouse</h3>
+              <p class="text-sm text-neutral-300 mt-3 leading-relaxed">Simple steps to preserve your embroidered pieces so they last generations.</p>
+              <a href="/blogs/blogs.html?post=care-hand-embroidered-blouse" class="mt-4 inline-block text-amber-300 font-semibold text-sm hover:text-amber-200 transition-colors">Read Article →</a>
             </div>
           </article>
 
-          <article class="bg-neutral-800 rounded-lg overflow-hidden">
-            <img src="./blogs/images/pinterest-to-reality-custom-design.png" alt="Pinterest to reality custom design" class="w-full h-44 object-cover" />
-            <div class="p-4">
-              <h3 class="font-semibold">From Pinterest to Reality: A Custom Design Story</h3>
-              <p class="text-sm text-neutral-300 mt-2">A behind-the-scenes look at turning inspiration into a finished embroidered piece.</p>
-              <a href="/blogs/blogs.html?post=pinterest-to-reality-custom-design" class="mt-3 inline-block text-amber-400 font-semibold text-sm">Read →</a>
+          <article class="bg-neutral-900/80 backdrop-blur-sm border border-neutral-800 hover:border-amber-400/40 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-amber-500/10">
+            <img src="./blogs/images/pinterest-to-reality-custom-design.png" alt="Pinterest to reality custom design" class="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300" />
+            <div class="p-7">
+              <h3 class="font-semibold text-white text-lg">From Pinterest to Reality: A Custom Design Story</h3>
+              <p class="text-sm text-neutral-300 mt-3 leading-relaxed">A behind-the-scenes look at turning inspiration into a finished embroidered piece.</p>
+              <a href="/blogs/blogs.html?post=pinterest-to-reality-custom-design" class="mt-4 inline-block text-amber-300 font-semibold text-sm hover:text-amber-200 transition-colors">Read Article →</a>
             </div>
           </article>
+        </div>
+
+        <!-- Bridge Line: Soft transition to contact section -->
+        <div class="mt-12 pt-8 border-t border-neutral-800/50 text-center">
+          <p class="text-sm text-neutral-400" style="opacity: 0.7;">Have questions or ready to discuss your order? We're happy to guide you.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONTACT: no placeholders, full form and instructions -->
-    <section id="contact" class="py-12 px-4">
-      <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
-        <div class="bg-neutral-900 p-6 rounded-lg">
-          <h3 class="text-xl font-bold mb-3">Studio & Contact</h3>
-          <p class="text-neutral-300">Visit our studio by appointment only. We schedule design consultations on weekdays bring your fabric swatches, pictures and deadline expectations.</p>
+    <!-- CONTACT: Premium Contact & Structured Enquiry Section -->
+    <section id="contact" class="py-24 md:py-32 px-4 bg-neutral-950/50">
+      <div class="max-w-5xl mx-auto">
+        <div class="bg-gradient-to-r from-amber-500/5 via-neutral-900/40 to-neutral-900 border border-amber-500/20 rounded-lg p-8 md:p-10 shadow-lg shadow-amber-500/5">
+          <h2 class="text-3xl md:text-4xl font-bold text-white mb-12">Ready to Discuss Your Aari Work?</h2>
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+        <!-- LEFT: Human Context & Expectation Setting -->
+        <div>
+          
+          <div class="space-y-5 text-neutral-300 leading-relaxed mb-12">
+            <p>We work on a limited number of handcrafted Aari orders at a time to ensure quality, attention to detail, and timely delivery.</p>
+            
+            <p>Share your requirements using the form and we'll review availability, timelines, and provide an estimate within 48 hours.</p>
+            
+            <p>Studio visits are by appointment only. Design consultations are scheduled on weekdays — please bring fabric swatches, reference images, and event deadlines if applicable.</p>
+          </div>
 
-          <ul class="mt-4 text-sm space-y-2 text-neutral-300">
-            <li><strong>Email:</strong> khadeejadesigns@gmail.com</li>
-            <li><strong>Phone:</strong> <a href="tel:+918667454391" class="hover:underline">+91 86674 54391</a></li>
-            <li><strong>Instagram:</strong> <a href="https://instagram.com/khadeeja.designs" target="_blank" class="hover:underline">@khadeeja.designs</a></li>
-            <li><strong>Address:</strong> 17 East Sayakara Lane, Jaffersha Street, Trichy - 620008</li>
-          </ul>
+          <!-- Contact Information Block -->
+          <div class="space-y-5 mt-12">
+            <!-- Email -->
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="4" width="20" height="16" rx="2"></rect>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <a href="mailto:khadeejadesigns@gmail.com" class="text-white font-semibold text-sm hover:text-amber-300 transition-colors">khadeejadesigns@gmail.com</a>
+              </div>
+            </div>
 
-          <div class="mt-4">
-            <iframe title="Google map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d244.92893852128338!2d78.69608187733292!3d10.821793421133687!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf597009dcd53%3A0x2c8a8d63f0a6eea7!2sKhadeeja%20Designs!5e0!3m2!1sen!2sin!4v1765800405564!5m2!1sen!2sin" width="100%" height="220" class="rounded" style="border:0;" loading="lazy"></iframe>
+            <!-- Phone -->
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <a href="tel:+918667454391" class="text-white font-semibold text-sm hover:text-amber-300 transition-colors">+91 86674 54391</a>
+              </div>
+            </div>
+
+            <!-- Instagram -->
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                  <circle cx="17.5" cy="6.5" r="1.5"></circle>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <a href="https://instagram.com/khadeeja.designs" target="_blank" class="text-white font-semibold text-sm hover:text-amber-300 transition-colors">@khadeeja.designs</a>
+              </div>
+            </div>
+
+            <!-- Address -->
+            <div class="flex items-start gap-4">
+              <div class="flex-shrink-0 w-10 h-10 rounded-lg bg-amber-400/15 border border-amber-400/30 flex items-center justify-center">
+                <svg class="w-5 h-5 text-amber-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="flex-1">
+                <p class="text-white font-semibold text-sm leading-relaxed">17 East Sayakara Lane<br/>Jaffersha Street<br/>Trichy - 620008</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Google Map Embed -->
+          <div class="rounded-lg overflow-hidden border border-neutral-700 mt-8">
+            <iframe title="Khadeeja Designs Studio Location" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d244.92893852128338!2d78.69608187733292!3d10.821793421133687!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3baaf597009dcd53%3A0x2c8a8d63f0a6eea7!2sKhadeeja%20Designs!5e0!3m2!1sen!2sin!4v1765800405564!5m2!1sen!2sin" width="100%" height="200" class="w-full" style="border:0;" loading="lazy"></iframe>
           </div>
         </div>
 
-        <div class="bg-neutral-900 p-6 rounded-lg">
-          <h3 class="text-xl font-bold mb-3">Request a Quote</h3>
-          <p class="text-sm text-neutral-300 mb-3">Fill the form below. We'll reply within 48 hours with availability and an estimate.</p>
-
-          <form id="quoteForm" class="space-y-3" onsubmit="handleFormSubmission(event)">
+        <!-- RIGHT: Structured Enquiry Form -->
+        <div>
+          <form id="quoteForm" class="space-y-5" onsubmit="handleFormSubmission(event)">
+            <!-- 1. Full Name -->
             <div>
-              <label class="sr-only" for="q-name">Name</label>
-              <input id="q-name" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700" placeholder="Your full name" />
+              <label for="q-name" class="text-xs font-semibold text-neutral-200 block mb-2">Full Name <span class="text-amber-400">*</span></label>
+              <input id="q-name" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all" placeholder="Your full name" />
             </div>
 
+            <!-- 2. Email Address -->
             <div>
-              <label class="sr-only" for="q-email">Email</label>
-              <input id="q-email" type="email" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700" placeholder="Email address" />
+              <label for="q-email" class="text-xs font-semibold text-neutral-200 block mb-2">Email Address <span class="text-amber-400">*</span></label>
+              <input id="q-email" type="email" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all" placeholder="your.email@example.com" />
             </div>
 
+            <!-- 3. Phone Number -->
             <div>
-              <label class="sr-only" for="q-details">Project details</label>
-              <textarea id="q-details" rows="5" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700" placeholder="Describe your project (fabric, piece type, deadline, images)"></textarea>
+              <label for="q-phone" class="text-xs font-semibold text-neutral-200 block mb-2">Phone Number <span class="text-amber-400">*</span></label>
+              <input id="q-phone" type="tel" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all" placeholder="+91 86674 54391" />
             </div>
 
-            <div class="flex gap-3">
-              <button id="q-submit" type="submit" class="flex-1 px-4 py-3 rounded bg-amber-400 text-black font-semibold">Send Request</button>
-              <a href="https://wa.me/918667454391" target="_blank" class="px-4 py-3 rounded border border-neutral-700 inline-flex items-center gap-2">WhatsApp</a>
+            <!-- 4. Event Date / Deadline -->
+            <div>
+              <label for="q-occasion-date" class="text-xs font-semibold text-neutral-200 block mb-2">Event Date / Deadline <span class="text-amber-400">*</span></label>
+              <input id="q-occasion-date" type="date" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all" />
+              <span class="text-xs text-neutral-300 mt-2 block">When do you need the embroidery done?</span>
             </div>
 
-            <div id="q-note" class="text-sm text-amber-200 hidden"></div>
+            <!-- 5. Product Type -->
+            <div>
+              <label for="q-product-type" class="text-xs font-semibold text-neutral-200 block mb-2">Product Type <span class="text-amber-400">*</span></label>
+              <select id="q-product-type" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700 text-white focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all">
+                <option value="">Select product type...</option>
+                <option value="bridal-blouse">Bridal Blouse</option>
+                <option value="saree-work">Saree Work</option>
+                <option value="full-bridal-set">Full Bridal Set</option>
+                <option value="couture-stage-wear">Couture / Stage Wear</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+
+            <!-- 6. Budget Range -->
+            <div>
+              <label for="q-budget" class="text-xs font-semibold text-neutral-200 block mb-2">Budget Range <span class="text-amber-400">(optional)</span></label>
+              <select id="q-budget" class="w-full p-3 rounded bg-neutral-800 border border-neutral-700 text-white focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all">
+                <option value="">Select budget range...</option>
+                <option value="2000-4000">₹2,000 - ₹4,000</option>
+                <option value="4000-7000">₹4,000 - ₹7,000</option>
+                <option value="7000-12000">₹7,000 - ₹12,000</option>
+                <option value="12000+">₹12,000+</option>
+              </select>
+            </div>
+
+            <!-- 7. Delivery Location -->
+            <div>
+              <label for="q-location" class="text-xs font-semibold text-neutral-200 block mb-2">Delivery Location <span class="text-amber-400">*</span></label>
+              <select id="q-location" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700 text-white focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all">
+                <option value="">Select delivery location...</option>
+                <option value="local-trichy">Local (Trichy)</option>
+                <option value="courier-india">Courier (India)</option>
+                <option value="international">International</option>
+              </select>
+            </div>
+
+            <!-- 8. Project Description -->
+            <div>
+              <label for="q-details" class="text-xs font-semibold text-neutral-200 block mb-2">Project Description <span class="text-amber-400">*</span></label>
+              <textarea id="q-details" rows="4" required class="w-full p-3 rounded bg-neutral-800 border border-neutral-700 text-white placeholder-neutral-400 focus:border-amber-400 focus:ring-2 focus:ring-amber-400/20 transition-all" placeholder="Describe your project: design ideas, fabric type, inspiration images, any other details..."></textarea>
+            </div>
+
+            <!-- CTAs: Primary and Secondary -->
+            <div class="flex gap-3 pt-6">
+              <button id="q-submit" type="submit" class="flex-1 px-6 py-3 rounded-lg bg-amber-400 text-black font-semibold hover:bg-amber-500 transition-colors focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-neutral-900">Send Enquiry</button>
+              <a href="https://wa.me/918667454391?text=Hi%20Khadeeja%20Designs!" target="_blank" class="px-6 py-3 rounded-lg border border-neutral-700 inline-flex items-center justify-center font-semibold hover:bg-neutral-800 hover:border-amber-400/50 transition-colors focus:ring-2 focus:ring-amber-300 focus:ring-offset-2 focus:ring-offset-neutral-900">WhatsApp</a>
+            </div>
+
+            <!-- Reassurance Microcopy -->
+            <p class="text-xs text-neutral-400 text-center mt-4">We review every enquiry personally. No automated replies.</p>
+
+            <div id="q-note" class="text-sm text-amber-200 hidden mt-4"></div>
           </form>
+        </div>
+          </div>
         </div>
       </div>
     </section>
@@ -350,7 +721,7 @@
     </a>
 
     <!-- Footer -->
-    <footer class="py-8 mt-6 border-t border-neutral-800" role="contentinfo">
+    <footer class="py-10 mt-12 border-t border-neutral-800" role="contentinfo">
       <div class="max-w-6xl mx-auto px-4 text-sm text-neutral-400 flex flex-col md:flex-row justify-between items-center gap-4">
         <div>© <strong>Khadeeja Designs</strong> All rights reserved</div>
         <div class="flex gap-4">

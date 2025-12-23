@@ -17,18 +17,23 @@ function handleFormSubmission(event) {
   const form = event.target;
   const name = document.getElementById('q-name')?.value.trim();
   const email = document.getElementById('q-email')?.value.trim();
+  const phone = document.getElementById('q-phone')?.value.trim();
+  const occasionDate = document.getElementById('q-occasion-date')?.value;
+  const productType = document.getElementById('q-product-type')?.value;
+  const budget = document.getElementById('q-budget')?.value;
+  const location = document.getElementById('q-location')?.value;
   const details = document.getElementById('q-details')?.value.trim();
   const submitBtn = document.getElementById('q-submit');
   const noteEl = document.getElementById('q-note');
 
   // Validation
-  if (!name || !email || !details) {
-    showNotification('Please fill in all fields', 'error', noteEl);
+  if (!name || !email || !phone || !occasionDate || !productType || !location || !details) {
+    showNotification('❌ Please fill in all required fields', 'error', noteEl);
     return;
   }
 
   if (!validateEmail(email)) {
-    showNotification('Please enter a valid email', 'error', noteEl);
+    showNotification('❌ Please enter a valid email address', 'error', noteEl);
     return;
   }
 
@@ -38,13 +43,19 @@ function handleFormSubmission(event) {
     submitBtn.innerHTML = '<span class="inline-flex items-center gap-2"><svg class="animate-spin h-5 w-5" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>Sending...</span>';
   }
 
-  // Prepare form data
+  // Prepare form data for Formspree
   const formData = new FormData();
   formData.append('name', name);
   formData.append('email', email);
-  formData.append('project_details', details);
+  formData.append('phone', phone);
+  formData.append('event_date', occasionDate);
+  formData.append('product_type', productType);
+  formData.append('budget_range', budget || 'Not specified');
+  formData.append('delivery_location', location);
+  formData.append('project_description', details);
   formData.append('_captcha', 'false'); // Optional: Formspree CAPTCHA
   formData.append('_replyto', email); // Formspree reply-to
+  formData.append('_subject', `New Enquiry from ${name}`); // Email subject
 
   // Submit to Formspree
   fetch(FORMSPREE_ENDPOINT, {
@@ -60,25 +71,25 @@ function handleFormSubmission(event) {
   })
   .then(data => {
     console.log('Form submitted successfully:', data);
-    showNotification('✓ Thanks! We received your request. We\'ll contact you within 48 hours.', 'success', noteEl);
+    showNotification('✓ Thank you! We received your enquiry. We\'ll contact you within 48 hours with availability and an estimate.', 'success', noteEl);
     form.reset();
     
     // Reset button
     setTimeout(() => {
       if (submitBtn) {
         submitBtn.disabled = false;
-        submitBtn.innerHTML = 'Send Request';
+        submitBtn.innerHTML = 'Send Enquiry';
       }
     }, 2000);
   })
   .catch(err => {
     console.error('Form submission error:', err);
-    showNotification('❌ Error sending request. Please try again or contact us on WhatsApp.', 'error', noteEl);
+    showNotification('❌ Error sending enquiry. Please try contacting us on WhatsApp or email instead.', 'error', noteEl);
     
     // Reset button
     if (submitBtn) {
       submitBtn.disabled = false;
-      submitBtn.innerHTML = 'Send Request';
+      submitBtn.innerHTML = 'Send Enquiry';
     }
   });
 }
@@ -99,7 +110,7 @@ function showNotification(message, type = 'success', element = null) {
   if (!noteEl) return;
 
   noteEl.innerHTML = message;
-  noteEl.className = `text-sm font-medium ${type === 'success' ? 'text-green-300' : 'text-red-300'}`;
+  noteEl.className = `text-sm font-medium ${type === 'success' ? 'text-amber-300' : 'text-red-300'}`;
   noteEl.classList.remove('hidden');
   
   if (type === 'success') {
