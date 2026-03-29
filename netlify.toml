@@ -3,3 +3,8 @@
   to = "/"
   status = 301
   force = true
+
+[[redirects]]
+  from = "/:page.html"
+  to = "/:page"
+  status = 301
