@@ -1,0 +1,18 @@
+{
+  "id": "temple-border",
+  "tag": "Temple Border Saree Line",
+  "category": "saree",
+  "title": "Temple Border Saree Line",
+  "oldPrice": "INR 5,590",
+  "newPrice": "INR 4,990",
+  "saving": "600",
+  "rating": "4.9",
+  "summary": "Intricate saree border with temple motifs in zari and stone work.",
+  "description": "Each motif is hand-placed along the border with precision zari threading. Designed for maximum visual impact on silk and georgette sarees, the pattern complements traditional jewelry and remains lightweight for all-day comfort.",
+  "specs": {
+    "category": "Saree Work",
+    "workType": "Aari · Zari · Temple motifs",
+    "timeline": "10–16 days"
+  },
+  "images": ["main.jpg", "2.jpg", "3.jpg"]
+}
