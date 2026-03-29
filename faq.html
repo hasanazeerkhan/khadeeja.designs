@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQ — Khadeeja Designs</title>
+<meta name="description" content="Answers to common questions about Aari embroidery, ordering, timelines, customisation, pricing, and delivery at Khadeeja Designs.">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','YOUR_GA4_ID');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+body { display:flex; flex-direction:column; min-height:100vh; }
+main { flex:1; }
+.faq-header { padding:52px 52px 44px; border-bottom:1px solid var(--border); }
+.faq-page-title { font-size:40px; font-weight:300; line-height:1.1; }
+.faq-page-title em { font-style:italic; color:var(--gold-light); }
+.faq-page-sub { font-family:var(--sans); font-size:14px; font-weight:300; color:var(--t2); margin-top:10px; line-height:1.7; max-width:480px; }
+
+.faq-body { display:grid; grid-template-columns:1fr 1px 1fr; }
+.v-rule { background:var(--border); }
+
+.faq-col { padding:48px 52px 56px; }
+
+.faq-col-label { display:block; font-family:var(--sans); font-size:10px; letter-spacing:0.18em; text-transform:uppercase; color:var(--t3); margin-bottom:32px; }
+.faq-col-title { font-size:26px; font-weight:300; margin-bottom:32px; }
+.faq-col-title em { font-style:italic; color:var(--gold-light); }
+
+.faq-list { display:flex; flex-direction:column; }
+.faq-item { border-top:1px solid var(--border); }
+.faq-item:last-child { border-bottom:1px solid var(--border); }
+.faq-q { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:18px 0; cursor:pointer; background:none; border:none; width:100%; text-align:left; }
+.faq-q-text { font-family:var(--serif); font-size:17px; font-weight:400; color:var(--t1); line-height:1.3; }
+.faq-icon { width:18px; height:18px; flex-shrink:0; display:flex; align-items:center; justify-content:center; position:relative; }
+.faq-icon::before,.faq-icon::after { content:''; position:absolute; background:var(--gold); border-radius:1px; transition:transform 0.25s,opacity 0.25s; }
+.faq-icon::before { width:11px; height:1px; }
+.faq-icon::after  { width:1px; height:11px; }
+.faq-item.open .faq-icon::after { transform:rotate(90deg); opacity:0; }
+.faq-item.open .faq-q-text { color:var(--gold-light); }
+.faq-a { font-family:var(--sans); font-size:13px; font-weight:300; color:var(--t2); line-height:1.8; max-height:0; overflow:hidden; transition:max-height 0.35s ease,padding-bottom 0.25s; }
+.faq-item.open .faq-a { max-height:400px; padding-bottom:20px; }
+
+.faq-cta {
+  margin:0 52px 56px;
+  border:1px solid var(--border);
+  padding:32px 36px;
+  display:flex; align-items:center; justify-content:space-between; gap:24px;
+}
+.faq-cta-text { font-family:var(--serif); font-size:22px; font-weight:300; line-height:1.3; }
+.faq-cta-text em { font-style:italic; color:var(--gold-light); }
+.faq-cta-sub { font-family:var(--sans); font-size:13px; color:var(--t3); margin-top:6px; }
+
+@media(max-width:900px){
+  .faq-header{padding:36px 20px 32px;}
+  .faq-page-title{font-size:32px;}
+  .faq-body{grid-template-columns:1fr;}
+  .v-rule{display:none;}
+  .faq-col{padding:36px 20px 40px; border-bottom:1px solid var(--border);}
+  .faq-col:last-child{border-bottom:none;}
+  .faq-cta{margin:0 20px 40px;flex-direction:column;align-items:flex-start;}
+  .faq-q-text{font-size:15px;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="index.html">Khadeeja Designs</a>
+  <div class="nav-center"></div>
+  <button class="hamburger" onclick="toggleMenu('faq')"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+  <div class="faq-header">
+    <div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Help &amp; information</span></div>
+    <h1 class="faq-page-title">Frequently asked <em>questions</em></h1>
+    <p class="faq-page-sub">Everything you need to know before placing an order. Can't find your answer? <a href="contact.html" style="color:var(--gold);text-decoration:none;">Send us a message →</a></p>
+  </div>
+
+  <div class="faq-body">
+
+    <!-- LEFT — Ordering & process -->
+    <div class="faq-col">
+      <span class="faq-col-label">Ordering &amp; process</span>
+      <h2 class="faq-col-title">Before you <em>order</em></h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How do I place an order?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Browse the portfolio, find a style you like, and click "Make It Yours." This takes you to our enquiry form where you share your name, contact number, and a brief description of what you need. We'll reply within 48 hours with a quote and next steps. No payment is needed to enquire.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How long does an order take?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Bridal blouses and heavy work typically take 14–21 days after the design brief is confirmed. Saree border and lighter work takes 10–14 days. We'll confirm the exact timeline with your quote. If you have an urgent event date, mention it in the enquiry and we'll check availability.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can I customise a design from the portfolio?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Yes. Every order is made to your brief. You can change colours, motif placement, density, neckline style, and sleeve work. Share a reference photo or describe your idea and we'll work from there. Most customers combine elements from multiple designs.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What if I don't have a design in mind yet?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">That's completely fine — many customers enquire before they've decided on a design. Tell us your occasion, the fabric colour, and your rough budget. We'll suggest options and share reference designs to help you decide. There's no commitment at this stage.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What are the payment terms?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">We collect an advance payment after the design brief is confirmed and before work begins. The remaining balance is due on completion, before shipping. The exact advance amount is shared with your quote. We accept UPI, bank transfer, and other standard digital payment methods.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you deliver outside Trichy?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Yes, we deliver across India with tracked shipping. You'll receive a tracking link once your order is dispatched. Delivery typically takes 2–4 business days after the embroidery is complete. Shipping cost, if any, is included in your quote.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do I need to send my blouse or fabric to you?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Yes, for blouse embroidery you'll need to courier the stitched or unstitched blouse to us. For saree work, the saree is sent to us. We'll share the studio address and courier instructions with your order confirmation. The item is returned to you with the completed embroidery.</div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="v-rule"></div>
+
+    <!-- RIGHT — About Aari work -->
+    <div class="faq-col">
+      <span class="faq-col-label">About Aari embroidery</span>
+      <h2 class="faq-col-title">Understanding <em>the craft</em></h2>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is Aari embroidery?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Aari is a traditional Indian embroidery technique done with a hooked needle called an Aari needle. The needle is used to pull thread loops through fabric from below, creating fine, continuous chain stitch patterns. It's one of the most intricate forms of hand embroidery and is especially popular for bridal and occasion wear in South India.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What is the difference between Aari and Zardosi?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Aari is a technique — it refers to the needle and method used. Zardosi is a style of heavy embroidery using metallic threads, beads, and stones, typically done using the Aari technique. So Zardosi embroidery is a specific type of Aari work. At Khadeeja Designs, we do both Aari thread work and Aari Zardosi depending on the design brief.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What fabrics work best for Aari embroidery?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Aari embroidery works on most natural and blended fabrics. Silk, raw silk, velvet, georgette, and net are the most popular. Cotton and linen can also be embroidered but require additional backing. Stretch fabrics like lycra are not suitable as the embroidery restricts movement. Share your fabric type when you enquire and we'll advise accordingly.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How should I care for Aari embroidered garments?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Always dry clean Aari embroidered pieces. Avoid machine washing as agitation can loosen threads and dislodge stones. Store flat or rolled — do not fold at the embroidered section as creasing can damage threads. Keep away from moisture and direct sunlight for long periods. A light pressing with a cloth on the reverse side is safe if needed.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Will the embroidery be heavy to wear?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">It depends on the design. Thread-only Aari work is very lightweight and comfortable for extended wear. Designs with stones, beads, and dense Zardosi work add weight but are designed for occasions where you won't be in constant movement. We always consider wearability when planning stitch density and material placement.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can embroidery be added to a readymade blouse?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Yes, we work on both stitched and unstitched blouses. For stitched blouses, the embroidery is worked directly on the garment. We place the blouse on a frame and embroider within the finished shape, so measurements and seams are respected. This is a very common request for brides who already have a fitted blouse from their tailor.</div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Is every piece truly handmade?</span><span class="faq-icon"></span></button>
+          <div class="faq-a">Yes, entirely. Every stitch on every piece is done by hand using the Aari needle. There is no machine embroidery involved at any stage. This is why timelines are what they are — handmade work cannot be rushed without compromising quality, and we won't do that.</div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom CTA -->
+  <div class="faq-cta">
+    <div>
+      <p class="faq-cta-text">Still have a question?<br><em>Just send us a message.</em></p>
+      <p class="faq-cta-sub">No commitment. We reply within 48 hours.</p>
+    </div>
+    <a class="btn-gold" href="contact.html">Send Enquiry →</a>
+  </div>
+</main>
+
+<footer></footer>
+<script src="shared-footer.js"></script>
+<script>
+injectNav('faq');
+injectFooter();
+function toggleFaq(btn) {
+  const item = btn.closest('.faq-item');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+</script>
+</body>
+</html>

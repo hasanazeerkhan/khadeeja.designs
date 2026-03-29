@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Thank You — Khadeeja Designs</title>
+<meta name="description" content="We've received your enquiry and will reply within 48 hours.">
+
+<!-- Meta Pixel — fires Purchase/Lead conversion here -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+fbq('track', 'Lead');          /* ← counts as a conversion in Meta Ads */
+</script>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'YOUR_GA4_ID');
+gtag('event', 'conversion', { send_to: 'YOUR_GA4_ID/lead' }); /* GA4 conversion */
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  body { display: flex; flex-direction: column; min-height: 100vh; }
+  main { flex: 1; display: flex; flex-direction: column; }
+
+  .ty-top {
+    display: flex; flex-direction: column; align-items: center;
+    text-align: center; padding: 72px 52px 56px;
+    border-bottom: 1px solid var(--border);
+  }
+  .ty-check {
+    width: 54px; height: 54px;
+    border: 1px solid var(--gold); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 28px;
+  }
+  .ty-check svg { width: 20px; height: 20px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+
+  .ty-heading {
+    font-family: var(--serif); font-size: clamp(32px, 4vw, 44px); font-weight: 300;
+    line-height: 1.12; color: var(--t1); margin-bottom: 10px; max-width: 520px;
+  }
+  .ty-heading em { font-style: italic; color: var(--gold-light); }
+  .ty-sub {
+    font-family: var(--sans); font-size: 14px; font-weight: 300;
+    color: var(--t2); margin-bottom: 36px; line-height: 1.7; max-width: 380px;
+  }
+
+  .timeline-row {
+    display: flex; border: 1px solid var(--border);
+    margin-bottom: 36px; width: 100%; max-width: 660px;
+  }
+  .tl-step { flex: 1; padding: 16px 18px; border-right: 1px solid var(--border); }
+  .tl-step:last-child { border-right: none; }
+  .tl-n { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; color: var(--t3); display: block; margin-bottom: 5px; }
+  .tl-l { font-family: var(--sans); font-size: 12px; color: var(--t2); line-height: 1.4; }
+  .tl-l.lit { color: var(--gold); }
+
+  .ty-actions { display: flex; align-items: center; gap: 14px; }
+  .btn-wa {
+    display: flex; align-items: center; gap: 8px;
+    font-family: var(--sans); font-size: 14px; font-weight: 500;
+    color: var(--t1); background: transparent;
+    border: 1px solid rgba(37,211,102,0.3); padding: 13px 26px;
+    cursor: pointer; transition: all 0.2s; text-decoration: none;
+  }
+  .btn-wa:hover { background: rgba(37,211,102,0.06); }
+  .btn-wa-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+
+  .ty-bottom { padding: 44px 52px 52px; }
+  .ty-bottom-hdr { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+  .ty-bottom-label { display: flex; align-items: center; gap: 12px; }
+  .ty-bottom-label span { font-family: var(--sans); font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase; color: var(--t3); }
+  .ty-view-all { font-family: var(--sans); font-size: 12px; color: var(--t3); text-decoration: none; transition: color 0.2s; }
+  .ty-view-all:hover { color: var(--gold); }
+
+  .photo-strip {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    gap: 1px; background: var(--border); border: 1px solid var(--border);
+  }
+  .photo-card { aspect-ratio: 1/1; overflow: hidden; cursor: pointer; position: relative; }
+  .photo-card img { width: 100%; height: 100%; object-fit: cover; display: block; filter: brightness(0.88); transition: filter 0.3s, transform 0.4s; }
+  .photo-card:hover img { filter: brightness(1.05); transform: scale(1.04); }
+  .photo-ph { width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+  .photo-ph span { font-family: var(--sans); font-size: 10px; color: #222; letter-spacing: 0.1em; text-transform: uppercase; }
+  .photo-hover { position: absolute; inset: 0; background: rgba(0,0,0,0); transition: background 0.3s; display: flex; align-items: flex-end; padding: 10px; }
+  .photo-card:hover .photo-hover { background: rgba(0,0,0,0.4); }
+  .ph-name { font-family: var(--sans); font-size: 11px; color: #fff; opacity: 0; transform: translateY(4px); transition: opacity 0.3s, transform 0.3s; }
+  .photo-card:hover .ph-name { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    .ty-top { padding: 52px 20px 44px; }
+    .timeline-row { display: none; }
+    .ty-actions { flex-direction: column; width: 100%; }
+    .btn-wa, .btn-ghost { width: 100%; justify-content: center; }
+    .ty-bottom { padding: 32px 20px 48px; }
+    .photo-strip { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">Khadeeja Designs</a>
+  <div class="nav-center">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="explore.html">Explore Design</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-cta" href="contact.html">Order Consultation</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu('')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<main>
+  <div class="ty-top">
+    <div class="ty-check">
+      <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+    </div>
+    <div class="kicker centered">
+      <div class="kicker-line"></div>
+      <span class="kicker-text">Enquiry received</span>
+      <div class="kicker-line"></div>
+    </div>
+    <h1 class="ty-heading">
+      Thank you.<br>We've received your<br><em>design brief.</em>
+    </h1>
+    <p class="ty-sub">We'll review your details and get back within 24–48 hours with pricing and next steps.</p>
+
+    <div class="timeline-row">
+      <div class="tl-step"><span class="tl-n">01</span><span class="tl-l lit">Enquiry received</span></div>
+      <div class="tl-step"><span class="tl-n">02</span><span class="tl-l">We review &amp; reply within 48 hrs</span></div>
+      <div class="tl-step"><span class="tl-n">03</span><span class="tl-l">Brief &amp; quote confirmed</span></div>
+      <div class="tl-step"><span class="tl-n">04</span><span class="tl-l">Work begins</span></div>
+    </div>
+
+    <div class="ty-actions">
+      <a class="btn-wa" href="https://wa.me/918667454391" target="_blank">
+        <div class="btn-wa-dot"></div>
+        Get a faster reply on WhatsApp
+      </a>
+      <a class="btn-ghost" href="explore.html">Explore more work</a>
+    </div>
+  </div>
+
+  <div class="ty-bottom">
+    <div class="ty-bottom-hdr">
+      <div class="ty-bottom-label">
+        <div style="width:20px;height:1px;background:var(--gold);flex-shrink:0;"></div>
+        <span>While you wait</span>
+      </div>
+      <a class="ty-view-all" href="explore.html">View full portfolio →</a>
+    </div>
+
+    <div class="photo-strip" id="photo-strip">
+      <!-- Loaded dynamically from products/index.json -->
+    </div>
+  </div>
+</main>
+
+<footer></footer>
+
+<script>
+/* Load first 4 products for photo strip */
+async function loadStrip() {
+  try {
+    const ids = await fetch('products/index.json').then(r => r.json());
+    const first4 = ids.slice(0, 4);
+    const products = await Promise.all(
+      first4.map(id => fetch(`products/${id}/product.json`).then(r => r.json()).catch(() => null))
+    );
+    const strip = document.getElementById('photo-strip');
+    strip.innerHTML = products.filter(Boolean).map(p => `
+      <a class="photo-card" href="product.html?id=${p.id}">
+        <img src="products/${p.id}/main.jpg" alt="${p.title}"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="photo-ph" style="display:none;background:#111;">
+          <span>${p.category}</span>
+        </div>
+        <div class="photo-hover"><span class="ph-name">${p.title}</span></div>
+      </a>`).join('');
+  } catch(e) { /* silent fail — strip just stays empty */ }
+}
+
+  const m = document.createElement('div');
+  m.id = 'mob-menu';
+  m.style.cssText = 'position:fixed;top:53px;left:0;right:0;background:#0f0f0f;border-bottom:1px solid rgba(255,255,255,0.07);z-index:99;padding:12px 20px 20px;display:flex;flex-direction:column;';
+  [['Home','index.html'],['Explore Design','explore.html'],['Contact','contact.html']].forEach(([l,h]) => {
+    const a = document.createElement('a');
+    a.textContent = l; a.href = h;
+    a.style.cssText = 'border-bottom:1px solid rgba(255,255,255,0.06);color:#888;font-family:var(--sans);font-size:14px;padding:14px 0;text-decoration:none;display:block;';
+    m.appendChild(a);
+  });
+  document.body.appendChild(m);
+}
+
+loadStrip();
+</script>
+<script src="shared-footer.js"></script>
+<script>
+injectNav('');
+injectFooter();
+</script>
+</body>
+</html>

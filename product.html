@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product — Khadeeja Designs</title>
+<meta name="description" content="View embroidery design details and enquire.">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date()); gtag('config', 'YOUR_GA4_ID');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .detail-wrap { padding: 0 52px 56px; }
+
+  .breadcrumb {
+    display: flex; align-items: center; gap: 8px;
+    padding: 22px 0 32px;
+    font-family: var(--sans); font-size: 12px; color: var(--t3);
+  }
+  .bc-link { cursor: pointer; transition: color 0.2s; text-decoration: none; color: var(--t3); }
+  .bc-link:hover { color: var(--t2); }
+  .bc-sep { font-size: 10px; }
+  .bc-cur { color: var(--t2); }
+
+  .detail-layout {
+    display: grid; grid-template-columns: 1fr 1px 1fr;
+  }
+  .v-rule { background: var(--border); }
+
+  /* LEFT */
+  .detail-left { padding-right: 52px; }
+  .main-img-box {
+    width: 100%; aspect-ratio: 4/3;
+    overflow: hidden; background: #111; margin-bottom: 12px;
+  }
+  .main-img-box img {
+    width: 100%; height: 100%; object-fit: cover; display: block;
+    transition: opacity 0.3s;
+  }
+  .img-ph {
+    width: 100%; height: 100%; background: #141414;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 10px;
+  }
+  .img-ph svg { opacity: 0.12; }
+  .img-ph span { font-family: var(--sans); font-size: 10px; color: var(--t3); letter-spacing: 0.12em; text-transform: uppercase; }
+
+  .img-nav {
+    display: flex; align-items: center;
+    justify-content: space-between; padding: 0 2px;
+  }
+  .img-dots { display: flex; gap: 6px; }
+  .dot {
+    width: 5px; height: 5px; border-radius: 50%;
+    background: var(--t3); cursor: pointer; transition: background 0.2s; border: none;
+  }
+  .dot.on { background: var(--gold); }
+  .img-count { font-family: var(--sans); font-size: 11px; color: var(--t3); }
+
+  .thumb-strip { display: flex; gap: 8px; margin-top: 12px; }
+  .thumb {
+    width: 64px; height: 64px; background: #141414;
+    border: 1px solid var(--border); cursor: pointer;
+    overflow: hidden; transition: border-color 0.2s; flex-shrink: 0;
+  }
+  .thumb.on { border-color: var(--gold); }
+  .thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .thumb-ph {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .thumb-ph span { font-family: var(--sans); font-size: 9px; color: #2a2a2a; text-align: center; }
+
+  /* RIGHT */
+  .detail-right { padding-left: 52px; }
+  .detail-cat {
+    font-family: var(--sans); font-size: 10px;
+    letter-spacing: 0.2em; text-transform: uppercase;
+    color: var(--gold); margin-bottom: 14px; display: block;
+  }
+  .detail-title {
+    font-family: var(--serif); font-size: 36px; font-weight: 300;
+    line-height: 1.12; color: var(--t1); margin-bottom: 14px;
+  }
+  .detail-title em { font-style: italic; }
+  .rating-row {
+    display: flex; align-items: center; gap: 8px; margin-bottom: 18px;
+  }
+  .stars { color: var(--gold); font-size: 13px; letter-spacing: 3px; }
+  .rating-n { font-family: var(--sans); font-size: 13px; color: var(--t2); }
+
+  .price-bar {
+    display: flex; align-items: baseline; gap: 14px;
+    padding: 16px 0; border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border); margin-bottom: 22px;
+  }
+  .dp-old { font-family: var(--sans); font-size: 13px; color: var(--t3); text-decoration: line-through; }
+  .dp-new { font-family: var(--sans); font-size: 22px; font-weight: 500; color: var(--t1); }
+  .dp-save {
+    font-family: var(--sans); font-size: 11px;
+    background: var(--gold-dim); color: var(--gold); padding: 3px 9px;
+  }
+
+  .detail-summary {
+    font-family: var(--serif); font-size: 16px; font-weight: 400;
+    line-height: 1.6; color: #ccc; margin-bottom: 12px;
+  }
+  .detail-body {
+    font-family: var(--sans); font-size: 13px; font-weight: 300;
+    line-height: 1.8; color: var(--t2); margin-bottom: 26px;
+  }
+
+  .spec-table { margin-bottom: 28px; }
+  .spec-row {
+    display: flex; align-items: baseline;
+    padding: 9px 0; border-bottom: 1px solid var(--border); gap: 16px;
+  }
+  .spec-row:first-child { border-top: 1px solid var(--border); }
+  .spec-k {
+    font-family: var(--sans); font-size: 10px;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--t3); min-width: 96px;
+  }
+  .spec-v { font-family: var(--sans); font-size: 13px; color: var(--t2); }
+
+  /* SINGLE CTA */
+  .cta-block { margin-top: 4px; }
+  .make-yours-btn {
+    width: 100%; padding: 16px;
+    background: var(--gold); color: var(--black); border: none;
+    font-family: var(--sans); font-size: 15px; font-weight: 500;
+    letter-spacing: 0.05em; cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+  }
+  .make-yours-btn:hover { background: var(--gold-light); }
+  .make-yours-btn:active { transform: scale(0.99); }
+  .cta-hint {
+    display: flex; align-items: center; gap: 8px; margin-top: 12px;
+  }
+  .cta-hint-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); flex-shrink: 0; }
+  .cta-hint-txt {
+    font-family: var(--sans); font-size: 12px; color: var(--t3);
+  }
+
+  .error-state {
+    padding: 80px 52px; text-align: center;
+    font-family: var(--sans); font-size: 14px; color: var(--t2);
+  }
+  .error-state a { color: var(--gold); }
+
+  @media (max-width: 900px) {
+    .detail-wrap { padding: 0 20px 48px; }
+    .detail-layout { grid-template-columns: 1fr; }
+    .v-rule { display: none; }
+    .detail-left { padding-right: 0; margin-bottom: 32px; }
+    .detail-right { padding-left: 0; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">Khadeeja Designs</a>
+  <div class="nav-center">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="explore.html">Explore Design</a>
+    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="nav-cta" href="contact.html">Order Consultation</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu('explore')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div id="content">
+  <div class="detail-wrap">
+    <div class="breadcrumb">
+      <a class="bc-link" href="index.html">Home</a>
+      <span class="bc-sep">/</span>
+      <a class="bc-link" href="explore.html">Explore Design</a>
+      <span class="bc-sep">/</span>
+      <span class="bc-cur" id="bc-name">Loading…</span>
+    </div>
+
+    <div class="detail-layout">
+      <div class="detail-left">
+        <div class="main-img-box" id="main-img-box">
+          <div class="img-ph">
+            <svg width="40" height="40" viewBox="0 0 40 40" fill="none" stroke="white" stroke-width="1" stroke-linecap="round">
+              <rect x="3" y="8" width="34" height="26" rx="2"/>
+              <circle cx="14" cy="18" r="4"/>
+              <path d="M3 29l9-7 7 5 6-4 12 7"/>
+            </svg>
+            <span>Loading…</span>
+          </div>
+        </div>
+        <div class="img-nav">
+          <div class="img-dots" id="dots"></div>
+          <span class="img-count" id="img-count">— / —</span>
+        </div>
+        <div class="thumb-strip" id="thumbs"></div>
+      </div>
+
+      <div class="v-rule"></div>
+
+      <div class="detail-right">
+        <span class="detail-cat" id="d-cat"></span>
+        <h1 class="detail-title" id="d-title"></h1>
+        <div class="rating-row">
+          <span class="stars">★★★★★</span>
+          <span class="rating-n" id="d-rating">4.9</span>
+        </div>
+        <div class="price-bar">
+          <span class="dp-old" id="d-old"></span>
+          <span class="dp-new" id="d-new"></span>
+          <span class="dp-save" id="d-save"></span>
+        </div>
+        <p class="detail-summary" id="d-summary"></p>
+        <p class="detail-body" id="d-body"></p>
+        <div class="spec-table" id="d-specs"></div>
+        <div class="cta-block">
+          <button class="make-yours-btn" id="cta-btn">Make It Yours →</button>
+          <div class="cta-hint">
+            <div class="cta-hint-dot"></div>
+            <span class="cta-hint-txt">We reply within 48 hours with pricing and next steps</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer></footer>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const productId = params.get('id');
+let currentImg = 0;
+let productImages = [];
+
+async function loadProduct() {
+  if (!productId) { showError(); return; }
+  try {
+    const res = await fetch(`products/${productId}/product.json`);
+    if (!res.ok) throw new Error('Not found');
+    const p = await res.json();
+    renderProduct(p);
+
+    /* Fire Meta ViewContent event */
+    if (typeof fbq !== 'undefined') {
+      fbq('track', 'ViewContent', {
+        content_name: p.tag,
+        content_category: p.category,
+        content_ids: [p.id],
+        currency: 'INR',
+        value: parseFloat(p.newPrice.replace(/[^0-9.]/g,''))
+      });
+    }
+    /* Fire GA4 view_item */
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'view_item', {
+        currency: 'INR',
+        value: parseFloat(p.newPrice.replace(/[^0-9.]/g,'')),
+        items: [{ item_id: p.id, item_name: p.tag, item_category: p.category }]
+      });
+    }
+    /* Update page title for SEO */
+    document.title = `${p.title} — Khadeeja Designs`;
+  } catch(e) { showError(); }
+}
+
+function renderProduct(p) {
+  document.getElementById('bc-name').textContent = p.title;
+  document.getElementById('d-cat').textContent = p.category.charAt(0).toUpperCase() + p.category.slice(1) + ' Collection';
+  document.getElementById('d-title').innerHTML = formatTitle(p.title);
+  document.getElementById('d-rating').textContent = p.rating;
+  document.getElementById('d-old').textContent = p.oldPrice;
+  document.getElementById('d-new').textContent = p.newPrice;
+  document.getElementById('d-save').textContent = `Save ₹${p.saving}`;
+  document.getElementById('d-summary').textContent = p.summary;
+  document.getElementById('d-body').textContent = p.description;
+
+  const specs = [
+    ['Category', p.specs.category],
+    ['Work type', p.specs.workType],
+    ['Timeline', p.specs.timeline + ' after design brief'],
+    ['Delivery', 'Pan India · Tracked shipping']
+  ];
+  document.getElementById('d-specs').innerHTML = specs.map(([k,v]) =>
+    `<div class="spec-row"><span class="spec-k">${k}</span><span class="spec-v">${v}</span></div>`
+  ).join('');
+
+  /* CTA — pass tag + id to contact page */
+  document.getElementById('cta-btn').onclick = () => {
+    const qs = new URLSearchParams({ design: p.tag, id: p.id }).toString();
+    window.location.href = `contact.html?${qs}`;
+  };
+
+  /* Images */
+  productImages = p.images || ['main.jpg'];
+  renderImages(p.id, productImages);
+}
+
+function renderImages(id, images) {
+  const box = document.getElementById('main-img-box');
+  const dots = document.getElementById('dots');
+  const thumbs = document.getElementById('thumbs');
+  setMainImage(id, images, 0);
+  document.getElementById('img-count').textContent = `1 / ${images.length}`;
+  dots.innerHTML = images.map((_, i) =>
+    `<button class="dot${i===0?' on':''}" onclick="switchImage(${i},'${id}')"></button>`
+  ).join('');
+  thumbs.innerHTML = images.map((img, i) =>
+    `<div class="thumb${i===0?' on':''}" onclick="switchImage(${i},'${id}')">
+      <img src="products/${id}/${img}" alt="View ${i+1}"
+        onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+      <div class="thumb-ph" style="display:none;"><span>View ${i+1}</span></div>
+    </div>`
+  ).join('');
+}
+
+function setMainImage(id, images, idx) {
+  const box = document.getElementById('main-img-box');
+  box.innerHTML = `<img src="products/${id}/${images[idx]}" alt="View ${idx+1}"
+    onerror="this.outerHTML='<div class=\\'img-ph\\'><svg width=\\'40\\' height=\\'40\\' viewBox=\\'0 0 40 40\\' fill=\\'none\\' stroke=\\'white\\' stroke-width=\\'1\\' stroke-linecap=\\'round\\'><rect x=\\'3\\' y=\\'8\\' width=\\'34\\' height=\\'26\\' rx=\\'2\\'/><circle cx=\\'14\\' cy=\\'18\\' r=\\'4\\'/><path d=\\'M3 29l9-7 7 5 6-4 12 7\\'/></svg><span>Photo ${idx+1}</span></div>'">`;
+}
+
+function switchImage(idx, id) {
+  currentImg = idx;
+  setMainImage(id, productImages, idx);
+  document.getElementById('img-count').textContent = `${idx+1} / ${productImages.length}`;
+  document.querySelectorAll('.dot').forEach((d,i) => d.classList.toggle('on', i===idx));
+  document.querySelectorAll('.thumb').forEach((t,i) => t.classList.toggle('on', i===idx));
+}
+
+function formatTitle(t) {
+  const parts = t.split(' ');
+  const last = parts.pop();
+  return `${parts.join(' ')}<br><em>${last}</em>`;
+}
+
+function showError() {
+  document.getElementById('content').innerHTML = `
+    <div class="error-state">
+      <p>Design not found. <a href="explore.html">Browse all designs →</a></p>
+    </div>`;
+}
+
+loadProduct();
+</script>
+<script src="shared-footer.js"></script>
+<script>
+injectNav('explore');
+injectFooter();
+</script>
+</body>
+</html>

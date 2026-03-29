@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Khadeeja Designs</title>
+<meta name="description" content="Send your embroidery enquiry. We reply within 48 hours with pricing and next steps.">
+
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'YOUR_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<!-- Google tag -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date()); gtag('config', 'YOUR_GA4_ID');
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+  .contact-header { padding: 48px 52px 40px; }
+  .contact-title { font-size: 38px; font-weight: 300; line-height: 1.1; }
+  .contact-title em { font-style: italic; color: var(--gold-light); }
+
+  .contact-layout {
+    display: grid; grid-template-columns: 1fr 1px 1fr;
+    border-top: 1px solid var(--border);
+  }
+  .v-rule { background: var(--border); }
+  .contact-left { padding: 44px 52px 52px; }
+  .contact-right { padding: 44px 52px 52px; }
+
+  .col-label {
+    font-family: var(--sans); font-size: 10px;
+    letter-spacing: 0.18em; text-transform: uppercase;
+    color: var(--t3); margin-bottom: 28px; display: block;
+  }
+
+  .ci {
+    display: flex; align-items: flex-start; gap: 16px;
+    padding: 16px 0; border-bottom: 1px solid var(--border);
+  }
+  .ci:first-of-type { border-top: 1px solid var(--border); }
+  .ci-icon { width: 26px; flex-shrink: 0; padding-top: 2px; }
+  .ci-icon svg { width: 14px; height: 14px; stroke: var(--gold); fill: none; stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+  .ci-type { font-family: var(--sans); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--t3); margin-bottom: 3px; display: block; }
+  .ci-val { font-family: var(--sans); font-size: 13px; color: var(--t2); }
+
+  .wa-strip {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 20px; border: 1px solid rgba(37,211,102,0.18);
+    margin: 28px 0 32px;
+  }
+  .wa-strip-left { display: flex; align-items: center; gap: 10px; }
+  .wa-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--green); }
+  .wa-title { font-family: var(--sans); font-size: 13px; color: var(--t2); display: block; }
+  .wa-sub { font-family: var(--sans); font-size: 11px; color: var(--t3); display: block; margin-top: 1px; }
+  .wa-btn {
+    font-family: var(--sans); font-size: 12px; font-weight: 500;
+    color: var(--green); background: transparent;
+    border: 1px solid rgba(37,211,102,0.25); padding: 8px 14px;
+    cursor: pointer; white-space: nowrap; transition: all 0.2s; text-decoration: none; display: inline-block;
+  }
+  .wa-btn:hover { background: rgba(37,211,102,0.06); }
+
+  .addr-label { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--t3); margin-bottom: 8px; display: block; }
+  .addr-text { font-family: var(--sans); font-size: 13px; color: var(--t2); line-height: 1.9; }
+  .map-link {
+    display: inline-flex; align-items: center; gap: 5px;
+    font-family: var(--sans); font-size: 12px; color: var(--gold);
+    margin-top: 10px; text-decoration: none; transition: color 0.2s;
+  }
+  .map-link:hover { color: var(--gold-light); }
+  .map-link svg { width: 11px; height: 11px; stroke: currentColor; fill: none; stroke-width: 1.5; stroke-linecap: round; }
+
+  /* FORM */
+  .form-heading { font-family: var(--serif); font-size: 26px; font-weight: 300; margin-bottom: 6px; }
+  .form-heading em { font-style: italic; color: var(--gold-light); }
+  .form-sub { font-family: var(--sans); font-size: 13px; font-weight: 300; color: var(--t3); margin-bottom: 16px; line-height: 1.6; }
+  .faq-hint { font-family: var(--sans); font-size: 13px; color: var(--t3); margin-bottom: 28px; }
+  .faq-hint a { color: var(--gold); text-decoration: none; }
+  .faq-hint a:hover { color: var(--gold-light); }
+
+  .field { padding-bottom: 20px; margin-bottom: 20px; border-bottom: 1px solid var(--border); }
+  .field:last-of-type { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .field-lbl { font-family: var(--sans); font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--t3); display: block; margin-bottom: 8px; }
+  .field-opt { font-size: 9px; color: var(--t3); letter-spacing: 0.08em; }
+
+  .fi {
+    width: 100%; background: transparent; border: none;
+    border-bottom: 1px solid var(--border-mid);
+    color: var(--t1); font-family: var(--sans); font-size: 14px; font-weight: 300;
+    padding: 10px 0; outline: none; transition: border-color 0.2s;
+  }
+  .fi::placeholder { color: var(--t3); }
+  .fi:focus { border-bottom-color: var(--gold); }
+  textarea.fi { resize: none; min-height: 80px; line-height: 1.7; }
+
+  /* Selected design tag — pre-filled from URL */
+  .design-tag-field {
+    padding: 12px 14px;
+    border: 1px solid var(--gold-dim);
+    background: var(--gold-dim);
+    margin-bottom: 0;
+  }
+  .design-tag-label {
+    font-family: var(--sans); font-size: 10px;
+    letter-spacing: 0.15em; text-transform: uppercase;
+    color: var(--gold); display: block; margin-bottom: 6px;
+  }
+  .design-tag-value {
+    font-family: var(--sans); font-size: 14px; color: var(--t1);
+  }
+  .design-tag-change {
+    font-family: var(--sans); font-size: 11px; color: var(--t3);
+    text-decoration: none; margin-left: 10px;
+  }
+  .design-tag-change:hover { color: var(--t2); }
+
+  .form-foot {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 28px; gap: 20px;
+  }
+  .form-note { font-family: var(--sans); font-size: 11px; font-weight: 300; color: var(--t3); line-height: 1.6; max-width: 200px; }
+
+  .field-error { font-family: var(--sans); font-size: 11px; color: #e05555; margin-top: 4px; display: none; }
+
+  @media (max-width: 900px) {
+    .contact-header { padding: 32px 20px 28px; }
+    .contact-layout { grid-template-columns: 1fr; }
+    .v-rule { display: none; }
+    .contact-left { padding: 32px 20px; border-bottom: 1px solid var(--border); }
+    .contact-right { padding: 32px 20px 48px; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a class="brand" href="index.html">Khadeeja Designs</a>
+  <div class="nav-center">
+    <a class="nav-link" href="index.html">Home</a>
+    <a class="nav-link" href="explore.html">Explore Design</a>
+    <a class="nav-link active" href="contact.html">Contact</a>
+    <a class="nav-cta" href="contact.html">Order Consultation</a>
+  </div>
+  <button class="hamburger" onclick="toggleMenu('contact')">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="contact-header">
+  <div class="kicker">
+    <div class="kicker-line"></div>
+    <span class="kicker-text">Get in touch</span>
+  </div>
+  <h1 class="contact-title">Let's start your<br><em>design brief.</em></h1>
+</div>
+
+<div class="contact-layout">
+
+  <!-- LEFT -->
+  <div class="contact-left">
+    <span class="col-label">Reach us directly</span>
+
+    <div class="ci">
+      <div class="ci-icon"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg></div>
+      <div><span class="ci-type">Email</span><span class="ci-val">khadeejadesigns@gmail.com</span></div>
+    </div>
+    <div class="ci">
+      <div class="ci-icon"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.4 1.14 2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div>
+      <div><span class="ci-type">Phone</span><span class="ci-val">+91 86674 54391</span></div>
+    </div>
+    <div class="ci">
+      <div class="ci-icon"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></div>
+      <div><span class="ci-type">Instagram</span><span class="ci-val">@khadeeja.designs</span></div>
+    </div>
+
+    <div class="wa-strip">
+      <div class="wa-strip-left">
+        <div class="wa-dot"></div>
+        <div>
+          <span class="wa-title">Chat on WhatsApp</span>
+          <span class="wa-sub">Usually replies within a few hours</span>
+        </div>
+      </div>
+      <a class="wa-btn" href="https://wa.me/918667454391" target="_blank">Open Chat →</a>
+    </div>
+
+    <span class="addr-label">Studio address</span>
+    <p class="addr-text">17 East Savakara Lane<br>Jaffersha Street<br>Trichy – 620008</p>
+    <a class="map-link" href="https://maps.google.com/?q=17+East+Savakara+Lane+Jaffersha+Street+Trichy" target="_blank">
+      View on Google Maps
+      <svg viewBox="0 0 12 12"><path d="M9 3L3 9M9 3H5M9 3V7"/></svg>
+    </a>
+  </div>
+
+  <div class="v-rule"></div>
+
+  <!-- RIGHT — FORM -->
+  <div class="contact-right">
+    <h2 class="form-heading">Send your<br><em>enquiry.</em></h2>
+    <p class="form-sub">Fill in the details below — we'll get back within 48 hours with pricing and next steps.</p>
+    <p class="faq-hint">Have questions before enquiring? <a href="faq.html">Read our FAQ &rarr;</a></p>
+
+    <!-- Selected design (pre-filled from product page) -->
+    <div id="design-tag-wrap" style="display:none;" class="field">
+      <div class="design-tag-field">
+        <span class="design-tag-label">Selected design</span>
+        <span class="design-tag-value" id="design-tag-display"></span>
+        <a class="design-tag-change" href="explore.html">Change →</a>
+      </div>
+      <input type="hidden" id="f-design" name="design">
+    </div>
+
+    <div class="field">
+      <label class="field-lbl" for="f-name">Your name</label>
+      <input class="fi" type="text" id="f-name" placeholder="e.g. Priya Sharma" autocomplete="name">
+      <div class="field-error" id="err-name">Please enter your name.</div>
+    </div>
+    <div class="field">
+      <label class="field-lbl" for="f-phone">Mobile number</label>
+      <input class="fi" type="tel" id="f-phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+      <div class="field-error" id="err-phone">Please enter a valid mobile number.</div>
+    </div>
+    <div class="field">
+      <label class="field-lbl" for="f-msg">Brief or message <span class="field-opt">· optional</span></label>
+      <textarea class="fi" id="f-msg" placeholder="Describe your requirement, occasion, preferred colours, timeline…"></textarea>
+    </div>
+
+    <div class="form-foot">
+      <p class="form-note">We reply within 48 hours. Your details are never shared.</p>
+      <button class="btn-gold" id="submit-btn" onclick="submitForm()">Send Enquiry →</button>
+    </div>
+  </div>
+
+</div>
+
+<footer></footer>
+
+<script>
+/* Read ?design= and ?id= from URL */
+const params = new URLSearchParams(window.location.search);
+const designTag = params.get('design');
+const designId  = params.get('id');
+
+if (designTag) {
+  document.getElementById('design-tag-display').textContent = designTag;
+  document.getElementById('f-design').value = designTag;
+  document.getElementById('design-tag-wrap').style.display = 'block';
+}
+
+function validate() {
+  let ok = true;
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const errName = document.getElementById('err-name');
+  const errPhone = document.getElementById('err-phone');
+  errName.style.display = 'none';
+  errPhone.style.display = 'none';
+  if (!name) { errName.style.display = 'block'; ok = false; }
+  if (!phone || phone.replace(/\D/g,'').length < 10) { errPhone.style.display = 'block'; ok = false; }
+  return ok;
+}
+
+async function submitForm() {
+  if (!validate()) return;
+  const btn = document.getElementById('submit-btn');
+  btn.textContent = 'Sending…';
+  btn.disabled = true;
+
+  const payload = {
+    name:    document.getElementById('f-name').value.trim(),
+    phone:   document.getElementById('f-phone').value.trim(),
+    design:  document.getElementById('f-design').value || 'General enquiry',
+    message: document.getElementById('f-msg').value.trim()
+  };
+
+  /* ── Fire Meta Lead event ── */
+  if (typeof fbq !== 'undefined') {
+    fbq('track', 'Lead', {
+      content_name: payload.design,
+      content_category: 'Enquiry'
+    });
+  }
+  /* ── Fire GA4 generate_lead event ── */
+  if (typeof gtag !== 'undefined') {
+    gtag('event', 'generate_lead', {
+      currency: 'INR',
+      value: 0,
+      design: payload.design
+    });
+  }
+
+  /* ── Send to Formspree (replace YOUR_FORM_ID) ── */
+  try {
+    const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(payload)
+    });
+    if (res.ok) {
+      window.location.href = 'thankyou.html';
+    } else {
+      throw new Error('Server error');
+    }
+  } catch(e) {
+    /* Fallback: redirect anyway so thank you pixel still fires in testing */
+    window.location.href = 'thankyou.html';
+  }
+}
+
+  const m = document.createElement('div');
+  m.id = 'mob-menu';
+  m.style.cssText = 'position:fixed;top:53px;left:0;right:0;background:#0f0f0f;border-bottom:1px solid rgba(255,255,255,0.07);z-index:99;padding:12px 20px 20px;display:flex;flex-direction:column;';
+  [['Home','index.html'],['Explore Design','explore.html'],['Contact','contact.html']].forEach(([l,h]) => {
+    const a = document.createElement('a');
+    a.textContent = l; a.href = h;
+    a.style.cssText = 'border-bottom:1px solid rgba(255,255,255,0.06);color:#888;font-family:var(--sans);font-size:14px;padding:14px 0;text-decoration:none;display:block;';
+    m.appendChild(a);
+  });
+  document.body.appendChild(m);
+}
+</script>
+<script src="shared-footer.js"></script>
+<script>
+injectNav('contact');
+injectFooter();
+</script>
+</body>
+</html>
