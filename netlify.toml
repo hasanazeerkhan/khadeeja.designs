@@ -8,3 +8,13 @@
   from = "/:page.html"
   to = "/:page"
   status = 301
+
+[[redirects]]
+  from = "/blog/:slug.html"
+  to = "/blog/:slug"
+  status = 301
+
+[[redirects]]
+  from = "/blog/:slug"
+  to = "/blog/:slug.html"
+  status = 200
