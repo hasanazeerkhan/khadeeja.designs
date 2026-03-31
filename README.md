@@ -1,146 +1,158 @@
-# Khadeeja Designs — Website v2
+# Khadeeja Designs — Website v3
 
 ## File structure
 
 ```
 khadeeja-designs/
-├── index.html          Home page
-├── explore.html        Product grid
-├── product.html        Shared product detail (?id=product-id)
-├── contact.html        Enquiry form
-├── thankyou.html       Post-submission confirmation
-├── shared.css          Nav, footer, buttons — shared across all pages
+├── index.html            Home
+├── explore.html          Portfolio grid
+├── product.html          Product detail (?id=product-id)
+├── contact.html          Enquiry form
+├── thankyou.html         Post-submission confirmation
+├── faq.html              Full FAQ page
+├── privacy.html          Privacy policy
+├── shared.css            Design system — shared by all pages
+├── shared-nav.js         Nav + footer injection for all pages
+├── netlify.toml          Clean URL config for Netlify
+│
+├── blog/
+│   ├── index.html        Blog listing
+│   └── how-to-choose-aari-embroidery-bridal-blouse.html
+│
 ├── products/
-│   ├── index.json      Master list of product IDs (edit to add/remove products)
+│   ├── index.json        Master list of product IDs
 │   ├── bridal-zardosi/
 │   │   ├── product.json
-│   │   ├── main.jpg    ← shown in the explore grid
+│   │   ├── main.jpg      ← shown in explore grid (min 800×800px square)
 │   │   ├── 2.jpg
 │   │   └── 3.jpg
 │   ├── temple-border/
-│   │   └── ...
 │   ├── couture-collar/
-│   │   └── ...
 │   └── lotus-vine/
-│       └── ...
-└── README.md
+│
+└── images/
+    ├── blog/             Cover images for blog posts
+    └── portfolio/        Any additional portfolio images
 ```
 
 ---
 
-## Setup checklist
+## Setup checklist (do in this order)
 
-### 1. Add your WhatsApp number
-Search for `918667454391` in all HTML files and replace with your number.
-Format: country code + number, no + or spaces. Example: `919876543210`
+### 1. Replace YOUR_PIXEL_ID
+Search all HTML files for `YOUR_PIXEL_ID` and replace with your Meta Pixel ID.
+Files to update: index, explore, product, contact, thankyou, faq, privacy,
+blog/index, blog/how-to-choose-aari...
 
-### 2. Connect the enquiry form (Formspree — free)
-1. Go to https://formspree.io and create a free account
-2. Create a new form, copy the form ID (looks like `xpzgkwqr`)
-3. In contact.html, replace `YOUR_FORM_ID` with your ID:
-   `https://formspree.io/f/YOUR_FORM_ID`
-4. You'll get an email for every enquiry with the customer's name, phone, design selected, and message
+### 2. Replace YOUR_GA4_ID
+Search all HTML files for `YOUR_GA4_ID` and replace with your GA4 Measurement ID (G-XXXXXXXXXX).
+Same files as above.
 
-### 3. Add Meta Pixel
-1. Go to Meta Events Manager and create a Pixel
-2. Copy your Pixel ID (a 15-16 digit number)
-3. In all 5 HTML files, replace `YOUR_PIXEL_ID` with your ID
-4. The pixel fires:
-   - PageView: on every page
-   - ViewContent: when a product detail is viewed (includes product name, category, price)
-   - Lead: when the enquiry form is submitted
-   - Lead (again): on the thank you page — use this as your conversion event
+### 3. Replace YOUR_FORM_ID
+In contact.html only, replace `YOUR_FORM_ID` with your Formspree form ID.
+Get it free at formspree.io — create a form, copy the ID.
 
-### 4. Add Google Analytics 4
-1. Go to Google Analytics and create a GA4 property
-2. Copy your Measurement ID (format: G-XXXXXXXXXX)
-3. In all 5 HTML files, replace `YOUR_GA4_ID` with your ID
-4. GA4 events fired:
-   - page_view: every page
-   - view_item: product detail page
-   - generate_lead: on form submit
-   - conversion: on thank you page
+### 4. Replace WhatsApp number
+Search for `918667454391` in all files and replace with your number.
+Format: country code + number, no + or spaces. E.g. `919876543210`
 
-### 5. Add your product images
-For each product folder, add:
-- `main.jpg` — square crop, min 800×800px, shown in the explore grid
-- `2.jpg`, `3.jpg` — detail shots shown in the image gallery on product page
+### 5. Add product images
+For each folder in products/:
+- main.jpg — square, min 800×800px (shown in grid)
+- 2.jpg, 3.jpg — detail shots (shown in product page gallery)
 
-If an image is missing, the site gracefully shows a dark placeholder. Nothing breaks.
+### 6. Add blog cover image
+Save to: images/blog/bridal-blouse-guide.jpg
+Recommended size: 1400×500px, landscape
 
 ---
 
 ## How to add a new product
 
-1. Create a new folder in `products/` — use a short hyphenated ID, e.g. `products/peacock-blouse/`
+1. Create folder: `products/my-new-product/`
 
-2. Add a `product.json` inside it:
-
+2. Add `product.json`:
 ```json
 {
-  "id": "peacock-blouse",
-  "tag": "Peacock Motif Bridal Blouse",
+  "id": "my-new-product",
+  "tag": "Full Product Name for Enquiry",
   "category": "bridal",
-  "title": "Peacock Motif Bridal Blouse",
+  "title": "Full Product Name",
   "oldPrice": "INR 7,990",
   "newPrice": "INR 6,990",
   "saving": "1,000",
   "rating": "4.9",
-  "summary": "One-line description shown prominently on the product page.",
-  "description": "Longer paragraph describing the design, occasion, technique, and comfort.",
+  "summary": "One sentence shown prominently on the product page.",
+  "description": "Longer paragraph describing the design and occasion.",
   "specs": {
     "category": "Bridal Blouse",
-    "workType": "Aari · Peacock motif · Stone",
+    "workType": "Aari · Zardosi · Stone",
     "timeline": "14–21 days"
   },
   "images": ["main.jpg", "2.jpg", "3.jpg"]
 }
 ```
 
-**category must be one of:** `bridal`, `saree`, `couture`
+`category` must be one of: `bridal`, `saree`, `couture`
 
-3. Add your images: `main.jpg`, `2.jpg`, `3.jpg` inside the folder
+3. Add images: main.jpg, 2.jpg, 3.jpg
 
-4. Open `products/index.json` and add the product ID:
-
+4. Add the ID to `products/index.json`:
 ```json
-[
-  "bridal-zardosi",
-  "temple-border",
-  "couture-collar",
-  "lotus-vine",
-  "peacock-blouse"
-]
+["bridal-zardosi", "temple-border", "couture-collar", "lotus-vine", "my-new-product"]
 ```
 
-That's it. The product automatically appears in the explore grid and gets its own trackable URL:
-`product.html?id=peacock-blouse`
+Done. Product appears in the grid and gets the URL: `/product?id=my-new-product`
 
 ---
 
-## Tracking funnel (for Meta Ads retargeting)
+## How to add a new blog post
 
-| Page | URL | Pixel event | What to do in Meta |
+1. Duplicate `blog/how-to-choose-aari-embroidery-bridal-blouse.html`
+2. Rename it: `blog/your-post-title-here.html`
+3. Update in the new file:
+   - `<title>` and `<meta name="description">`
+   - `<meta property="og:title">` and `og:description`
+   - `.post-meta` (category, date, read time)
+   - `<h1 class="post-title">` and `.post-intro`
+   - All `<article>` content
+   - Hero image src (add to images/blog/)
+   - Post byline at bottom
+4. Add a card to `blog/index.html` pointing to the new file
+5. Update the "More from the blog" sidebar in the new post
+
+Google will automatically discover and index the new post via your sitemap
+(add sitemap.xml when you have 5+ posts — Netlify can auto-generate it).
+
+---
+
+## Netlify deployment (clean URLs)
+
+The `netlify.toml` file handles clean URLs automatically.
+After deploying:
+- `/faq` serves `faq.html` — no .html in the URL bar
+- `/blog/` serves `blog/index.html`
+- `/product?id=bridal-zardosi` still works (query params pass through)
+
+To deploy:
+1. Push this folder to a GitHub repo
+2. Connect the repo to Netlify (netlify.com → Add new site → GitHub)
+3. Build settings: Build command = leave blank, Publish directory = .
+4. Deploy — Netlify reads netlify.toml automatically
+
+---
+
+## Tracking funnel (Meta Ads retargeting)
+
+| Page | URL | Pixel event | Audience to build |
 |------|-----|-------------|-------------------|
-| Home | index.html | PageView | Top of funnel audience |
-| Explore | explore.html | PageView | "Browsed products" audience |
-| Product detail | product.html?id=X | ViewContent | "Viewed specific product" audience |
-| Contact | contact.html | PageView | "Showed intent" audience |
-| Thank You | thankyou.html | Lead (conversion) | Confirmed lead — exclude from retargeting |
+| Home | / | PageView | Top of funnel |
+| Explore | /explore | PageView | "Browsed portfolio" |
+| Product | /product?id=X | ViewContent | "Viewed specific design" |
+| Contact | /contact | PageView | "High intent" |
+| Thank You | /thankyou | Lead (conversion) | Exclude from retargeting |
 
-**Recommended Meta Ads audiences:**
-- Retarget: visited explore.html but NOT thankyou.html → show "Browse our new arrivals" ad
-- Retarget: visited product.html but NOT thankyou.html → show the specific design they viewed
-- Lookalike: based on thankyou.html visitors → find similar people to target
-
----
-
-## Tech note
-
-The product pages use JavaScript `fetch()` to load JSON files, which requires a web server.
-This already works on:
-- VS Code Live Server (localhost:5500) ← what you're using now
-- Any web hosting (Netlify, Vercel, shared hosting, etc.)
-
-It does NOT work if you open the HTML files directly by double-clicking them (file:// protocol).
-This is expected — just use Live Server or upload to hosting.
+Recommended retargeting campaigns:
+- Visited /explore but NOT /thankyou → "Browse our new arrivals"
+- Visited /product?id=X but NOT /thankyou → Show the specific design they viewed
+- Lookalike of /thankyou visitors → Find similar audiences to target

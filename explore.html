@@ -4,206 +4,118 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Explore Design — Khadeeja Designs</title>
-<meta name="description" content="Browse our Aari embroidery portfolio. Bridal blouses, saree work, and couture pieces. View details and send your enquiry.">
-
-<!-- Meta Pixel -->
-<script>
-!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
-n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
-document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'YOUR_PIXEL_ID');
-fbq('track', 'PageView');
-</script>
-<!-- Google tag -->
+<meta name="description" content="Browse our Aari embroidery portfolio. Bridal blouses, saree work, and couture. View full details and send your enquiry.">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
-<script>
-window.dataLayer = window.dataLayer || [];
-function gtag(){dataLayer.push(arguments);}
-gtag('js', new Date()); gtag('config', 'YOUR_GA4_ID');
-</script>
-
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','YOUR_GA4_ID');</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-  .explore-header { padding: 48px 52px 36px; }
-  .explore-title { font-size: 36px; font-weight: 300; line-height: 1.1; margin-bottom: 10px; }
-  .explore-sub {
-    font-family: var(--sans); font-size: 14px; font-weight: 300;
-    color: var(--t2); line-height: 1.7; max-width: 480px;
-  }
+body{display:flex;flex-direction:column;min-height:100vh;}
+main{flex:1;}
+.explore-header{padding:48px 52px 36px;}
+.explore-title{font-size:36px;font-weight:300;line-height:1.1;margin-bottom:10px;}
+.explore-sub{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--t2);line-height:1.7;max-width:480px;}
 
-  .filter-row {
-    display: flex; align-items: center;
-    border-top: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
-    padding: 0 52px; overflow-x: auto; gap: 0;
-  }
-  .filter-tab {
-    font-family: var(--sans); font-size: 11px; font-weight: 400;
-    letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--t3); padding: 15px 26px;
-    cursor: pointer; border: none; background: none;
-    border-bottom: 2px solid transparent; margin-bottom: -1px;
-    transition: all 0.2s; white-space: nowrap;
-  }
-  .filter-tab:hover { color: var(--t2); }
-  .filter-tab.active { color: var(--gold); border-bottom-color: var(--gold); }
+.filter-row{display:flex;align-items:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0 52px;overflow-x:auto;gap:0;scrollbar-width:none;}
+.filter-row::-webkit-scrollbar{display:none;}
+.filter-tab{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--t3);padding:15px 26px;cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;white-space:nowrap;}
+.filter-tab:hover{color:var(--t2);}
+.filter-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 
-  #grid {
-    display: grid; grid-template-columns: repeat(4, 1fr);
-    gap: 1px; background: var(--border);
-    border-left: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-    min-height: 300px;
-  }
+#grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-left:1px solid var(--border);border-right:1px solid var(--border);min-height:280px;}
+.design-card{background:var(--black);cursor:pointer;transition:background 0.2s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block;}
+.design-card:hover{background:#0d0d0d;}
+.card-top-line{position:absolute;top:0;left:0;right:0;height:1px;background:transparent;transition:background 0.3s;z-index:1;}
+.design-card:hover .card-top-line{background:var(--gold);}
+.card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#111;}
+.card-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.92);transition:filter 0.4s,transform 0.5s;}
+.design-card:hover .card-img{filter:brightness(1.05);transform:scale(1.04);}
+.card-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
+.card-img-ph span{font-family:var(--sans);font-size:10px;color:#2a2a2a;letter-spacing:0.1em;text-transform:uppercase;}
+.card-body{padding:16px 20px 22px;}
+.card-cat{font-family:var(--sans);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;}
+.card-title{font-family:var(--serif);font-size:16px;font-weight:400;color:var(--t1);line-height:1.25;margin-bottom:12px;}
+.card-title em{font-style:italic;}
+.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;}
+.price-old{font-family:var(--sans);font-size:12px;color:var(--t3);text-decoration:line-through;}
+.price-new{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--t1);}
+.card-btn{width:100%;padding:10px;background:transparent;border:1px solid var(--border);color:var(--t3);font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
+.design-card:hover .card-btn{border-color:var(--gold);color:var(--gold);}
+.grid-msg{grid-column:1/-1;display:flex;align-items:center;justify-content:center;padding:80px;font-family:var(--sans);font-size:13px;color:var(--t3);}
 
-  .design-card {
-    background: var(--black); cursor: pointer;
-    transition: background 0.2s; position: relative; overflow: hidden;
-    text-decoration: none; color: inherit; display: block;
-  }
-  .design-card:hover { background: #0d0d0d; }
-  .card-top-line {
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 1px; background: transparent; transition: background 0.3s; z-index: 1;
-  }
-  .design-card:hover .card-top-line { background: var(--gold); }
-
-  .card-img-wrap { width: 100%; aspect-ratio: 1/1; overflow: hidden; background: #111; }
-  .card-img {
-    width: 100%; height: 100%; object-fit: cover; display: block;
-    filter: brightness(0.92); transition: filter 0.4s, transform 0.5s;
-  }
-  .design-card:hover .card-img { filter: brightness(1.05); transform: scale(1.04); }
-  .card-img-ph {
-    width: 100%; height: 100%;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .card-img-ph span { font-family: var(--sans); font-size: 10px; color: #2a2a2a; letter-spacing: 0.1em; text-transform: uppercase; }
-
-  .card-body { padding: 16px 18px 20px; }
-  .card-cat {
-    font-family: var(--sans); font-size: 10px;
-    letter-spacing: 0.15em; text-transform: uppercase;
-    color: var(--gold); margin-bottom: 6px; display: block;
-  }
-  .card-title {
-    font-family: var(--serif); font-size: 16px; font-weight: 400;
-    color: var(--t1); line-height: 1.25; margin-bottom: 12px;
-  }
-  .card-title em { font-style: italic; }
-  .price-row { display: flex; align-items: baseline; gap: 10px; margin-bottom: 14px; }
-  .price-old { font-family: var(--sans); font-size: 12px; color: var(--t3); text-decoration: line-through; }
-  .price-new { font-family: var(--sans); font-size: 14px; font-weight: 500; color: var(--t1); }
-  .card-btn {
-    width: 100%; padding: 10px;
-    background: transparent; border: 1px solid var(--border);
-    color: var(--t3); font-family: var(--sans); font-size: 11px;
-    letter-spacing: 0.1em; text-transform: uppercase;
-    cursor: pointer; transition: all 0.2s;
-  }
-  .design-card:hover .card-btn { border-color: var(--gold); color: var(--gold); }
-
-  .grid-loading {
-    grid-column: 1 / -1; display: flex; align-items: center; justify-content: center;
-    padding: 80px; font-family: var(--sans); font-size: 13px; color: var(--t3);
-  }
-
-  @media (max-width: 900px) {
-    .explore-header { padding: 32px 20px 24px; }
-    .filter-row { padding: 0 20px; }
-    #grid { grid-template-columns: repeat(2, 1fr); }
-  }
+@media(max-width:900px){
+  .explore-header{padding:32px 20px 24px;}
+  .filter-row{padding:0 20px;}
+  #grid{grid-template-columns:repeat(2,1fr);}
+}
 </style>
 </head>
 <body>
-
 <nav>
   <a class="brand" href="index.html">Khadeeja Designs</a>
-  <div class="nav-center">
-    <a class="nav-link" href="index.html">Home</a>
-    <a class="nav-link active" href="explore.html">Explore Design</a>
-    <a class="nav-link" href="contact.html">Contact</a>
-    <a class="nav-cta" href="contact.html">Order Consultation</a>
-  </div>
-  <button class="hamburger" onclick="toggleMenu('explore')">
-    <span></span><span></span><span></span>
-  </button>
+  <div class="nav-center"></div>
+  <button class="hamburger"><span></span><span></span><span></span></button>
 </nav>
 
-<div class="explore-header">
-  <div class="kicker">
-    <div class="kicker-line"></div>
-    <span class="kicker-text">Portfolio</span>
+<main>
+  <div class="explore-header">
+    <div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Portfolio</span></div>
+    <h1 class="explore-title">Explore Design</h1>
+    <p class="explore-sub">Browse our latest work. Open any design to view full details and send your enquiry.</p>
   </div>
-  <h1 class="explore-title">Explore Design</h1>
-  <p class="explore-sub">Browse our latest work. Open any design to view full details and send your enquiry.</p>
-</div>
 
-<div class="filter-row">
-  <button class="filter-tab active" onclick="filterCards(this,'all')">All</button>
-  <button class="filter-tab" onclick="filterCards(this,'bridal')">Bridal</button>
-  <button class="filter-tab" onclick="filterCards(this,'saree')">Saree</button>
-  <button class="filter-tab" onclick="filterCards(this,'couture')">Couture</button>
-</div>
+  <div class="filter-row">
+    <button class="filter-tab active" onclick="filterCards(this,'all')">All</button>
+    <button class="filter-tab" onclick="filterCards(this,'bridal')">Bridal</button>
+    <button class="filter-tab" onclick="filterCards(this,'saree')">Saree</button>
+    <button class="filter-tab" onclick="filterCards(this,'couture')">Couture</button>
+  </div>
 
-<div id="grid">
-  <div class="grid-loading">Loading designs…</div>
-</div>
+  <div id="grid"><div class="grid-msg">Loading designs…</div></div>
+</main>
 
 <footer></footer>
-
+<script src="shared-nav.js"></script>
 <script>
+initPage('explore');
+
 let allProducts = [];
 
 async function loadProducts() {
-  const grid = document.getElementById('grid');
   try {
-    const idxRes = await fetch('products/index.json');
-    const ids = await idxRes.json();
-    const products = await Promise.all(
-      ids.map(id =>
-        fetch(`products/${id}/product.json`)
-          .then(r => r.json())
-          .catch(() => null)
-      )
-    );
-    allProducts = products.filter(Boolean);
+    const ids = await fetch('products/index.json').then(r => r.json());
+    allProducts = (await Promise.all(
+      ids.map(id => fetch(`products/${id}/product.json`).then(r => r.json()).catch(() => null))
+    )).filter(Boolean);
     renderGrid(allProducts);
   } catch(e) {
-    grid.innerHTML = '<div class="grid-loading">Unable to load designs. Please refresh.</div>';
+    document.getElementById('grid').innerHTML = '<div class="grid-msg">Unable to load designs. Please refresh.</div>';
   }
 }
 
 function renderGrid(products) {
   const grid = document.getElementById('grid');
   if (!products.length) {
-    grid.innerHTML = '<div class="grid-loading">No designs in this category yet.</div>';
+    grid.innerHTML = '<div class="grid-msg">No designs in this category yet.</div>';
     return;
   }
   grid.innerHTML = products.map(p => {
-    const titleParts = p.title.split(' ');
-    const lastWord = titleParts.pop();
-    const restTitle = titleParts.join(' ');
+    const words = p.title.split(' ');
+    const last = words.pop();
     return `
-      <a class="design-card" href="product.html?id=${p.id}" data-cat="${p.category}">
+      <a class="design-card" href="product.html?id=${p.id}">
         <div class="card-top-line"></div>
         <div class="card-img-wrap">
-          <img class="card-img"
-            src="products/${p.id}/main.jpg"
-            alt="${p.title}"
+          <img class="card-img" src="products/${p.id}/main.jpg" alt="${p.title}"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="card-img-ph" style="display:none;">
-            <span>${p.category}</span>
-          </div>
+          <div class="card-img-ph" style="display:none;"><span>${p.category}</span></div>
         </div>
         <div class="card-body">
           <span class="card-cat">${p.category}</span>
-          <div class="card-title">${restTitle}<br><em>${lastWord}</em></div>
+          <div class="card-title">${words.join(' ')}<br><em>${last}</em></div>
           <div class="price-row">
             <span class="price-old">${p.oldPrice}</span>
             <span class="price-new">${p.newPrice}</span>
@@ -217,16 +129,10 @@ function renderGrid(products) {
 function filterCards(btn, cat) {
   document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
   btn.classList.add('active');
-  const filtered = cat === 'all' ? allProducts : allProducts.filter(p => p.category === cat);
-  renderGrid(filtered);
+  renderGrid(cat === 'all' ? allProducts : allProducts.filter(p => p.category === cat));
 }
 
 loadProducts();
-</script>
-<script src="shared-footer.js"></script>
-<script>
-injectNav('explore');
-injectFooter();
 </script>
 </body>
 </html>

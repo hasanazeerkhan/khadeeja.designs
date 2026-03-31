@@ -1,20 +1,24 @@
-[[redirects]]
-  from = "/index.html"
-  to = "/"
-  status = 301
-  force = true
+# netlify.toml
+# Enables clean URLs — visitors see /faq not /faq.html
+# Also handles /blog/ subfolder correctly
+
+[build]
+  publish = "."
 
 [[redirects]]
-  from = "/:page.html"
-  to = "/:page"
+  from = "/blog"
+  to   = "/blog/"
   status = 301
 
+# Pretty URLs: /page → /page.html (served transparently, URL stays clean)
 [[redirects]]
-  from = "/blog/:slug.html"
-  to = "/blog/:slug"
-  status = 301
+  from   = "/*"
+  to     = "/:splat.html"
+  status = 200
+  conditions = {Language = ["en"]}
 
+# Fallback for any path not matched above
 [[redirects]]
-  from = "/blog/:slug"
-  to = "/blog/:slug.html"
+  from   = "/*"
+  to     = "/index.html"
   status = 200

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Khadeeja Designs</title>
+<meta name="description" content="Tips, guides, and inspiration on Aari embroidery, bridal fashion, and how to choose the right embroidery for your wedding.">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','YOUR_GA4_ID');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>
+body{display:flex;flex-direction:column;min-height:100vh;}
+main{flex:1;}
+.blog-header{padding:52px 52px 44px;border-bottom:1px solid var(--border);}
+.blog-title{font-size:40px;font-weight:300;line-height:1.1;}
+.blog-title em{font-style:italic;color:var(--gold-light);}
+.blog-sub{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--t2);margin-top:10px;line-height:1.7;}
+
+.blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border);border-left:1px solid var(--border);border-right:1px solid var(--border);}
+.blog-card{background:var(--black);text-decoration:none;color:inherit;display:block;transition:background 0.2s;position:relative;}
+.blog-card:hover{background:#0d0d0d;}
+.card-top-rule{position:absolute;top:0;left:0;right:0;height:1px;background:transparent;transition:background 0.3s;}
+.blog-card:hover .card-top-rule{background:var(--gold);}
+
+.blog-thumb{width:100%;aspect-ratio:16/9;overflow:hidden;background:#111;}
+.blog-thumb img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.88);transition:filter 0.4s,transform 0.5s;}
+.blog-card:hover .blog-thumb img{filter:brightness(1.0);transform:scale(1.03);}
+.blog-thumb-ph{width:100%;height:100%;background:#141414;display:flex;align-items:center;justify-content:center;}
+.blog-thumb-ph span{font-family:var(--sans);font-size:10px;color:#2a2a2a;letter-spacing:0.1em;text-transform:uppercase;}
+
+.blog-card-body{padding:24px 24px 28px;}
+.blog-meta{display:flex;align-items:center;gap:12px;margin-bottom:12px;}
+.blog-cat{font-family:var(--sans);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);}
+.blog-date{font-family:var(--sans);font-size:11px;color:var(--t3);}
+.blog-card-title{font-family:var(--serif);font-size:20px;font-weight:400;color:var(--t1);line-height:1.3;margin-bottom:10px;}
+.blog-card-title em{font-style:italic;}
+.blog-excerpt{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--t2);line-height:1.7;margin-bottom:16px;}
+.blog-read{font-family:var(--sans);font-size:12px;color:var(--t3);letter-spacing:0.06em;transition:color 0.2s;}
+.blog-card:hover .blog-read{color:var(--gold);}
+
+/* Coming soon card style */
+.blog-card.soon{opacity:0.5;pointer-events:none;}
+
+@media(max-width:900px){
+  .blog-header{padding:36px 20px 32px;}
+  .blog-title{font-size:32px;}
+  .blog-grid{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="../index.html">Khadeeja Designs</a>
+  <div class="nav-center"></div>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+  <div class="blog-header">
+    <div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Journal</span></div>
+    <h1 class="blog-title">From the <em>studio</em></h1>
+    <p class="blog-sub">Guides, tips and ideas on Aari embroidery, bridal fashion, and making your wedding look exactly what you imagined.</p>
+  </div>
+
+  <div class="blog-grid">
+
+    <!-- POST 1 — live -->
+    <a class="blog-card" href="how-to-choose-aari-embroidery-bridal-blouse.html">
+      <div class="card-top-rule"></div>
+      <div class="blog-thumb">
+        <img src="../images/blog/bridal-blouse-guide.jpg" alt="Choosing Aari embroidery for bridal blouse"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <div class="blog-thumb-ph" style="display:none;"><span>Add cover image</span></div>
+      </div>
+      <div class="blog-card-body">
+        <div class="blog-meta"><span class="blog-cat">Bridal</span><span class="blog-date">June 2025</span></div>
+        <h2 class="blog-card-title">How to choose the right <em>Aari embroidery</em> style for your wedding blouse</h2>
+        <p class="blog-excerpt">Heavy Zardosi or delicate thread work? Full coverage or neckline-only? Here's how to match the embroidery to your saree, jewellery, and occasion.</p>
+        <span class="blog-read">Read article →</span>
+      </div>
+    </a>
+
+    <!-- POST 2 — coming soon -->
+    <div class="blog-card soon">
+      <div class="card-top-rule"></div>
+      <div class="blog-thumb"><div class="blog-thumb-ph"><span>Coming soon</span></div></div>
+      <div class="blog-card-body">
+        <div class="blog-meta"><span class="blog-cat">Guide</span><span class="blog-date">Coming soon</span></div>
+        <h2 class="blog-card-title"><em>Aari vs Zardosi</em> — what is the difference and which one is right for you?</h2>
+        <p class="blog-excerpt">Two terms you'll hear constantly when shopping for bridal embroidery. Here's what they actually mean.</p>
+        <span class="blog-read">Coming soon</span>
+      </div>
+    </div>
+
+    <!-- POST 3 — coming soon -->
+    <div class="blog-card soon">
+      <div class="card-top-rule"></div>
+      <div class="blog-thumb"><div class="blog-thumb-ph"><span>Coming soon</span></div></div>
+      <div class="blog-card-body">
+        <div class="blog-meta"><span class="blog-cat">Care</span><span class="blog-date">Coming soon</span></div>
+        <h2 class="blog-card-title">How to <em>care for</em> your Aari embroidered blouse after the wedding</h2>
+        <p class="blog-excerpt">The embroidery is done. Now how do you store, clean, and preserve it so it lasts for years?</p>
+        <span class="blog-read">Coming soon</span>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer></footer>
+<script src="../shared-nav.js"></script>
+<script>initPage('blog', '../');</script>
+</body>
+</html>

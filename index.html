@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Khadeeja Designs — Luxury Aari Embroidery, Trichy</title>
-<meta name="description" content="Boutique Aari embroidery crafted for brides, sarees and couture. Handmade in Trichy with pan India delivery. Send your enquiry today.">
+<meta name="description" content="Boutique Aari embroidery crafted for brides, sarees and couture. Fully handmade in Trichy with pan India delivery.">
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','YOUR_GA4_ID');</script>
@@ -14,50 +14,90 @@
 <link rel="stylesheet" href="shared.css">
 <style>
 body { display:flex; flex-direction:column; min-height:100vh; }
+
 .hero { flex:1; display:flex; flex-direction:column; justify-content:space-between; }
-.hero-top { padding:52px 52px 0; }
-.hero-heading { font-size:clamp(36px,4.8vw,62px); font-weight:300; line-height:1.08; color:var(--t1); letter-spacing:-0.015em; max-width:760px; }
+.hero-top { padding:56px 52px 0; }
+.hero-heading {
+  font-size: clamp(38px, 4.8vw, 64px);
+  font-weight:300; line-height:1.08; color:var(--t1);
+  letter-spacing:-0.015em; max-width:780px;
+}
 .hero-heading em { font-style:italic; color:var(--gold-light); }
-.hero-bottom { display:flex; align-items:flex-end; justify-content:space-between; gap:40px; padding:36px 52px 44px; border-top:1px solid var(--border); margin-top:48px; }
-.hero-desc { font-family:var(--sans); font-size:14px; font-weight:300; color:var(--t2); line-height:1.8; max-width:340px; }
-.hero-right { display:flex; flex-direction:column; align-items:flex-end; gap:18px; flex-shrink:0; }
-.stats-row { display:flex; gap:36px; }
+
+.hero-bottom {
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:40px; padding:36px 52px 48px;
+  border-top:1px solid var(--border); margin-top:52px;
+}
+.hero-desc {
+  font-family:var(--sans); font-size:14px; font-weight:300;
+  color:var(--t2); line-height:1.85; max-width:340px;
+}
+.hero-right { display:flex; flex-direction:column; align-items:flex-end; gap:20px; flex-shrink:0; }
+.stats-row { display:flex; gap:40px; }
 .stat { text-align:right; }
-.stat-val { display:block; font-family:var(--serif); font-size:20px; color:var(--gold-light); line-height:1; margin-bottom:4px; }
+.stat-val { display:block; font-family:var(--serif); font-size:21px; color:var(--gold-light); line-height:1; margin-bottom:5px; }
 .stat-lbl { display:block; font-family:var(--sans); font-size:10px; letter-spacing:0.12em; text-transform:uppercase; color:var(--t3); }
 
-/* FAQ */
-.faq-section { border-top:1px solid var(--border); padding:56px 52px 60px; }
-.faq-header { display:flex; align-items:flex-end; justify-content:space-between; gap:24px; margin-bottom:40px; }
-.faq-title { font-size:32px; font-weight:300; line-height:1.1; }
+/* ── FAQ SECTION ── */
+.faq-section { border-top:1px solid var(--border); padding:60px 52px 64px; }
+.faq-header {
+  display:flex; align-items:flex-end; justify-content:space-between;
+  gap:24px; margin-bottom:44px;
+}
+.faq-title { font-size:34px; font-weight:300; line-height:1.1; }
 .faq-title em { font-style:italic; color:var(--gold-light); }
-.faq-all-link { font-family:var(--sans); font-size:12px; color:var(--t3); text-decoration:none; white-space:nowrap; transition:color 0.2s; flex-shrink:0; padding-bottom:4px; }
+.faq-all-link {
+  font-family:var(--sans); font-size:12px; color:var(--t3);
+  text-decoration:none; white-space:nowrap;
+  transition:color 0.2s; padding-bottom:4px; flex-shrink:0;
+}
 .faq-all-link:hover { color:var(--gold); }
+
 .faq-list { display:flex; flex-direction:column; }
 .faq-item { border-top:1px solid var(--border); }
 .faq-item:last-child { border-bottom:1px solid var(--border); }
-.faq-q { display:flex; align-items:center; justify-content:space-between; gap:24px; padding:22px 0; cursor:pointer; background:none; border:none; width:100%; text-align:left; }
-.faq-q-text { font-family:var(--serif); font-size:18px; font-weight:400; color:var(--t1); line-height:1.3; }
-.faq-icon { width:20px; height:20px; flex-shrink:0; display:flex; align-items:center; justify-content:center; position:relative; }
-.faq-icon::before,.faq-icon::after { content:''; position:absolute; background:var(--gold); border-radius:1px; transition:transform 0.25s, opacity 0.25s; }
+.faq-btn {
+  display:flex; align-items:center; justify-content:space-between;
+  gap:24px; padding:22px 0; cursor:pointer;
+  background:none; border:none; width:100%; text-align:left;
+}
+.faq-q {
+  font-family:var(--serif); font-size:18px; font-weight:400;
+  color:var(--t1); line-height:1.3; transition:color 0.2s;
+}
+.faq-icon {
+  width:18px; height:18px; flex-shrink:0; position:relative;
+  display:flex; align-items:center; justify-content:center;
+}
+.faq-icon::before, .faq-icon::after {
+  content:''; position:absolute; background:var(--gold);
+  border-radius:1px; transition:transform 0.28s, opacity 0.28s;
+}
 .faq-icon::before { width:12px; height:1px; }
 .faq-icon::after  { width:1px; height:12px; }
 .faq-item.open .faq-icon::after { transform:rotate(90deg); opacity:0; }
-.faq-item.open .faq-q-text { color:var(--gold-light); }
-.faq-a { font-family:var(--sans); font-size:14px; font-weight:300; color:var(--t2); line-height:1.8; max-height:0; overflow:hidden; transition:max-height 0.35s ease, padding-bottom 0.25s; padding-bottom:0; }
-.faq-item.open .faq-a { max-height:300px; padding-bottom:24px; }
+.faq-item.open .faq-q { color:var(--gold-light); }
+.faq-a {
+  font-family:var(--sans); font-size:14px; font-weight:300;
+  color:var(--t2); line-height:1.85;
+  max-height:0; overflow:hidden;
+  transition:max-height 0.38s ease, padding-bottom 0.28s;
+}
+.faq-item.open .faq-a { max-height:320px; padding-bottom:26px; }
 
 @media(max-width:900px){
-  .hero-top{padding:36px 20px 0;}
-  .hero-heading{font-size:clamp(34px,9vw,48px);}
-  .hero-bottom{flex-direction:column;align-items:flex-start;padding:28px 20px 36px;gap:24px;margin-top:36px;}
+  .hero-top{padding:40px 20px 0;}
+  .hero-heading{font-size:clamp(34px,9vw,50px);}
+  .hero-bottom{flex-direction:column;align-items:flex-start;padding:28px 20px 40px;gap:24px;margin-top:36px;}
   .hero-right{align-items:flex-start;width:100%;}
-  .stats-row{gap:20px;}
+  .stats-row{gap:24px;}
   .stat{text-align:left;}
   .btn-gold{width:100%;text-align:center;padding:15px;}
-  .faq-section{padding:40px 20px 48px;}
-  .faq-header{flex-direction:column;align-items:flex-start;gap:12px;}
-  .faq-q-text{font-size:16px;}
+  .faq-section{padding:44px 20px 52px;}
+  .faq-header{flex-direction:column;align-items:flex-start;gap:10px;}
+  .faq-title{font-size:28px;}
+  .faq-q{font-size:16px;}
 }
 </style>
 </head>
@@ -65,27 +105,42 @@ body { display:flex; flex-direction:column; min-height:100vh; }
 <nav>
   <a class="brand" href="index.html">Khadeeja Designs</a>
   <div class="nav-center"></div>
-  <button class="hamburger" onclick="toggleMenu('home')"><span></span><span></span><span></span></button>
+  <button class="hamburger"><span></span><span></span><span></span></button>
 </nav>
 
 <main class="hero">
   <div class="hero-top">
-    <div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Boutique Aari Embroidery · Trichy</span></div>
-    <h1 class="hero-heading">Luxury embroidery<br>crafted for<br><em>brides, sarees,</em><br>&amp; couture.</h1>
+    <div class="kicker">
+      <div class="kicker-line"></div>
+      <span class="kicker-text">Boutique Aari Embroidery · Trichy</span>
+    </div>
+    <h1 class="hero-heading">
+      Luxury embroidery<br>
+      crafted for<br>
+      <em>brides, sarees,</em><br>
+      &amp; couture.
+    </h1>
   </div>
+
   <div class="hero-bottom">
-    <p class="hero-desc">Every order is fully handmade with premium Aari work. Browse the portfolio, choose a style, and send your brief — we reply within 48 hours.</p>
+    <p class="hero-desc">
+      Every order is fully handmade with premium Aari work.
+      Browse the portfolio, choose a style, and send your brief —
+      we reply within 48 hours.
+    </p>
     <div class="hero-right">
       <div class="stats-row">
         <div class="stat"><span class="stat-val">200+</span><span class="stat-lbl">Orders</span></div>
         <div class="stat"><span class="stat-val">4.9 ★</span><span class="stat-lbl">Rating</span></div>
         <div class="stat"><span class="stat-val">Pan India</span><span class="stat-lbl">Delivery</span></div>
       </div>
-      <a class="btn-gold" href="contact.html">Explore Design →</a>
+      <!-- Changed from Send Enquiry to Explore Design -->
+      <a class="btn-gold" href="explore.html">Explore Design →</a>
     </div>
   </div>
 </main>
 
+<!-- Short FAQ -->
 <section class="faq-section">
   <div class="faq-header">
     <div>
@@ -94,41 +149,55 @@ body { display:flex; flex-direction:column; min-height:100vh; }
     </div>
     <a class="faq-all-link" href="faq.html">See all questions →</a>
   </div>
+
   <div class="faq-list">
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">How long does an Aari embroidery order take?</span><span class="faq-icon"></span></button>
-      <div class="faq-a">Most orders are completed in 14–21 days after the design brief is confirmed. Saree border work can be faster at 10–14 days. We'll give you an exact timeline with your quote so you can plan around your event date.</div>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">How long does an Aari embroidery order take?</span>
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-a">Most orders are completed in 14–21 days after the design brief is confirmed. Saree border work is typically faster at 10–14 days. We'll give you an exact timeline with your quote so you can plan around your event date.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Can I customise a design I saw in the portfolio?</span><span class="faq-icon"></span></button>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">Can I customise a design I saw in the portfolio?</span>
+        <span class="faq-icon"></span>
+      </button>
       <div class="faq-a">Yes — every order is made to your brief. You can request changes to colours, motif placement, density, or sleeve style. Share a reference photo or describe what you have in mind and we'll adapt the design accordingly.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Do you deliver outside Trichy?</span><span class="faq-icon"></span></button>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">Do you deliver outside Trichy?</span>
+        <span class="faq-icon"></span>
+      </button>
       <div class="faq-a">Yes, we deliver across India with tracked shipping. You'll receive a tracking link once your order is dispatched. Delivery typically takes 2–4 days after the embroidery work is complete.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">What do I need to send an enquiry?</span><span class="faq-icon"></span></button>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">What do I need to send an enquiry?</span>
+        <span class="faq-icon"></span>
+      </button>
       <div class="faq-a">Just your name, mobile number, and a rough idea of what you need. You don't need to have everything figured out — we'll ask the right questions and guide you through the brief at no commitment.</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)"><span class="faq-q-text">Is payment required before work begins?</span><span class="faq-icon"></span></button>
-      <div class="faq-a">We collect an advance after the design brief is approved. The balance is due on completion before shipping. Full payment terms are shared with your quote — no surprises.</div>
+      <button class="faq-btn" onclick="toggleFaq(this)">
+        <span class="faq-q">Is payment required before work begins?</span>
+        <span class="faq-icon"></span>
+      </button>
+      <div class="faq-a">We collect an advance after the design brief is approved and before work begins. The balance is due on completion, before shipping. Full payment terms are shared with your quote — no surprises.</div>
     </div>
   </div>
 </section>
 
 <footer></footer>
-
-<script src="shared-footer.js"></script>
+<script src="shared-nav.js"></script>
 <script>
-injectNav('home');
-injectFooter();
+initPage('home');
 function toggleFaq(btn) {
   const item = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
+  const open = item.classList.contains('open');
   document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
-  if (!isOpen) item.classList.add('open');
+  if (!open) item.classList.add('open');
 }
 </script>
 </body>
