@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="../shared.css">
 <style>
 body{display:flex;flex-direction:column;min-height:100vh;}
 main{flex:1;}
@@ -90,7 +90,7 @@ textarea.fi{resize:none;min-height:80px;line-height:1.7;}
 </head>
 <body>
 <nav>
-  <a class="brand" href="index.html">Khadeeja Designs</a>
+  <a class="brand" href="/">Khadeeja Designs</a>
   <div class="nav-center"></div>
   <button class="hamburger"><span></span><span></span><span></span></button>
 </nav>
@@ -138,7 +138,7 @@ textarea.fi{resize:none;min-height:80px;line-height:1.7;}
     <div class="contact-right">
       <h2 class="form-heading">Send your<br><em>enquiry.</em></h2>
       <p class="form-sub">Fill in the details below — we'll get back within 48 hours with pricing and next steps.</p>
-      <p class="faq-hint">Have questions before enquiring? <a href="faq.html">Read our FAQ →</a></p>
+      <p class="faq-hint">Have questions before enquiring? <a href="../faq/">Read our FAQ →</a></p>
 
       <!-- Selected design — shown only when arriving from product page -->
       <div class="design-tag-wrap" id="design-tag-wrap">
@@ -146,7 +146,7 @@ textarea.fi{resize:none;min-height:80px;line-height:1.7;}
           <span class="design-tag-label">Selected design</span>
           <div class="design-tag-row">
             <span class="design-tag-value" id="design-tag-display"></span>
-            <a class="design-tag-change" href="explore.html">Change design →</a>
+            <a class="design-tag-change" href="../explore/">Change design →</a>
           </div>
         </div>
         <input type="hidden" id="f-design" value="">
@@ -176,9 +176,9 @@ textarea.fi{resize:none;min-height:80px;line-height:1.7;}
 </main>
 
 <footer></footer>
-<script src="shared-nav.js"></script>
+<script src="../shared-nav.js"></script>
 <script>
-initPage('');
+initPage('contact');
 
 /* ── Read design tag from URL ── */
 (function() {
@@ -233,7 +233,7 @@ async function submitForm() {
     if (!res.ok) throw new Error();
   } catch(e) { /* fall through to thank you regardless */ }
 
-  window.location.href = 'thankyou.html';
+  window.location.href = '../thankyou/';
 }
 </script>
 </body>

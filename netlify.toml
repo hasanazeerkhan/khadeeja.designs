@@ -1,24 +1,56 @@
 # netlify.toml
-# Enables clean URLs — visitors see /faq not /faq.html
-# Also handles /blog/ subfolder correctly
+# Enables clean URLs with folder structure
+# /explore/ → /explore/index.html (automatic)
+# /blog/ → /blog/index.html (automatic)
+# etc.
 
 [build]
   publish = "."
 
+# Redirect /blog to /blog/ for consistency
 [[redirects]]
   from = "/blog"
   to   = "/blog/"
   status = 301
 
-# Pretty URLs: /page → /page.html (served transparently, URL stays clean)
+# Redirect /explore to /explore/ for consistency
 [[redirects]]
-  from   = "/*"
-  to     = "/:splat.html"
-  status = 200
-  conditions = {Language = ["en"]}
+  from = "/explore"
+  to   = "/explore/"
+  status = 301
 
-# Fallback for any path not matched above
+# Redirect /faq to /faq/ for consistency
 [[redirects]]
-  from   = "/*"
-  to     = "/index.html"
+  from = "/faq"
+  to   = "/faq/"
+  status = 301
+
+# Redirect /contact to /contact/ for consistency
+[[redirects]]
+  from = "/contact"
+  to   = "/contact/"
+  status = 301
+
+# Redirect /privacy to /privacy/ for consistency
+[[redirects]]
+  from = "/privacy"
+  to   = "/privacy/"
+  status = 301
+
+# Redirect /thankyou to /thankyou/ for consistency
+[[redirects]]
+  from = "/thankyou"
+  to   = "/thankyou/"
+  status = 301
+
+# Redirect /product to /product/ for consistency
+[[redirects]]
+  from = "/product"
+  to   = "/product/"
+  status = 301
+
+# Fallback for any unmatched routes
+[[redirects]]
+  from = "/*"
+  to   = "/index.html"
   status = 200

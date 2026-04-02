@@ -12,7 +12,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="../shared.css">
 <style>
 body{display:flex;flex-direction:column;min-height:100vh;}
 main{flex:1;}
@@ -60,7 +60,7 @@ main{flex:1;}
 </head>
 <body>
 <nav>
-  <a class="brand" href="index.html">Khadeeja Designs</a>
+  <a class="brand" href="/">Khadeeja Designs</a>
   <div class="nav-center"></div>
   <button class="hamburger"><span></span><span></span><span></span></button>
 </nav>
@@ -85,7 +85,7 @@ main{flex:1;}
       <a class="btn-wa" href="https://wa.me/918667454391" target="_blank" rel="noopener">
         <div class="btn-wa-dot"></div>Get a faster reply on WhatsApp
       </a>
-      <a class="btn-ghost" href="explore.html">Explore more work</a>
+      <a class="btn-ghost" href="../explore/">Explore more work</a>
     </div>
   </div>
 
@@ -95,7 +95,7 @@ main{flex:1;}
         <div style="width:20px;height:1px;background:var(--gold);flex-shrink:0;"></div>
         <span>While you wait</span>
       </div>
-      <a class="ty-view-all" href="explore.html">View full portfolio →</a>
+      <a class="ty-view-all" href="../explore/">View full portfolio →</a>
     </div>
     <div class="photo-strip" id="photo-strip">
       <div class="photo-ph"><span>Loading…</span></div>
@@ -104,18 +104,18 @@ main{flex:1;}
 </main>
 
 <footer></footer>
-<script src="shared-nav.js"></script>
+<script src="../shared-nav.js"></script>
 <script>
 initPage('');
 async function loadStrip() {
   try {
-    const ids = await fetch('products/index.json').then(r => r.json());
+    const ids = await fetch('../explore/designs/products/index.json').then(r => r.json());
     const products = (await Promise.all(
-      ids.slice(0,4).map(id => fetch(`products/${id}/product.json`).then(r=>r.json()).catch(()=>null))
+      ids.slice(0,4).map(id => fetch(`../explore/designs/products/${id}/product.json`).then(r=>r.json()).catch(()=>null))
     )).filter(Boolean);
     document.getElementById('photo-strip').innerHTML = products.map(p => `
-      <a class="photo-card" href="product.html?id=${p.id}">
-        <img src="products/${p.id}/main.jpg" alt="${p.title}"
+      <a class="photo-card" href="../explore/product.html?id=${p.id}">
+        <img src="../explore/designs/products/${p.id}/main.jpg" alt="${p.title}"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="photo-ph" style="display:none;"><span>${p.category}</span></div>
         <div class="photo-hover"><span class="ph-name">${p.title}</span></div>

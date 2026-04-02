@@ -1,26 +1,20 @@
 /**
  * shared-nav.js
  * Handles nav, footer, and mobile menu for ALL pages.
+ * Uses ABSOLUTE PATHS so navigation works from any page depth.
  *
- * Usage on ROOT pages (index, explore, product, contact, faq, privacy, thankyou):
- *   <script src="shared-nav.js"></script>
- *   <script>initPage('home');</script>
+ * Usage on ALL pages:
+ *   <script src="../shared-nav.js"></script>  (adjust ../ based on depth)
+ *   <script>initPage('home');</script>        (or 'explore', 'blog', 'faq', 'contact')
  *
- * Usage on BLOG pages (blog/index.html, blog/post-name.html):
- *   <script src="../shared-nav.js"></script>
- *   <script>initPage('blog', '../');</script>
- *
- * @param {string} activePage - nav item to highlight
- * @param {string} root       - path prefix to reach root ('./' for root, '../' for blog/)
+ * @param {string} activePage - nav item to highlight ('home', 'explore', 'blog', 'faq', 'contact')
  */
-function initPage(activePage, root) {
-  root = root || '';
-
+function initPage(activePage) {
   const NAV_PAGES = [
-    { id: 'home',    label: 'Home',          href: root + 'index.html'   },
-    { id: 'explore', label: 'Explore Design', href: root + 'explore.html' },
-    { id: 'blog',    label: 'Blog',           href: root + 'blog/'        },
-    { id: 'faq',     label: 'FAQ',            href: root + 'faq.html'     },
+    { id: 'home',    label: 'Home',            href: '/'               },
+    { id: 'explore', label: 'Explore Design', href: '/explore/'       },
+    { id: 'blog',    label: 'Blog',            href: '/blog/'          },
+    { id: 'faq',     label: 'FAQ',             href: '/faq/'          },
   ];
 
   /* ── Inject nav links ── */
@@ -30,7 +24,7 @@ function initPage(activePage, root) {
       NAV_PAGES.map(p =>
         `<a class="nav-link${p.id === activePage ? ' active' : ''}" href="${p.href}">${p.label}</a>`
       ).join('') +
-      `<a class="nav-cta" href="${root}contact.html">Order Consultation</a>`;
+      `<a class="nav-cta" href="/contact/">Order Consultation</a>`;
   }
 
   /* ── Inject footer ── */
@@ -45,13 +39,13 @@ function initPage(activePage, root) {
         <div class="footer-cols">
           <div class="footer-col">
             <span class="footer-col-label">Explore</span>
-            <a href="${root}explore.html">Portfolio</a>
-            <a href="${root}blog/">Blog</a>
-            <a href="${root}faq.html">FAQ</a>
+            <a href="/explore/">Portfolio</a>
+            <a href="/blog/">Blog</a>
+            <a href="/faq/">FAQ</a>
           </div>
           <div class="footer-col">
             <span class="footer-col-label">Contact</span>
-            <a href="${root}contact.html">Send Enquiry</a>
+            <a href="/contact/">Send Enquiry</a>
             <a href="https://wa.me/918667454391" target="_blank" rel="noopener">WhatsApp</a>
             <a href="https://instagram.com/khadeeja.designs" target="_blank" rel="noopener">Instagram</a>
           </div>
@@ -60,8 +54,8 @@ function initPage(activePage, root) {
       <div class="footer-bottom">
         <span class="footer-copy">© Khadeeja Designs. All rights reserved.</span>
         <div class="footer-legal">
-          <a href="${root}privacy.html">Privacy Policy</a>
-          <a href="${root}faq.html">FAQ</a>
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/faq/">FAQ</a>
         </div>
       </div>`;
   }
@@ -69,19 +63,19 @@ function initPage(activePage, root) {
   /* ── Wire hamburger ── */
   const hamburger = document.querySelector('.hamburger');
   if (hamburger) {
-    hamburger.onclick = () => _toggleMobileMenu(root);
+    hamburger.onclick = () => _toggleMobileMenu();
   }
 }
 
-function _toggleMobileMenu(root) {
+function _toggleMobileMenu() {
   const existing = document.getElementById('mob-menu');
   if (existing) { existing.remove(); return; }
 
   const pages = [
-    { label: 'Home',           href: root + 'index.html'   },
-    { label: 'Explore Design', href: root + 'explore.html' },
-    { label: 'Blog',           href: root + 'blog/'        },
-    { label: 'FAQ',            href: root + 'faq.html'     },
+    { label: 'Home',           href: '/'               },
+    { label: 'Explore Design', href: '/explore/'       },
+    { label: 'Blog',           href: '/blog/'          },
+    { label: 'FAQ',            href: '/faq/'           },
   ];
 
   const navH = document.querySelector('nav').offsetHeight;
@@ -101,7 +95,7 @@ function _toggleMobileMenu(root) {
 
   const cta = document.createElement('a');
   cta.textContent = 'Order Consultation';
-  cta.href = root + 'contact.html';
+  cta.href = '/contact/';
   cta.style.cssText = 'background:var(--gold);color:#000;font-family:var(--sans);' +
     'font-size:14px;font-weight:500;padding:13px;margin-top:14px;' +
     'text-decoration:none;text-align:center;display:block;';

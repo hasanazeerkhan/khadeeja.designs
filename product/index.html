@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product — Khadeeja Designs</title>
+<meta name="description" content="View embroidery design details and send your enquiry.">
+<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','YOUR_GA4_ID');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../shared.css">
+<style>body{display:flex;flex-direction:column;min-height:100vh;}main{flex:1;}
+.redir-msg{padding:80px 52px;text-align:center;font-family:var(--sans);font-size:14px;color:var(--t2);}
+.redir-msg a{color:var(--gold);}
+</style>
+</head>
+<body>
+<nav>
+  <a class="brand" href="/">Khadeeja Designs</a>
+  <div class="nav-center"></div>
+  <button class="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<main>
+  <div class="redir-msg" id="msg">
+    <p>Redirecting to portfolio… <a href="../explore/">View portfolio →</a></p>
+  </div>
+</main>
+
+<footer></footer>
+<script src="../shared-nav.js"></script>
+<script>
+initPage('');
+window.location.href = '../explore/';
+</script>
+</body>
+</html>

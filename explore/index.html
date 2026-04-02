@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="../shared.css">
 <style>
 body{display:flex;flex-direction:column;min-height:100vh;}
 main{flex:1;}
@@ -55,7 +55,7 @@ main{flex:1;}
 </head>
 <body>
 <nav>
-  <a class="brand" href="index.html">Khadeeja Designs</a>
+  <a class="brand" href="/">Khadeeja Designs</a>
   <div class="nav-center"></div>
   <button class="hamburger"><span></span><span></span><span></span></button>
 </nav>
@@ -78,7 +78,7 @@ main{flex:1;}
 </main>
 
 <footer></footer>
-<script src="shared-nav.js"></script>
+<script src="../shared-nav.js"></script>
 <script>
 initPage('explore');
 
@@ -86,9 +86,9 @@ let allProducts = [];
 
 async function loadProducts() {
   try {
-    const ids = await fetch('products/index.json').then(r => r.json());
+    const ids = await fetch('designs/products/index.json').then(r => r.json());
     allProducts = (await Promise.all(
-      ids.map(id => fetch(`products/${id}/product.json`).then(r => r.json()).catch(() => null))
+      ids.map(id => fetch(`designs/products/${id}/product.json`).then(r => r.json()).catch(() => null))
     )).filter(Boolean);
     renderGrid(allProducts);
   } catch(e) {
@@ -109,7 +109,7 @@ function renderGrid(products) {
       <a class="design-card" href="product.html?id=${p.id}">
         <div class="card-top-line"></div>
         <div class="card-img-wrap">
-          <img class="card-img" src="products/${p.id}/main.jpg" alt="${p.title}"
+          <img class="card-img" src="designs/products/${p.id}/main.jpg" alt="${p.title}"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="card-img-ph" style="display:none;"><span>${p.category}</span></div>
         </div>

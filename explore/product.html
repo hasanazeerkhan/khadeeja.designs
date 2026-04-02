@@ -11,7 +11,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="shared.css">
+<link rel="stylesheet" href="../shared.css">
 <style>
 body{display:flex;flex-direction:column;min-height:100vh;}
 main{flex:1;}
@@ -95,7 +95,7 @@ main{flex:1;}
 </head>
 <body>
 <nav>
-  <a class="brand" href="index.html">Khadeeja Designs</a>
+  <a class="brand" href="/">Khadeeja Designs</a>
   <div class="nav-center"></div>
   <button class="hamburger"><span></span><span></span><span></span></button>
 </nav>
@@ -103,9 +103,9 @@ main{flex:1;}
 <main>
   <div class="detail-wrap" id="detail-wrap">
     <div class="breadcrumb">
-      <a class="bc-link" href="index.html">Home</a>
+      <a class="bc-link" href="/">Home</a>
       <span class="bc-sep">/</span>
-      <a class="bc-link" href="explore.html">Explore Design</a>
+      <a class="bc-link" href="/explore/">Explore Design</a>
       <span class="bc-sep">/</span>
       <span class="bc-cur" id="bc-name">Loading…</span>
     </div>
@@ -157,7 +157,7 @@ main{flex:1;}
 </main>
 
 <footer></footer>
-<script src="shared-nav.js"></script>
+<script src="../shared-nav.js"></script>
 <script>
 initPage('explore');
 
@@ -169,7 +169,7 @@ let currentProductId = '';
 async function loadProduct() {
   if (!productId) { showError(); return; }
   try {
-    const res = await fetch(`products/${productId}/product.json`);
+    const res = await fetch(`designs/products/${productId}/product.json`);
     if (!res.ok) throw new Error('not found');
     const p = await res.json();
     currentProductId = p.id;
@@ -227,7 +227,7 @@ function render(p) {
   /* ── CTA: pass design tag + id to contact page ── */
   document.getElementById('cta-btn').onclick = () => {
     const qs = new URLSearchParams({ design: p.tag, id: p.id });
-    window.location.href = `contact.html?${qs}`;
+    window.location.href = `../contact/?${qs}`;
   };
 
   /* images */
@@ -243,7 +243,7 @@ function buildGallery(id, images) {
   ).join('');
   document.getElementById('thumbs').innerHTML = images.map((img, i) =>
     `<div class="thumb${i===0?' on':''}" onclick="switchImg(${i})">
-       <img src="products/${id}/${img}" alt="View ${i+1}"
+       <img src="designs/products/${id}/${img}" alt="View ${i+1}"
          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
        <div class="thumb-ph" style="display:none;"><span>${i+1}</span></div>
      </div>`
@@ -252,7 +252,7 @@ function buildGallery(id, images) {
 
 function setMainImg(id, images, idx) {
   document.getElementById('main-img-box').innerHTML =
-    `<img src="products/${id}/${images[idx]}" alt="View ${idx+1}"
+    `<img src="designs/products/${id}/${images[idx]}" alt="View ${idx+1}"
        onerror="this.style.display='none';this.insertAdjacentHTML('afterend',
        '<div class=\\'img-ph\\'><svg width=\\'40\\' height=\\'40\\' viewBox=\\'0 0 40 40\\' fill=\\'none\\' stroke=\\'white\\' stroke-width=\\'1\\' stroke-linecap=\\'round\\'><rect x=\\'3\\' y=\\'8\\' width=\\'34\\' height=\\'26\\' rx=\\'2\\'/></svg><span>Photo ${idx+1}</span></div>')">`;
 }
@@ -266,7 +266,7 @@ function switchImg(idx) {
 
 function showError() {
   document.getElementById('detail-wrap').innerHTML =
-    `<div class="error-state"><p>Design not found. <a href="explore.html">Browse all designs →</a></p></div>`;
+    `<div class="error-state"><p>Design not found. <a href="/explore/">Browse all designs →</a></p></div>`;
 }
 
 loadProduct();
