@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://khadeejadesigns.netlify.app/explore/"><meta property="og:type" content="website"><meta property="og:title" content="Aari Blouse Designs | Khadeeja Designs"><meta property="og:description" content="Browse handcrafted bridal Aari blouse and saree embroidery designs from Trichy."><meta property="og:url" content="https://khadeejadesigns.netlify.app/explore/"><meta name="twitter:card" content="summary">
 <title>Explore Design — Khadeeja Designs</title>
 <meta name="description" content="Browse our Aari embroidery portfolio. Bridal blouses, saree work, and couture. View full details and send your enquiry.">
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
@@ -30,7 +31,7 @@ main{flex:1;}
 .design-card:hover{background:#0d0d0d;}
 .card-top-line{position:absolute;top:0;left:0;right:0;height:1px;background:transparent;transition:background 0.3s;z-index:1;}
 .design-card:hover .card-top-line{background:var(--gold);}
-.card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#111;}
+.card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#111;position:relative;}
 .card-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.92);transition:filter 0.4s,transform 0.5s;}
 .design-card:hover .card-img{filter:brightness(1.05);transform:scale(1.04);}
 .card-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
@@ -45,6 +46,9 @@ main{flex:1;}
 .card-btn{width:100%;padding:10px;background:transparent;border:1px solid var(--border);color:var(--t3);font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
 .design-card:hover .card-btn{border-color:var(--gold);color:var(--gold);}
 .grid-msg{grid-column:1/-1;display:flex;align-items:center;justify-content:center;padding:80px;font-family:var(--sans);font-size:13px;color:var(--t3);}
+.grid-msg{flex-direction:column;gap:16px;text-align:center;}
+.grid-msg button{font:inherit;color:var(--gold);background:transparent;border:1px solid var(--gold);padding:10px 18px;cursor:pointer;}
+.skeleton-card{background:#101010;min-height:390px;}.skeleton{background:linear-gradient(90deg,#151515 25%,#202020 37%,#151515 63%);background-size:400% 100%;animation:shimmer 1.4s ease infinite;}.skeleton-img{aspect-ratio:1/1}.skeleton-line{height:12px;margin:16px 20px 0}.skeleton-line.short{width:45%;margin-top:10px}@keyframes shimmer{to{background-position:-400% 0}}@media(prefers-reduced-motion:reduce){.skeleton{animation:none}}
 
 @media(max-width:900px){
   .explore-header{padding:32px 20px 24px;}
@@ -74,7 +78,7 @@ main{flex:1;}
     <button class="filter-tab" onclick="filterCards(this,'couture')">Couture</button>
   </div>
 
-  <div id="grid"><div class="grid-msg">Loading designs…</div></div>
+  <div id="grid" aria-live="polite"></div>
 </main>
 
 <footer></footer>
@@ -83,23 +87,35 @@ main{flex:1;}
 initPage('explore');
 
 let allProducts = [];
+let productsRequest = null;
+function showSkeletons(){document.getElementById('grid').innerHTML=Array.from({length:8},()=>'<div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line short"></div></div>').join('');}
 
 async function loadProducts() {
+  showSkeletons();
+  if (productsRequest) return productsRequest;
+  productsRequest = (async () => {
   try {
-    const ids = await fetch('designs/products/index.json').then(r => r.json());
+    const indexRes = await fetch('designs/products/index.json', {cache:'no-store'});
+    if (!indexRes.ok) throw new Error(`Index request failed: ${indexRes.status}`);
+    const ids = await indexRes.json();
     allProducts = (await Promise.all(
       ids.map(id => fetch(`designs/products/${id}/product.json`).then(r => r.json()).catch(() => null))
     )).filter(Boolean);
     renderGrid(allProducts);
   } catch(e) {
-    document.getElementById('grid').innerHTML = '<div class="grid-msg">Unable to load designs. Please refresh.</div>';
-  }
+    console.error('Portfolio load failed', e);
+    document.getElementById('grid').innerHTML = '<div class="grid-msg"><span>We couldn\'t load the designs right now. Please try again.</span><button type="button" onclick="retryProducts()">Retry</button></div>';
+  } finally { productsRequest = null; }
+  })();
+  return productsRequest;
 }
+function retryProducts(){allProducts=[];loadProducts();}
+function safeImageFallback(img){img.hidden=true;img.nextElementSibling.hidden=false;}
 
 function renderGrid(products) {
   const grid = document.getElementById('grid');
   if (!products.length) {
-    grid.innerHTML = '<div class="grid-msg">No designs in this category yet.</div>';
+    grid.innerHTML = '<div class="grid-msg"><span>No designs found in this category yet.</span><button type="button" onclick="filterCards(document.querySelector(\'.filter-tab\'),\'all\')">Browse all designs</button></div>';
     return;
   }
   grid.innerHTML = products.map(p => {
@@ -109,9 +125,8 @@ function renderGrid(products) {
       <a class="design-card" href="product.html?id=${encodeURIComponent(p.path || p.id)}">
         <div class="card-top-line"></div>
         <div class="card-img-wrap">
-          <img class="card-img" src="designs/products/${p.path || p.id}/${p.images && p.images[0] || 'main.jpg'}" alt="${p.title}"
-            onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-          <div class="card-img-ph" style="display:none;"><span>${p.category}</span></div>
+          <img class="card-img" loading="lazy" width="600" height="600" src="designs/products/${p.path || p.id}/${p.images && p.images[0] || 'main.jpg'}" alt="${p.title} embroidery design" onerror="safeImageFallback(this)">
+          <div class="card-img-ph" hidden><span>${p.category}</span></div>
         </div>
         <div class="card-body">
           <span class="card-cat">${p.category}</span>
@@ -120,7 +135,7 @@ function renderGrid(products) {
             <span class="price-old">${p.oldPrice}</span>
             <span class="price-new">${p.newPrice}</span>
           </div>
-          <button class="card-btn">Know More →</button>
+          <span class="card-btn">Know More →</span>
         </div>
       </a>`;
   }).join('');

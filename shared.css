@@ -60,6 +60,7 @@ nav {
   cursor: pointer; background: none; border: none; padding: 4px;
 }
 .hamburger span { display: block; width: 22px; height: 1px; background: var(--t2); }
+.hamburger:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 2px solid var(--gold-light); outline-offset: 3px; }
 
 /* ── SHARED COMPONENTS ── */
 .kicker { display: flex; align-items: center; gap: 14px; margin-bottom: 20px; }

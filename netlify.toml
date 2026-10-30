@@ -7,6 +7,12 @@
 [build]
   publish = "."
 
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
 # Redirect /blog to /blog/ for consistency
 [[redirects]]
   from = "/blog"
@@ -49,8 +55,9 @@
   to   = "/product/"
   status = 301
 
-# Fallback for any unmatched routes
+# Serve a real not-found page for unmatched routes instead of making every URL
+# look like the homepage to crawlers.
 [[redirects]]
   from = "/*"
-  to   = "/index.html"
-  status = 200
+  to   = "/404.html"
+  status = 404

@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="canonical" href="https://khadeejadesigns.netlify.app/contact/"><meta property="og:type" content="website"><meta property="og:title" content="Enquire About Custom Aari Embroidery | Khadeeja Designs"><meta property="og:description" content="Share your bridal blouse or embroidery brief with Khadeeja Designs in Trichy."><meta property="og:url" content="https://khadeejadesigns.netlify.app/contact/"><meta name="twitter:card" content="summary">
 <title>Contact — Khadeeja Designs</title>
 <meta name="description" content="Send your Aari embroidery enquiry. We reply within 48 hours with pricing and next steps.">
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
@@ -72,6 +73,8 @@ main{flex:1;}
 .fi:focus{border-bottom-color:var(--gold);}
 textarea.fi{resize:none;min-height:80px;line-height:1.7;}
 .field-error{font-family:var(--sans);font-size:11px;color:#e05555;margin-top:5px;display:none;}
+.field.has-error .fi{border-bottom-color:#e05555;}
+.form-status{font-family:var(--sans);font-size:12px;line-height:1.5;margin-top:16px;display:none;}.form-status.error{display:block;color:#e05555}.form-status.success{display:block;color:var(--green)}
 
 .form-foot{display:flex;align-items:center;justify-content:space-between;margin-top:28px;gap:20px;}
 .form-note{font-family:var(--sans);font-size:11px;font-weight:300;color:var(--t3);line-height:1.6;max-width:200px;}
@@ -171,6 +174,7 @@ textarea.fi{resize:none;min-height:80px;line-height:1.7;}
         <p class="form-note">We reply within 48 hours. Your details are never shared.</p>
         <button class="btn-gold" onclick="submitForm()">Send Enquiry →</button>
       </div>
+      <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
     </div>
   </div>
 </main>
@@ -199,9 +203,10 @@ function validate() {
   const name = document.getElementById('f-name').value.trim();
   const phone = document.getElementById('f-phone').value.trim();
   ['err-name','err-phone'].forEach(id => document.getElementById(id).style.display = 'none');
-  if (!name)  { document.getElementById('err-name').style.display = 'block'; ok = false; }
+  document.querySelectorAll('.field').forEach(f => f.classList.remove('has-error'));
+  if (!name)  { document.getElementById('err-name').style.display = 'block'; document.getElementById('f-name').closest('.field').classList.add('has-error'); ok = false; }
   if (!phone || phone.replace(/\D/g,'').length < 10) {
-    document.getElementById('err-phone').style.display = 'block'; ok = false;
+    document.getElementById('err-phone').style.display = 'block'; document.getElementById('f-phone').closest('.field').classList.add('has-error'); ok = false;
   }
   return ok;
 }
@@ -210,6 +215,7 @@ async function submitForm() {
   if (!validate()) return;
   const btn = document.querySelector('.btn-gold');
   btn.textContent = 'Sending…'; btn.disabled = true;
+  const status = document.getElementById('form-status'); status.className = 'form-status'; status.textContent = '';
 
   const design = document.getElementById('f-design').value || 'General enquiry';
   const payload = {
@@ -231,9 +237,15 @@ async function submitForm() {
       body: JSON.stringify(payload)
     });
     if (!res.ok) throw new Error();
-  } catch(e) { /* fall through to thank you regardless */ }
-
-  window.location.href = '../thankyou/';
+    status.className = 'form-status success';
+    status.textContent = 'Your enquiry has been submitted successfully! Our team will get back to you soon.';
+    btn.textContent = 'Enquiry sent';
+  } catch(e) {
+    console.error('Enquiry submission failed', e);
+    status.className = 'form-status error';
+    status.textContent = 'We couldn\'t submit your enquiry right now. Please check your connection and try again.';
+    btn.textContent = 'Send Enquiry →'; btn.disabled = false;
+  }
 }
 </script>
 </body>

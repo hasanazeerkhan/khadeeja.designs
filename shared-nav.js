@@ -63,13 +63,26 @@ function initPage(activePage) {
   /* ── Wire hamburger ── */
   const hamburger = document.querySelector('.hamburger');
   if (hamburger) {
+    hamburger.setAttribute('aria-label', 'Open navigation menu');
+    hamburger.setAttribute('aria-expanded', 'false');
     hamburger.onclick = () => _toggleMobileMenu();
   }
 }
 
+// Keep dynamically generated portfolio images accessible and stable for search
+// and assistive technology when product data is loaded client-side.
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('img').forEach((img, index) => {
+    if (!img.alt || /^View \d+$/.test(img.alt)) img.alt = `Khadeeja Designs Aari embroidery detail ${index + 1}`;
+    if (!img.hasAttribute('width')) img.setAttribute('width', '600');
+    if (!img.hasAttribute('height')) img.setAttribute('height', '600');
+    if (!img.loading) img.loading = index === 0 ? 'eager' : 'lazy';
+  });
+});
+
 function _toggleMobileMenu() {
   const existing = document.getElementById('mob-menu');
-  if (existing) { existing.remove(); return; }
+  if (existing) { existing.remove(); document.body.style.overflow = ''; document.querySelector('.hamburger')?.setAttribute('aria-expanded', 'false'); return; }
 
   const pages = [
     { label: 'Home',           href: '/'               },
@@ -81,6 +94,8 @@ function _toggleMobileMenu() {
   const navH = document.querySelector('nav').offsetHeight;
   const m = document.createElement('div');
   m.id = 'mob-menu';
+  m.setAttribute('role', 'dialog');
+  m.setAttribute('aria-label', 'Mobile navigation');
   m.style.cssText = `position:fixed;top:${navH}px;left:0;right:0;background:#0f0f0f;
     border-bottom:1px solid rgba(255,255,255,0.07);z-index:99;
     padding:8px 20px 20px;display:flex;flex-direction:column;`;
@@ -101,14 +116,20 @@ function _toggleMobileMenu() {
     'text-decoration:none;text-align:center;display:block;';
   m.appendChild(cta);
   document.body.appendChild(m);
+  document.body.style.overflow = 'hidden';
+  document.querySelector('.hamburger')?.setAttribute('aria-expanded', 'true');
 
   /* close on outside click */
   setTimeout(() => {
     document.addEventListener('click', function handler(e) {
       if (!m.contains(e.target) && !document.querySelector('.hamburger').contains(e.target)) {
-        m.remove();
+        m.remove(); document.body.style.overflow = ''; document.querySelector('.hamburger')?.setAttribute('aria-expanded', 'false');
         document.removeEventListener('click', handler);
       }
     });
   }, 0);
+
+  m.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    m.remove(); document.body.style.overflow = ''; document.querySelector('.hamburger')?.setAttribute('aria-expanded', 'false');
+  }));
 }
