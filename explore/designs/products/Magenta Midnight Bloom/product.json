@@ -1,0 +1,15 @@
+{
+  "id": "magenta-midnight-bloom",
+  "tag": "Magenta Midnight Bloom Blouse",
+  "category": "designer",
+  "title": "Magenta Midnight Bloom Blouse",
+  "oldPrice": "INR 5,999",
+  "newPrice": "INR 4,499",
+  "saving": "1,500",
+  "rating": "4.8",
+  "summary": "A rich magenta blouse with delicate gold sprig embroidery, navy floral accents and puff sleeves.",
+  "description": "The front design features a broad rounded neckline with radiating gold-toned motifs, small navy floral accents and matching embroidered borders along the sleeves and hem. The generated back showcase carries the same colour palette and decorative language, with a U-shaped back, tie strings and paired tassels. Check the generated back against the actual garment before publishing.",
+  "specs": { "category": "Designer Blouse", "workType": "Aari-style embroidery · Floral motifs · Beadwork", "timeline": "To be confirmed" },
+  "images": ["Khadeeja Designs Magenta Midnight Bloom Front.png", "Khadeeja Designs Magenta Midnight Bloom Back.png"],
+  "path": "Magenta Midnight Bloom"
+}

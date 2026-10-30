@@ -1,0 +1,15 @@
+{
+  "id": "royal-heritage-maroon",
+  "tag": "Royal Heritage Maroon Blouse",
+  "category": "bridal",
+  "title": "Royal Heritage Maroon Blouse",
+  "oldPrice": "INR 5,999",
+  "newPrice": "INR 4,499",
+  "saving": "1,500",
+  "rating": "4.8",
+  "summary": "A vibrant maroon blouse with multicolour embellishments, gold detailing and statement puff sleeves.",
+  "description": "The front features dense geometric and floral-inspired embellishment in gold and jewel tones, paired with a deep V-shaped neckline and puff sleeves. The generated back showcase presents a coordinating embellished U-back with tie strings and decorative tassels. Verify the back design against the actual blouse before using it as a product representation.",
+  "specs": { "category": "Bridal Blouse", "workType": "Aari-style embroidery · Mirror-style embellishment · Beadwork", "timeline": "To be confirmed" },
+  "images": ["Royal Heritage Maroon Blouse Front.png", "Royal Heritage Maroon Blouse Back.png"],
+  "path": "Royal Heritage Maroon"
+}

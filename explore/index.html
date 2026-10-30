@@ -106,10 +106,10 @@ function renderGrid(products) {
     const words = p.title.split(' ');
     const last = words.pop();
     return `
-      <a class="design-card" href="product.html?id=${p.id}">
+      <a class="design-card" href="product.html?id=${encodeURIComponent(p.path || p.id)}">
         <div class="card-top-line"></div>
         <div class="card-img-wrap">
-          <img class="card-img" src="designs/products/${p.id}/main.jpg" alt="${p.title}"
+          <img class="card-img" src="designs/products/${p.path || p.id}/${p.images && p.images[0] || 'main.jpg'}" alt="${p.title}"
             onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
           <div class="card-img-ph" style="display:none;"><span>${p.category}</span></div>
         </div>
