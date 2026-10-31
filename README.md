@@ -52,9 +52,8 @@ Same files as above.
 In contact.html only, replace `YOUR_FORM_ID` with your Formspree form ID.
 Get it free at formspree.io — create a form, copy the ID.
 
-### 4. Replace WhatsApp number
-Search for `918667454391` in all files and replace with your number.
-Format: country code + number, no + or spaces. E.g. `919876543210`
+### 4. Update contact details
+Keep the Instagram handle and contact email consistent across the site.
 
 ### 5. Add product images
 For each folder in products/:

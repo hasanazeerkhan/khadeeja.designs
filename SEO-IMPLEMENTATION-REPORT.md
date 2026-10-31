@@ -47,7 +47,7 @@ No reliable volume or difficulty source was available in the repository, so no s
 - Explore keeps its collection description, filters, product CTAs, FAQ content and descriptive client-rendered image alt text. Its static product URLs are in the sitemap.
 - Product landing pages retain unique product-specific titles, descriptions, H1s, descriptions, prices and Product schema. Product facts that are uncertain remain qualified in the visible copy rather than being presented as confirmed claims.
 - The blog article retains its useful guidance, now has Article schema and non-placeholder contextual links.
-- Contact title/description and the existing visible Trichy address, phone, email, WhatsApp and pan-India delivery information should be kept consistent if business details change.
+- Contact title/description and the existing visible Trichy address, email, Instagram and pan-India delivery information should be kept consistent if business details change.
 - FAQ already covers ordering, customisation, pricing, Aari education, care and delivery, with links to Contact and Explore where useful.
 
 ## 4. Local SEO
@@ -79,8 +79,8 @@ Implemented or verified: LocalBusiness and WebSite schema on the homepage, Produ
 - Inspect the homepage, Explore, FAQ, Blog, Contact and each clean product URL.
 - Review indexing, crawl errors, discovered-but-not-indexed URLs and canonical selection. A sitemap entry is not proof of indexing.
 - Supply the real GA4 Measurement ID and Meta Pixel ID before enabling tracking.
-- Implement and test meaningful events: enquiry submission, WhatsApp click, product view and (where technically confirmed) completed enquiry. Page views are not conversions.
-- Record organic sessions, impressions, clicks, average position, product visits, enquiries, WhatsApp clicks and conversion rate.
+- Implement and test meaningful events: enquiry submission, Instagram click, product view and (where technically confirmed) completed enquiry. Page views are not conversions.
+- Record organic sessions, impressions, clicks, average position, product visits, enquiries, Instagram clicks and conversion rate.
 
 ## 8. Files modified
 

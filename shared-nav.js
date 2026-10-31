@@ -12,7 +12,7 @@
 function initPage(activePage) {
   const NAV_PAGES = [
     { id: 'home',    label: 'Home',            href: '/'               },
-    { id: 'explore', label: 'Explore Design', href: '/explore/'       },
+    { id: 'explore', label: 'Browse Designs', href: '/explore/'       },
     { id: 'blog',    label: 'Blog',            href: '/blog/'          },
     { id: 'faq',     label: 'FAQ',             href: '/faq/'          },
   ];
@@ -24,7 +24,7 @@ function initPage(activePage) {
       NAV_PAGES.map(p =>
         `<a class="nav-link${p.id === activePage ? ' active' : ''}" href="${p.href}">${p.label}</a>`
       ).join('') +
-      `<a class="nav-cta" href="/contact/">Order Consultation</a>`;
+      `<a class="nav-cta" href="/contact/">Send Enquiry</a>`;
   }
 
   /* ── Inject footer ── */
@@ -46,7 +46,6 @@ function initPage(activePage) {
           <div class="footer-col">
             <span class="footer-col-label">Contact</span>
             <a href="/contact/">Send Enquiry</a>
-            <a href="https://wa.me/918667454391" target="_blank" rel="noopener">WhatsApp</a>
             <a href="https://instagram.com/khadeeja.designs" target="_blank" rel="noopener">Instagram</a>
           </div>
         </div>
@@ -86,7 +85,7 @@ function _toggleMobileMenu() {
 
   const pages = [
     { label: 'Home',           href: '/'               },
-    { label: 'Explore Design', href: '/explore/'       },
+    { label: 'Browse Designs', href: '/explore/'       },
     { label: 'Blog',           href: '/blog/'          },
     { label: 'FAQ',            href: '/faq/'           },
   ];
@@ -103,13 +102,13 @@ function _toggleMobileMenu() {
   pages.forEach(({ label, href }) => {
     const a = document.createElement('a');
     a.textContent = label; a.href = href;
-    a.style.cssText = 'border-bottom:1px solid rgba(255,255,255,0.06);color:#888;' +
+    a.style.cssText = 'border-bottom:1px solid rgba(255,255,255,0.12);color:#C8C8C8;' +
       'font-family:var(--sans);font-size:14px;padding:14px 0;text-decoration:none;display:block;';
     m.appendChild(a);
   });
 
   const cta = document.createElement('a');
-  cta.textContent = 'Order Consultation';
+  cta.textContent = 'Send Enquiry';
   cta.href = '/contact/';
   cta.style.cssText = 'background:var(--gold);color:#000;font-family:var(--sans);' +
     'font-size:14px;font-weight:500;padding:13px;margin-top:14px;' +
