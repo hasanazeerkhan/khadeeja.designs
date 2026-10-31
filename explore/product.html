@@ -5,6 +5,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Product — Khadeeja Designs</title>
 <meta name="description" content="View embroidery design details and send your enquiry.">
+<meta name="robots" content="noindex,follow">
+<link id="canonical-url" rel="canonical" href="https://khadeejadesigns.in/explore/product.html">
+<meta property="og:type" content="product">
+<meta property="og:title" content="Product — Khadeeja Designs">
+<meta property="og:description" content="View embroidery design details and send your enquiry.">
+<meta id="og-url" property="og:url" content="https://khadeejadesigns.in/explore/product.html">
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','YOUR_GA4_ID');</script>
@@ -179,6 +185,13 @@ async function loadProduct() {
 
     /* update page title */
     document.title = `${p.title} — Khadeeja Designs`;
+
+    const canonicalPath = p.path ? `explore/designs/${p.path.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}/` : `explore/product.html?id=${encodeURIComponent(p.id)}`;
+    const canonicalUrl = `https://khadeejadesigns.in/${canonicalPath}`;
+    document.getElementById('canonical-url').href = canonicalUrl;
+    document.getElementById('og-url').content = canonicalUrl;
+    document.querySelector('meta[property="og:title"]').content = `${p.title} — Khadeeja Designs`;
+    document.querySelector('meta[property="og:description"]').content = p.description || p.summary;
 
     /* Meta ViewContent */
     if (typeof fbq !== 'undefined') {

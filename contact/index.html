@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://khadeejadesigns.netlify.app/contact/"><meta property="og:type" content="website"><meta property="og:title" content="Enquire About Custom Aari Embroidery | Khadeeja Designs"><meta property="og:description" content="Share your bridal blouse or embroidery brief with Khadeeja Designs in Trichy."><meta property="og:url" content="https://khadeejadesigns.netlify.app/contact/"><meta name="twitter:card" content="summary">
+<link rel="canonical" href="https://khadeejadesigns.in/contact/"><meta property="og:type" content="website"><meta property="og:title" content="Enquire About Custom Aari Embroidery | Khadeeja Designs"><meta property="og:description" content="Share your bridal blouse or embroidery brief with Khadeeja Designs in Trichy."><meta property="og:url" content="https://khadeejadesigns.in/contact/"><meta name="twitter:card" content="summary">
 <title>Contact — Khadeeja Designs</title>
 <meta name="description" content="Send your Aari embroidery enquiry. We reply within 48 hours with pricing and next steps.">
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
@@ -54,6 +54,17 @@ main{flex:1;}
 .faq-hint{font-family:var(--sans);font-size:13px;color:var(--t3);margin-bottom:28px;}
 .faq-hint a{color:var(--gold);text-decoration:none;}
 .faq-hint a:hover{color:var(--gold-light);}
+.contact-faq{border-top:1px solid var(--border);padding:44px 52px 56px;}
+.contact-faq h2{font-size:28px;font-weight:300;margin-bottom:24px;}
+.contact-faq details{border-top:1px solid var(--border);padding:0;}
+.contact-faq details:last-child{border-bottom:1px solid var(--border);}
+.contact-faq summary{font:17px var(--serif);cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 0;list-style:none;}
+.contact-faq summary::-webkit-details-marker{display:none;}
+.contact-faq summary::after{content:'+';font:22px var(--sans);font-weight:300;color:var(--gold);line-height:1;}
+.contact-faq details[open] summary{color:var(--gold-light);}
+.contact-faq details[open] summary::after{content:'−';}
+.contact-faq p{font:13px var(--sans);color:var(--t2);line-height:1.8;padding:0 42px 20px 0;max-width:760px;}
+.contact-faq a{color:var(--gold);text-decoration:none;}
 
 /* Selected design tag */
 .design-tag-wrap{margin-bottom:22px;display:none;}
@@ -88,6 +99,7 @@ textarea.fi{resize:none;min-height:80px;line-height:1.7;}
   .contact-right{padding:32px 20px 48px;}
   .form-foot{flex-direction:column;align-items:stretch;}
   .btn-gold{text-align:center;padding:15px;}
+  .contact-faq{padding:36px 20px 44px;}
 }
 </style>
 </head>
@@ -177,12 +189,24 @@ textarea.fi{resize:none;min-height:80px;line-height:1.7;}
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
     </div>
   </div>
+
+  <section class="contact-faq" aria-labelledby="contact-faq-title">
+    <h2 id="contact-faq-title">Before You Send an Enquiry</h2>
+    <details><summary>How can I order Aari embroidery from Khadeeja Designs?</summary><p>Browse our <a href="../explore/">design collection</a>, select a design you like and use the enquiry option to share your requirements. You can also contact us directly through WhatsApp to discuss a customised order.</p></details>
+    <details><summary>Do you accept customised bridal blouse orders?</summary><p>Yes, you can discuss customised bridal blouse embroidery according to your preferred colours, motifs, neckline and sleeve details. Share your reference image and event date to help us understand your requirements.</p></details>
+    <details><summary>Can I share my design reference through WhatsApp?</summary><p>Yes, you can share design reference images and your requirements through our WhatsApp contact. This helps us understand your preferred embroidery style before discussing the quotation.</p></details>
+    <details><summary>Do you accept Aari embroidery orders from other cities?</summary><p>Yes, Khadeeja Designs is based in Trichy, Tamil Nadu, and offers delivery across India. Contact us to discuss your requirements and shipping arrangements.</p></details>
+    <details><summary>How soon will I receive a response to my enquiry?</summary><p>We aim to respond to enquiries within 48 hours. Please share your design requirements, preferred timeline and contact information so we can assist you. See the <a href="../faq/">full FAQ page</a> for more answers.</p></details>
+  </section>
 </main>
 
 <footer></footer>
 <script src="../shared-nav.js"></script>
 <script>
 initPage('contact');
+document.querySelectorAll('.contact-faq details').forEach(detail => detail.addEventListener('toggle', () => {
+  if (detail.open) document.querySelectorAll('.contact-faq details').forEach(other => { if (other !== detail) other.open = false; });
+}));
 
 /* ── Read design tag from URL ── */
 (function() {

@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /thankyou/
-Disallow: /product/
-Sitemap: https://khadeejadesigns.netlify.app/sitemap.xml
+Sitemap: https://khadeejadesigns.in/sitemap.xml

@@ -13,6 +13,19 @@
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
 
+# Canonicalize alternate hostnames while preserving the requested path.
+[[redirects]]
+  from = "https://www.khadeejadesigns.in/*"
+  to = "https://khadeejadesigns.in/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://khadeejadesigns.netlify.app/*"
+  to = "https://khadeejadesigns.in/:splat"
+  status = 301
+  force = true
+
 # Redirect /blog to /blog/ for consistency
 [[redirects]]
   from = "/blog"
@@ -53,6 +66,47 @@
 [[redirects]]
   from = "/product"
   to   = "/product/"
+  status = 301
+
+[[redirects]]
+  from = "/explore/product.html"
+  query = {id = "bridal-royal-zardosi"}
+  to = "/explore/designs/bridal-royal-zardosi/"
+  status = 301
+[[redirects]]
+  from = "/explore/product.html"
+  query = {id = "royal-heritage-maroon"}
+  to = "/explore/designs/royal-heritage-maroon/"
+  status = 301
+[[redirects]]
+  from = "/explore/product.html"
+  query = {id = "emerald-jhumka-elegance"}
+  to = "/explore/designs/emerald-jhumka-elegance/"
+  status = 301
+[[redirects]]
+  from = "/explore/product.html"
+  query = {id = "magenta-midnight-bloom"}
+  to = "/explore/designs/magenta-midnight-bloom/"
+  status = 301
+[[redirects]]
+  from = "/explore/product.html"
+  query = {id = "midnight-gold-vine"}
+  to = "/explore/designs/midnight-gold-vine/"
+  status = 301
+[[redirects]]
+  from = "/explore/product.html"
+  query = {id = "sunset-garden"}
+  to = "/explore/designs/sunset-garden/"
+  status = 301
+[[redirects]]
+  from = "/explore/product.html"
+  query = {id = "violet-gold-vine"}
+  to = "/explore/designs/violet-gold-vine/"
+  status = 301
+[[redirects]]
+  from = "/explore/product.html"
+  query = {id = "midnight-grace"}
+  to = "/explore/designs/midnight-grace/"
   status = 301
 
 # Serve a real not-found page for unmatched routes instead of making every URL

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Thank You — Khadeeja Designs</title>
 <meta name="description" content="We've received your enquiry and will reply within 48 hours.">
+<meta name="robots" content="noindex,follow">
 <!-- Pixel fires Lead conversion here — this is your thank you page tracking event -->
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');fbq('track','Lead');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
@@ -114,7 +115,7 @@ async function loadStrip() {
       ids.slice(0,4).map(id => fetch(`../explore/designs/products/${id}/product.json`).then(r=>r.json()).catch(()=>null))
     )).filter(Boolean);
     document.getElementById('photo-strip').innerHTML = products.map(p => `
-      <a class="photo-card" href="../explore/product.html?id=${p.id}">
+      <a class="photo-card" href="../explore/designs/${p.id}/">
         <img src="../explore/designs/products/${p.id}/main.jpg" alt="${p.title}"
           onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
         <div class="photo-ph" style="display:none;"><span>${p.category}</span></div>
