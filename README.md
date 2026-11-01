@@ -20,7 +20,8 @@ khadeeja-designs/
 │
 ├── blog/
 │   ├── index.html        Blog listing
-│   └── how-to-choose-aari-embroidery-bridal-blouse.html
+│   └── how-to-choose-aari-embroidery-bridal-blouse/
+│       └── index.html   Published article
 │
 └── images/
     ├── blog/             Cover images for blog posts
@@ -31,28 +32,28 @@ khadeeja-designs/
 
 ## Setup checklist (do in this order)
 
-### 1. Replace YOUR_PIXEL_ID
-Search all HTML files for `YOUR_PIXEL_ID` and replace with your Meta Pixel ID.
-Files to update: index, explore, product, contact, thankyou, faq, privacy,
-blog/index, blog/how-to-choose-aari...
+### 1. Analytics and privacy
+Microsoft Clarity is configured on the homepage, Explore, Contact, FAQ, Blog,
+the live blog article, and product detail pages. Google Analytics and Meta
+Pixel snippets still contain placeholder IDs and are not configured. Do not
+deploy placeholder IDs; if enabling either service, first decide the
+appropriate consent behavior, update the privacy policy, and use real IDs.
 
-### 2. Replace YOUR_GA4_ID
-Search all HTML files for `YOUR_GA4_ID` and replace with your GA4 Measurement ID (G-XXXXXXXXXX).
-Same files as above.
-
-### 3. Form endpoint
+### 2. Form endpoint
 The enquiry endpoint is configured in `contact/index.html`.
 Update the Formspree endpoint there if the form account changes.
 
-### 4. Update contact details
-Keep the Instagram handle and contact email consistent across the site.
+### 3. Update contact details
+Keep the business address, Instagram handle, and contact email consistent
+across the contact page, structured data, and privacy policy.
 
-### 5. Add product images
-For each folder in explore/designs/:
-- main.jpg - square, min 800×800px (shown in grid)
-- 2.jpg, 3.jpg - detail shots (shown in product page gallery)
+### 4. Add product images
+For each folder in `explore/designs/`, keep the original image files and list
+their exact names in `product.json`. Add a `.webp` version beside each image
+using the same filename stem. The Explore cards, product pages, and thank-you
+page load WebP first and fall back to the original file.
 
-### 6. Add blog cover image
+### 5. Add blog cover image
 Save to: images/blog/bridal-blouse-guide.jpg
 Recommended size: 1400×500px, landscape
 
@@ -72,7 +73,6 @@ Recommended size: 1400×500px, landscape
   "oldPrice": "INR 7,990",
   "newPrice": "INR 6,990",
   "saving": "1,000",
-  "rating": "4.9",
   "summary": "One sentence shown prominently on the product page.",
   "description": "Longer paragraph describing the design and occasion.",
   "specs": {
@@ -80,16 +80,20 @@ Recommended size: 1400×500px, landscape
     "workType": "Aari · Zardosi · Stone",
     "timeline": "14–21 days"
   },
-  "images": ["main.jpg", "2.jpg", "3.jpg"]
+  "images": ["Full Product Name Front.png", "Full Product Name Back.png"]
 }
 ```
 
 `category` must match an available Explore filter. Current values are
 `bridal` or `designer`.
 
-3. Add images: main.jpg, 2.jpg, 3.jpg
+3. Add the original image files and matching `.webp` versions. List the
+   original filenames in `product.json`; keep the first image as the card and
+   product-page hero image.
 
-4. Add the ID to `explore/designs/index.json`:
+4. Add the ID to `explore/designs/index.json` and add a matching design card
+   to `explore/index.html`. The HTML card keeps the catalogue browsable if
+   JavaScript or the product JSON request is unavailable.
 ```json
 ["bridal-zardosi", "temple-border", "couture-collar", "lotus-vine", "my-new-product"]
 ```
@@ -100,8 +104,8 @@ Done. Product appears in the grid and gets the URL: `/explore/designs/my-new-pro
 
 ## How to add a new blog post
 
-1. Duplicate `blog/how-to-choose-aari-embroidery-bridal-blouse.html`
-2. Rename it: `blog/your-post-title-here.html`
+1. Copy `blog/how-to-choose-aari-embroidery-bridal-blouse/` to a new
+   kebab-case folder under `blog/`, keeping `index.html` as the entry point.
 3. Update in the new file:
    - `<title>` and `<meta name="description">`
    - `<meta property="og:title">` and `og:description`
@@ -110,11 +114,9 @@ Done. Product appears in the grid and gets the URL: `/explore/designs/my-new-pro
    - All `<article>` content
    - Hero image src (add to images/blog/)
    - Post byline at bottom
-4. Add a card to `blog/index.html` pointing to the new file
+4. Add a card to `blog/index.html` pointing to the new folder URL
 5. Update the "More from the blog" sidebar in the new post
-
-Google will automatically discover and index the new post via your sitemap
-(add sitemap.xml when you have 5+ posts - Netlify can auto-generate it).
+6. Add the canonical URL and accurate modification date to `sitemap.xml`.
 
 ---
 
@@ -135,17 +137,11 @@ To deploy:
 
 ---
 
-## Tracking funnel (Meta Ads retargeting)
+## Tracking status
 
-| Page | URL | Pixel event | Audience to build |
-|------|-----|-------------|-------------------|
-| Home | / | PageView | Top of funnel |
-| Explore | /explore | PageView | "Browsed portfolio" |
-| Product | /explore/designs/<id>/ | ViewContent | "Viewed specific design" |
-| Contact | /contact | PageView | "High intent" |
-| Thank You | /thankyou | Lead (conversion) | Exclude from retargeting |
-
-Recommended retargeting campaigns:
-- Visited /explore but NOT /thankyou → "Browse our new arrivals"
-- Visited /explore/designs/<id>/ but NOT /thankyou → Show the specific design they viewed
-- Lookalike of /thankyou visitors → Find similar audiences to target
+Microsoft Clarity is active on selected pages, as listed in the setup
+checklist. Google Analytics and Meta Pixel are not configured: their IDs
+remain placeholders, so analytics and conversion reporting should not be
+assumed to work. Review privacy and consent requirements before enabling
+either service; verify event delivery and avoid counting a successful enquiry
+more than once.

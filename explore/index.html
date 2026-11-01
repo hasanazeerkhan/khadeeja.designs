@@ -36,10 +36,12 @@ main{flex:1;}
 
 #grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-left:1px solid var(--border);border-right:1px solid var(--border);min-height:280px;}
 .design-card{background:var(--black);cursor:pointer;transition:background 0.2s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block;}
+.design-card[hidden]{display:none;}
 .design-card:hover{background:#0d0d0d;}
 .card-top-line{position:absolute;top:0;left:0;right:0;height:1px;background:transparent;transition:background 0.3s;z-index:1;}
 .design-card:hover .card-top-line{background:var(--gold);}
 .card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#111;position:relative;}
+.card-img-wrap picture{display:block;width:100%;height:100%;}
 .card-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.92);transition:filter 0.4s,transform 0.5s;}
 .design-card:hover .card-img{filter:brightness(1.05);transform:scale(1.04);}
 .card-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
@@ -53,9 +55,10 @@ main{flex:1;}
 .price-new{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--t1);}
 .card-btn{width:100%;padding:10px;background:transparent;border:1px solid var(--border);color:var(--t3);font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
 .design-card:hover .card-btn{border-color:var(--gold);color:var(--gold);}
-.grid-msg{grid-column:1/-1;display:flex;align-items:center;justify-content:center;padding:80px;font-family:var(--sans);font-size:13px;color:var(--t3);}
-.grid-msg{flex-direction:column;gap:16px;text-align:center;}
-.grid-msg button{font:inherit;color:var(--gold);background:transparent;border:1px solid var(--gold);padding:10px 18px;cursor:pointer;}
+.catalog-status{padding:18px 20px;text-align:center;font:13px/1.6 var(--sans);color:var(--t2);border-bottom:1px solid var(--border);}
+.catalog-status[hidden]{display:none;}
+.catalog-status button{margin-left:10px;padding:6px 12px;color:var(--gold-light);background:transparent;border:1px solid var(--gold);font:inherit;cursor:pointer;}
+.catalog-status button:disabled{opacity:.6;cursor:wait;}
 .seo-copy,.seo-faq{padding:56px 52px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(3,1fr);gap:32px;}
 .seo-copy h2,.seo-faq h2{font-size:25px;font-weight:300;line-height:1.15;margin-bottom:12px;}
 .seo-copy p,.seo-faq p{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--t2);line-height:1.8;}
@@ -70,8 +73,6 @@ main{flex:1;}
 .seo-faq details[open] summary{color:var(--gold-light);}
 .seo-faq details[open] summary::after{content:'−';}
 .seo-faq details p{padding:0 42px 20px 0;max-width:760px;}
-.skeleton-card{background:#101010;min-height:390px;}.skeleton{background:linear-gradient(90deg,#151515 25%,#202020 37%,#151515 63%);background-size:400% 100%;animation:shimmer 1.4s ease infinite;}.skeleton-img{aspect-ratio:1/1}.skeleton-line{height:12px;margin:16px 20px 0}.skeleton-line.short{width:45%;margin-top:10px}@keyframes shimmer{to{background-position:-400% 0}}@media(prefers-reduced-motion:reduce){.skeleton{animation:none}}
-
 @media(max-width:900px){
   .explore-header{padding:32px 20px 24px;}
   .filter-row{padding:0 20px;}
@@ -96,12 +97,58 @@ main{flex:1;}
   </div>
 
   <div class="filter-row" role="group" aria-label="Filter designs by category">
-    <button class="filter-tab active" type="button" aria-pressed="true" onclick="filterCards(this,'all')">All</button>
-    <button class="filter-tab" type="button" aria-pressed="false" onclick="filterCards(this,'bridal')">Bridal</button>
-    <button class="filter-tab" type="button" aria-pressed="false" onclick="filterCards(this,'designer')">Designer</button>
+    <button class="filter-tab active" type="button" data-category="all" aria-pressed="true" onclick="filterCards(this,'all')">All</button>
+    <button class="filter-tab" type="button" data-category="bridal" aria-pressed="false" onclick="filterCards(this,'bridal')">Bridal</button>
+    <button class="filter-tab" type="button" data-category="designer" aria-pressed="false" onclick="filterCards(this,'designer')">Designer</button>
   </div>
 
-  <div id="grid" role="region" aria-label="Design collection" aria-live="polite"></div>
+  <div id="grid" role="region" aria-label="Design collection">
+    <a class="design-card" data-category="bridal" href="/explore/designs/bridal-royal-zardosi/">
+      <div class="card-top-line"></div>
+      <div class="card-img-wrap"><picture><source srcset="designs/bridal-royal-zardosi/Khadeeja%20Designs%20-%20Bridal%20Royal%20Zardosi%20Blouse%20Front.webp" type="image/webp"><img class="card-img" loading="lazy" width="1254" height="1254" src="designs/bridal-royal-zardosi/Khadeeja%20Designs%20-%20Bridal%20Royal%20Zardosi%20Blouse%20Front.png" alt="Bridal Royal Zardosi Blouse embroidery design"></picture></div>
+      <div class="card-body"><span class="card-cat">Bridal</span><div class="card-title">Bridal Royal Zardosi<br><em>Blouse</em></div><div class="price-row"><span class="price-old">INR 5,999</span><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div>
+    </a>
+    <a class="design-card" data-category="bridal" href="/explore/designs/royal-heritage-maroon/">
+      <div class="card-top-line"></div>
+      <div class="card-img-wrap"><picture><source srcset="designs/royal-heritage-maroon/Royal%20Heritage%20Maroon%20Blouse%20Front.webp" type="image/webp"><img class="card-img" loading="lazy" width="1254" height="1254" src="designs/royal-heritage-maroon/Royal%20Heritage%20Maroon%20Blouse%20Front.png" alt="Royal Heritage Maroon Blouse embroidery design"></picture></div>
+      <div class="card-body"><span class="card-cat">Bridal</span><div class="card-title">Royal Heritage Maroon<br><em>Blouse</em></div><div class="price-row"><span class="price-old">INR 5,999</span><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div>
+    </a>
+    <a class="design-card" data-category="designer" href="/explore/designs/emerald-jhumka-elegance/">
+      <div class="card-top-line"></div>
+      <div class="card-img-wrap"><picture><source srcset="designs/emerald-jhumka-elegance/Khadeeja%20Designs%20Emerald%20Jhumka%20Elegance%20Front.webp" type="image/webp"><img class="card-img" loading="lazy" width="1254" height="1254" src="designs/emerald-jhumka-elegance/Khadeeja%20Designs%20Emerald%20Jhumka%20Elegance%20Front.png" alt="Emerald Jhumka Elegance Blouse embroidery design"></picture></div>
+      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Emerald Jhumka Elegance<br><em>Blouse</em></div><div class="price-row"><span class="price-old">INR 5,999</span><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div>
+    </a>
+    <a class="design-card" data-category="designer" href="/explore/designs/magenta-midnight-bloom/">
+      <div class="card-top-line"></div>
+      <div class="card-img-wrap"><picture><source srcset="designs/magenta-midnight-bloom/Khadeeja%20Designs%20Magenta%20Midnight%20Bloom%20Front.webp" type="image/webp"><img class="card-img" loading="lazy" width="1254" height="1254" src="designs/magenta-midnight-bloom/Khadeeja%20Designs%20Magenta%20Midnight%20Bloom%20Front.png" alt="Magenta Midnight Bloom Blouse embroidery design"></picture></div>
+      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Magenta Midnight Bloom<br><em>Blouse</em></div><div class="price-row"><span class="price-old">INR 5,999</span><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div>
+    </a>
+    <a class="design-card" data-category="bridal" href="/explore/designs/midnight-gold-vine/">
+      <div class="card-top-line"></div>
+      <div class="card-img-wrap"><picture><source srcset="designs/midnight-gold-vine/Khadeeja%20Designs%20Midnight%20Gold%20Vine%20Aari%20Blouse%20Front.webp" type="image/webp"><img class="card-img" loading="lazy" width="1254" height="1254" src="designs/midnight-gold-vine/Khadeeja%20Designs%20Midnight%20Gold%20Vine%20Aari%20Blouse%20Front.png" alt="Midnight Gold Vine Blouse embroidery design"></picture></div>
+      <div class="card-body"><span class="card-cat">Bridal</span><div class="card-title">Midnight Gold Vine<br><em>Blouse</em></div><div class="price-row"><span class="price-old">INR 5,999</span><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div>
+    </a>
+    <a class="design-card" data-category="designer" href="/explore/designs/sunset-garden/">
+      <div class="card-top-line"></div>
+      <div class="card-img-wrap"><picture><source srcset="designs/sunset-garden/Khadeeja%20Designs%20Sunset%20Garden%20Front.webp" type="image/webp"><img class="card-img" loading="lazy" width="1254" height="1254" src="designs/sunset-garden/Khadeeja%20Designs%20Sunset%20Garden%20Front.png" alt="Sunset Garden Blouse embroidery design"></picture></div>
+      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Sunset Garden<br><em>Blouse</em></div><div class="price-row"><span class="price-old">INR 5,999</span><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div>
+    </a>
+    <a class="design-card" data-category="designer" href="/explore/designs/violet-gold-vine/">
+      <div class="card-top-line"></div>
+      <div class="card-img-wrap"><picture><source srcset="designs/violet-gold-vine/Khadeeja%20Designs%20Violet%20Gold%20Vine%20Front.webp" type="image/webp"><img class="card-img" loading="lazy" width="1254" height="1254" src="designs/violet-gold-vine/Khadeeja%20Designs%20Violet%20Gold%20Vine%20Front.png" alt="Violet Gold Vine Blouse embroidery design"></picture></div>
+      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Violet Gold Vine<br><em>Blouse</em></div><div class="price-row"><span class="price-old">INR 5,999</span><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div>
+    </a>
+    <a class="design-card" data-category="designer" href="/explore/designs/midnight-grace/">
+      <div class="card-top-line"></div>
+      <div class="card-img-wrap"><picture><source srcset="designs/midnight-grace/Khadeeja%20Designs%20Midnight%20Grace%20Front.webp" type="image/webp"><img class="card-img" loading="lazy" width="1254" height="1254" src="designs/midnight-grace/Khadeeja%20Designs%20Midnight%20Grace%20Front.png" alt="Midnight Grace Blouse embroidery design"></picture></div>
+      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Midnight Grace<br><em>Blouse</em></div><div class="price-row"><span class="price-old">INR 3,999</span><span class="price-new">INR 1,999</span></div><span class="card-btn">View Design →</span></div>
+    </a>
+  </div>
+  <p id="catalog-status" class="catalog-status" role="status" aria-live="polite" hidden>
+    Showing the saved catalogue. It could not be refreshed just now.
+    <button type="button" onclick="retryProducts()">Retry</button>
+  </p>
+  <noscript><p class="catalog-status">JavaScript is off. You can still browse all designs; category filters require JavaScript.</p></noscript>
 
   <section class="seo-copy" aria-labelledby="collection-heading">
     <article><h2 id="collection-heading">Bridal Aari Blouse Designs</h2><p>Discover bridal Aari blouse designs featuring traditional embroidery details, intricate motifs and decorative embellishments. Whether you prefer delicate threadwork or elaborate bridal embroidery, explore designs that complement your wedding saree and personal style.</p><a href="/explore/">Browse bridal designs →</a></article>
@@ -128,59 +175,99 @@ document.querySelectorAll('.seo-faq details').forEach(detail => detail.addEventL
   if (detail.open) document.querySelectorAll('.seo-faq details').forEach(other => { if (other !== detail) other.open = false; });
 }));
 
-let allProducts = [];
 let productsRequest = null;
-function showSkeletons(){document.getElementById('grid').innerHTML=Array.from({length:8},()=>'<div class="skeleton-card"><div class="skeleton skeleton-img"></div><div class="skeleton skeleton-line"></div><div class="skeleton skeleton-line short"></div></div>').join('');}
 
 async function loadProducts() {
-  showSkeletons();
   if (productsRequest) return productsRequest;
+  const retryButton = document.querySelector('#catalog-status button');
+  if (retryButton) retryButton.disabled = true;
   productsRequest = (async () => {
-  try {
-    const indexRes = await fetch('designs/index.json', {cache:'no-store'});
-    if (!indexRes.ok) throw new Error(`Index request failed: ${indexRes.status}`);
-    const ids = await indexRes.json();
-    allProducts = (await Promise.all(
-      ids.map(id => fetch(`designs/${id}/product.json`).then(r => r.json()).catch(() => null))
-    )).filter(Boolean);
-    renderGrid(allProducts);
-  } catch(e) {
-    console.error('Portfolio load failed', e);
-    document.getElementById('grid').innerHTML = '<div class="grid-msg"><span>We couldn\'t load the designs right now. Please try again.</span><button type="button" onclick="retryProducts()">Retry</button></div>';
-  } finally { productsRequest = null; }
+    try {
+      const indexRes = await fetch('designs/index.json', {cache:'no-store'});
+      if (!indexRes.ok) throw new Error(`Index request failed: ${indexRes.status}`);
+      const ids = await indexRes.json();
+      if (!Array.isArray(ids) || !ids.length || ids.some(id => typeof id !== 'string' || !/^[a-z0-9-]+$/.test(id))) {
+        throw new Error('Product index must contain valid product IDs');
+      }
+
+      const products = await Promise.all(ids.map(async id => {
+        const response = await fetch(`designs/${encodeURIComponent(id)}/product.json`, {cache:'no-store'});
+        if (!response.ok) throw new Error(`Product request failed for ${id}: ${response.status}`);
+        const product = await response.json();
+        if (!product || product.id !== id || typeof product.title !== 'string' || typeof product.category !== 'string') {
+          throw new Error(`Product data is invalid for ${id}`);
+        }
+        return product;
+      }));
+
+      renderGrid(products);
+      document.getElementById('catalog-status').hidden = true;
+    } catch(e) {
+      console.error('Portfolio refresh failed; keeping the saved catalogue visible.', e);
+      document.getElementById('catalog-status').hidden = false;
+    } finally {
+      productsRequest = null;
+      if (retryButton) retryButton.disabled = false;
+    }
   })();
   return productsRequest;
 }
-function retryProducts(){allProducts=[];loadProducts();}
-function safeImageFallback(img){img.hidden=true;img.nextElementSibling.hidden=false;}
+function retryProducts(){return loadProducts();}
+function safeImageFallback(img){
+  if(img.dataset.fallbackSrc){
+    img.src=img.dataset.fallbackSrc;
+    delete img.dataset.fallbackSrc;
+    img.onerror=()=>{img.hidden=true;img.closest('.card-img-wrap').querySelector('.card-img-ph').hidden=false;};
+    return;
+  }
+  img.hidden=true;
+  img.closest('.card-img-wrap').querySelector('.card-img-ph').hidden=false;
+}
 
 function renderGrid(products) {
   const grid = document.getElementById('grid');
-  if (!products.length) {
-    grid.innerHTML = '<div class="grid-msg"><span>No designs found in this category yet.</span><button type="button" onclick="filterCards(document.querySelector(\'.filter-tab\'),\'all\')">Browse all designs</button></div>';
-    return;
-  }
   grid.innerHTML = products.map(p => {
     const words = p.title.split(' ');
     const last = words.pop();
+    const imageName = p.images && p.images[0] || 'main.jpg';
+    const imagePath = `designs/${p.id}/${encodeURIComponent(imageName)}`;
+    const webpPath = imagePath.replace(/\.(?:png|jpe?g)$/i, '.webp');
+    const category = escapeHtml(p.category);
     return `
-      <a class="design-card" href="/explore/designs/${encodeURIComponent(p.id)}/">
+      <a class="design-card" data-category="${category.toLowerCase()}" href="/explore/designs/${encodeURIComponent(p.id)}/">
         <div class="card-top-line"></div>
         <div class="card-img-wrap">
-          <img class="card-img" loading="lazy" width="600" height="600" src="designs/${p.id}/${p.images && p.images[0] || 'main.jpg'}" alt="${p.title} embroidery design" onerror="safeImageFallback(this)">
-          <div class="card-img-ph" hidden><span>${p.category}</span></div>
+          <img class="card-img" loading="lazy" width="600" height="600" src="${webpPath}" data-fallback-src="${imagePath}" alt="${escapeHtml(p.title)} embroidery design" onerror="safeImageFallback(this)">
+          <div class="card-img-ph" hidden><span>${category}</span></div>
         </div>
         <div class="card-body">
-          <span class="card-cat">${p.category}</span>
-          <div class="card-title">${words.join(' ')}<br><em>${last}</em></div>
+          <span class="card-cat">${category}</span>
+          <div class="card-title">${escapeHtml(words.join(' '))}<br><em>${escapeHtml(last)}</em></div>
           <div class="price-row">
-            <span class="price-old">${p.oldPrice}</span>
-            <span class="price-new">${p.newPrice}</span>
+            <span class="price-old">${escapeHtml(p.oldPrice || '')}</span>
+            <span class="price-new">${escapeHtml(p.newPrice || '')}</span>
           </div>
           <span class="card-btn">View Design →</span>
         </div>
       </a>`;
   }).join('');
+  applyFilter(document.querySelector('.filter-tab.active')?.dataset.category || 'all');
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#39;'
+  })[character]);
+}
+
+function applyFilter(category) {
+  document.querySelectorAll('.design-card').forEach(card => {
+    card.hidden = category !== 'all' && card.dataset.category !== category;
+  });
 }
 
 function filterCards(btn, cat) {
@@ -190,7 +277,7 @@ function filterCards(btn, cat) {
   });
   btn.classList.add('active');
   btn.setAttribute('aria-pressed', 'true');
-  renderGrid(cat === 'all' ? allProducts : allProducts.filter(p => p.category === cat));
+  applyFilter(cat);
 }
 
 loadProducts();

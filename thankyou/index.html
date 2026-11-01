@@ -135,13 +135,15 @@ async function loadStrip() {
     )).filter(Boolean);
     if (!products.length) throw new Error('No products could be loaded');
     strip.innerHTML = products.map(p => {
-      const imagePath = p.images && p.images[0]
+      const imageName = p.images && p.images[0];
+      const imagePath = imageName
         ? `../explore/designs/${encodeURIComponent(p.id)}/${encodeURIComponent(p.images[0])}`
         : '';
+      const webpPath = imagePath.replace(/\.(?:png|jpe?g)$/i, '.webp');
       return `
       <a class="photo-card" href="../explore/designs/${p.id}/">
-        <img src="${imagePath}" alt="${p.title}"
-          onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <img src="${webpPath}" data-fallback-src="${imagePath}" alt="${p.title}" width="1254" height="1254" loading="lazy"
+          onerror="if(this.dataset.fallbackSrc){this.src=this.dataset.fallbackSrc;delete this.dataset.fallbackSrc}else{this.hidden=true;this.closest('.photo-card').querySelector('.photo-ph').style.display='flex'}">
         <div class="photo-ph" style="display:none;"><span>${p.category}</span></div>
         <div class="photo-hover"><span class="ph-name">${p.title}</span></div>
       </a>`;
