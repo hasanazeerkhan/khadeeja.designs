@@ -1,14 +1,4 @@
-/**
- * shared-nav.js
- * Handles nav, footer, and mobile menu for ALL pages.
- * Uses ABSOLUTE PATHS so navigation works from any page depth.
- *
- * Usage on ALL pages:
- *   <script src="../shared-nav.js"></script>  (adjust ../ based on depth)
- *   <script>initPage('home');</script>        (or 'explore', 'blog', 'faq', 'contact')
- *
- * @param {string} activePage - nav item to highlight ('home', 'explore', 'blog', 'faq', 'contact')
- */
+/** Khadeeja Designs shared site shell. */
 function initPage(activePage) {
   const NAV_PAGES = [
     { id: 'home',    label: 'Home',            href: '/'               },
@@ -17,14 +7,19 @@ function initPage(activePage) {
     { id: 'faq',     label: 'FAQ',             href: '/faq/'          },
   ];
 
-  /* ── Inject nav links ── */
-  const navCenter = document.querySelector('nav .nav-center');
-  if (navCenter) {
-    navCenter.innerHTML =
-      NAV_PAGES.map(p =>
-        `<a class="nav-link${p.id === activePage ? ' active' : ''}" href="${p.href}">${p.label}</a>`
-      ).join('') +
-      `<a class="nav-cta" href="/contact/">Send Enquiry</a>`;
+  /* Render the complete header from one source on every page. */
+  const header = document.querySelector('nav');
+  if (header) {
+    header.className = 'site-header';
+    header.setAttribute('aria-label', 'Primary navigation');
+    header.innerHTML = `
+      <a class="brand" href="/" aria-label="Khadeeja Designs home">Khadeeja Designs</a>
+      <div class="nav-center">
+        ${NAV_PAGES.map(p => `<a class="nav-link${p.id === activePage ? ' active' : ''}" href="${p.href}"${p.id === activePage ? ' aria-current="page"' : ''}>${p.label}</a>`).join('')}
+        <a class="nav-cta button button--gold" data-button="gold" href="/contact/">Send Enquiry</a>
+      </div>
+      <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>`;
+    header.querySelector('.hamburger').addEventListener('click', _toggleMobileMenu);
   }
 
   /* ── Inject footer ── */
@@ -33,7 +28,7 @@ function initPage(activePage) {
     footer.innerHTML = `
       <div class="footer-inner">
         <div>
-          <span class="footer-brand">Khadeeja Designs</span>
+          <a class="footer-brand" href="/">Khadeeja Designs</a>
           <p class="footer-tagline">Boutique Aari embroidery,<br>handcrafted in Trichy.</p>
         </div>
         <div class="footer-cols">
@@ -60,12 +55,12 @@ function initPage(activePage) {
   }
 
   /* ── Wire hamburger ── */
-  const hamburger = document.querySelector('.hamburger');
-  if (hamburger) {
-    hamburger.setAttribute('aria-label', 'Open navigation menu');
-    hamburger.setAttribute('aria-expanded', 'false');
-    hamburger.onclick = () => _toggleMobileMenu();
-  }
+  /* Normalise legacy page-specific CTAs into the shared button system. */
+  document.querySelectorAll('.btn-gold, .cta, [data-button="gold"]').forEach(el => el.classList.add('button', 'button--gold'));
+  document.querySelectorAll('.btn-ghost, [data-button="ghost"]').forEach(el => el.classList.add('button', 'button--ghost'));
+  document.querySelectorAll('.faq, .seo-faq, .contact-faq').forEach(section => {
+    if (section.querySelector('details')) section.classList.add('shared-question-section');
+  });
 }
 
 // Keep dynamically generated portfolio images accessible and stable for search
@@ -95,24 +90,19 @@ function _toggleMobileMenu() {
   m.id = 'mob-menu';
   m.setAttribute('role', 'dialog');
   m.setAttribute('aria-label', 'Mobile navigation');
-  m.style.cssText = `position:fixed;top:${navH}px;left:0;right:0;background:#0f0f0f;
-    border-bottom:1px solid rgba(255,255,255,0.07);z-index:99;
-    padding:8px 20px 20px;display:flex;flex-direction:column;`;
+  m.className = 'mobile-menu';
+  m.style.top = `${navH}px`;
 
   pages.forEach(({ label, href }) => {
     const a = document.createElement('a');
     a.textContent = label; a.href = href;
-    a.style.cssText = 'border-bottom:1px solid rgba(255,255,255,0.12);color:#C8C8C8;' +
-      'font-family:var(--sans);font-size:14px;padding:14px 0;text-decoration:none;display:block;';
     m.appendChild(a);
   });
 
   const cta = document.createElement('a');
   cta.textContent = 'Send Enquiry';
   cta.href = '/contact/';
-  cta.style.cssText = 'background:var(--gold);color:#000;font-family:var(--sans);' +
-    'font-size:14px;font-weight:500;padding:13px;margin-top:14px;' +
-    'text-decoration:none;text-align:center;display:block;';
+  cta.className = 'button button--gold';
   m.appendChild(cta);
   document.body.appendChild(m);
   document.body.style.overflow = 'hidden';

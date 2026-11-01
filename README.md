@@ -1,34 +1,26 @@
-# Khadeeja Designs — Website v3
+# Khadeeja Designs - Website v3
 
 ## File structure
 
 ```
 khadeeja-designs/
 ├── index.html            Home
-├── explore.html          Portfolio grid
-├── product.html          Product detail (?id=product-id)
+├── explore/              Portfolio and design pages
+│   ├── index.html        Portfolio grid
+│   └── designs/
+│       ├── index.json    Master list of product IDs
+│       └── <product-id>/ Product JSON, images and static design page
 ├── contact.html          Enquiry form
 ├── thankyou.html         Post-submission confirmation
 ├── faq.html              Full FAQ page
 ├── privacy.html          Privacy policy
-├── shared.css            Design system — shared by all pages
+├── shared.css            Design system - shared by all pages
 ├── shared-nav.js         Nav + footer injection for all pages
 ├── netlify.toml          Clean URL config for Netlify
 │
 ├── blog/
 │   ├── index.html        Blog listing
 │   └── how-to-choose-aari-embroidery-bridal-blouse.html
-│
-├── products/
-│   ├── index.json        Master list of product IDs
-│   ├── bridal-zardosi/
-│   │   ├── product.json
-│   │   ├── main.jpg      ← shown in explore grid (min 800×800px square)
-│   │   ├── 2.jpg
-│   │   └── 3.jpg
-│   ├── temple-border/
-│   ├── couture-collar/
-│   └── lotus-vine/
 │
 └── images/
     ├── blog/             Cover images for blog posts
@@ -50,15 +42,15 @@ Same files as above.
 
 ### 3. Replace YOUR_FORM_ID
 In contact.html only, replace `YOUR_FORM_ID` with your Formspree form ID.
-Get it free at formspree.io — create a form, copy the ID.
+Get it free at formspree.io - create a form, copy the ID.
 
 ### 4. Update contact details
 Keep the Instagram handle and contact email consistent across the site.
 
 ### 5. Add product images
-For each folder in products/:
-- main.jpg — square, min 800×800px (shown in grid)
-- 2.jpg, 3.jpg — detail shots (shown in product page gallery)
+For each folder in explore/designs/:
+- main.jpg - square, min 800×800px (shown in grid)
+- 2.jpg, 3.jpg - detail shots (shown in product page gallery)
 
 ### 6. Add blog cover image
 Save to: images/blog/bridal-blouse-guide.jpg
@@ -68,7 +60,7 @@ Recommended size: 1400×500px, landscape
 
 ## How to add a new product
 
-1. Create folder: `products/my-new-product/`
+1. Create folder: `explore/designs/my-new-product/`
 
 2. Add `product.json`:
 ```json
@@ -96,12 +88,12 @@ Recommended size: 1400×500px, landscape
 
 3. Add images: main.jpg, 2.jpg, 3.jpg
 
-4. Add the ID to `products/index.json`:
+4. Add the ID to `explore/designs/index.json`:
 ```json
 ["bridal-zardosi", "temple-border", "couture-collar", "lotus-vine", "my-new-product"]
 ```
 
-Done. Product appears in the grid and gets the URL: `/product?id=my-new-product`
+Done. Product appears in the grid and gets the URL: `/explore/designs/my-new-product/`
 
 ---
 
@@ -121,7 +113,7 @@ Done. Product appears in the grid and gets the URL: `/product?id=my-new-product`
 5. Update the "More from the blog" sidebar in the new post
 
 Google will automatically discover and index the new post via your sitemap
-(add sitemap.xml when you have 5+ posts — Netlify can auto-generate it).
+(add sitemap.xml when you have 5+ posts - Netlify can auto-generate it).
 
 ---
 
@@ -129,7 +121,7 @@ Google will automatically discover and index the new post via your sitemap
 
 The `netlify.toml` file handles clean URLs automatically.
 After deploying:
-- `/faq` serves `faq.html` — no .html in the URL bar
+- `/faq` serves `faq.html` - no .html in the URL bar
 - `/blog/` serves `blog/index.html`
 - `/product?id=bridal-zardosi` still works (query params pass through)
 
@@ -137,7 +129,7 @@ To deploy:
 1. Push this folder to a GitHub repo
 2. Connect the repo to Netlify (netlify.com → Add new site → GitHub)
 3. Build settings: Build command = leave blank, Publish directory = .
-4. Deploy — Netlify reads netlify.toml automatically
+4. Deploy - Netlify reads netlify.toml automatically
 
 ---
 

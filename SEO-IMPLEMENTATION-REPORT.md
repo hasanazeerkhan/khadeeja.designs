@@ -1,4 +1,4 @@
-# Khadeeja Designs — Phase 2 SEO implementation report
+# Khadeeja Designs - Phase 2 SEO implementation report
 
 Date: 31 October 2026  
 Canonical domain: `https://khadeejadesigns.in/`

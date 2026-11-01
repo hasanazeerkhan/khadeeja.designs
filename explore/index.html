@@ -138,11 +138,11 @@ async function loadProducts() {
   if (productsRequest) return productsRequest;
   productsRequest = (async () => {
   try {
-    const indexRes = await fetch('designs/products/index.json', {cache:'no-store'});
+    const indexRes = await fetch('designs/index.json', {cache:'no-store'});
     if (!indexRes.ok) throw new Error(`Index request failed: ${indexRes.status}`);
     const ids = await indexRes.json();
     allProducts = (await Promise.all(
-      ids.map(id => fetch(`designs/products/${id}/product.json`).then(r => r.json()).catch(() => null))
+      ids.map(id => fetch(`designs/${id}/product.json`).then(r => r.json()).catch(() => null))
     )).filter(Boolean);
     renderGrid(allProducts);
   } catch(e) {
@@ -165,10 +165,10 @@ function renderGrid(products) {
     const words = p.title.split(' ');
     const last = words.pop();
     return `
-      <a class="design-card" href="/explore/designs/${encodeURIComponent((p.id || p.path).toLowerCase().replace(/\s+/g,'-'))}/">
+      <a class="design-card" href="/explore/designs/${encodeURIComponent(p.id)}/">
         <div class="card-top-line"></div>
         <div class="card-img-wrap">
-          <img class="card-img" loading="lazy" width="600" height="600" src="designs/products/${p.path || p.id}/${p.images && p.images[0] || 'main.jpg'}" alt="${p.title} embroidery design" onerror="safeImageFallback(this)">
+          <img class="card-img" loading="lazy" width="600" height="600" src="designs/${p.id}/${p.images && p.images[0] || 'main.jpg'}" alt="${p.title} embroidery design" onerror="safeImageFallback(this)">
           <div class="card-img-ph" hidden><span>${p.category}</span></div>
         </div>
         <div class="card-body">

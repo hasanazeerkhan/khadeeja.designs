@@ -1,8 +1,10 @@
 /* ═══════════════════════════════════════
-   KHADEEJA DESIGNS — shared.css
+   KHADEEJA DESIGNS - shared.css
    Root-level pages only.
    Blog pages use ../shared.css
 ═══════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
@@ -55,6 +57,7 @@ nav {
   transition: background 0.2s; text-decoration: none; display: inline-block;
 }
 .nav-cta:hover { background: var(--gold-light); }
+.nav-cta.button { padding: 9px 22px; font-size: 13px; }
 .hamburger {
   display: none; flex-direction: column; gap: 5px;
   cursor: pointer; background: none; border: none; padding: 4px;
@@ -70,6 +73,7 @@ nav {
   font-family: var(--sans); font-size: 11px;
   letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
 }
+.button,
 .btn-gold {
   font-family: var(--sans); font-size: 14px; font-weight: 500;
   letter-spacing: 0.04em; color: var(--black); background: var(--gold);
@@ -77,27 +81,44 @@ nav {
   transition: background 0.2s, transform 0.1s;
   white-space: nowrap; display: inline-block; text-decoration: none;
 }
-.btn-gold:hover { background: var(--gold-light); }
+.button--gold,
+.btn-gold { color: var(--black); background: var(--gold); }
+.button--gold:hover,
+.btn-gold:hover,
+.nav-cta:hover { background: var(--gold-light); }
+.button:active,
 .btn-gold:active { transform: scale(0.98); }
+.button--ghost,
 .btn-ghost {
   font-family: var(--sans); font-size: 13px; font-weight: 400;
   color: var(--t2); background: transparent; border: 1px solid #555;
   padding: 14px 24px; cursor: pointer; transition: all 0.2s; white-space: nowrap;
   text-decoration: none; display: inline-block;
 }
+.button--ghost:hover,
 .btn-ghost:hover { color: var(--t1); border-color: #777; }
 
 /* ── SHARED FAQ ACCORDION ──
    Used by the homepage, Explore, Contact, FAQ and product pages. */
+.faq-section-title {
+  font-family: var(--serif);
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: 32px;
+}
+.faq-section-title em { font-style: italic; color: var(--gold-light); }
+
 .faq details,
 .seo-faq details,
 .contact-faq details {
   border-top: 1px solid var(--border);
-  padding: 0;
+  border-bottom: 0 !important;
+  padding: 0 !important;
 }
 .faq details:last-child,
 .seo-faq details:last-child,
-.contact-faq details:last-child { border-bottom: 1px solid var(--border); }
+.contact-faq details:last-child { border-bottom: 1px solid var(--border) !important; }
 .faq details summary,
 .seo-faq details summary,
 .contact-faq details summary {
@@ -109,10 +130,10 @@ nav {
   cursor: pointer;
   list-style: none;
   color: var(--t1);
-  font-family: var(--serif);
+  font-family: var(--serif) !important;
   font-size: 18px !important;
-  font-weight: 400;
-  line-height: 1.3;
+  font-weight: 400 !important;
+  line-height: 1.3 !important;
 }
 .faq details summary::-webkit-details-marker,
 .seo-faq details summary::-webkit-details-marker,
@@ -146,6 +167,30 @@ nav {
   line-height: 1.85;
 }
 
+/* Explicit shared hook for product/detail-page question sections. */
+.shared-question-section details {
+  border-top: 1px solid var(--border) !important;
+  border-bottom: 0 !important;
+  padding: 0 !important;
+}
+.shared-question-section details:last-child { border-bottom: 1px solid var(--border) !important; }
+.shared-question-section details summary {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  gap: 24px !important;
+  padding: 22px 0 !important;
+  font: 400 18px/1.3 var(--serif) !important;
+  color: var(--t1) !important;
+}
+.shared-question-section details[open] summary { color: var(--gold-light) !important; }
+.shared-question-section details p {
+  max-width: 760px !important;
+  padding: 0 42px 26px 0 !important;
+  font: 300 14px/1.85 var(--sans) !important;
+  color: var(--t2) !important;
+}
+
 /* ── FOOTER ── */
 footer { border-top: 1px solid var(--border); padding: 40px 52px 32px; margin-top: auto; }
 .footer-inner {
@@ -153,6 +198,7 @@ footer { border-top: 1px solid var(--border); padding: 40px 52px 32px; margin-to
   gap: 40px; margin-bottom: 28px;
 }
 .footer-brand { font-family: var(--serif); font-size: 16px; color: var(--gold-pale); display: block; margin-bottom: 6px; }
+.footer-brand { text-decoration: none; }
 .footer-tagline { font-family: var(--sans); font-size: 12px; color: var(--t2); line-height: 1.6; max-width: 200px; }
 .footer-cols { display: flex; gap: 52px; }
 .footer-col-label {
@@ -172,6 +218,20 @@ footer { border-top: 1px solid var(--border); padding: 40px 52px 32px; margin-to
 .footer-legal { display: flex; gap: 20px; }
 .footer-legal a { font-family: var(--sans); font-size: 11px; color: var(--t2); text-decoration: none; transition: color 0.2s; }
 .footer-legal a:hover { color: var(--t1); }
+
+/* Shared mobile navigation rendered by shared-nav.js. */
+.mobile-menu {
+  position: fixed; left: 0; right: 0; z-index: 99;
+  background: var(--black); border-bottom: 1px solid var(--border);
+  padding: 8px 20px 20px; display: flex; flex-direction: column;
+}
+.mobile-menu > a:not(.button) {
+  border-bottom: 1px solid var(--border); color: var(--t2);
+  font-family: var(--sans); font-size: 14px; padding: 14px 0;
+  text-decoration: none; display: block;
+}
+.mobile-menu > a:not(.button):hover { color: var(--t1); }
+.mobile-menu .button { margin-top: 14px; text-align: center; width: 100%; }
 
 /* ── MOBILE ── */
 @media (max-width: 900px) {

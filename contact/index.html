@@ -12,7 +12,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="canonical" href="https://khadeejadesigns.in/contact/"><meta property="og:type" content="website"><meta property="og:title" content="Enquire About Custom Aari Embroidery | Khadeeja Designs"><meta property="og:description" content="Share your bridal blouse or embroidery brief with Khadeeja Designs in Trichy."><meta property="og:url" content="https://khadeejadesigns.in/contact/"><meta name="twitter:card" content="summary">
-<title>Contact — Khadeeja Designs</title>
+<title>Contact - Khadeeja Designs</title>
 <meta name="description" content="Send your Aari embroidery enquiry. We reply within 48 hours with pricing and next steps.">
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init','YOUR_PIXEL_ID');fbq('track','PageView');</script>
 <script async src="https://www.googletagmanager.com/gtag/js?id=YOUR_GA4_ID"></script>
@@ -159,7 +159,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
       </div>
       <span class="addr-label">Studio address</span>
       <p class="addr-text">17 East Sayakara Lane<br>Jaffersha Street<br>Trichy – 620008</p>
-      <a class="map-link" href="https://maps.google.com/?q=17+East+Savakara+Lane+Jaffersha+Street+Trichy" target="_blank" rel="noopener">
+      <a class="map-link" href="https://maps.app.goo.gl/LLfyh2Ar4wq9Twyc8" target="_blank" rel="noopener">
         View on Google Maps
         <svg viewBox="0 0 12 12"><path d="M9 3L3 9M9 3H5M9 3V7"/></svg>
       </a>
@@ -167,13 +167,13 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
 
     <div class="v-rule"></div>
 
-    <!-- RIGHT — FORM -->
+    <!-- RIGHT - FORM -->
     <div class="contact-right">
       <h2 class="form-heading">Send your<br><em>enquiry.</em></h2>
-      <p class="form-sub">Fill in the details below — we'll get back within 48 hours with pricing and next steps.</p>
+      <p class="form-sub">Fill in the details below - we'll get back within 48 hours with pricing and next steps.</p>
       <p class="faq-hint">Have questions before enquiring? <a href="../faq/">Read our FAQ →</a></p>
 
-      <!-- Selected design — shown only when arriving from product page -->
+      <!-- Selected design - shown only when arriving from product page -->
       <div class="design-tag-wrap" id="design-tag-wrap">
         <div class="design-tag-box">
           <span class="design-tag-label">Selected design</span>
@@ -227,15 +227,32 @@ document.querySelectorAll('.contact-faq details').forEach(detail => detail.addEv
 }));
 
 /* ── Read design tag from URL ── */
-(function() {
+let selectedDesignId = '';
+(async function() {
   const p = new URLSearchParams(window.location.search);
-  const tag = p.get('design');
-  if (tag && tag.trim()) {
+  const id = p.get('id')?.trim();
+  const legacyTag = p.get('design')?.trim();
+  let tag = legacyTag || '';
+
+  if (id) {
+    selectedDesignId = id;
+    try {
+      const res = await fetch(`../explore/designs/${encodeURIComponent(id)}/product.json`);
+      if (res.ok) {
+        const product = await res.json();
+        tag = product.tag || product.title || tag;
+      }
+    } catch (e) {
+      console.warn('Could not load selected design details', e);
+    }
+  }
+
+  if (tag) {
     const wrap = document.getElementById('design-tag-wrap');
     const display = document.getElementById('design-tag-display');
     const hidden = document.getElementById('f-design');
-    display.textContent = tag.trim();
-    hidden.value = tag.trim();
+    display.textContent = tag;
+    hidden.value = tag;
     wrap.style.display = 'block';
   }
 })();
@@ -263,6 +280,9 @@ async function submitForm() {
   const payload = {
     name:    document.getElementById('f-name').value.trim(),
     phone:   document.getElementById('f-phone').value.trim(),
+    design_url: selectedDesignId
+      ? new URL(`../explore/designs/${encodeURIComponent(selectedDesignId)}/`, window.location.href).href
+      : '',
     design,
     message: document.getElementById('f-msg').value.trim()
   };

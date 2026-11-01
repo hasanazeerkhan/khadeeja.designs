@@ -97,6 +97,13 @@ body { display:flex; flex-direction:column; min-height:100vh; }
   transition:color 0.2s; padding-bottom:4px; flex-shrink:0;
 }
 .faq-all-link:hover { color:var(--gold); }
+.action-links {
+  display:flex;
+  gap:20px;
+  flex-wrap:wrap;
+  margin-top:24px;
+  align-items:center;
+}
 
 .faq-list { display:flex; flex-direction:column; }
 .faq-item { border-top:1px solid var(--border); }
@@ -138,6 +145,9 @@ body { display:flex; flex-direction:column; min-height:100vh; }
   .stats-row{gap:24px;}
   .stat{text-align:left;}
   .btn-gold{width:100%;text-align:center;padding:15px;}
+  .action-links{flex-direction:column;align-items:stretch;gap:12px;}
+  .action-links .btn-gold,
+  .action-links .btn-ghost{width:100%;text-align:center;padding:15px;}
   .faq-section{padding:44px 20px 52px;}
   .faq-header{flex-direction:column;align-items:flex-start;gap:10px;}
   .faq-title{font-size:28px;}
@@ -226,7 +236,7 @@ body { display:flex; flex-direction:column; min-height:100vh; }
         <span class="faq-q">Can I customise a design I saw in the portfolio?</span>
         <span class="faq-icon"></span>
       </button>
-      <div class="faq-a">Yes — every order is made to your brief. You can request changes to colours, motif placement, density, or sleeve style. Share a reference photo or describe what you have in mind and we'll adapt the design accordingly.</div>
+      <div class="faq-a">Yes - every order is made to your brief. You can request changes to colours, motif placement, density, or sleeve style. Share a reference photo or describe what you have in mind and we'll adapt the design accordingly.</div>
     </div>
     <div class="faq-item">
       <button class="faq-btn" onclick="toggleFaq(this)">
@@ -240,14 +250,14 @@ body { display:flex; flex-direction:column; min-height:100vh; }
         <span class="faq-q">What do I need to send an enquiry?</span>
         <span class="faq-icon"></span>
       </button>
-      <div class="faq-a">Just your name, mobile number, and a rough idea of what you need. You don't need to have everything figured out — we'll ask the right questions and guide you through the brief at no commitment.</div>
+      <div class="faq-a">Just your name, mobile number, and a rough idea of what you need. You don't need to have everything figured out - we'll ask the right questions and guide you through the brief at no commitment.</div>
     </div>
     <div class="faq-item">
       <button class="faq-btn" onclick="toggleFaq(this)">
         <span class="faq-q">Is payment required before work begins?</span>
         <span class="faq-icon"></span>
       </button>
-      <div class="faq-a">We collect an advance after the design brief is approved and before work begins. The balance is due on completion, before shipping. Full payment terms are shared with your quote — no surprises.</div>
+      <div class="faq-a">We collect an advance after the design brief is approved and before work begins. The balance is due on completion, before shipping. Full payment terms are shared with your quote - no surprises.</div>
     </div>
     <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false"><span class="faq-q">What is Aari embroidery and how is it done?</span><span class="faq-icon"></span></button><div class="faq-a">Aari embroidery is a traditional Indian hand embroidery technique performed using a specialised hooked needle called an Aari needle. The technique creates intricate chain stitches and decorative patterns using threads, beads, stones and other embellishments. It is widely used for bridal blouses, sarees and occasion wear. <a href="/blog/">More Aari embroidery information</a>.</div></div>
     <div class="faq-item"><button class="faq-btn" onclick="toggleFaq(this)" aria-expanded="false"><span class="faq-q">What makes handmade Aari embroidery different from machine embroidery?</span><span class="faq-icon"></span></button><div class="faq-a">Handmade Aari embroidery is created by artisans using an Aari needle, allowing detailed patterns and individual design customisation. Machine embroidery is produced using automated stitching processes. Handmade Aari work offers a distinctive handcrafted finish, with design details tailored to the garment.</div></div>
@@ -260,7 +270,12 @@ body { display:flex; flex-direction:column; min-height:100vh; }
 <section class="faq-section" aria-label="Explore Khadeeja Designs">
   <div class="faq-header"><div><div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Continue exploring</span></div><h2 class="faq-title">Find your <em>next step</em></h2></div></div>
   <p class="hero-desc">Browse bridal Aari blouse designs, learn about embroidery and send a brief for a customised order from Trichy.</p>
-  <div style="display:flex;gap:20px;flex-wrap:wrap;margin-top:24px"><a class="btn-gold" href="/explore/">Browse Aari blouse designs →</a><a class="faq-all-link" href="/blog/">Read embroidery guides →</a><a class="faq-all-link" href="/faq/">Read customer FAQs →</a><a class="faq-all-link" href="/contact/">Send an enquiry →</a></div>
+  <div class="action-links">
+    <a class="btn-gold" href="/explore/">Browse Aari blouse designs →</a>
+    <a class="btn-ghost" href="/blog/">Read embroidery guides →</a>
+    <a class="btn-ghost" href="/faq/">Read customer FAQs →</a>
+    <a class="btn-ghost" href="/contact/">Send an enquiry →</a>
+  </div>
 </section>
 <footer></footer>
 <script src="shared-nav.js"></script>
