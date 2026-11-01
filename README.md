@@ -10,10 +10,10 @@ khadeeja-designs/
 │   └── designs/
 │       ├── index.json    Master list of product IDs
 │       └── <product-id>/ Product JSON, images and static design page
-├── contact.html          Enquiry form
-├── thankyou.html         Post-submission confirmation
-├── faq.html              Full FAQ page
-├── privacy.html          Privacy policy
+├── contact/              Enquiry form (`index.html`)
+├── thankyou/             Post-submission confirmation (`index.html`)
+├── faq/                  Full FAQ page (`index.html`)
+├── privacy/              Privacy policy (`index.html`)
 ├── shared.css            Design system - shared by all pages
 ├── shared-nav.js         Nav + footer injection for all pages
 ├── netlify.toml          Clean URL config for Netlify
@@ -40,9 +40,9 @@ blog/index, blog/how-to-choose-aari...
 Search all HTML files for `YOUR_GA4_ID` and replace with your GA4 Measurement ID (G-XXXXXXXXXX).
 Same files as above.
 
-### 3. Replace YOUR_FORM_ID
-In contact.html only, replace `YOUR_FORM_ID` with your Formspree form ID.
-Get it free at formspree.io - create a form, copy the ID.
+### 3. Form endpoint
+The enquiry endpoint is configured in `contact/index.html`.
+Update the Formspree endpoint there if the form account changes.
 
 ### 4. Update contact details
 Keep the Instagram handle and contact email consistent across the site.
@@ -84,7 +84,8 @@ Recommended size: 1400×500px, landscape
 }
 ```
 
-`category` must be one of: `bridal`, `saree`, `couture`
+`category` must match an available Explore filter. Current values are
+`bridal` or `designer`.
 
 3. Add images: main.jpg, 2.jpg, 3.jpg
 
@@ -121,9 +122,10 @@ Google will automatically discover and index the new post via your sitemap
 
 The `netlify.toml` file handles clean URLs automatically.
 After deploying:
-- `/faq` serves `faq.html` - no .html in the URL bar
+- `/faq/` serves `faq/index.html` - no `.html` in the URL bar
 - `/blog/` serves `blog/index.html`
-- `/product?id=bridal-zardosi` still works (query params pass through)
+- Legacy `/product?id=...` links redirect to the matching
+  `/explore/designs/<product-id>/` page.
 
 To deploy:
 1. Push this folder to a GitHub repo
@@ -139,11 +141,11 @@ To deploy:
 |------|-----|-------------|-------------------|
 | Home | / | PageView | Top of funnel |
 | Explore | /explore | PageView | "Browsed portfolio" |
-| Product | /product?id=X | ViewContent | "Viewed specific design" |
+| Product | /explore/designs/<id>/ | ViewContent | "Viewed specific design" |
 | Contact | /contact | PageView | "High intent" |
 | Thank You | /thankyou | Lead (conversion) | Exclude from retargeting |
 
 Recommended retargeting campaigns:
 - Visited /explore but NOT /thankyou → "Browse our new arrivals"
-- Visited /product?id=X but NOT /thankyou → Show the specific design they viewed
+- Visited /explore/designs/<id>/ but NOT /thankyou → Show the specific design they viewed
 - Lookalike of /thankyou visitors → Find similar audiences to target

@@ -37,7 +37,10 @@
 <script src="../shared-nav.js"></script>
 <script>
 initPage('');
-window.location.href = '../explore/';
+const id = new URLSearchParams(window.location.search).get('id')?.trim();
+window.location.replace(id
+  ? `../explore/designs/${encodeURIComponent(id)}/`
+  : '../explore/');
 </script>
 </body>
 </html>

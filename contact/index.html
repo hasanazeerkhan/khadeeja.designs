@@ -91,6 +91,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
 .field-error{font-family:var(--sans);font-size:11px;color:#e05555;margin-top:5px;display:none;}
 .field.has-error .fi{border-bottom-color:#e05555;}
 .form-status{font-family:var(--sans);font-size:12px;line-height:1.5;margin-top:16px;display:none;}.form-status.error{display:block;color:#e05555}.form-status.success{display:block;color:var(--green)}
+.form-trap{position:absolute;left:-10000px;width:1px;height:1px;overflow:hidden;}
 
 .form-foot{display:flex;align-items:center;justify-content:space-between;margin-top:28px;gap:20px;}
 .form-note{font-family:var(--sans);font-size:11px;font-weight:300;color:var(--t1);line-height:1.6;max-width:200px;}
@@ -173,6 +174,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
       <p class="form-sub">Fill in the details below - we'll get back within 48 hours with pricing and next steps.</p>
       <p class="faq-hint">Have questions before enquiring? <a href="../faq/">Read our FAQ →</a></p>
 
+      <form id="enquiry-form" novalidate>
       <!-- Selected design - shown only when arriving from product page -->
       <div class="design-tag-wrap" id="design-tag-wrap">
         <div class="design-tag-box">
@@ -182,17 +184,17 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
             <a class="design-tag-change" href="../explore/">Change design →</a>
           </div>
         </div>
-        <input type="hidden" id="f-design" value="">
+        <input type="hidden" id="f-design" name="design" value="">
       </div>
 
       <div class="field">
         <label class="field-lbl" for="f-name">Your name</label>
-        <input class="fi" type="text" id="f-name" name="name" placeholder="e.g. Priya Sharma" autocomplete="name">
+        <input class="fi" type="text" id="f-name" name="name" placeholder="e.g. Priya Sharma" autocomplete="name" required aria-describedby="err-name">
         <div class="field-error" id="err-name">Please enter your name.</div>
       </div>
       <div class="field">
         <label class="field-lbl" for="f-phone">Mobile number</label>
-        <input class="fi" type="tel" id="f-phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel">
+        <input class="fi" type="tel" id="f-phone" name="phone" placeholder="+91 XXXXX XXXXX" autocomplete="tel" inputmode="tel" required aria-describedby="err-phone">
         <div class="field-error" id="err-phone">Please enter a valid mobile number.</div>
       </div>
       <div class="field">
@@ -200,11 +202,17 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
         <textarea class="fi" id="f-msg" name="message" placeholder="Describe your requirement, occasion, preferred colours, timeline…"></textarea>
       </div>
 
+      <div class="form-trap" aria-hidden="true">
+        <label for="f-website">Leave this field empty</label>
+        <input type="text" id="f-website" name="website" tabindex="-1" autocomplete="off">
+      </div>
+
       <div class="form-foot">
         <p class="form-note">We reply within 48 hours. Your details are never shared.</p>
-        <button type="button" class="btn-gold" onclick="submitForm()">Send Enquiry →</button>
+        <button type="submit" class="btn-gold" id="enquiry-submit">Send Enquiry →</button>
       </div>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+      </form>
     </div>
   </div>
 
@@ -222,6 +230,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
 <script src="../shared-nav.js"></script>
 <script>
 initPage('contact');
+document.getElementById('enquiry-form').addEventListener('submit', submitForm);
 document.querySelectorAll('.contact-faq details').forEach(detail => detail.addEventListener('toggle', () => {
   if (detail.open) document.querySelectorAll('.contact-faq details').forEach(other => { if (other !== detail) other.open = false; });
 }));
@@ -259,20 +268,25 @@ let selectedDesignId = '';
 
 function validate() {
   let ok = true;
-  const name = document.getElementById('f-name').value.trim();
-  const phone = document.getElementById('f-phone').value.trim();
+  const nameField = document.getElementById('f-name');
+  const phoneField = document.getElementById('f-phone');
+  const name = nameField.value.trim();
+  const phone = phoneField.value.trim();
   ['err-name','err-phone'].forEach(id => document.getElementById(id).style.display = 'none');
   document.querySelectorAll('.field').forEach(f => f.classList.remove('has-error'));
-  if (!name)  { document.getElementById('err-name').style.display = 'block'; document.getElementById('f-name').closest('.field').classList.add('has-error'); ok = false; }
+  [nameField, phoneField].forEach(field => field.setAttribute('aria-invalid', 'false'));
+  if (!name)  { document.getElementById('err-name').style.display = 'block'; nameField.closest('.field').classList.add('has-error'); nameField.setAttribute('aria-invalid', 'true'); ok = false; }
   if (!phone || phone.replace(/\D/g,'').length < 10) {
-    document.getElementById('err-phone').style.display = 'block'; document.getElementById('f-phone').closest('.field').classList.add('has-error'); ok = false;
+    document.getElementById('err-phone').style.display = 'block'; phoneField.closest('.field').classList.add('has-error'); phoneField.setAttribute('aria-invalid', 'true'); ok = false;
   }
   return ok;
 }
 
-async function submitForm() {
+async function submitForm(event) {
+  event.preventDefault();
+  if (document.getElementById('f-website').value) return;
   if (!validate()) return;
-  const btn = document.querySelector('.btn-gold');
+  const btn = document.getElementById('enquiry-submit');
   btn.textContent = 'Sending…'; btn.disabled = true;
   const status = document.getElementById('form-status'); status.className = 'form-status'; status.textContent = '';
 
@@ -288,13 +302,17 @@ async function submitForm() {
   };
 
   const formEndpoint = 'https://formspree.io/f/maqlejwd';
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 15000);
   try {
     const res = await fetch(formEndpoint,{
       method:'POST',
       headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify(payload)
+      body: JSON.stringify(payload),
+      signal: controller.signal
     });
     if (!res.ok) throw new Error();
+    clearTimeout(timeout);
 
     /* Track the conversion only after Formspree confirms the enquiry. */
     if (typeof fbq !== 'undefined') fbq('track','Lead',{content_name:design,content_category:'Enquiry'});
@@ -303,6 +321,7 @@ async function submitForm() {
     /* Show the dedicated confirmation page instead of leaving the user on the form. */
     window.location.assign('../thankyou/');
   } catch(e) {
+    clearTimeout(timeout);
     console.error('Enquiry submission failed', e);
     status.className = 'form-status error';
     status.textContent = 'We couldn\'t submit your enquiry right now. Please check your connection and try again.';

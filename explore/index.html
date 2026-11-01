@@ -95,14 +95,13 @@ main{flex:1;}
     <p class="explore-sub">Explore our collection of handcrafted Aari blouse designs, bridal embroidery and traditional saree embellishments. Discover different embroidery styles, view design details and enquire about customisation. Every design can be discussed according to your preferred colours, motifs and occasion.</p>
   </div>
 
-  <div class="filter-row">
-    <button class="filter-tab active" onclick="filterCards(this,'all')">All</button>
-    <button class="filter-tab" onclick="filterCards(this,'bridal')">Bridal</button>
-    <button class="filter-tab" onclick="filterCards(this,'saree')">Saree</button>
-    <button class="filter-tab" onclick="filterCards(this,'couture')">Couture</button>
+  <div class="filter-row" role="group" aria-label="Filter designs by category">
+    <button class="filter-tab active" type="button" aria-pressed="true" onclick="filterCards(this,'all')">All</button>
+    <button class="filter-tab" type="button" aria-pressed="false" onclick="filterCards(this,'bridal')">Bridal</button>
+    <button class="filter-tab" type="button" aria-pressed="false" onclick="filterCards(this,'designer')">Designer</button>
   </div>
 
-  <div id="grid" aria-live="polite"></div>
+  <div id="grid" role="region" aria-label="Design collection" aria-live="polite"></div>
 
   <section class="seo-copy" aria-labelledby="collection-heading">
     <article><h2 id="collection-heading">Bridal Aari Blouse Designs</h2><p>Discover bridal Aari blouse designs featuring traditional embroidery details, intricate motifs and decorative embellishments. Whether you prefer delicate threadwork or elaborate bridal embroidery, explore designs that complement your wedding saree and personal style.</p><a href="/explore/">Browse bridal designs →</a></article>
@@ -185,8 +184,12 @@ function renderGrid(products) {
 }
 
 function filterCards(btn, cat) {
-  document.querySelectorAll('.filter-tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.filter-tab').forEach(t => {
+    t.classList.remove('active');
+    t.setAttribute('aria-pressed', 'false');
+  });
   btn.classList.add('active');
+  btn.setAttribute('aria-pressed', 'true');
   renderGrid(cat === 'all' ? allProducts : allProducts.filter(p => p.category === cat));
 }
 
