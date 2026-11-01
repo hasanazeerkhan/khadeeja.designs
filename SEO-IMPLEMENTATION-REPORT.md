@@ -66,7 +66,14 @@ Google Business Profile owner checklist:
 
 ## 5. Image SEO and performance
 
-Existing product image files are large PNGs (roughly 2.2–2.5 MB each) and should be compressed or converted to WebP/AVIF in a deployment-safe future pass while retaining the originals and paths. Do not replace them blindly. Below-the-fold product and blog images should remain lazy-loaded; the primary hero image should be eager. Intrinsic dimensions should be retained or added to every image to reduce layout shift. A production Lighthouse/PageSpeed audit is still required.
+Performance follow-up audit: 1 November 2026.
+
+- Added 600px WebP thumbnails for the eight Explore cards while retaining the full-size WebP and PNG originals. The card image payloads total about 486 KB instead of 1.55 MB (about 69% smaller).
+- Added WebP versions for the three blog images while retaining the JPEG originals; the converted files total about 730 KB instead of 993 KB (about 27% smaller).
+- The first Explore and Blog card images are prioritized; other cards are lazy-loaded at low priority. Product detail images already use WebP and high fetch priority.
+- Added intrinsic dimensions and asynchronous decoding to blog images to reserve layout space and reduce layout shifts.
+- Removed inactive GA4/Meta Pixel snippets that used placeholder IDs, and defer Microsoft Clarity until after page load and browser idle time.
+- Lighthouse/PageSpeed production measurements are still pending deployment and a successful audit run.
 
 ## 6. Structured data and internal linking
 
@@ -89,8 +96,22 @@ Implemented or verified: LocalBusiness and WebSite schema on the homepage, Produ
 - `explore/product.html`
 - `blog/index.html`
 - `blog/how-to-choose-aari-embroidery-bridal-blouse/index.html`
+- `privacy/index.html`
+- `contact/index.html`, `faq/index.html`, `thankyou/index.html`
+- `explore/index.html` and the eight `explore/designs/*/index.html` product pages
+- Responsive WebP derivatives in `explore/designs/` and `images/blog/`
 - `SEO-IMPLEMENTATION-REPORT.md`
 
-## 9. Remaining issues
+## 9. Redirect and link verification
 
-Real analytics IDs, production mobile performance measurements, image compression/modern-format derivatives, live HTTPS/redirect verification and Search Console indexing observations require deployment or owner credentials. The current client-rendered Explore grid is functional, but server-rendered product links would improve first-pass crawlability and resilience.
+Follow-up audit: 1 November 2026.
+
+- Checked local links and assets across all 18 HTML pages; no missing local targets or broken in-page anchors were found.
+- Verified the eight legacy product-query redirects each resolve to the matching clean product page with one redirect and a final `200`.
+- Verified hostname and slash-normalization redirects resolve to the canonical domain; an unknown path returns `404`.
+- Checked the privacy policy's external links. Formspree's policy is available at its slash-terminated URL, so both references now point directly to it and avoid the extra redirect.
+- Live responses confirmed for the linked Formspree policy, Microsoft privacy statement, Instagram profile, and Google Maps location.
+
+## 10. Performance and remaining issues
+
+Real analytics IDs and Search Console indexing observations require owner configuration. Production mobile Core Web Vitals should be measured after deployment; the PageSpeed Insights API was unavailable during this pass because its query quota was exhausted. Live HTTPS and redirect behavior have been checked. The current client-rendered Explore grid is functional, but server-rendered product links would improve first-pass crawlability and resilience.
