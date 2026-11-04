@@ -97,6 +97,55 @@ nav {
 .button--ghost:hover,
 .btn-ghost:hover { color: var(--t1); border-color: #777; }
 
+.whatsapp-float {
+  position: fixed; right: 24px; bottom: 24px; z-index: 99;
+  display: inline-flex; align-items: center; gap: 9px;
+  padding: 13px 18px; border: 1px solid var(--green); border-radius: 999px;
+  background: #101510; color: var(--t1); font: 13px var(--sans);
+  text-decoration: none; box-shadow: 0 8px 26px rgba(0,0,0,.4);
+}
+.whatsapp-icon { display: block; width: 20px; height: 20px; flex: 0 0 20px; fill: none; stroke: var(--green); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.whatsapp-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
+.contact-whatsapp, .product-whatsapp { margin: 20px 0 0 12px; }
+.ordering-steps {
+  padding: 48px 52px; border-top: 1px solid var(--border);
+}
+.ordering-steps__heading h2, .testimonials h2 {
+  font: 300 30px var(--serif); margin-bottom: 26px;
+}
+.ordering-steps__heading h2 em { color: var(--gold-light); }
+.ordering-steps ol {
+  list-style: none; display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+.ordering-steps li { border-top: 1px solid var(--border-mid); padding-top: 16px; }
+.ordering-steps__number { color: var(--gold); font: 11px var(--sans); letter-spacing: .12em; }
+.ordering-steps h3 { margin: 10px 0 6px; font: 20px var(--serif); }
+.ordering-steps p { color: var(--t2); font: 13px/1.7 var(--sans); }
+.testimonials { padding: 48px 52px; border-top: 1px solid var(--border); }
+.testimonials__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.testimonials figure { border: 1px solid var(--border); padding: 22px; }
+.testimonials blockquote { color: var(--t2); font: 15px/1.8 var(--sans); }
+.testimonials figcaption { display: flex; align-items: center; gap: 10px; margin-top: 18px; font: 12px var(--sans); }
+.testimonials img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
+.related-guide { margin: 28px 0; color: var(--t2); font: 13px/1.8 var(--sans); }
+.related-guide a, .related-designs a { color: var(--gold-light); }
+.related-designs { margin-top: 36px; border-top: 1px solid var(--border); padding-top: 20px; }
+.related-designs h2 { font: 26px var(--serif); margin: 0 0 12px; }
+.related-designs ul { display: flex; flex-wrap: wrap; gap: 18px; list-style: none; font: 13px var(--sans); }
+.product .old { display: none; }
+@media(max-width: 700px) {
+  .whatsapp-float {
+    right: 16px; bottom: 16px; width: 48px; height: 48px; padding: 0;
+    display: grid; place-items: center; border-radius: 50%;
+  }
+  .whatsapp-float .whatsapp-label { display: none; }
+  .whatsapp-float .whatsapp-icon { width: 24px; height: 24px; }
+  .ordering-steps, .testimonials { padding: 36px 20px; }
+  .ordering-steps ol, .testimonials__grid { grid-template-columns: 1fr; }
+  .contact-whatsapp, .product-whatsapp { margin-left: 0; width: 100%; text-align: center; }
+}
+
 /* ── SHARED FAQ ACCORDION ──
    Used by the homepage, Explore, Contact, FAQ and product pages. */
 .faq-section-title {

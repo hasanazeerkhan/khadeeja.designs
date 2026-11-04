@@ -1,4 +1,17 @@
 /** Khadeeja Designs shared site shell. */
+let siteConfigPromise;
+
+function getSiteConfig() {
+  if (!siteConfigPromise) {
+    siteConfigPromise = fetch('/site-config.json')
+      .then(response => {
+        if (!response.ok) throw new Error(`Site config request failed: ${response.status}`);
+        return response.json();
+      });
+  }
+  return siteConfigPromise;
+}
+
 function initPage(activePage) {
   const NAV_PAGES = [
     { id: 'home',    label: 'Home',            href: '/'               },
@@ -61,6 +74,21 @@ function initPage(activePage) {
   document.querySelectorAll('.faq, .seo-faq, .contact-faq').forEach(section => {
     if (section.querySelector('details')) section.classList.add('shared-question-section');
   });
+
+  preserveCampaignParams();
+  addLocalBusinessSchema(activePage);
+  addBreadcrumbSchema(activePage);
+  trackDesignView();
+  updateProductPrice();
+  renderRelatedLinks();
+  getSiteConfig()
+    .then(config => {
+      renderOrderingSteps(config, activePage);
+      renderTestimonials(config, activePage);
+      renderWhatsAppLinks(config, activePage);
+      applyReplyWindow(config);
+    })
+    .catch(error => console.error('Could not initialize shared site components', error));
 }
 
 // Keep dynamically generated portfolio images accessible and stable for search
@@ -73,6 +101,351 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!img.loading) img.loading = index === 0 ? 'eager' : 'lazy';
   });
 });
+
+function preserveCampaignParams() {
+  const search = new URLSearchParams(window.location.search);
+  const campaign = new URLSearchParams();
+  search.forEach((value, key) => {
+    if (/^utm_/i.test(key) || key === 'gclid' || key === 'fbclid') campaign.set(key, value);
+  });
+
+  try {
+    if (campaign.toString()) sessionStorage.setItem('kd-campaign', campaign.toString());
+  } catch (error) {
+    console.warn('Campaign parameters could not be saved for this session', error);
+  }
+
+  let saved = '';
+  try {
+    saved = sessionStorage.getItem('kd-campaign') || '';
+  } catch (error) {
+    console.warn('Campaign parameters could not be restored for this session', error);
+  }
+  if (!saved) saved = campaign.toString();
+  if (!saved) return;
+
+  document.addEventListener('click', event => {
+    const anchor = event.target.closest('a[href]');
+    if (!anchor) return;
+    const destination = new URL(anchor.href, window.location.href);
+    if (destination.origin !== window.location.origin) return;
+    new URLSearchParams(saved).forEach((value, key) => {
+      if (!destination.searchParams.has(key)) destination.searchParams.set(key, value);
+    });
+    anchor.href = destination.href;
+  });
+}
+
+function renderOrderingSteps(config, activePage) {
+  if (!['home', 'contact'].includes(activePage) || !Array.isArray(config.orderingSteps)) return;
+  const main = document.querySelector('main');
+  if (!main || main.querySelector('.ordering-steps')) return;
+
+  const section = document.createElement('section');
+  section.className = 'ordering-steps';
+  section.setAttribute('aria-labelledby', 'ordering-steps-title');
+  section.innerHTML = `
+    <div class="ordering-steps__heading">
+      <div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Simple process</span></div>
+      <h2 id="ordering-steps-title">How ordering <em>works</em></h2>
+    </div>
+    <ol>${config.orderingSteps.map((step, index) => `
+      <li><span class="ordering-steps__number">0${index + 1}</span>
+        <h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.description)}</p>
+      </li>`).join('')}
+    </ol>`;
+  const faq = main.querySelector('.faq-section, .contact-faq');
+  main.insertBefore(section, faq || null);
+}
+
+function renderTestimonials(config, activePage) {
+  if (!['home', 'contact'].includes(activePage) || !Array.isArray(config.testimonials) || !config.testimonials.length) return;
+  const main = document.querySelector('main');
+  if (!main) return;
+  const section = document.createElement('section');
+  section.className = 'testimonials';
+  section.setAttribute('aria-labelledby', 'testimonials-title');
+  section.innerHTML = `
+    <h2 id="testimonials-title">Kind words from our clients</h2>
+    <div class="testimonials__grid">${config.testimonials.map(testimonial => `
+      <figure><blockquote>${escapeHtml(testimonial.quote)}</blockquote>
+        <figcaption>${testimonial.photo ? `<img src="${escapeHtml(testimonial.photo)}" alt="" width="48" height="48" loading="lazy">` : ''}
+          <span>${escapeHtml(testimonial.name)}${testimonial.city ? ` · ${escapeHtml(testimonial.city)}` : ''}</span>
+        </figcaption>
+      </figure>`).join('')}</div>`;
+  const steps = main.querySelector('.ordering-steps');
+  main.insertBefore(section, steps ? steps.nextSibling : null);
+}
+
+function renderWhatsAppLinks(config, activePage) {
+  const number = String(config.whatsappNumber || '').replace(/\D/g, '');
+  if (!number) return;
+  const product = document.querySelector('main.product');
+  const designName = product?.querySelector('.title')?.textContent.trim();
+  const message = designName
+    ? `Hi, I'm interested in ${designName}`
+    : 'Hi, I am interested in custom Aari blouse embroidery.';
+  const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
+  const createLink = (className, label) => {
+    const link = document.createElement('a');
+    link.className = `${className} whatsapp-link`;
+    link.href = url;
+    link.target = '_blank';
+    link.rel = 'noopener noreferrer';
+    link.dataset.whatsapp = 'true';
+
+    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    icon.classList.add('whatsapp-icon');
+    icon.setAttribute('viewBox', '0 0 24 24');
+    icon.setAttribute('aria-hidden', 'true');
+    icon.innerHTML = '<path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L3 20l1.2-4.9a8.2 8.2 0 1 1 16-3.4Z"/><path d="M8.8 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .6.5.9 1.2 1.5 2.1 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.1l1.5.7c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.4-.5.4-1.1.6-1.7.5-1-.1-2.2-.6-3.4-1.7-1.4-1.2-2.3-2.7-2.5-3.7-.2-.9 0-1.6.5-2.1Z"/>';
+    const text = document.createElement('span');
+    text.className = 'whatsapp-label';
+    text.textContent = label;
+    link.append(icon, text);
+    return link;
+  };
+
+  const floating = createLink('whatsapp-float', 'Chat on WhatsApp');
+  floating.setAttribute('aria-label', 'Chat with Khadeeja Designs on WhatsApp');
+  document.body.appendChild(floating);
+
+  if (activePage === 'contact') {
+    const header = document.querySelector('.contact-header');
+    if (header && !header.querySelector('[data-whatsapp-cta]')) {
+      const cta = createLink('button button--ghost contact-whatsapp', 'Enquire on WhatsApp');
+      cta.dataset.whatsappCta = 'true';
+      header.appendChild(cta);
+    }
+  }
+
+  if (product && !product.querySelector('[data-whatsapp-cta]')) {
+    const cta = createLink('button button--ghost product-whatsapp', 'Ask about this design on WhatsApp');
+    cta.dataset.whatsappCta = 'true';
+    product.querySelector('.layout > div:last-child')?.appendChild(cta);
+  }
+
+  if (!window.kdWhatsAppTrackingInstalled) {
+    window.kdWhatsAppTrackingInstalled = true;
+    document.addEventListener('click', event => {
+      if (!event.target.closest('[data-whatsapp]')) return;
+      trackMarketingEvent('Contact', 'click_whatsapp', {
+        content_name: designName || 'Custom Aari embroidery',
+        content_category: 'WhatsApp'
+      });
+    });
+  }
+}
+
+function renderRelatedLinks() {
+  const product = document.querySelector('main.product');
+  if (product && !product.querySelector('.related-guide')) {
+    const related = document.createElement('p');
+    related.className = 'related-guide';
+    related.innerHTML = 'Related guide: <a href="/blog/how-to-choose-aari-embroidery-bridal-blouse/">How to choose an Aari embroidery style for your wedding blouse</a>.';
+    product.appendChild(related);
+  }
+
+  if (window.location.pathname !== '/blog/how-to-choose-aari-embroidery-bridal-blouse/') return;
+  const article = document.querySelector('main article');
+  if (!article || article.querySelector('.related-designs')) return;
+  const links = document.createElement('section');
+  links.className = 'related-designs';
+  links.innerHTML = `
+    <h2>Explore related blouse designs</h2>
+    <ul>
+      <li><a href="/explore/designs/bridal-royal-zardosi/">Bridal Royal Zardosi blouse</a></li>
+      <li><a href="/explore/designs/royal-heritage-maroon/">Royal Heritage Maroon blouse</a></li>
+      <li><a href="/explore/designs/midnight-gold-vine/">Midnight Gold Vine blouse</a></li>
+    </ul>`;
+  article.appendChild(links);
+}
+
+function applyReplyWindow(config) {
+  const replyWindow = config.replyWindow || 'the stated reply window';
+  document.querySelectorAll('[data-reply-window]').forEach(element => {
+    element.textContent = replyWindow;
+  });
+}
+
+function addLocalBusinessSchema(activePage) {
+  if (!['home', 'contact'].includes(activePage)) return;
+  const existing = [...document.querySelectorAll('script[type="application/ld+json"]')].some(script => {
+    try { return JSON.parse(script.textContent)['@type'] === 'LocalBusiness'; }
+    catch { return false; }
+  });
+  if (existing) return;
+  const schema = {
+    '@context': 'https://schema.org',
+    '@type': 'LocalBusiness',
+    name: 'Khadeeja Designs',
+    description: 'Handcrafted Aari embroidery and custom blouse design in Trichy, Tamil Nadu.',
+    url: 'https://khadeejadesigns.in/',
+    email: 'contact@khadeejadesigns.in',
+    telephone: '+918667454391',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '17 East Sayakara Lane, Jaffersha Street',
+      addressLocality: 'Trichy',
+      postalCode: '620008',
+      addressCountry: 'IN'
+    },
+    areaServed: ['Trichy', 'Tamil Nadu', 'India'],
+    sameAs: ['https://instagram.com/khadeeja.designs']
+  };
+  appendJsonLd(schema, 'local-business');
+}
+
+function addBreadcrumbSchema(activePage) {
+  const existing = [...document.querySelectorAll('script[type="application/ld+json"]')].some(script => {
+    try { return JSON.parse(script.textContent)['@type'] === 'BreadcrumbList'; }
+    catch { return false; }
+  });
+  if (existing) return;
+  const product = document.querySelector('main.product');
+  const crumbs = [{name: 'Home', item: 'https://khadeejadesigns.in/'}];
+  if (product) {
+    const title = product.querySelector('.title')?.textContent.trim();
+    crumbs.push({name: 'Explore Designs', item: 'https://khadeejadesigns.in/explore/'});
+    if (title) crumbs.push({name: title, item: window.location.href.split('?')[0]});
+  } else if (activePage && activePage !== 'home') {
+    const link = document.querySelector('link[rel="canonical"]');
+    const title = document.querySelector('h1')?.textContent.trim() || document.title;
+    crumbs.push({name: title, item: link?.href || window.location.href.split('?')[0]});
+  } else if (window.location.pathname !== '/') {
+    const title = document.querySelector('h1')?.textContent.trim() || document.title;
+    crumbs.push({name: title, item: window.location.href.split('?')[0]});
+  }
+  if (!crumbs.length) return;
+  appendJsonLd({
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: crumbs.map((crumb, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: crumb.name,
+      item: crumb.item
+    }))
+  }, 'breadcrumbs');
+}
+
+function trackDesignView() {
+  const product = document.querySelector('main.product');
+  if (!product || window.kdViewContentTracked) return;
+  window.kdViewContentTracked = true;
+  const design = product.querySelector('.title')?.textContent.trim() || document.title;
+  trackMarketingEvent('ViewContent', 'view_item', {
+    content_name: design,
+    content_type: 'product',
+    items: [{item_name: design}]
+  });
+}
+
+async function updateProductPrice() {
+  const page = document.querySelector('main.product');
+  if (!page) return;
+  const id = window.location.pathname.match(/\/explore\/designs\/([a-z0-9-]+)\//)?.[1];
+  if (!id) return;
+  try {
+    const response = await fetch(`/explore/designs/${encodeURIComponent(id)}/product.json`);
+    if (!response.ok) throw new Error(`Product request failed: ${response.status}`);
+    const data = await response.json();
+    const priceElement = page.querySelector('.price');
+    let originalPrice = priceElement?.querySelector('.old');
+    const offerActive = Boolean(
+      data.originalPrice && data.offerEndsOn &&
+      /^\d{4}-\d{2}-\d{2}$/.test(data.offerEndsOn) &&
+      data.offerEndsOn >= new Date().toISOString().slice(0, 10)
+    );
+    if (offerActive && priceElement && !originalPrice) {
+      originalPrice = document.createElement('span');
+      originalPrice.className = 'old';
+      priceElement.prepend(originalPrice);
+    }
+    if (originalPrice) {
+      const originalAmount = Number(String(data.originalPrice || '').replace(/[^\d.]/g, ''));
+      originalPrice.textContent = offerActive && Number.isFinite(originalAmount) && originalAmount > 0
+        ? formatRupees(originalAmount)
+        : '';
+      originalPrice.hidden = !offerActive;
+      originalPrice.style.display = offerActive ? 'inline' : 'none';
+    }
+    const price = Number(String(data.newPrice || '').replace(/[^\d.]/g, ''));
+    if (Number.isFinite(price) && price > 0) {
+      if (priceElement) {
+        const amountNode = Array.from(priceElement.childNodes).find(node => node.nodeType === Node.TEXT_NODE);
+        if (amountNode) amountNode.textContent = formatRupees(price);
+        else priceElement.append(document.createTextNode(formatRupees(price)));
+        priceElement.setAttribute('aria-label', `Listed rate ${formatRupees(price)}`);
+      }
+      const pricingCopy = Array.from(page.querySelectorAll('h2'))
+        .find(heading => heading.textContent.trim() === 'Pricing & Enquiry')
+        ?.nextElementSibling;
+      if (pricingCopy?.matches('.copy')) {
+        pricingCopy.textContent = 'The listed rate applies to the design shown. Customisation can be discussed for colours, motifs, placement, neckline and sleeve details. Final feasibility and quotation are confirmed after enquiry.';
+      }
+      document.querySelectorAll('script[type="application/ld+json"]').forEach(script => {
+        try {
+          const schema = JSON.parse(script.textContent);
+          if (schema['@type'] !== 'Product' || !schema.offers) return;
+          schema.offers.price = price;
+          if (offerActive) schema.offers.priceValidUntil = data.offerEndsOn;
+          else delete schema.offers.priceValidUntil;
+          script.textContent = JSON.stringify(schema);
+        } catch (error) {
+          console.error('Could not update Product structured data', error);
+        }
+      });
+    }
+  } catch (error) {
+    console.error('Could not update the design offer display', error);
+  }
+}
+
+function formatRupees(amount) {
+  return `₹${Math.round(amount).toLocaleString('en-IN')}`;
+}
+
+function getCampaignParams() {
+  const search = new URLSearchParams(window.location.search);
+  let campaign = new URLSearchParams();
+  search.forEach((value, key) => {
+    if (/^utm_/i.test(key) || key === 'gclid' || key === 'fbclid') campaign.set(key, value);
+  });
+  try {
+    if (!campaign.toString()) {
+      campaign = new URLSearchParams(sessionStorage.getItem('kd-campaign') || '');
+    }
+  } catch (error) {
+    console.warn('Campaign parameters are unavailable for this enquiry', error);
+  }
+  const values = {};
+  campaign.forEach((value, key) => {
+    if (/^utm_/i.test(key) || key === 'gclid' || key === 'fbclid') values[key] = value;
+  });
+  return values;
+}
+
+function trackMarketingEvent(pixelEvent, gaEvent, parameters) {
+  if (typeof window.fbq === 'function') window.fbq('track', pixelEvent, parameters);
+  else console.warn(`Meta Pixel is unavailable; ${pixelEvent} was not sent`);
+  if (typeof window.gtag === 'function') window.gtag('event', gaEvent, parameters);
+  else console.warn(`GA4 is unavailable; ${gaEvent} was not sent`);
+}
+
+function appendJsonLd(data, marker) {
+  const script = document.createElement('script');
+  script.type = 'application/ld+json';
+  if (marker) script.dataset[marker] = 'true';
+  script.textContent = JSON.stringify(data);
+  document.head.appendChild(script);
+}
+
+function escapeHtml(value) {
+  return String(value).replace(/[&<>"']/g, character => ({
+    '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+  })[character]);
+}
 
 function _toggleMobileMenu() {
   const existing = document.getElementById('mob-menu');

@@ -16,6 +16,7 @@ khadeeja-designs/
 ├── privacy/              Privacy policy (`index.html`)
 ├── shared.css            Design system - shared by all pages
 ├── shared-nav.js         Nav + footer injection for all pages
+├── site-config.json      WhatsApp, reply window, ordering steps and testimonials
 ├── netlify.toml          Clean URL config for Netlify
 │
 ├── blog/
@@ -35,25 +36,34 @@ khadeeja-designs/
 ### 1. Analytics and privacy
 Microsoft Clarity is configured on the homepage, Explore, Contact, FAQ, Blog,
 the live blog article, and product detail pages. Google Analytics and Meta
-Pixel snippets still contain placeholder IDs and are not configured. Do not
-deploy placeholder IDs; if enabling either service, first decide the
-appropriate consent behavior, update the privacy policy, and use real IDs.
+Pixel are not configured in the site source. The event hooks call the GA4 and
+Meta Pixel globals when available; add the real measurement IDs through the
+approved deployment setup before expecting event delivery. Decide consent
+behavior and update the privacy policy before enabling either service.
 
 ### 2. Form endpoint
 The enquiry endpoint is configured in `contact/index.html`.
 Update the Formspree endpoint there if the form account changes.
 
-### 3. Update contact details
+### 3. Update site-wide conversion content
+Update `site-config.json` to change the WhatsApp number (digits only, with
+country code), reply window, four ordering steps or permitted testimonials.
+Keep `testimonials` empty until each review and photo has customer permission.
+The default design prices are single prices; set both `originalPrice` and a
+valid future `offerEndsOn` date in a product's `product.json` to show a timed
+offer.
+
+### 4. Update contact details
 Keep the business address, Instagram handle, and contact email consistent
 across the contact page, structured data, and privacy policy.
 
-### 4. Add product images
+### 5. Add product images
 For each folder in `explore/designs/`, keep the original image files and list
 their exact names in `product.json`. Add a `.webp` version beside each image
 using the same filename stem. The Explore cards, product pages, and thank-you
 page load WebP first and fall back to the original file.
 
-### 5. Add blog cover image
+### 6. Add blog cover image
 Save to: images/blog/bridal-blouse-guide.jpg
 Recommended size: 1400×500px, landscape
 
@@ -70,9 +80,10 @@ Recommended size: 1400×500px, landscape
   "tag": "Full Product Name for Enquiry",
   "category": "bridal",
   "title": "Full Product Name",
-  "oldPrice": "INR 7,990",
+  "originalPrice": null,
+  "offerEndsOn": null,
   "newPrice": "INR 6,990",
-  "saving": "1,000",
+  "imageAlt": "Custom descriptive Aari embroidery alt text",
   "summary": "One sentence shown prominently on the product page.",
   "description": "Longer paragraph describing the design and occasion.",
   "specs": {
@@ -134,14 +145,15 @@ To deploy:
 2. Connect the repo to Netlify (netlify.com → Add new site → GitHub)
 3. Build settings: Build command = leave blank, Publish directory = .
 4. Deploy - Netlify reads netlify.toml automatically
+5. After deployment, submit `https://khadeejadesigns.in/sitemap.xml` in the
+   verified Google Search Console property. This requires owner account access.
 
 ---
 
 ## Tracking status
 
 Microsoft Clarity is active on selected pages, as listed in the setup
-checklist. Google Analytics and Meta Pixel are not configured: their IDs
-remain placeholders, so analytics and conversion reporting should not be
-assumed to work. Review privacy and consent requirements before enabling
-either service; verify event delivery and avoid counting a successful enquiry
-more than once.
+checklist. Google Analytics and Meta Pixel IDs are not configured in this
+repository, so the event hooks deliver only when their real tags are available
+in the deployment. Confirm deployment-level tag and consent settings; verify
+event delivery and avoid counting a successful enquiry more than once.

@@ -3,12 +3,20 @@
   "tag": "Emerald Jhumka Elegance Blouse",
   "category": "designer",
   "title": "Emerald Jhumka Elegance Blouse",
-  "oldPrice": "INR 5,999",
   "newPrice": "INR 4,499",
-  "saving": "1,500",
+  "originalPrice": null,
+  "offerEndsOn": null,
+  "imageAlt": "Emerald green Aari blouse embroidery with gold oval motifs and jhumka tassels",
   "rating": "4.8",
   "summary": "An emerald green blouse with ornate gold oval borders, scattered motifs and traditional jhumka-style back tassels.",
   "description": "The front showcases a rounded neckline framed by repeated gold oval motifs, with matching embellished sleeve cuffs and a coordinated lower border. The back features a wide U-shaped neckline, scalloped oval embroidery, tie strings and paired jhumka-style tassels. The rich green-and-gold palette gives the design a traditional festive and bridal feel.",
-  "specs": { "category": "Designer Blouse", "workType": "Aari-style gold embroidery · Beadwork · Jhumka-style tassels", "timeline": "To be confirmed" },
-  "images": ["Khadeeja Designs Emerald Jhumka Elegance Front.png", "Khadeeja Designs Emerald Jhumka Embroidered Blouse Back.png"]
+  "specs": {
+    "category": "Designer Blouse",
+    "workType": "Aari-style gold embroidery · Beadwork · Jhumka-style tassels",
+    "timeline": "To be confirmed"
+  },
+  "images": [
+    "Khadeeja Designs Emerald Jhumka Elegance Front.png",
+    "Khadeeja Designs Emerald Jhumka Embroidered Blouse Back.png"
+  ]
 }

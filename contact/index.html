@@ -20,9 +20,10 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="canonical" href="https://khadeejadesigns.in/contact/"><meta property="og:type" content="website"><meta property="og:title" content="Enquire About Custom Aari Embroidery | Khadeeja Designs"><meta property="og:description" content="Share your bridal blouse or embroidery brief with Khadeeja Designs in Trichy."><meta property="og:url" content="https://khadeejadesigns.in/contact/"><meta name="twitter:card" content="summary">
-<title>Contact - Khadeeja Designs</title>
-<meta name="description" content="Send your Aari embroidery enquiry. We reply within 48 hours with pricing and next steps.">
+<link rel="canonical" href="https://khadeejadesigns.in/contact/"><meta property="og:type" content="website"><meta property="og:title" content="Enquire for Custom Aari Blouse Embroidery in Trichy | Khadeeja Designs"><meta property="og:description" content="Share your custom Aari blouse embroidery brief with Khadeeja Designs in Trichy."><meta property="og:url" content="https://khadeejadesigns.in/contact/"><meta property="og:image" content="https://khadeejadesigns.in/explore/designs/royal-heritage-maroon/Royal%20Heritage%20Maroon%20Blouse%20Back.webp"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://khadeejadesigns.in/explore/designs/royal-heritage-maroon/Royal%20Heritage%20Maroon%20Blouse%20Back.webp">
+<title>Enquire for Custom Aari Blouse Embroidery in Trichy | Khadeeja Designs</title>
+<meta name="description" content="Enquire about custom Aari blouse embroidery in Trichy. Share your design brief, occasion and contact details with Khadeeja Designs.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Khadeeja Designs","description":"Handcrafted Aari embroidery and custom blouse design in Trichy, Tamil Nadu.","url":"https://khadeejadesigns.in/","email":"contact@khadeejadesigns.in","telephone":"+918667454391","address":{"@type":"PostalAddress","streetAddress":"17 East Sayakara Lane, Jaffersha Street","addressLocality":"Trichy","postalCode":"620008","addressCountry":"IN"},"areaServed":["Trichy","Tamil Nadu","India"],"sameAs":["https://instagram.com/khadeeja.designs"]}</script>
 
 
 
@@ -93,6 +94,8 @@ main{flex:1;}
 .field-lbl{font-family:var(--sans);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--t1);display:block;margin-bottom:8px;}
 .field-opt{font-size:9px;color:var(--t3);letter-spacing:0.08em;}
 .fi{width:100%;background:transparent;border:1px solid var(--border-mid);color:#fff;font-family:var(--sans);font-size:14px;font-weight:400;padding:12px;outline:none;transition:border-color 0.2s;}
+.fi[type="date"]{color-scheme:dark;cursor:pointer;min-height:46px;}
+.fi[type="date"]::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.9;}
 .fi::placeholder{color:#8d8d8d;opacity:1;}
 .fi:focus,
 .fi:focus-visible{border-color:var(--gold);outline:0;outline-offset:0;}
@@ -139,6 +142,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
   .form-note{max-width:none;}
 }
 </style>
+<script type="application/ld+json" data-breadcrumbs>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khadeejadesigns.in/"},{"@type":"ListItem","position":2,"name":"Contact","item":"https://khadeejadesigns.in/contact/"}]}</script>
 </head>
 <body>
 <nav>
@@ -181,7 +185,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
     <!-- RIGHT - FORM -->
     <div class="contact-right">
       <h2 class="form-heading">Send your<br><em>enquiry.</em></h2>
-      <p class="form-sub">Fill in the details below - we'll get back within 48 hours with pricing and next steps.</p>
+      <p class="form-sub">Fill in the details below - we'll get back within <span data-reply-window></span> with pricing and next steps.</p>
       <p class="faq-hint">Have questions before enquiring? <a href="../faq/">Read our FAQ →</a></p>
 
       <form id="enquiry-form" novalidate>
@@ -208,6 +212,15 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
         <div class="field-error" id="err-phone">Please enter a valid mobile number.</div>
       </div>
       <div class="field">
+        <label class="field-lbl" for="f-city">City</label>
+        <input class="fi" type="text" id="f-city" name="city" placeholder="Your city" autocomplete="address-level2" required aria-describedby="err-city">
+        <div class="field-error" id="err-city">Please enter your city.</div>
+      </div>
+      <div class="field">
+        <label class="field-lbl" for="f-event-date">Event date <span class="field-opt">· optional</span></label>
+        <input class="fi" type="date" id="f-event-date" name="event_date">
+      </div>
+      <div class="field">
         <label class="field-lbl" for="f-msg">Brief or message <span class="field-opt">· optional</span></label>
         <textarea class="fi" id="f-msg" name="message" placeholder="Describe your requirement, occasion, preferred colours, timeline…"></textarea>
       </div>
@@ -218,7 +231,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
       </div>
 
       <div class="form-foot">
-        <p class="form-note">We reply within 48 hours. Formspree securely delivers your enquiry to us. <a href="../privacy/">Privacy details</a></p>
+        <p class="form-note">We reply within <span data-reply-window></span>. Formspree securely delivers your enquiry to us. <a href="../privacy/">Privacy details</a></p>
         <button type="submit" class="btn-gold" id="enquiry-submit">Send Enquiry →</button>
       </div>
       <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
@@ -232,7 +245,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
     <details><summary>Do you accept customised bridal blouse orders?</summary><p>Yes, you can discuss customised bridal blouse embroidery according to your preferred colours, motifs, neckline and sleeve details. Share your reference image and event date to help us understand your requirements.</p></details>
     <details><summary>Can I share my design reference?</summary><p>Yes, you can share design reference images and your requirements through Instagram, email, or the enquiry form. This helps us understand your preferred embroidery style before discussing the quotation.</p></details>
     <details><summary>Do you accept Aari embroidery orders from other cities?</summary><p>Yes, Khadeeja Designs is based in Trichy, Tamil Nadu, and offers delivery across India. Contact us to discuss your requirements and shipping arrangements.</p></details>
-    <details><summary>How soon will I receive a response to my enquiry?</summary><p>We aim to respond to enquiries within 48 hours. Please share your design requirements, preferred timeline and contact information so we can assist you. See the <a href="../faq/">full FAQ page</a> for more answers.</p></details>
+    <details><summary>How soon will I receive a response to my enquiry?</summary><p>We aim to respond to enquiries within <span data-reply-window></span>. Please share your design requirements, preferred timeline and contact information so we can assist you. See the <a href="../faq/">full FAQ page</a> for more answers.</p></details>
   </section>
 </main>
 
@@ -241,12 +254,17 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
 <script>
 initPage('contact');
 document.getElementById('enquiry-form').addEventListener('submit', submitForm);
+const eventDateField = document.getElementById('f-event-date');
+const today = new Date();
+today.setMinutes(today.getMinutes() - today.getTimezoneOffset());
+eventDateField.min = today.toISOString().slice(0, 10);
 document.querySelectorAll('.contact-faq details').forEach(detail => detail.addEventListener('toggle', () => {
   if (detail.open) document.querySelectorAll('.contact-faq details').forEach(other => { if (other !== detail) other.open = false; });
 }));
 
 /* ── Read design tag from URL ── */
 let selectedDesignId = '';
+let submitting = false;
 (async function() {
   const p = new URLSearchParams(window.location.search);
   const id = p.get('id')?.trim();
@@ -282,20 +300,26 @@ function validate() {
   const phoneField = document.getElementById('f-phone');
   const name = nameField.value.trim();
   const phone = phoneField.value.trim();
-  ['err-name','err-phone'].forEach(id => document.getElementById(id).style.display = 'none');
+  const cityField = document.getElementById('f-city');
+  ['err-name','err-phone','err-city'].forEach(id => document.getElementById(id).style.display = 'none');
   document.querySelectorAll('.field').forEach(f => f.classList.remove('has-error'));
-  [nameField, phoneField].forEach(field => field.setAttribute('aria-invalid', 'false'));
+  [nameField, phoneField, cityField].forEach(field => field.setAttribute('aria-invalid', 'false'));
   if (!name)  { document.getElementById('err-name').style.display = 'block'; nameField.closest('.field').classList.add('has-error'); nameField.setAttribute('aria-invalid', 'true'); ok = false; }
   if (!phone || phone.replace(/\D/g,'').length < 10) {
     document.getElementById('err-phone').style.display = 'block'; phoneField.closest('.field').classList.add('has-error'); phoneField.setAttribute('aria-invalid', 'true'); ok = false;
+  }
+  if (!cityField.value.trim()) {
+    document.getElementById('err-city').style.display = 'block'; cityField.closest('.field').classList.add('has-error'); cityField.setAttribute('aria-invalid', 'true'); ok = false;
   }
   return ok;
 }
 
 async function submitForm(event) {
   event.preventDefault();
+  if (submitting) return;
   if (document.getElementById('f-website').value) return;
   if (!validate()) return;
+  submitting = true;
   const btn = document.getElementById('enquiry-submit');
   btn.textContent = 'Sending…'; btn.disabled = true;
   const status = document.getElementById('form-status'); status.className = 'form-status'; status.textContent = '';
@@ -304,11 +328,14 @@ async function submitForm(event) {
   const payload = {
     name:    document.getElementById('f-name').value.trim(),
     phone:   document.getElementById('f-phone').value.trim(),
+    city:    document.getElementById('f-city').value.trim(),
+    event_date: document.getElementById('f-event-date').value,
     design_url: selectedDesignId
       ? new URL(`../explore/designs/${encodeURIComponent(selectedDesignId)}/`, window.location.href).href
       : '',
     design,
-    message: document.getElementById('f-msg').value.trim()
+    message: document.getElementById('f-msg').value.trim(),
+    ...getCampaignParams()
   };
 
   const formEndpoint = 'https://formspree.io/f/maqlejwd';
@@ -325,13 +352,13 @@ async function submitForm(event) {
     clearTimeout(timeout);
 
     /* Track the conversion only after Formspree confirms the enquiry. */
-    if (typeof fbq !== 'undefined') fbq('track','Lead',{content_name:design,content_category:'Enquiry'});
-    if (typeof gtag !== 'undefined') gtag('event','generate_lead',{currency:'INR',value:0,design});
+    trackMarketingEvent('Lead', 'generate_lead', {content_name:design,content_category:'Enquiry',currency:'INR',value:0,design});
 
     /* Show the dedicated confirmation page instead of leaving the user on the form. */
     window.location.assign('../thankyou/');
   } catch(e) {
     clearTimeout(timeout);
+    submitting = false;
     console.error('Enquiry submission failed', e);
     status.className = 'form-status error';
     status.textContent = 'We couldn\'t submit your enquiry right now. Please check your connection and try again.';

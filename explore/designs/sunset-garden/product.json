@@ -3,12 +3,20 @@
   "tag": "Sunset Garden Blouse",
   "category": "designer",
   "title": "Sunset Garden Blouse",
-  "oldPrice": "INR 5,999",
   "newPrice": "INR 4,499",
-  "saving": "1,500",
+  "originalPrice": null,
+  "offerEndsOn": null,
+  "imageAlt": "Sunset orange blouse with colourful floral Aari embroidery and gold beadwork",
   "rating": "4.8",
   "summary": "A burnt-orange blouse with multicolour floral embroidery, pearl accents and embellished puff sleeves.",
   "description": "The front features a warm orange base decorated with colourful floral and paisley-inspired motifs, pearl-like accents, gold-toned beadwork and detailed puff sleeves finished with decorative edging. The generated back showcase presents a coordinating U-shaped back with tie strings and tassels. Verify that the generated back matches the actual blouse before publishing.",
-  "specs": { "category": "Designer Blouse", "workType": "Aari-style floral embroidery · Beadwork · Pearl-style embellishment", "timeline": "To be confirmed" },
-  "images": ["Khadeeja Designs Sunset Garden Front.png", "Khadeeja Designs Sunset Garden Back.png"]
+  "specs": {
+    "category": "Designer Blouse",
+    "workType": "Aari-style floral embroidery · Beadwork · Pearl-style embellishment",
+    "timeline": "To be confirmed"
+  },
+  "images": [
+    "Khadeeja Designs Sunset Garden Front.png",
+    "Khadeeja Designs Sunset Garden Back.png"
+  ]
 }

@@ -1,0 +1,23 @@
+{
+  "whatsappNumber": "918667454391",
+  "replyWindow": "48 hours",
+  "orderingSteps": [
+    {
+      "title": "Share your brief",
+      "description": "Tell us about the occasion, preferred design and any reference images."
+    },
+    {
+      "title": "Discuss the details",
+      "description": "We will discuss suitable embroidery options and clarify your requirements."
+    },
+    {
+      "title": "Review your quote",
+      "description": "We will share the price and estimated timeline for your requested work."
+    },
+    {
+      "title": "Confirm your order",
+      "description": "Proceed after you have reviewed and approved the agreed details."
+    }
+  ],
+  "testimonials": []
+}
