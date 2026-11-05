@@ -267,9 +267,9 @@ document.querySelectorAll('.contact-faq details').forEach(detail => detail.addEv
 let selectedDesignId = '';
 let submitting = false;
 (async function() {
-  const p = new URLSearchParams(window.location.search);
-  const id = p.get('id')?.trim();
-  const legacyTag = p.get('design')?.trim();
+  const fragment = new URLSearchParams(window.location.hash.slice(1));
+  const id = fragment.get('id')?.trim();
+  const legacyTag = fragment.get('design')?.trim();
   let tag = legacyTag || '';
 
   if (id) {
