@@ -79,6 +79,7 @@ function initPage(activePage) {
   addLocalBusinessSchema(activePage);
   addBreadcrumbSchema(activePage);
   trackDesignView();
+  renderProductGallery();
   updateProductPrice();
   renderRelatedLinks();
   getSiteConfig()
@@ -89,6 +90,71 @@ function initPage(activePage) {
       applyReplyWindow(config);
     })
     .catch(error => console.error('Could not initialize shared site components', error));
+}
+
+async function renderProductGallery() {
+  const product = document.querySelector('main.product');
+  const photo = product?.querySelector('.photo');
+  const mainImage = photo?.querySelector('img');
+  const id = window.location.pathname.match(/\/explore\/designs\/([a-z0-9-]+)\//)?.[1];
+  if (!product || !photo || !mainImage || !id) return;
+
+  try {
+    const response = await fetch(`/explore/designs/${encodeURIComponent(id)}/product.json`);
+    if (!response.ok) throw new Error(`Product request failed: ${response.status}`);
+    const data = await response.json();
+    const images = Array.isArray(data.images)
+      ? data.images.filter(image => typeof image === 'string' && image.trim())
+      : [];
+    if (images.length < 2) return;
+
+    const thumbnails = document.createElement('div');
+    thumbnails.className = 'product-gallery__thumbnails';
+    thumbnails.setAttribute('aria-label', 'Design images');
+    const mainImageId = `design-image-${id}`;
+    mainImage.id = mainImageId;
+
+    images.forEach((filename, index) => {
+      const originalSrc = `/explore/designs/${encodeURIComponent(id)}/${encodeURIComponent(filename)}`;
+      const webpSrc = originalSrc.replace(/\.(?:png|jpe?g)$/i, '.webp');
+      const button = document.createElement('button');
+      button.className = 'product-gallery__thumbnail';
+      button.type = 'button';
+      button.setAttribute('aria-label', `Show design image ${index + 1}`);
+      button.setAttribute('aria-controls', mainImageId);
+      button.setAttribute('aria-pressed', String(index === 0));
+      if (index === 0) button.classList.add('is-active');
+
+      const thumbnail = document.createElement('img');
+      thumbnail.src = webpSrc;
+      thumbnail.alt = '';
+      thumbnail.loading = 'lazy';
+      thumbnail.width = 96;
+      thumbnail.height = 96;
+      thumbnail.dataset.fallbackSrc = originalSrc;
+      thumbnail.addEventListener('error', () => {
+        if (!thumbnail.dataset.fallbackSrc) return;
+        thumbnail.src = thumbnail.dataset.fallbackSrc;
+        delete thumbnail.dataset.fallbackSrc;
+      }, {once: true});
+      button.appendChild(thumbnail);
+      thumbnails.appendChild(button);
+
+      button.addEventListener('click', () => {
+        mainImage.src = webpSrc;
+        mainImage.dataset.fallbackSrc = originalSrc;
+        thumbnails.querySelectorAll('.product-gallery__thumbnail').forEach((item, itemIndex) => {
+          const selected = itemIndex === index;
+          item.classList.toggle('is-active', selected);
+          item.setAttribute('aria-pressed', String(selected));
+        });
+      });
+    });
+
+    photo.appendChild(thumbnails);
+  } catch (error) {
+    console.error('Could not load the design image gallery', error);
+  }
 }
 
 // Keep dynamically generated portfolio images accessible and stable for search
