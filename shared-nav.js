@@ -216,8 +216,8 @@ function renderOrderingSteps(config, activePage) {
       <h2 id="ordering-steps-title">How ordering <em>works</em></h2>
     </div>
     <ol>${config.orderingSteps.map((step, index) => `
-      <li><span class="ordering-steps__number">0${index + 1}</span>
-        <h3>${escapeHtml(step.title)}</h3><p>${escapeHtml(step.description)}</p>
+      <li><h3><span class="ordering-steps__number">0${index + 1}</span>${escapeHtml(step.title)}</h3>
+        <p>${escapeHtml(step.description)}</p>
       </li>`).join('')}
     </ol>`;
   const faq = main.querySelector('.faq-section, .contact-faq');
@@ -232,15 +232,43 @@ function renderTestimonials(config, activePage) {
   section.className = 'testimonials';
   section.setAttribute('aria-labelledby', 'testimonials-title');
   section.innerHTML = `
-    <h2 id="testimonials-title">Kind words from our clients</h2>
-    <div class="testimonials__grid">${config.testimonials.map(testimonial => `
-      <figure><blockquote>${escapeHtml(testimonial.quote)}</blockquote>
-        <figcaption>${testimonial.photo ? `<img src="${escapeHtml(testimonial.photo)}" alt="" width="48" height="48" loading="lazy">` : ''}
-          <span>${escapeHtml(testimonial.name)}${testimonial.city ? ` · ${escapeHtml(testimonial.city)}` : ''}</span>
-        </figcaption>
-      </figure>`).join('')}</div>`;
+    <div class="testimonials__heading">
+      <div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Client reviews</span></div>
+      <h2 id="testimonials-title">Kind words from our <em>clients</em></h2>
+    </div>
+    <div class="testimonials__carousel" role="group" aria-roledescription="carousel" aria-label="Client testimonials">
+      <div class="testimonials__track" aria-live="polite">${config.testimonials.map((testimonial, index) => {
+        const rating = Math.max(0, Math.min(5, Number(testimonial.rating) || 5));
+        return `
+          <figure class="testimonials__slide" role="group" aria-roledescription="slide" aria-label="${index + 1} of ${config.testimonials.length}" aria-hidden="${index !== 0}">
+            <span class="testimonials__stars" role="img" aria-label="${rating} out of 5 stars">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</span>
+            <blockquote>${escapeHtml(testimonial.quote)}</blockquote>
+            <figcaption>${testimonial.photo ? `<img src="${escapeHtml(testimonial.photo)}" alt="" width="48" height="48" loading="lazy">` : ''}
+              <span>${escapeHtml(testimonial.name)}${testimonial.city ? ` · ${escapeHtml(testimonial.city)}` : ''}</span>
+            </figcaption>
+          </figure>`;
+      }).join('')}</div>
+    </div>
+    <div class="testimonials__controls">
+      <button class="testimonials__button" type="button" aria-label="Previous review">‹</button>
+      <span class="testimonials__position" aria-hidden="true">1 / ${config.testimonials.length}</span>
+      <button class="testimonials__button" type="button" aria-label="Next review">›</button>
+    </div>`;
+  const track = section.querySelector('.testimonials__track');
+  const slides = Array.from(track.children);
+  const position = section.querySelector('.testimonials__position');
+  let currentIndex = 0;
+  const showSlide = index => {
+    currentIndex = (index + slides.length) % slides.length;
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    slides.forEach((slide, slideIndex) => slide.setAttribute('aria-hidden', String(slideIndex !== currentIndex)));
+    position.textContent = `${currentIndex + 1} / ${slides.length}`;
+  };
+  const buttons = section.querySelectorAll('.testimonials__button');
+  buttons[0].addEventListener('click', () => showSlide(currentIndex - 1));
+  buttons[1].addEventListener('click', () => showSlide(currentIndex + 1));
   const steps = main.querySelector('.ordering-steps');
-  main.insertBefore(section, steps ? steps.nextSibling : null);
+  main.insertBefore(section, steps || null);
 }
 
 function renderWhatsAppLinks(config, activePage) {
@@ -321,7 +349,6 @@ function renderRelatedLinks() {
     <h2>Explore related blouse designs</h2>
     <ul>
       <li><a href="/explore/designs/bridal-royal-zardosi/">Bridal Royal Zardosi blouse</a></li>
-      <li><a href="/explore/designs/royal-heritage-maroon/">Royal Heritage Maroon blouse</a></li>
       <li><a href="/explore/designs/midnight-gold-vine/">Midnight Gold Vine blouse</a></li>
     </ul>`;
   article.appendChild(links);
@@ -349,6 +376,7 @@ function addLocalBusinessSchema(activePage) {
     url: 'https://khadeejadesigns.in/',
     email: 'contact@khadeejadesigns.in',
     telephone: '+918667454391',
+    image: 'https://khadeejadesigns.in/explore/designs/bridal-royal-zardosi/khadeeja_designs_bridal_royal_zardosi_blouse_back.webp',
     address: {
       '@type': 'PostalAddress',
       streetAddress: '17 East Sayakara Lane, Jaffersha Street',
@@ -356,7 +384,21 @@ function addLocalBusinessSchema(activePage) {
       postalCode: '620008',
       addressCountry: 'IN'
     },
+    geo: {
+      '@type': 'GeoCoordinates',
+      latitude: 10.822033045661112,
+      longitude: 78.69673369581488
+    },
     areaServed: ['Trichy', 'Tamil Nadu', 'India'],
+    alternateName: 'Khadeeja Designs Tiruchirappalli',
+    priceRange: '₹1,999–₹8,499',
+    openingHoursSpecification: [{
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      opens: '10:00',
+      closes: '19:00'
+    }],
+    hasMap: 'https://maps.app.goo.gl/LLfyh2Ar4wq9Twyc8',
     sameAs: ['https://instagram.com/khadeeja.designs']
   };
   appendJsonLd(schema, 'local-business');

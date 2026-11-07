@@ -19,5 +19,21 @@
       "description": "Proceed after you have reviewed and approved the agreed details."
     }
   ],
-  "testimonials": []
+  "testimonials": [
+    {
+      "name": "Ayisha Noor",
+      "quote": "Absolutely loved the Aari work on my blouse! ❤️ The work was so beautiful and perfectly done. Everyone loved it and kept asking me about the designer. Already looking forward to choosing your designs for my next function! ✨ Highly recommend!",
+      "rating": 5
+    },
+    {
+      "name": "Rakshana Fareen",
+      "quote": "Absolutely happy with her work.. worthy!!",
+      "rating": 5
+    },
+    {
+      "name": "Affaan Junaira",
+      "quote": "Masha Allah 👌 nice ...",
+      "rating": 5
+    }
+  ]
 }

@@ -62,21 +62,21 @@
   to   = "/thankyou/"
   status = 301
 
-# Redirect /product to /product/ for consistency
+# Redirect /product to the portfolio permanently
 [[redirects]]
   from = "/product"
-  to   = "/product/"
+  to   = "/explore/"
+  status = 301
+
+[[redirects]]
+  from = "/product/"
+  to   = "/explore/"
   status = 301
 
 [[redirects]]
   from = "/explore/product.html"
   query = {id = "bridal-royal-zardosi"}
   to = "/explore/designs/bridal-royal-zardosi/"
-  status = 301
-[[redirects]]
-  from = "/explore/product.html"
-  query = {id = "royal-heritage-maroon"}
-  to = "/explore/designs/royal-heritage-maroon/"
   status = 301
 [[redirects]]
   from = "/explore/product.html"
