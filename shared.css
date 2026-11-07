@@ -113,7 +113,7 @@ nav {
   background: #101510; color: var(--t1); font: 13px var(--sans);
   text-decoration: none; box-shadow: 0 8px 26px rgba(0,0,0,.4);
 }
-.whatsapp-icon { display: block; width: 20px; height: 20px; flex: 0 0 20px; fill: none; stroke: var(--green); stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+.whatsapp-icon { display: block; width: 24px; height: 24px; flex: 0 0 24px; object-fit: contain; }
 .whatsapp-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
 .contact-whatsapp, .product-whatsapp { margin: 20px 0 0 12px; }
 .ordering-steps {
@@ -160,7 +160,7 @@ nav {
     display: grid; place-items: center; border-radius: 50%;
   }
   .whatsapp-float .whatsapp-label { display: none; }
-  .whatsapp-float .whatsapp-icon { width: 24px; height: 24px; }
+  .whatsapp-float .whatsapp-icon { width: 28px; height: 28px; flex-basis: 28px; }
   .ordering-steps, .testimonials { padding: 36px 20px; }
   .testimonials__slide { padding: 18px 16px 20px; }
   .ordering-steps ol { grid-template-columns: 1fr; }

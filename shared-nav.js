@@ -304,11 +304,11 @@ function renderWhatsAppLinks(config, activePage) {
     link.dataset.whatsapp = 'true';
 
     if (includeIcon) {
-      const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      const icon = document.createElement('img');
       icon.classList.add('whatsapp-icon');
-      icon.setAttribute('viewBox', '0 0 24 24');
+      icon.src = '/images/whatsapp-icon.png';
+      icon.alt = '';
       icon.setAttribute('aria-hidden', 'true');
-      icon.innerHTML = '<path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L3 20l1.2-4.9a8.2 8.2 0 1 1 16-3.4Z"/><path d="M8.8 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .6.5.9 1.2 1.5 2.1 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.1l1.5.7c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.4-.5.4-1.1.6-1.7.5-1-.1-2.2-.6-3.4-1.7-1.4-1.2-2.3-2.7-2.5-3.7-.2-.9 0-1.6.5-2.1Z"/>';
       link.append(icon);
     }
     const text = document.createElement('span');
@@ -332,7 +332,7 @@ function renderWhatsAppLinks(config, activePage) {
   }
 
   if (product && !product.querySelector('[data-whatsapp-cta]')) {
-    const cta = createLink('button button--ghost product-whatsapp', 'Ask about this', false);
+    const cta = createLink('button button--ghost product-whatsapp', 'Ask about this');
     cta.dataset.whatsappCta = 'true';
     const actions = product.querySelector('.product-actions');
     (actions || product.querySelector('.layout > div:last-child'))?.appendChild(cta);

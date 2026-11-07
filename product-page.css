@@ -153,9 +153,9 @@
 
 .product .product-whatsapp {
   margin: 0;
-  border-color: var(--green);
-  background: var(--green);
-  color: var(--black);
+  border-color: #555;
+  background: transparent;
+  color: var(--t2);
 }
 
 .product .product-whatsapp .whatsapp-label {
@@ -173,9 +173,9 @@
 }
 
 .product .product-whatsapp:hover {
-  border-color: #20bd5a;
-  background: #20bd5a;
-  color: var(--black);
+  border-color: #777;
+  background: transparent;
+  color: var(--t1);
 }
 
 .related-guide {
