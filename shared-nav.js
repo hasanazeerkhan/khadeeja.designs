@@ -258,9 +258,13 @@ function renderTestimonials(config, activePage) {
   const slides = Array.from(track.children);
   const position = section.querySelector('.testimonials__position');
   let currentIndex = 0;
+  const updateTrackHeight = () => {
+    track.style.height = `${slides[currentIndex].offsetHeight}px`;
+  };
   const showSlide = index => {
     currentIndex = (index + slides.length) % slides.length;
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    updateTrackHeight();
     slides.forEach((slide, slideIndex) => slide.setAttribute('aria-hidden', String(slideIndex !== currentIndex)));
     position.textContent = `${currentIndex + 1} / ${slides.length}`;
   };
@@ -269,6 +273,9 @@ function renderTestimonials(config, activePage) {
   buttons[1].addEventListener('click', () => showSlide(currentIndex + 1));
   const steps = main.querySelector('.ordering-steps');
   main.insertBefore(section, steps || null);
+  showSlide(0);
+  const resizeObserver = new ResizeObserver(updateTrackHeight);
+  slides.forEach(slide => resizeObserver.observe(slide));
 }
 
 function renderWhatsAppLinks(config, activePage) {
