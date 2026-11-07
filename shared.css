@@ -10,6 +10,11 @@
   --gold-light: #D4A017;
   --gold-pale:  #C9A84C;
   --gold-dim:   rgba(184,134,11,0.15);
+  --gold-glow:  radial-gradient(ellipse at 18% 0%, rgba(184,134,11,.10), transparent 42%);
+  --gold-glow-right: radial-gradient(ellipse at 82% 0%, rgba(184,134,11,.08), transparent 48%);
+  --radius-sm: 6px;
+  --radius-card: 12px;
+  --radius-feature: 16px;
   --black:      #0A0A0A;
   --border:     rgba(255,255,255,0.14);
   --border-mid: rgba(255,255,255,0.24);
@@ -26,6 +31,7 @@ body {
   background: var(--black); font-family: var(--serif);
   color: var(--t1); min-height: 100vh; overflow-x: hidden;
 }
+img { border-radius: var(--radius-sm); }
 
 /* ── NAV ── */
 nav {
@@ -53,6 +59,7 @@ nav {
   color: var(--black); background: var(--gold); border: none;
   padding: 9px 22px; cursor: pointer; letter-spacing: 0.04em;
   transition: background 0.2s; text-decoration: none; display: inline-block;
+  border-radius: var(--radius-sm);
 }
 .nav-cta:hover { background: var(--gold-light); }
 .nav-cta.button { padding: 9px 22px; font-size: 13px; }
@@ -79,6 +86,7 @@ nav {
   border: none; padding: 14px 38px; cursor: pointer;
   transition: background 0.2s, transform 0.1s;
   white-space: nowrap; display: inline-block; text-decoration: none;
+  border-radius: var(--radius-sm);
 }
 .button--gold,
 .btn-gold { color: var(--black); background: var(--gold); }
@@ -93,6 +101,7 @@ nav {
   color: var(--t2); background: transparent; border: 1px solid #555;
   padding: 14px 24px; cursor: pointer; transition: all 0.2s; white-space: nowrap;
   text-decoration: none; display: inline-block;
+  border-radius: var(--radius-sm);
 }
 .button--ghost:hover,
 .btn-ghost:hover { color: var(--t1); border-color: #777; }
@@ -108,33 +117,37 @@ nav {
 .whatsapp-link { display: inline-flex; align-items: center; justify-content: center; gap: 9px; }
 .contact-whatsapp, .product-whatsapp { margin: 20px 0 0 12px; }
 .ordering-steps {
-  padding: 48px 52px; border-top: 1px solid var(--border);
+  padding: 48px 52px 52px; border-top: 1px solid var(--border);
+  background-image: var(--gold-glow);
 }
 .ordering-steps__heading h2, .testimonials__heading h2 {
-  font: 300 30px var(--serif); margin-bottom: 26px;
+  font: 300 30px var(--serif); margin-bottom: 28px;
 }
 .ordering-steps__heading h2 em, .testimonials__heading h2 em { color: var(--gold-light); }
 .ordering-steps ol {
   list-style: none; display: grid; grid-template-columns: repeat(4, 1fr);
-  gap: 20px;
+  gap: 16px; padding: 0;
 }
-.ordering-steps li { border-top: 1px solid var(--border-mid); padding-top: 12px; }
-.ordering-steps__number { flex: 0 0 auto; color: var(--gold); font: 11px var(--sans); letter-spacing: .12em; }
-.ordering-steps h3 { display: flex; align-items: baseline; gap: 10px; margin: 0 0 4px; font: 20px var(--serif); }
-.ordering-steps p { color: var(--t2); font: 13px/1.7 var(--sans); }
-.testimonials { padding: 48px 52px; border-top: 1px solid var(--border); }
-.testimonials__carousel { overflow: hidden; }
+.ordering-steps li { display: flex; min-width: 0; min-height: 188px; flex-direction: column; padding: 22px 20px; border: 1px solid var(--border); border-radius: var(--radius-card); }
+.ordering-steps__title { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+.ordering-steps__number { flex: 0 0 auto; color: var(--gold); font: 10px var(--sans); letter-spacing: .1em; text-transform: uppercase; white-space: nowrap; }
+.ordering-steps h3 { min-width: 0; margin: 0; color: var(--t1); font: 21px/1.25 var(--serif); }
+.ordering-steps p { margin: 0; color: var(--t2); font: 13px/1.8 var(--sans); font-weight: 300; }
+.testimonials { padding: 48px 52px; border-top: 1px solid var(--border); background-image: var(--gold-glow); }
+.testimonials__carousel { border: 1px solid var(--border); border-radius: var(--radius-card); overflow: hidden; }
+.testimonials__toolbar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 12px 18px; border-bottom: 1px solid var(--border); }
+.testimonials__toolbar .testimonials__stars { flex: 1; margin: 0; text-align: center; }
+.testimonials__toolbar .testimonials__button { flex: 0 0 34px; }
+.testimonials__viewport { position: relative; overflow: hidden; }
 .testimonials__track { display: flex; align-items: flex-start; transition: transform .35s ease, height .25s ease; }
-.testimonials__slide { flex: 0 0 100%; min-width: 0; border: 1px solid var(--border); padding: 22px; }
-.testimonials__stars { display: block; margin-bottom: 12px; color: var(--gold-light); font: 18px/1 var(--sans); letter-spacing: .12em; }
+.testimonials__slide { flex: 0 0 100%; min-width: 0; padding: 18px 22px 22px; }
+.testimonials__stars { display: block; color: var(--gold-light); font: 18px/1 var(--sans); letter-spacing: .12em; white-space: nowrap; }
 .testimonials blockquote { max-width: 680px; color: var(--t2); font: 15px/1.8 var(--sans); }
 .testimonials figcaption { display: flex; align-items: center; gap: 10px; margin-top: 18px; color: var(--gold-pale); font: 500 13px var(--sans); letter-spacing: .03em; }
 .testimonials figcaption::before { content: ""; width: 20px; height: 1px; flex: 0 0 20px; background: var(--gold); }
 .testimonials img { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; }
-.testimonials__controls { display: flex; align-items: center; justify-content: center; gap: 18px; margin-top: 18px; }
-.testimonials__button { width: 38px; height: 38px; border: 1px solid var(--border-mid); background: transparent; color: var(--gold-light); cursor: pointer; font: 24px/1 var(--sans); }
+.testimonials__button { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--border-mid); border-radius: var(--radius-sm); background: var(--black); color: var(--gold-light); cursor: pointer; font: 22px/1 var(--sans); }
 .testimonials__button:hover, .testimonials__button:focus-visible { border-color: var(--gold-light); }
-.testimonials__position { color: var(--t3); font: 12px var(--sans); font-variant-numeric: tabular-nums; }
 .related-guide { margin: 28px 0; color: var(--t2); font: 13px/1.8 var(--sans); }
 .related-guide a, .related-designs a { color: var(--gold-light); }
 .related-designs { margin-top: 36px; border-top: 1px solid var(--border); padding-top: 20px; }
@@ -149,7 +162,9 @@ nav {
   .whatsapp-float .whatsapp-label { display: none; }
   .whatsapp-float .whatsapp-icon { width: 24px; height: 24px; }
   .ordering-steps, .testimonials { padding: 36px 20px; }
+  .testimonials__slide { padding: 18px 16px 20px; }
   .ordering-steps ol { grid-template-columns: 1fr; }
+  .ordering-steps li { min-height: 0; padding: 20px 18px; }
   .contact-whatsapp, .product-whatsapp { margin-left: 0; width: 100%; text-align: center; }
 }
 @media(prefers-reduced-motion: reduce) {
@@ -169,7 +184,8 @@ nav {
 
 .faq details,
 .seo-faq details,
-.contact-faq details {
+.contact-faq details,
+.product-accordion {
   border-top: 1px solid var(--border);
   border-bottom: 0 !important;
   padding: 0 !important;
@@ -179,7 +195,8 @@ nav {
 .contact-faq details:last-child { border-bottom: 1px solid var(--border) !important; }
 .faq details summary,
 .seo-faq details summary,
-.contact-faq details summary {
+.contact-faq details summary,
+.product-accordion summary {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -195,10 +212,12 @@ nav {
 }
 .faq details summary::-webkit-details-marker,
 .seo-faq details summary::-webkit-details-marker,
-.contact-faq details summary::-webkit-details-marker { display: none !important; }
+.contact-faq details summary::-webkit-details-marker,
+.product-accordion summary::-webkit-details-marker { display: none !important; }
 .faq details summary::after,
 .seo-faq details summary::after,
-.contact-faq details summary::after {
+.contact-faq details summary::after,
+.product-accordion summary::after {
   content: '+' !important;
   flex-shrink: 0;
   color: var(--gold);
@@ -209,13 +228,17 @@ nav {
 }
 .faq details[open] summary,
 .seo-faq details[open] summary,
-.contact-faq details[open] summary { color: var(--gold-light); }
+.contact-faq details[open] summary,
+.product-accordion[open] summary { color: var(--gold-light); }
 .faq details[open] summary::after,
 .seo-faq details[open] summary::after,
-.contact-faq details[open] summary::after { content: '−'; }
+.contact-faq details[open] summary::after,
+.product-accordion[open] summary::after { content: '−'; }
 .faq details p,
 .seo-faq details p,
-.contact-faq details p {
+.contact-faq details p,
+.product .product-accordion > .copy,
+.product .product-accordion > .specs {
   max-width: 760px;
   padding: 0 42px 26px 0 !important;
   color: var(--t2);
@@ -223,6 +246,10 @@ nav {
   font-size: 14px;
   font-weight: 300;
   line-height: 1.85;
+}
+.product .product-accordion > .specs strong {
+  color: var(--t1);
+  font-weight: 400;
 }
 
 /* Explicit shared hook for product/detail-page question sections. */

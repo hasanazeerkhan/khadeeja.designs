@@ -35,7 +35,7 @@
 <style>
 body{display:flex;flex-direction:column;min-height:100vh;}
 main{flex:1;}
-.explore-header{padding:48px 52px 36px;}
+.explore-header{padding:48px 52px 36px;background-image:var(--gold-glow);}
 .explore-title{font-size:36px;font-weight:300;line-height:1.1;margin-bottom:10px;}
 .explore-sub{font-family:var(--sans);font-size:14px;font-weight:300;color:var(--t2);line-height:1.7;max-width:760px;}
 
@@ -45,32 +45,33 @@ main{flex:1;}
 .filter-tab:hover{color:var(--t2);}
 .filter-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 
-#grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border-left:1px solid var(--border);border-right:1px solid var(--border);min-height:280px;}
-.design-card{background:var(--black);cursor:pointer;transition:background 0.2s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:block;}
+#grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:transparent;min-height:280px;}
+.design-card{background:var(--black);border:1px solid var(--border);border-radius:var(--radius-card);cursor:pointer;transition:background 0.2s,border-color 0.2s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;min-width:0;}
 .design-card[hidden]{display:none;}
 .design-card:hover{background:#0d0d0d;}
+.design-card:focus-visible{outline:2px solid var(--gold-light);outline-offset:-2px;z-index:2;}
 .card-top-line{position:absolute;top:0;left:0;right:0;height:1px;background:transparent;transition:background 0.3s;z-index:1;}
-.design-card:hover .card-top-line{background:var(--gold);}
-.card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;background:#111;position:relative;}
+.design-card:hover .card-top-line,.design-card:focus-visible .card-top-line{background:var(--gold);}
+.card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:var(--radius-card) var(--radius-card) 0 0;background:#111;position:relative;}
 .card-img-wrap picture{display:block;width:100%;height:100%;}
-.card-img{width:100%;height:100%;object-fit:cover;display:block;filter:brightness(0.92);transition:filter 0.4s,transform 0.5s;}
+.card-img{width:100%;height:100%;border-radius:0;object-fit:cover;display:block;filter:brightness(0.92);transition:filter 0.4s,transform 0.5s;}
 .design-card:hover .card-img{filter:brightness(1.05);transform:scale(1.04);}
 .card-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
 .card-img-ph span{font-family:var(--sans);font-size:10px;color:#2a2a2a;letter-spacing:0.1em;text-transform:uppercase;}
-.card-body{padding:16px 20px 22px;}
-.card-cat{font-family:var(--sans);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);margin-bottom:6px;display:block;}
-.card-title{font-family:var(--serif);font-size:16px;font-weight:400;color:var(--t1);line-height:1.25;margin-bottom:12px;}
-.card-title em{font-style:italic;}
-.price-row{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;}
+.card-body{display:flex;flex:1;flex-direction:column;padding:14px 16px 16px;}
+.card-heading{min-width:0;margin-bottom:12px;text-align:center;}
+.card-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--serif);font-size:18px;font-weight:400;color:var(--t1);line-height:1.2;}
+.card-footer{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));align-items:center;gap:8px;margin-top:auto;}
+.price-row{display:flex;align-items:baseline;justify-content:center;gap:8px;min-width:0;}
 .price-old{font-family:var(--sans);font-size:12px;color:var(--t3);text-decoration:line-through;}
-.price-new{font-family:var(--sans);font-size:14px;font-weight:500;color:var(--t1);}
-.card-btn{width:100%;padding:10px;background:transparent;border:1px solid var(--border);color:var(--t3);font-family:var(--sans);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;cursor:pointer;transition:all 0.2s;}
-.design-card:hover .card-btn{border-color:var(--gold);color:var(--gold);}
-.catalog-status{padding:18px 20px;text-align:center;font:13px/1.6 var(--sans);color:var(--t2);border-bottom:1px solid var(--border);}
+.price-new{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--t1);white-space:nowrap;}
+.card-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-width:0;padding:8px 6px;background:transparent;border:1px solid var(--border-mid);border-radius:var(--radius-sm);color:var(--t2);font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;white-space:nowrap;transition:background 0.2s,border-color 0.2s,color 0.2s;}
+.design-card:hover .card-btn,.design-card:focus-visible .card-btn{background:var(--gold-dim);border-color:var(--gold);color:var(--gold-light);}
+.catalog-status{padding:18px 20px;text-align:center;font:13px/1.6 var(--sans);color:var(--t2);border:1px solid var(--border);border-radius:var(--radius-card);}
 .catalog-status[hidden]{display:none;}
-.catalog-status button{margin-left:10px;padding:6px 12px;color:var(--gold-light);background:transparent;border:1px solid var(--gold);font:inherit;cursor:pointer;}
+.catalog-status button{margin-left:10px;padding:6px 12px;color:var(--gold-light);background:transparent;border:1px solid var(--gold);border-radius:var(--radius-sm);font:inherit;cursor:pointer;}
 .catalog-status button:disabled{opacity:.6;cursor:wait;}
-.seo-copy,.seo-faq{padding:56px 52px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;}
+.seo-copy,.seo-faq{padding:56px 52px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;background-image:var(--gold-glow-right);}
 .seo-copy h2,.seo-faq h2{font-size:25px;font-weight:300;line-height:1.15;margin-bottom:12px;}
 .seo-copy p,.seo-faq p{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--t2);line-height:1.8;}
 .seo-copy a,.seo-faq a{display:inline-block;margin-top:14px;color:var(--gold);font:12px var(--sans);text-decoration:none;}
@@ -88,6 +89,13 @@ main{flex:1;}
   .explore-header{padding:32px 20px 24px;}
   .filter-row{padding:0 20px;}
   #grid{grid-template-columns:repeat(2,1fr);}
+  .card-body{padding:12px;}
+  .card-heading{margin-bottom:10px;}
+  .card-title{font-size:16px;}
+  .card-footer{gap:6px;}
+  .price-new{font-size:11px;}
+  .price-old{font-size:10px;}
+  .card-btn{padding:7px 6px;font-size:8px;letter-spacing:.04em;}
   .seo-copy{grid-template-columns:1fr;padding:40px 20px;gap:28px;}
   .seo-faq{padding:36px 20px 48px;}
 }
@@ -118,37 +126,37 @@ main{flex:1;}
     <a class="design-card" data-category="bridal" href="/explore/designs/bridal-royal-zardosi/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/bridal-royal-zardosi/khadeeja_designs_bridal_royal_zardosi_blouse_front_card.webp" type="image/webp"><img class="card-img" loading="eager" fetchpriority="high" decoding="async" width="600" height="600" src="designs/bridal-royal-zardosi/khadeeja_designs_bridal_royal_zardosi_blouse_front.png" alt="Bridal royal zardosi Aari blouse embroidery with gold, red and pearl accents"></picture></div>
-      <div class="card-body"><span class="card-cat">Bridal</span><div class="card-title">Bridal Royal Zardosi<br><em>Blouse</em></div><div class="price-row"><span class="price-new">INR 7,499</span></div><span class="card-btn">View Design →</span></div>
+      <div class="card-body"><div class="card-heading"><div class="card-title">Bridal Royal Zardosi</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 7,499</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
     <a class="design-card" data-category="designer" href="/explore/designs/emerald-jhumka-elegance/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/emerald-jhumka-elegance/khadeeja_designs_emerald_jhumka_elegance_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/emerald-jhumka-elegance/khadeeja_designs_emerald_jhumka_elegance_front.png" alt="Emerald green Aari blouse embroidery with gold oval motifs and jhumka tassels"></picture></div>
-      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Emerald Jhumka Elegance<br><em>Blouse</em></div><div class="price-row"><span class="price-new">INR 4,999</span></div><span class="card-btn">View Design →</span></div>
+      <div class="card-body"><div class="card-heading"><div class="card-title">Emerald Jhumka Elegance</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 4,999</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
     <a class="design-card" data-category="designer" href="/explore/designs/magenta-midnight-bloom/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/magenta-midnight-bloom/khadeeja_designs_magenta_midnight_bloom_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/magenta-midnight-bloom/khadeeja_designs_magenta_midnight_bloom_front.png" alt="Magenta blouse with midnight-blue and gold Aari embroidery motifs"></picture></div>
-      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Magenta Midnight Bloom<br><em>Blouse</em></div><div class="price-row"><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div>
+      <div class="card-body"><div class="card-heading"><div class="card-title">Magenta Midnight Bloom</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
     <a class="design-card" data-category="bridal" href="/explore/designs/midnight-gold-vine/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/midnight-gold-vine/khadeeja_designs_midnight_gold_vine_aari_blouse_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/midnight-gold-vine/khadeeja_designs_midnight_gold_vine_aari_blouse_front.png" alt="Midnight black blouse with gold Aari embroidery vines and floral motifs"></picture></div>
-      <div class="card-body"><span class="card-cat">Bridal</span><div class="card-title">Midnight Gold Vine<br><em>Blouse</em></div><div class="price-row"><span class="price-new">INR 6,499</span></div><span class="card-btn">View Design →</span></div>
+      <div class="card-body"><div class="card-heading"><div class="card-title">Midnight Gold Vine</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 6,499</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
     <a class="design-card" data-category="designer" href="/explore/designs/sunset-garden/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/sunset-garden/khadeeja_designs_sunset_garden_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/sunset-garden/khadeeja_designs_sunset_garden_front.png" alt="Sunset orange blouse with colourful floral Aari embroidery and gold beadwork"></picture></div>
-      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Sunset Garden<br><em>Blouse</em></div><div class="price-row"><span class="price-new">INR 8,499</span></div><span class="card-btn">View Design →</span></div>
+      <div class="card-body"><div class="card-heading"><div class="card-title">Sunset Garden</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 8,499</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
     <a class="design-card" data-category="designer" href="/explore/designs/violet-gold-vine/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/violet-gold-vine/khadeeja_designs_violet_gold_vine_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/violet-gold-vine/khadeeja_designs_violet_gold_vine_front.png" alt="Violet blouse with gold Aari embroidery vines and floral motifs"></picture></div>
-      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Violet Gold Vine<br><em>Blouse</em></div><div class="price-row"><span class="price-new">INR 6,999</span></div><span class="card-btn">View Design →</span></div>
+      <div class="card-body"><div class="card-heading"><div class="card-title">Violet Gold Vine</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 6,999</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
     <a class="design-card" data-category="designer" href="/explore/designs/midnight-grace/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/midnight-grace/khadeeja_designs_midnight_grace_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/midnight-grace/khadeeja_designs_midnight_grace_front.png" alt="Midnight black blouse with maroon and antique-gold Aari embroidery"></picture></div>
-      <div class="card-body"><span class="card-cat">Designer</span><div class="card-title">Midnight Grace<br><em>Blouse</em></div><div class="price-row"><span class="price-new">INR 1,999</span></div><span class="card-btn">View Design →</span></div>
+      <div class="card-body"><div class="card-heading"><div class="card-title">Midnight Grace</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 1,999</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
   </div>
   <p id="catalog-status" class="catalog-status" role="status" aria-live="polite" hidden>
@@ -233,8 +241,7 @@ function safeImageFallback(img){
 function renderGrid(products) {
   const grid = document.getElementById('grid');
   grid.innerHTML = products.map((p, index) => {
-    const words = p.title.split(' ');
-    const last = words.pop();
+    const title = p.title.replace(/\s+blouse$/i, '');
     const imageName = p.images && p.images[0] || 'main.jpg';
     const imagePath = `designs/${p.id}/${encodeURIComponent(imageName)}`;
     const webpPath = imagePath.replace(/\.(?:png|jpe?g)$/i, '-card.webp');
@@ -252,13 +259,16 @@ function renderGrid(products) {
           <div class="card-img-ph" hidden><span>${category}</span></div>
         </div>
         <div class="card-body">
-          <span class="card-cat">${category}</span>
-          <div class="card-title">${escapeHtml(words.join(' '))}<br><em>${escapeHtml(last)}</em></div>
-          <div class="price-row">
-            ${offerActive ? `<span class="price-old">${escapeHtml(p.originalPrice)}</span>` : ''}
-            <span class="price-new">${escapeHtml(p.newPrice || '')}</span>
+          <div class="card-heading">
+            <div class="card-title">${escapeHtml(title)}</div>
           </div>
-          <span class="card-btn">View Design →</span>
+          <div class="card-footer">
+            <div class="price-row">
+              ${offerActive ? `<span class="price-old">${escapeHtml(p.originalPrice)}</span>` : ''}
+              <span class="price-new">${escapeHtml(p.newPrice || '')}</span>
+            </div>
+            <span class="card-btn">View Design →</span>
+          </div>
         </div>
       </a>`;
   }).join('');

@@ -80,6 +80,7 @@ function initPage(activePage) {
   addBreadcrumbSchema(activePage);
   trackDesignView();
   renderProductGallery();
+  renderProductDetailAccordions();
   updateProductPrice();
   renderRelatedLinks();
   getSiteConfig()
@@ -205,7 +206,7 @@ function preserveCampaignParams() {
 function renderOrderingSteps(config, activePage) {
   if (!['home', 'contact'].includes(activePage) || !Array.isArray(config.orderingSteps)) return;
   const main = document.querySelector('main');
-  if (!main || main.querySelector('.ordering-steps')) return;
+  if (!main || document.querySelector('.ordering-steps')) return;
 
   const section = document.createElement('section');
   section.className = 'ordering-steps';
@@ -216,18 +217,22 @@ function renderOrderingSteps(config, activePage) {
       <h2 id="ordering-steps-title">How ordering <em>works</em></h2>
     </div>
     <ol>${config.orderingSteps.map((step, index) => `
-      <li><h3><span class="ordering-steps__number">0${index + 1}</span>${escapeHtml(step.title)}</h3>
+      <li><div class="ordering-steps__title"><span class="ordering-steps__number">Step 0${index + 1}</span><h3>${escapeHtml(step.title)}</h3></div>
         <p>${escapeHtml(step.description)}</p>
       </li>`).join('')}
     </ol>`;
-  const faq = main.querySelector('.faq-section, .contact-faq');
-  main.insertBefore(section, faq || null);
+  const serviceSection = activePage === 'home' ? document.querySelector('.service-section') : null;
+  if (serviceSection) serviceSection.after(section);
+  else {
+    const faq = main.querySelector('.faq-section, .contact-faq');
+    main.insertBefore(section, faq || null);
+  }
 }
 
 function renderTestimonials(config, activePage) {
   if (!['home', 'contact'].includes(activePage) || !Array.isArray(config.testimonials) || !config.testimonials.length) return;
   const main = document.querySelector('main');
-  if (!main) return;
+  if (!main || document.querySelector('.testimonials')) return;
   const section = document.createElement('section');
   section.className = 'testimonials';
   section.setAttribute('aria-labelledby', 'testimonials-title');
@@ -237,26 +242,26 @@ function renderTestimonials(config, activePage) {
       <h2 id="testimonials-title">Kind words from our <em>clients</em></h2>
     </div>
     <div class="testimonials__carousel" role="group" aria-roledescription="carousel" aria-label="Client testimonials">
-      <div class="testimonials__track" aria-live="polite">${config.testimonials.map((testimonial, index) => {
-        const rating = Math.max(0, Math.min(5, Number(testimonial.rating) || 5));
-        return `
+      <div class="testimonials__toolbar">
+        <button class="testimonials__button" type="button" aria-label="Previous review">‹</button>
+        <span class="testimonials__stars" role="img"></span>
+        <button class="testimonials__button" type="button" aria-label="Next review">›</button>
+      </div>
+      <div class="testimonials__viewport">
+        <div class="testimonials__track" aria-live="polite">${config.testimonials.map((testimonial, index) => `
           <figure class="testimonials__slide" role="group" aria-roledescription="slide" aria-label="${index + 1} of ${config.testimonials.length}" aria-hidden="${index !== 0}">
-            <span class="testimonials__stars" role="img" aria-label="${rating} out of 5 stars">${'★'.repeat(rating)}${'☆'.repeat(5 - rating)}</span>
             <blockquote>${escapeHtml(testimonial.quote)}</blockquote>
             <figcaption>${testimonial.photo ? `<img src="${escapeHtml(testimonial.photo)}" alt="" width="48" height="48" loading="lazy">` : ''}
               <span>${escapeHtml(testimonial.name)}${testimonial.city ? ` · ${escapeHtml(testimonial.city)}` : ''}</span>
             </figcaption>
-          </figure>`;
-      }).join('')}</div>
+          </figure>`).join('')}</div>
+      </div>
     </div>
-    <div class="testimonials__controls">
-      <button class="testimonials__button" type="button" aria-label="Previous review">‹</button>
-      <span class="testimonials__position" aria-hidden="true">1 / ${config.testimonials.length}</span>
-      <button class="testimonials__button" type="button" aria-label="Next review">›</button>
-    </div>`;
+    `;
   const track = section.querySelector('.testimonials__track');
   const slides = Array.from(track.children);
-  const position = section.querySelector('.testimonials__position');
+  const stars = section.querySelector('.testimonials__stars');
+  const ratings = config.testimonials.map(testimonial => Math.max(0, Math.min(5, Number(testimonial.rating) || 5)));
   let currentIndex = 0;
   const updateTrackHeight = () => {
     track.style.height = `${slides[currentIndex].offsetHeight}px`;
@@ -266,13 +271,16 @@ function renderTestimonials(config, activePage) {
     track.style.transform = `translateX(-${currentIndex * 100}%)`;
     updateTrackHeight();
     slides.forEach((slide, slideIndex) => slide.setAttribute('aria-hidden', String(slideIndex !== currentIndex)));
-    position.textContent = `${currentIndex + 1} / ${slides.length}`;
+    stars.textContent = `${'★'.repeat(ratings[currentIndex])}${'☆'.repeat(5 - ratings[currentIndex])}`;
+    stars.setAttribute('aria-label', `${ratings[currentIndex]} out of 5 stars`);
   };
-  const buttons = section.querySelectorAll('.testimonials__button');
+  const buttons = section.querySelectorAll('.testimonials__toolbar .testimonials__button');
   buttons[0].addEventListener('click', () => showSlide(currentIndex - 1));
   buttons[1].addEventListener('click', () => showSlide(currentIndex + 1));
   const steps = main.querySelector('.ordering-steps');
-  main.insertBefore(section, steps || null);
+  const serviceSection = activePage === 'home' ? document.querySelector('.service-section') : null;
+  if (serviceSection) serviceSection.after(section);
+  else main.insertBefore(section, steps || null);
   showSlide(0);
   const resizeObserver = new ResizeObserver(updateTrackHeight);
   slides.forEach(slide => resizeObserver.observe(slide));
@@ -287,7 +295,7 @@ function renderWhatsAppLinks(config, activePage) {
     ? `Hi, I'm interested in ${designName}`
     : 'Hi, I am interested in custom Aari blouse embroidery.';
   const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
-  const createLink = (className, label) => {
+  const createLink = (className, label, includeIcon = true) => {
     const link = document.createElement('a');
     link.className = `${className} whatsapp-link`;
     link.href = url;
@@ -295,15 +303,18 @@ function renderWhatsAppLinks(config, activePage) {
     link.rel = 'noopener noreferrer';
     link.dataset.whatsapp = 'true';
 
-    const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-    icon.classList.add('whatsapp-icon');
-    icon.setAttribute('viewBox', '0 0 24 24');
-    icon.setAttribute('aria-hidden', 'true');
-    icon.innerHTML = '<path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L3 20l1.2-4.9a8.2 8.2 0 1 1 16-3.4Z"/><path d="M8.8 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .6.5.9 1.2 1.5 2.1 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.1l1.5.7c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.4-.5.4-1.1.6-1.7.5-1-.1-2.2-.6-3.4-1.7-1.4-1.2-2.3-2.7-2.5-3.7-.2-.9 0-1.6.5-2.1Z"/>';
+    if (includeIcon) {
+      const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+      icon.classList.add('whatsapp-icon');
+      icon.setAttribute('viewBox', '0 0 24 24');
+      icon.setAttribute('aria-hidden', 'true');
+      icon.innerHTML = '<path d="M20.2 11.7a8.2 8.2 0 0 1-12.1 7.2L3 20l1.2-4.9a8.2 8.2 0 1 1 16-3.4Z"/><path d="M8.8 8.1c.2-.4.4-.4.7-.4h.5c.2 0 .4.1.5.4l.7 1.6c.1.3.1.5-.1.7l-.5.6c-.2.2-.2.4 0 .6.5.9 1.2 1.5 2.1 1.9.2.1.4.1.6-.1l.7-.8c.2-.2.4-.3.7-.1l1.5.7c.3.1.4.3.4.5 0 .3-.2 1.1-.7 1.4-.5.4-1.1.6-1.7.5-1-.1-2.2-.6-3.4-1.7-1.4-1.2-2.3-2.7-2.5-3.7-.2-.9 0-1.6.5-2.1Z"/>';
+      link.append(icon);
+    }
     const text = document.createElement('span');
     text.className = 'whatsapp-label';
     text.textContent = label;
-    link.append(icon, text);
+    link.append(text);
     return link;
   };
 
@@ -321,9 +332,10 @@ function renderWhatsAppLinks(config, activePage) {
   }
 
   if (product && !product.querySelector('[data-whatsapp-cta]')) {
-    const cta = createLink('button button--ghost product-whatsapp', 'Ask about this design on WhatsApp');
+    const cta = createLink('button button--ghost product-whatsapp', 'Ask about this', false);
     cta.dataset.whatsappCta = 'true';
-    product.querySelector('.layout > div:last-child')?.appendChild(cta);
+    const actions = product.querySelector('.product-actions');
+    (actions || product.querySelector('.layout > div:last-child'))?.appendChild(cta);
   }
 
   if (!window.kdWhatsAppTrackingInstalled) {
@@ -341,9 +353,23 @@ function renderWhatsAppLinks(config, activePage) {
 function renderRelatedLinks() {
   const product = document.querySelector('main.product');
   if (product && !product.querySelector('.related-guide')) {
-    const related = document.createElement('p');
+    const related = document.createElement('section');
     related.className = 'related-guide';
-    related.innerHTML = 'Related guide: <a href="/blog/how-to-choose-aari-embroidery-bridal-blouse/">How to choose an Aari embroidery style for your wedding blouse</a>.';
+    related.setAttribute('aria-label', 'Related guide');
+    const label = document.createElement('span');
+    label.className = 'related-guide-label';
+    label.textContent = 'From our blog';
+    const link = document.createElement('a');
+    link.className = 'related-guide-link';
+    link.href = '/blog/how-to-choose-aari-embroidery-bridal-blouse/';
+    const type = document.createElement('span');
+    type.textContent = 'Related guide →';
+    const title = document.createElement('strong');
+    title.textContent = 'How to choose an Aari embroidery style for your wedding blouse';
+    const date = document.createElement('small');
+    date.textContent = 'June 2025';
+    link.append(type, title, date);
+    related.append(label, link);
     product.appendChild(related);
   }
 
@@ -456,6 +482,42 @@ function trackDesignView() {
   });
 }
 
+function renderProductDetailAccordions() {
+  const product = document.querySelector('main.product');
+  const content = product?.querySelector('.layout > div:last-child');
+  const headings = content ? Array.from(content.querySelectorAll(':scope > h2')) : [];
+  if (!content || headings.length < 3 || content.querySelector('.product-accordion')) return;
+
+  const sections = [
+    { heading: headings[0], title: 'Design Details', content: headings[0].nextElementSibling },
+    { heading: headings[1], title: 'Embroidery Details', content: headings[1].nextElementSibling },
+    { heading: headings[2], title: 'Pricing', content: headings[2].nextElementSibling }
+  ];
+
+  const accordions = sections.map(({ heading, title, content: sectionContent }) => {
+    if (!sectionContent || !sectionContent.matches('.copy, .specs')) return null;
+    const accordion = document.createElement('details');
+    accordion.className = `product-accordion${title === 'Pricing' ? ' product-accordion--pricing' : ''}`;
+    const summary = document.createElement('summary');
+    summary.textContent = title;
+    accordion.append(summary, sectionContent);
+    heading.replaceWith(accordion);
+    return accordion;
+  });
+
+  const pricingAccordion = accordions[2];
+  const enquiryLink = content.querySelector(':scope > .cta');
+  if (!pricingAccordion || !enquiryLink) return;
+
+  const actions = document.createElement('div');
+  actions.className = 'product-actions';
+  actions.setAttribute('role', 'group');
+  actions.setAttribute('aria-label', 'Enquiry options');
+  enquiryLink.textContent = 'Make It Yours';
+  actions.appendChild(enquiryLink);
+  pricingAccordion.after(actions);
+}
+
 async function updateProductPrice() {
   const page = document.querySelector('main.product');
   if (!page) return;
@@ -493,9 +555,7 @@ async function updateProductPrice() {
         else priceElement.append(document.createTextNode(formatRupees(price)));
         priceElement.setAttribute('aria-label', `Listed rate ${formatRupees(price)}`);
       }
-      const pricingCopy = Array.from(page.querySelectorAll('h2'))
-        .find(heading => heading.textContent.trim() === 'Pricing & Enquiry')
-        ?.nextElementSibling;
+      const pricingCopy = page.querySelector('.product-accordion--pricing > .copy');
       if (pricingCopy?.matches('.copy')) {
         pricingCopy.textContent = 'The listed rate applies to the design shown. Customisation can be discussed for colours, motifs, placement, neckline and sleeve details. Final feasibility and quotation are confirmed after enquiry.';
       }

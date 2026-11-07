@@ -36,15 +36,16 @@
 <style>
 body{display:flex;flex-direction:column;min-height:100vh;}
 main{flex:1;}
-.contact-header{max-width:1420px;margin:0 auto;padding:58px 52px 48px;}
+.contact-header{max-width:1420px;margin:0 auto;padding:58px 52px 48px;background-image:var(--gold-glow);}
 .contact-title{font-size:clamp(38px,3.2vw,52px);font-weight:300;line-height:1.04;letter-spacing:-0.01em;}
 .contact-title em{font-style:italic;color:var(--gold-light);}
 .contact-lead{font:14px/1.7 var(--sans);color:var(--t2);margin-top:14px;max-width:620px;}
 
-.contact-layout{max-width:1420px;margin:0 auto;display:grid;grid-template-columns:minmax(340px,.86fr) 1px minmax(560px,1.14fr);border:1px solid var(--border);border-bottom:0;}
+.contact-layout{max-width:1420px;margin:0 auto;display:grid;grid-template-columns:minmax(560px,1.14fr) 1px minmax(340px,.86fr);grid-template-areas:"form divider contact";border:1px solid var(--border);border-bottom:0;border-radius:var(--radius-feature);overflow:hidden;}
 .v-rule{background:var(--border);}
-.contact-left{padding:46px 64px 64px 52px;}
-.contact-right{padding:46px 52px 64px;}
+.contact-left{grid-area:contact;padding:46px 52px 64px 64px;}
+.contact-right{grid-area:form;padding:46px 64px 64px 52px;background-image:var(--gold-glow-right);}
+.contact-layout>.v-rule{grid-area:divider;}
 .contact-right>*{max-width:780px;}
 
 .col-label{font-family:var(--sans);font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--t1);margin-bottom:28px;display:block;}
@@ -71,7 +72,7 @@ main{flex:1;}
 .faq-hint{font-family:var(--sans);font-size:13px;color:var(--t1);margin-bottom:28px;}
 .faq-hint a{color:var(--gold);text-decoration:none;}
 .faq-hint a:hover{color:var(--gold-light);}
-.contact-faq{max-width:1420px;margin:0 auto;border:1px solid var(--border);border-top:1px solid var(--border);padding:52px 52px 64px;}
+.contact-faq{max-width:1420px;margin:0 auto;border:1px solid var(--border);border-top:1px solid var(--border);border-radius:var(--radius-feature);padding:52px 52px 64px;background-image:var(--gold-glow);}
 .contact-faq h2{font-size:28px;font-weight:300;margin-bottom:24px;}
 .contact-faq details{border-top:1px solid var(--border);padding:0;}
 .contact-faq details:last-child{border-bottom:1px solid var(--border);}
@@ -85,7 +86,7 @@ main{flex:1;}
 
 /* Selected design tag */
 .design-tag-wrap{margin-bottom:22px;display:none;}
-.design-tag-box{background:var(--gold-dim);border:1px solid rgba(184,134,11,0.25);padding:14px 16px;}
+.design-tag-box{background:var(--gold-dim);border:1px solid rgba(184,134,11,0.25);border-radius:var(--radius-sm);padding:14px 16px;}
 .design-tag-label{font-family:var(--sans);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--gold);display:block;margin-bottom:5px;}
 .design-tag-row{display:flex;align-items:center;justify-content:space-between;gap:12px;}
 .design-tag-value{font-family:var(--sans);font-size:14px;color:var(--t1);}
@@ -96,7 +97,7 @@ main{flex:1;}
 .field:last-of-type{margin-bottom:0;}
 .field-lbl{font-family:var(--sans);font-size:10px;letter-spacing:0.15em;text-transform:uppercase;color:var(--t1);display:block;margin-bottom:8px;}
 .field-opt{font-size:9px;color:var(--t3);letter-spacing:0.08em;}
-.fi{width:100%;background:transparent;border:1px solid var(--border-mid);color:#fff;font-family:var(--sans);font-size:14px;font-weight:400;padding:12px;outline:none;transition:border-color 0.2s;}
+.fi{width:100%;background:transparent;border:1px solid var(--border-mid);border-radius:var(--radius-sm);color:#fff;font-family:var(--sans);font-size:14px;font-weight:400;padding:12px;outline:none;transition:border-color 0.2s;}
 .fi[type="date"]{color-scheme:dark;cursor:pointer;min-height:46px;}
 .fi[type="date"]::-webkit-calendar-picker-indicator{cursor:pointer;opacity:.9;}
 .fi::placeholder{color:#8d8d8d;opacity:1;}
@@ -116,7 +117,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
 @media(max-width:900px){
   .contact-header{padding:40px 20px 32px;}
   .contact-title{font-size:30px;}
-  .contact-layout{grid-template-columns:1fr;border-inline:0;}
+  .contact-layout{grid-template-columns:1fr;grid-template-areas:"form" "contact";border-inline:0;}
   .v-rule{display:none;}
   .contact-left{padding:34px 20px 40px;border-bottom:1px solid var(--border);}
   .contact-right{padding:36px 20px 48px;}
@@ -193,7 +194,7 @@ textarea.fi{resize:vertical;min-height:104px;line-height:1.7;}
 
     <!-- RIGHT - FORM -->
     <div class="contact-right">
-      <h2 class="form-heading">Send your<br><em>enquiry.</em></h2>
+      <h2 class="form-heading">Send your <em>enquiry.</em></h2>
       <p class="form-sub">Fill in the details below - we'll get back within <span data-reply-window></span> with pricing and next steps.</p>
       <p class="faq-hint">Have questions before enquiring? <a href="../faq/">Read our FAQ →</a></p>
 
