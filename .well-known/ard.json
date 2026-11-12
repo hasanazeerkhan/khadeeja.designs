@@ -1,0 +1,25 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:khadeejadesigns.in:public-catalog",
+      "displayName": "Khadeeja Designs Public Catalog",
+      "type": "application/ai-catalog+json",
+      "url": "https://khadeejadesigns.in/.well-known/ai-catalog.json",
+      "description": "Machine-readable discovery catalog for Khadeeja Designs' public Aari embroidery designs and ordering information. It describes read-only resources; custom enquiries and orders are handled directly by the studio.",
+      "representativeQueries": [
+        "Find a bridal Aari blouse design with gold embroidery",
+        "Compare listed prices for custom embroidered blouse designs",
+        "Find out how to order custom Aari embroidery for a blouse"
+      ],
+      "capabilities": [
+        "Discover public design and ordering information"
+      ],
+      "tags": [
+        "Aari embroidery",
+        "bridal blouse",
+        "custom embroidery",
+        "Trichy"
+      ]
+    }
+  ]
+}

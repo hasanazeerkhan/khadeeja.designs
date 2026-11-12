@@ -27,3 +27,4 @@
 
 ## AI discovery
 - [AI catalog](https://khadeejadesigns.in/.well-known/ai-catalog.json): Read-only discovery metadata for the public design catalog and ordering FAQs. Orders and custom enquiries are handled directly by the studio.
+- [ARD manifest](https://khadeejadesigns.in/.well-known/ard.json): Agentic Resource Discovery manifest for the AI catalog.
