@@ -52,6 +52,10 @@ blog posts.
 Update `site-config.json` to change the WhatsApp number (digits only, with
 country code), reply window, four ordering steps or permitted testimonials.
 Keep `testimonials` empty until each review and photo has customer permission.
+The Netlify build runs `tools/sync-reply-window.js` to write the configured
+reply window into the FAQ, contact and product-page HTML before publishing.
+Other pages with `[data-reply-window]` placeholders are filled by
+`shared-nav.js` when their JavaScript loads.
 The default design prices are single prices; set both `originalPrice` and a
 valid future `offerEndsOn` date in a product's `product.json` to show a timed
 offer.

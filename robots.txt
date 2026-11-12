@@ -1,4 +1,3 @@
 User-agent: *
 Allow: /
-Disallow: /thankyou/
 Sitemap: https://khadeejadesigns.in/sitemap.xml

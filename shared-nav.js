@@ -76,6 +76,7 @@ function initPage(activePage) {
   });
 
   preserveCampaignParams();
+  installContactLinkTracking();
   addLocalBusinessSchema(activePage);
   addBreadcrumbSchema(activePage);
   trackDesignView();
@@ -87,8 +88,6 @@ function initPage(activePage) {
     .then(config => {
       renderOrderingSteps(config, activePage);
       renderTestimonials(config, activePage);
-      renderWhatsAppLinks(config, activePage);
-      applyReplyWindow(config);
     })
     .catch(error => console.error('Could not initialize shared site components', error));
 }
@@ -286,87 +285,22 @@ function renderTestimonials(config, activePage) {
   slides.forEach(slide => resizeObserver.observe(slide));
 }
 
-function renderWhatsAppLinks(config, activePage) {
-  const number = String(config.whatsappNumber || '').replace(/\D/g, '');
-  if (!number) return;
-  const product = document.querySelector('main.product');
-  const designName = product?.querySelector('.title')?.textContent.trim();
-  const blogTitle = activePage === 'blog'
-    ? document.querySelector('.article-heading .article-title')?.textContent.replace(/\s+/g, ' ').trim()
-    : null;
-  let message;
+function installContactLinkTracking() {
+  if (window.kdContactLinkTrackingInstalled) return;
+  window.kdContactLinkTrackingInstalled = true;
+  document.addEventListener('click', event => {
+    if (!(event.target instanceof Element)) return;
+    const link = event.target.closest('[data-contact-method]');
+    if (!link) return;
+    const method = link.dataset.contactMethod;
+    if (method !== 'whatsapp' && method !== 'call') return;
 
-  if (designName) {
-    message = `Hi, I'm interested in the "${designName}" design. Could you please share its price, customization options, and availability?`;
-  } else if (blogTitle) {
-    message = `Hi, I was reading your blog "${blogTitle}" and have a question about how this applies to my blouse or saree. Could you please guide me?`;
-  } else if (activePage === 'blog') {
-    message = 'Hi, I was reading your Aari embroidery guides and have a question about choosing a design for my blouse. Could you please guide me?';
-  } else if (activePage === 'explore') {
-    message = 'Hi, I was browsing your Aari blouse designs and would like help choosing one for my saree. Could you please share some recommendations?';
-  } else if (activePage === 'faq') {
-    message = 'Hi, I was reading your FAQs and have a question about custom Aari embroidery. Could you please help me?';
-  } else if (activePage === 'contact') {
-    message = "Hi, I'm looking for a custom Aari blouse. Could you help me with a quote? I can share my saree details, reference photos, and event date.";
-  } else if (activePage === 'home') {
-    message = "Hi, I'm interested in custom Aari blouse embroidery. Could you help me with design options, pricing, and timeline?";
-  } else {
-    message = 'Hi, I have a question about custom Aari embroidery. Could you please help me?';
-  }
-  const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
-  const createLink = (className, label, includeIcon = true) => {
-    const link = document.createElement('a');
-    link.className = `${className} whatsapp-link`;
-    link.href = url;
-    link.target = '_blank';
-    link.rel = 'noopener noreferrer';
-    link.dataset.whatsapp = 'true';
-
-    if (includeIcon) {
-      const icon = document.createElement('img');
-      icon.classList.add('whatsapp-icon');
-      icon.src = '/images/whatsapp-icon.png';
-      icon.alt = '';
-      icon.setAttribute('aria-hidden', 'true');
-      link.append(icon);
-    }
-    const text = document.createElement('span');
-    text.className = 'whatsapp-label';
-    text.textContent = label;
-    link.append(text);
-    return link;
-  };
-
-  const floating = createLink('whatsapp-float', 'Chat on WhatsApp');
-  floating.setAttribute('aria-label', 'Chat with Khadeeja Designs on WhatsApp');
-  document.body.appendChild(floating);
-
-  if (activePage === 'contact') {
-    const header = document.querySelector('.contact-header');
-    if (header && !header.querySelector('[data-whatsapp-cta]')) {
-      const cta = createLink('button button--ghost contact-whatsapp', 'Enquire on WhatsApp');
-      cta.dataset.whatsappCta = 'true';
-      header.appendChild(cta);
-    }
-  }
-
-  if (product && !product.querySelector('[data-whatsapp-cta]')) {
-    const cta = createLink('button button--ghost product-whatsapp', 'Ask about this');
-    cta.dataset.whatsappCta = 'true';
-    const actions = product.querySelector('.product-actions');
-    (actions || product.querySelector('.layout > div:last-child'))?.appendChild(cta);
-  }
-
-  if (!window.kdWhatsAppTrackingInstalled) {
-    window.kdWhatsAppTrackingInstalled = true;
-    document.addEventListener('click', event => {
-      if (!event.target.closest('[data-whatsapp]')) return;
-      trackMarketingEvent('Contact', 'click_whatsapp', {
-        content_name: designName || 'Custom Aari embroidery',
-        content_category: 'WhatsApp'
-      });
+    const designName = document.querySelector('main.product .title')?.textContent.trim();
+    trackMarketingEvent('Contact', method === 'whatsapp' ? 'click_whatsapp' : 'click_call', {
+      content_name: designName || 'Custom Aari embroidery',
+      content_category: method === 'whatsapp' ? 'WhatsApp' : 'Phone'
     });
-  }
+  });
 }
 
 function renderRelatedLinks() {
@@ -404,13 +338,6 @@ function renderRelatedLinks() {
       <li><a href="/explore/designs/midnight-gold-vine/">Midnight Gold Vine blouse</a></li>
     </ul>`;
   article.appendChild(links);
-}
-
-function applyReplyWindow(config) {
-  const replyWindow = config.replyWindow || 'the stated reply window';
-  document.querySelectorAll('[data-reply-window]').forEach(element => {
-    element.textContent = replyWindow;
-  });
 }
 
 function addLocalBusinessSchema(activePage) {
@@ -525,8 +452,11 @@ function renderProductDetailAccordions() {
   });
 
   const pricingAccordion = accordions[2];
-  const enquiryLink = content.querySelector(':scope > .cta');
+  const existingActions = content.querySelector(':scope > .product-actions');
+  const enquiryLink = existingActions?.querySelector(':scope > .cta')
+    || content.querySelector(':scope > .cta');
   if (!pricingAccordion || !enquiryLink) return;
+  if (existingActions) return;
 
   const actions = document.createElement('div');
   actions.className = 'product-actions';

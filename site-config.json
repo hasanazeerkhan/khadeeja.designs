@@ -1,6 +1,7 @@
 {
   "whatsappNumber": "918667454391",
-  "replyWindow": "6 hours",
+  "replyWindow": "6 hours during studio hours",
+  "studioHours": "9 am to 8 pm, Mon to Sat",
   "orderingSteps": [
     {
       "title": "Share your brief",
@@ -19,51 +20,5 @@
       "description": "Proceed after you have reviewed and approved the agreed details."
     }
   ],
-  "testimonials": [
-    {
-      "name": "Ayisha",
-      "quote": "Absolutely loved the Aari work on my blouse! ❤️ The work was so beautiful and perfectly done. Everyone loved it and kept asking me about the designer. Already looking forward to choosing your designs for my next function! ✨ Highly recommend!",
-      "rating": 5
-    },
-    {
-      "name": "Reehana",
-      "quote": "We entrusted this boutique with my daughter's wedding reception blouse as well as my own silk saree blouse, and both turned out spectacular. When wedding dates are tight, delays are a major fear. But Khadeeja and her team promised delivery in three weeks and handed over both pieces two days ahead of schedule. The quality of the raw silk fabric, the neat inner lining, the sturdy latkans, and the intricate peacock motif Aari handwork drew compliments from all our guests.It is rare to find an embroidery studio in Trichy that combines authentic traditional craftsmanship with such prompt, stress-free customer service. A genuine 10/10 recommendation for any family preparing for a wedding.",
-      "rating": 5
-    },
-    {
-      "name": "Noor",
-      "quote": "I ordered a custom bridal Aari work blouse from Khadeeja Designs for my friends wedding reception, and the craftsmanship exceeded all my expectations! I paired it with a pure Kanchipuram silk saree and wanted intricate zardosi detailing with delicate beadwork on the sleeves and neckline. Khadeeja was incredibly patient throughout the consultation, we discussed design references, thread shades, and motif placement over WhatsApp, and the team brought the concept to life flawlessly. The finishing on the reverse side is neat with zero loose threads or irritation, and the fit was spot on. Everything was completed within 18 days and delivered right on schedule with secure packaging. If you are looking for authentic, handcrafted bridal embroidery in Trichy or ordering online across India, Khadeeja Designs is definitely the best boutique to trust for your big day✨🛍️.",
-      "rating": 5
-    },
-    {
-      "name": "Basha",
-      "quote": "Most bridal embroidery studios try to push heavy, crowded beadwork that overpowers the saree. I wanted the complete opposite: something lightweight, minimal, and royal. Khadeeja listened patiently to what I wanted and suggested a fine antique zari outline with delicate French knots and matte pearl highlights for my Muhurtham silk saree. The back neck finish is crisp, the sleeves look graceful without feeling heavy, and the handwork looks refined rather than loud. The inside lining is soft, the armhole stitching doesn’t pinch, and the overall blouse weight is comfortable enough to wear all day without irritation. If you appreciate clean lines, subtle elegance, and authentic handcrafted Aari work in Trichy, you will love her work.",
-      "rating": 5
-    },
-    {
-      "name": "Lalitha Sri",
-      "quote": "Had a wonderful experience with the aari work blouse designs! ❤️ The work was so beautiful, neat, and detailed. Everything was done perfectly, just the way I expected. Truly loved the final outcome, and I received so many compliments. Thank you for making my blouse look so special! Definitely looking forward to choosing your aari work again for my next function. ✨❤️🧿🫠",
-      "rating": 5
-    },
-    {
-      "name": "Ashickaa",
-      "quote": "Between managing my work schedule and wedding prep, I barely had time for multiple boutique visits. Getting my bridal blouse done here was the easiest and smoothest part of my entire wedding shopping. I shared my saree photo and basic ideas on WhatsApp, and Khadeeja took care of the rest. The Aari work on the sleeves and neck border came out clean, neat, and elegant exactly like the reference picture. The blouse fitting was 100% perfect on the first try, with no alterations needed. Fair price for genuine hand embroidery and prompt delivery right on the promised date. If you need quality bridal blouse stitching and embroidery work in Trichy without any stress, this is definitely the best boutique to choose.",
-      "rating": 5
-    },
-    {
-      "name": "Mukthiyar",
-      "quote": "As the maid of honor for my sister's big day, I wanted a modern blouse that looked youthful and regal without clashing with her bridal palette. Khadeeja completely understood the vision right away. Instead of the usual heavy patterns, she suggested a contemporary sweetheart neckline with delicate pearl detailing, cutbead edges, and subtle tonal threadwork along the sheer back. The craftsmanship looks straight out of a couture runway, and the finishing is so neat that there wasn't a single scratchy bead or rough edge all evening. It photographed gorgeously under reception stage lighting, and I lost count of how many guests asked where I got the embroidery done. If you want authentic handcrafted work with a fresh, modern aesthetic and zero fit issues, this studio in Trichy is hands down the best place to go.",
-      "rating": 5
-    },
-    {
-      "name": "Rakshana",
-      "quote": "Absolutely happy with her work.. worthy!!",
-      "rating": 5
-    },
-    {
-      "name": "Affaan Junaira",
-      "quote": "Masha Allah 👌 nice ...",
-      "rating": 5
-    }
-  ]
+  "testimonials": []
 }
