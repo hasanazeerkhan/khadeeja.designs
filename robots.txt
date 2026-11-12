@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
 Sitemap: https://khadeejadesigns.in/sitemap.xml
+Agentmap: https://khadeejadesigns.in/.well-known/ai-catalog.json

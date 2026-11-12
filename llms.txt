@@ -1,15 +1,16 @@
 # Khadeeja Designs
-> Handcrafted Aari embroidery and bridal blouse designs from a boutique studio in Trichy (Tiruchirappalli), Tamil Nadu. Custom orders with delivery across India.
+> A boutique Aari embroidery studio in Trichy (Tiruchirappalli), Tamil Nadu, creating handcrafted bridal blouse designs and custom embroidery for customers across India.
 
 ## Key facts
 - Business: Khadeeja Designs
 - Location: 17 East Sayakara Lane, Jaffersha Street, Trichy 620008
 - Phone / WhatsApp: +91 86674 54391
 - Email: contact@khadeejadesigns.in
-- Hours: 9 am to 8 pm, Monday to Saturday
-- Ordering: enquire, receive quote, confirm design brief, pay advance, courier your blouse or saree, receive it back tracked
-- Design range: visible listings from ₹1,999 to ₹8,499 across the Explore collection
-- Services: bridal Aari blouse embroidery, custom embroidery, saree blouse design and finishing
+- Hours: 10 am to 7 pm, Monday to Saturday; Sunday by appointment
+- Enquiries: response within 6 hours during studio hours
+- Ordering: enquire, receive a quote, confirm the design brief and advance, courier your blouse or saree, then receive it back with tracked delivery
+- Design range: 7 listed designs from ₹1,999 to ₹8,499; listed prices cover the embroidery work, while the garment, courier and changes beyond the listing are quoted separately
+- Services: bridal and custom Aari embroidery for blouses and sarees, with designs tailored to the garment and occasion
 - Social: https://instagram.com/khadeeja.designs
 
 ## Pages
@@ -19,3 +20,10 @@
 - [Blog](https://khadeejadesigns.in/blog/)
 - [Contact](https://khadeejadesigns.in/contact/)
 - [About](https://khadeejadesigns.in/about/)
+- [Privacy policy](https://khadeejadesigns.in/privacy/)
+
+## Full content
+- [Full site content](https://khadeejadesigns.in/llms-full.txt): Consolidated full-text export of public site pages, including all published blog articles, individual design pages, FAQs and the privacy policy.
+
+## AI discovery
+- [AI catalog](https://khadeejadesigns.in/.well-known/ai-catalog.json): Read-only discovery metadata for the public design catalog and ordering FAQs. Orders and custom enquiries are handled directly by the studio.

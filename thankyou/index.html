@@ -12,9 +12,8 @@
 
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../shared.css">
 <style>
 body{display:flex;flex-direction:column;min-height:100vh;}
@@ -145,10 +144,11 @@ async function loadStrip() {
         ? `../explore/designs/${encodeURIComponent(p.id)}/${encodeURIComponent(p.images[0])}`
         : '';
       const webpPath = imagePath.replace(/\.(?:png|jpe?g)$/i, '.webp');
+      const responsiveImagePath = (width) => imagePath.replace(/\.(?:png|jpe?g)$/i, `_${width}w.webp`);
       return `
       <a class="photo-card" href="../explore/designs/${p.id}/">
-        <img src="${webpPath}" data-fallback-src="${imagePath}" alt="${p.title}" width="1254" height="1254" loading="lazy"
-          onerror="if(this.dataset.fallbackSrc){this.src=this.dataset.fallbackSrc;delete this.dataset.fallbackSrc}else{this.hidden=true;this.closest('.photo-card').querySelector('.photo-ph').style.display='flex'}">
+        <img src="${webpPath}" srcset="${responsiveImagePath(480)} 480w, ${responsiveImagePath(720)} 720w, ${responsiveImagePath(960)} 960w, ${webpPath} 1254w" sizes="(max-width: 900px) 50vw, 25vw" data-fallback-src="${imagePath}" alt="${p.title}" width="1254" height="1254" loading="lazy" decoding="async"
+          onerror="this.removeAttribute('srcset');if(this.dataset.fallbackSrc){this.src=this.dataset.fallbackSrc;delete this.dataset.fallbackSrc}else{this.hidden=true;this.closest('.photo-card').querySelector('.photo-ph').style.display='flex'}">
         <div class="photo-ph" style="display:none;"><span>${p.category}</span></div>
         <div class="photo-hover"><span class="ph-name">${p.title}</span></div>
       </a>`;

@@ -29,9 +29,8 @@
 
 
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" href="/fonts/cormorant-garamond-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/dm-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="../shared.css">
 <style>
 body{display:flex;flex-direction:column;min-height:100vh;}
@@ -50,7 +49,7 @@ main{flex:1;}
 .blog-card:focus-visible{outline:2px solid var(--gold-light);outline-offset:-3px;z-index:1;}
 .blog-card-featured{min-width:0;grid-column:1/-1;order:-1;}
 .blog-card-featured .blog-card-body{min-height:310px;justify-content:center;padding:clamp(32px,6vw,72px) clamp(24px,7vw,88px);}
-.blog-card-featured .blog-card-body::before{content:"Latest guide";display:block;margin-bottom:16px;color:var(--gold);font:10px var(--sans);letter-spacing:.16em;text-transform:uppercase;}
+.blog-latest-tag{display:inline-block;margin-bottom:16px;padding:5px 9px;border:1px solid rgba(184,134,11,.4);border-radius:999px;color:var(--gold);font:10px var(--sans);letter-spacing:.12em;text-transform:uppercase;}
 .blog-card-featured .blog-card-title{font-size:clamp(25px,3vw,36px);}
 .card-top-rule{position:absolute;top:0;left:0;right:0;height:1px;background:transparent;transition:background 0.3s;}
 .blog-card:hover .card-top-rule{background:var(--gold);}
@@ -95,6 +94,7 @@ main{flex:1;}
 <main>
   <div class="blog-header">
    <div class="blog-header-inner">
+    <div class="breadcrumbs" role="navigation" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li aria-current="page">Blog</li></ol></div>
     <div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Journal</span></div>
     <h1 class="blog-title">Aari embroidery guides <em>from the studio</em></h1>
     <p class="blog-sub">Practical guides to bridal Aari blouses, Kanchipuram silk pairings, embroidery techniques and pricing, saree colours, blouse care, everyday designs, traditional motifs and wedding planning.</p>
@@ -171,9 +171,9 @@ main{flex:1;}
       </div>
     </a>
 
-    <a id="latest" class="blog-card blog-card-featured site-card site-card--interactive" href="/blog/aari-work-timeline-when-to-book-wedding/">
+    <a class="blog-card blog-card-featured site-card site-card--interactive" href="/blog/aari-work-timeline-when-to-book-wedding/">
       <div class="card-top-rule"></div>
-      <div class="blog-card-body"><div class="blog-meta"><span class="blog-cat">Wedding planning</span><time class="blog-date" datetime="2026-11-12">November 2026</time></div>
+      <div class="blog-card-body"><span class="blog-latest-tag" id="latest">Latest</span><div class="blog-meta"><span class="blog-cat">Wedding planning</span><time class="blog-date" datetime="2026-11-12">November 2026</time></div>
         <h2 class="blog-card-title">How long does Aari work take and <em>when should you book?</em></h2>
         <p class="blog-excerpt">Plan around design approval, fabric readiness, embroidery workload and fitting before your wedding date.</p><span class="blog-read">Read article →</span>
       </div>

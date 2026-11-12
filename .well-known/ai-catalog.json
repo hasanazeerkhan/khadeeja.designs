@@ -1,0 +1,57 @@
+{
+  "specVersion": "1.0",
+  "host": {
+    "displayName": "Khadeeja Designs",
+    "identifier": "did:web:khadeejadesigns.in"
+  },
+  "entries": [
+    {
+      "identifier": "urn:ai:khadeejadesigns.in:catalog:embroidery-designs",
+      "displayName": "Khadeeja Designs",
+      "type": "text/html",
+      "url": "https://khadeejadesigns.in/explore/",
+      "description": "Read-only public catalog of handcrafted Aari embroidery and blouse designs, with listed prices and design details. Custom orders are arranged through the studio; no machine-callable ordering API is provided.",
+      "representativeQueries": [
+        "Find a bridal Aari blouse design with gold embroidery",
+        "Compare listed prices for custom embroidered blouse designs",
+        "Show blouse designs that can be customized for a wedding saree"
+      ],
+      "capabilities": [
+        "Browse public embroidery designs",
+        "Read listed design prices and details",
+        "Find design references for a custom enquiry"
+      ],
+      "tags": [
+        "Aari embroidery",
+        "bridal blouse",
+        "custom embroidery",
+        "Trichy",
+        "India"
+      ]
+    },
+    {
+      "identifier": "urn:ai:khadeejadesigns.in:information:ordering-faq",
+      "displayName": "Khadeeja Designs Ordering and Embroidery FAQs",
+      "type": "text/html",
+      "url": "https://khadeejadesigns.in/faq/",
+      "description": "Read-only information about Aari embroidery, customization, pricing, order timelines, garment handling, and delivery. Enquiries and orders are handled directly by the studio.",
+      "representativeQueries": [
+        "How do I order custom Aari embroidery for a blouse?",
+        "How long does bridal blouse embroidery take?",
+        "What is included in the listed embroidery price?"
+      ],
+      "capabilities": [
+        "Read embroidery and ordering FAQs",
+        "Check order timelines and delivery information",
+        "Understand what listed design prices include"
+      ],
+      "tags": [
+        "Aari embroidery FAQ",
+        "custom orders",
+        "pricing",
+        "delivery",
+        "garment care"
+      ]
+    }
+  ]
+}

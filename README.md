@@ -75,6 +75,14 @@ For each folder in `explore/designs/`, keep the original image files and list
 their exact names in `product.json`. Add a `.webp` version beside each image
 using the same filename stem. The Explore cards, product pages, and thank-you
 page load WebP first and fall back to the original file.
+Add responsive WebP derivatives named `<stem>_480w.webp`, `<stem>_720w.webp`,
+and `<stem>_960w.webp` for every product image. Use `srcset` and `sizes` so
+mobile and desktop browsers can select the appropriate image URL; retain the
+full-size WebP and original image as the largest candidate and fallback.
+
+The site self-hosts its Cormorant Garamond and DM Sans WOFF2 fonts in `fonts/`
+to avoid a render-blocking Google Fonts stylesheet. Keep the included OFL
+license files with those font assets.
 
 ### 6. Add blog cover image
 Save to: images/blog/bridal-blouse-guide.jpg
@@ -136,7 +144,9 @@ Done. Product appears in the grid and gets the URL: `/explore/designs/my-new-pro
    - `.post-meta` (category, date, read time)
    - `<h1 class="post-title">` and `.post-intro`
    - All `<article>` content
-   - Hero image src (add to images/blog/)
+   - Hero image src (add to images/blog/) and 480w, 720w, and 960w WebP
+     derivatives; wire all image URLs into the hero `<source srcset>` with
+     accurate `sizes` so mobile and desktop download an appropriate size.
    - Post byline at bottom
 4. Add a card to `blog/index.html` pointing to the new folder URL
 5. Update the "More from the blog" sidebar in the new post
