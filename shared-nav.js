@@ -291,9 +291,28 @@ function renderWhatsAppLinks(config, activePage) {
   if (!number) return;
   const product = document.querySelector('main.product');
   const designName = product?.querySelector('.title')?.textContent.trim();
-  const message = designName
-    ? `Hi, I'm interested in ${designName}`
-    : 'Hi, I am interested in custom Aari blouse embroidery.';
+  const blogTitle = activePage === 'blog'
+    ? document.querySelector('.article-heading .article-title')?.textContent.replace(/\s+/g, ' ').trim()
+    : null;
+  let message;
+
+  if (designName) {
+    message = `Hi, I'm interested in the "${designName}" design. Could you please share its price, customization options, and availability?`;
+  } else if (blogTitle) {
+    message = `Hi, I was reading your blog "${blogTitle}" and have a question about how this applies to my blouse or saree. Could you please guide me?`;
+  } else if (activePage === 'blog') {
+    message = 'Hi, I was reading your Aari embroidery guides and have a question about choosing a design for my blouse. Could you please guide me?';
+  } else if (activePage === 'explore') {
+    message = 'Hi, I was browsing your Aari blouse designs and would like help choosing one for my saree. Could you please share some recommendations?';
+  } else if (activePage === 'faq') {
+    message = 'Hi, I was reading your FAQs and have a question about custom Aari embroidery. Could you please help me?';
+  } else if (activePage === 'contact') {
+    message = "Hi, I'm looking for a custom Aari blouse. Could you help me with a quote? I can share my saree details, reference photos, and event date.";
+  } else if (activePage === 'home') {
+    message = "Hi, I'm interested in custom Aari blouse embroidery. Could you help me with design options, pricing, and timeline?";
+  } else {
+    message = 'Hi, I have a question about custom Aari embroidery. Could you please help me?';
+  }
   const url = `https://wa.me/${number}?text=${encodeURIComponent(message)}`;
   const createLink = (className, label, includeIcon = true) => {
     const link = document.createElement('a');

@@ -46,10 +46,9 @@ main{flex:1;}
 .filter-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 
 #grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;background:transparent;min-height:280px;}
-.design-card{background:var(--black);border:1px solid var(--border);border-radius:var(--radius-card);cursor:pointer;transition:background 0.2s,border-color 0.2s;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;min-width:0;}
+.design-card{cursor:pointer;position:relative;overflow:hidden;text-decoration:none;color:inherit;display:flex;flex-direction:column;min-width:0;}
 .design-card[hidden]{display:none;}
-.design-card:hover{background:#0d0d0d;}
-.design-card:focus-visible{outline:2px solid var(--gold-light);outline-offset:-2px;z-index:2;}
+.design-card:focus-visible{z-index:2;}
 .card-top-line{position:absolute;top:0;left:0;right:0;height:1px;background:transparent;transition:background 0.3s;z-index:1;}
 .design-card:hover .card-top-line,.design-card:focus-visible .card-top-line{background:var(--gold);}
 .card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:var(--radius-card) var(--radius-card) 0 0;background:#111;position:relative;}
@@ -71,10 +70,12 @@ main{flex:1;}
 .catalog-status[hidden]{display:none;}
 .catalog-status button{margin-left:10px;padding:6px 12px;color:var(--gold-light);background:transparent;border:1px solid var(--gold);border-radius:var(--radius-sm);font:inherit;cursor:pointer;}
 .catalog-status button:disabled{opacity:.6;cursor:wait;}
-.seo-copy,.seo-faq{padding:56px 52px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:32px;background-image:var(--gold-glow-right);}
+.seo-copy,.seo-faq{padding:56px 52px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;background-image:var(--gold-glow-right);}
+.seo-copy-card{display:flex;min-width:0;min-height:270px;flex-direction:column;padding:24px;}
 .seo-copy h2,.seo-faq h2{font-size:25px;font-weight:300;line-height:1.15;margin-bottom:12px;}
 .seo-copy p,.seo-faq p{font-family:var(--sans);font-size:13px;font-weight:300;color:var(--t2);line-height:1.8;}
 .seo-copy a,.seo-faq a{display:inline-block;margin-top:14px;color:var(--gold);font:12px var(--sans);text-decoration:none;}
+.seo-copy-card a{margin-top:auto;padding-top:14px;}
 .seo-faq{display:block;padding-top:42px;padding-bottom:64px;}
 .seo-faq h2{margin-bottom:24px;}
 .seo-faq details{border-top:1px solid var(--border);padding:0;}
@@ -96,7 +97,8 @@ main{flex:1;}
   .price-new{font-size:11px;}
   .price-old{font-size:10px;}
   .card-btn{padding:7px 6px;font-size:8px;letter-spacing:.04em;}
-  .seo-copy{grid-template-columns:1fr;padding:40px 20px;gap:28px;}
+  .seo-copy{grid-template-columns:1fr;padding:40px 20px;gap:14px;}
+  .seo-copy-card{min-height:0;padding:22px 20px;}
   .seo-faq{padding:36px 20px 48px;}
 }
 </style>
@@ -123,37 +125,37 @@ main{flex:1;}
   </div>
 
   <div id="grid" role="region" aria-label="Design collection">
-    <a class="design-card" data-category="bridal" href="/explore/designs/bridal-royal-zardosi/">
+    <a class="design-card site-card site-card--interactive" data-category="bridal" href="/explore/designs/bridal-royal-zardosi/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/bridal-royal-zardosi/khadeeja_designs_bridal_royal_zardosi_blouse_front_card.webp" type="image/webp"><img class="card-img" loading="eager" fetchpriority="high" decoding="async" width="600" height="600" src="designs/bridal-royal-zardosi/khadeeja_designs_bridal_royal_zardosi_blouse_front.png" alt="Bridal royal zardosi Aari blouse embroidery with gold, red and pearl accents"></picture></div>
       <div class="card-body"><div class="card-heading"><div class="card-title">Bridal Royal Zardosi</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 7,499</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
-    <a class="design-card" data-category="designer" href="/explore/designs/emerald-jhumka-elegance/">
+    <a class="design-card site-card site-card--interactive" data-category="designer" href="/explore/designs/emerald-jhumka-elegance/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/emerald-jhumka-elegance/khadeeja_designs_emerald_jhumka_elegance_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/emerald-jhumka-elegance/khadeeja_designs_emerald_jhumka_elegance_front.png" alt="Emerald green Aari blouse embroidery with gold oval motifs and jhumka tassels"></picture></div>
       <div class="card-body"><div class="card-heading"><div class="card-title">Emerald Jhumka Elegance</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 4,999</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
-    <a class="design-card" data-category="designer" href="/explore/designs/magenta-midnight-bloom/">
+    <a class="design-card site-card site-card--interactive" data-category="designer" href="/explore/designs/magenta-midnight-bloom/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/magenta-midnight-bloom/khadeeja_designs_magenta_midnight_bloom_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/magenta-midnight-bloom/khadeeja_designs_magenta_midnight_bloom_front.png" alt="Magenta blouse with midnight-blue and gold Aari embroidery motifs"></picture></div>
       <div class="card-body"><div class="card-heading"><div class="card-title">Magenta Midnight Bloom</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 4,499</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
-    <a class="design-card" data-category="bridal" href="/explore/designs/midnight-gold-vine/">
+    <a class="design-card site-card site-card--interactive" data-category="bridal" href="/explore/designs/midnight-gold-vine/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/midnight-gold-vine/khadeeja_designs_midnight_gold_vine_aari_blouse_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/midnight-gold-vine/khadeeja_designs_midnight_gold_vine_aari_blouse_front.png" alt="Midnight black blouse with gold Aari embroidery vines and floral motifs"></picture></div>
       <div class="card-body"><div class="card-heading"><div class="card-title">Midnight Gold Vine</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 6,499</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
-    <a class="design-card" data-category="designer" href="/explore/designs/sunset-garden/">
+    <a class="design-card site-card site-card--interactive" data-category="designer" href="/explore/designs/sunset-garden/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/sunset-garden/khadeeja_designs_sunset_garden_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/sunset-garden/khadeeja_designs_sunset_garden_front.png" alt="Sunset orange blouse with colourful floral Aari embroidery and gold beadwork"></picture></div>
       <div class="card-body"><div class="card-heading"><div class="card-title">Sunset Garden</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 8,499</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
-    <a class="design-card" data-category="designer" href="/explore/designs/violet-gold-vine/">
+    <a class="design-card site-card site-card--interactive" data-category="designer" href="/explore/designs/violet-gold-vine/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/violet-gold-vine/khadeeja_designs_violet_gold_vine_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/violet-gold-vine/khadeeja_designs_violet_gold_vine_front.png" alt="Violet blouse with gold Aari embroidery vines and floral motifs"></picture></div>
       <div class="card-body"><div class="card-heading"><div class="card-title">Violet Gold Vine</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 6,999</span></div><span class="card-btn">View Design →</span></div></div>
     </a>
-    <a class="design-card" data-category="designer" href="/explore/designs/midnight-grace/">
+    <a class="design-card site-card site-card--interactive" data-category="designer" href="/explore/designs/midnight-grace/">
       <div class="card-top-line"></div>
       <div class="card-img-wrap"><picture><source srcset="designs/midnight-grace/khadeeja_designs_midnight_grace_front_card.webp" type="image/webp"><img class="card-img" loading="lazy" fetchpriority="low" decoding="async" width="600" height="600" src="designs/midnight-grace/khadeeja_designs_midnight_grace_front.png" alt="Midnight black blouse with maroon and antique-gold Aari embroidery"></picture></div>
       <div class="card-body"><div class="card-heading"><div class="card-title">Midnight Grace</div></div><div class="card-footer"><div class="price-row"><span class="price-new">INR 1,999</span></div><span class="card-btn">View Design →</span></div></div>
@@ -166,10 +168,10 @@ main{flex:1;}
   <noscript><p class="catalog-status">JavaScript is off. You can still browse all designs; category filters require JavaScript.</p></noscript>
 
   <section class="seo-copy" aria-labelledby="collection-heading">
-    <article><h2 id="collection-heading">Bridal Aari Blouse Designs in Trichy</h2><p>Discover bridal Aari blouse designs featuring traditional embroidery details, intricate motifs and decorative embellishments. Explore styles that complement your wedding saree and personal preferences.</p><a href="/explore/">Browse bridal designs →</a></article>
-    <article><h2>Aari Work for Kanchipuram Silk Sarees</h2><p>Explore embroidery ideas to complement a silk saree's colour, border and pallu. Share your saree details to discuss suitable patterns, colours and design placement.</p><a href="/faq/">Read about Aari work for silk sarees →</a></article>
-    <article><h2>Zardosi Aari Blouse Designs</h2><p>Browse ornate blouse styles featuring gold-toned embroidery, beads and decorative accents. The Bridal Royal Zardosi design shows one example; materials and customisation options are confirmed for each enquiry.</p><a href="/explore/designs/bridal-royal-zardosi/">View the Bridal Royal Zardosi blouse →</a></article>
-    <article><h2>Custom Aari Embroidery, Delivered Across India</h2><p>Discuss colours, motifs, embroidery coverage and placement for a custom blouse or saree order. Khadeeja Designs is based in Trichy and offers delivery across India; timelines and shipping details are confirmed with your quote.</p><a href="/contact/">Discuss custom Aari embroidery →</a></article>
+    <article class="site-card site-card--interactive seo-copy-card"><h2 id="collection-heading">Bridal Aari Blouse Designs in Trichy</h2><p>Discover bridal Aari blouse designs featuring traditional embroidery details, intricate motifs and decorative embellishments. Explore styles that complement your wedding saree and personal preferences.</p><a href="/explore/">Browse bridal designs →</a></article>
+    <article class="site-card site-card--interactive seo-copy-card"><h2>Aari Work for Kanchipuram Silk Sarees</h2><p>Explore embroidery ideas to complement a silk saree's colour, border and pallu. Share your saree details to discuss suitable patterns, colours and design placement.</p><a href="/faq/">Read about Aari work for silk sarees →</a></article>
+    <article class="site-card site-card--interactive seo-copy-card"><h2>Zardosi Aari Blouse Designs</h2><p>Browse ornate blouse styles featuring gold-toned embroidery, beads and decorative accents. The Bridal Royal Zardosi design shows one example; materials and customisation options are confirmed for each enquiry.</p><a href="/explore/designs/bridal-royal-zardosi/">View the Bridal Royal Zardosi blouse →</a></article>
+    <article class="site-card site-card--interactive seo-copy-card"><h2>Custom Aari Embroidery, Delivered Across India</h2><p>Discuss colours, motifs, embroidery coverage and placement for a custom blouse or saree order. Khadeeja Designs is based in Trichy and offers delivery across India; timelines and shipping details are confirmed with your quote.</p><a href="/contact/">Discuss custom Aari embroidery →</a></article>
   </section>
   <section class="seo-faq" aria-labelledby="explore-faq-heading"><h2 id="explore-faq-heading">Aari Blouse Design Questions</h2>
     <details><summary>What types of Aari blouse designs are available?</summary><p>Khadeeja Designs showcases different styles of handcrafted blouse embroidery, including bridal-inspired designs, floral motifs, traditional patterns and decorative gold embroidery. <a href="/explore/">Browse our collection</a> to explore available designs.</p></details>
@@ -252,7 +254,7 @@ function renderGrid(products) {
       p.offerEndsOn >= new Date().toISOString().slice(0, 10)
     );
     return `
-      <a class="design-card" data-category="${category.toLowerCase()}" href="/explore/designs/${encodeURIComponent(p.id)}/">
+      <a class="design-card site-card site-card--interactive" data-category="${category.toLowerCase()}" href="/explore/designs/${encodeURIComponent(p.id)}/">
         <div class="card-top-line"></div>
         <div class="card-img-wrap">
           <img class="card-img" loading="${index === 0 ? 'eager' : 'lazy'}" fetchpriority="${index === 0 ? 'high' : 'low'}" decoding="async" width="600" height="600" src="${webpPath}" data-fallback-src="${imagePath}" alt="${escapeHtml(p.imageAlt || `${p.title} embroidery design`)}" onerror="safeImageFallback(this)">

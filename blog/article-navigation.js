@@ -8,12 +8,83 @@
     { slug: "aari-embroidery-care-washing-guide", title: "Aari embroidery care and washing guide", date: "November 2025" },
     { slug: "simple-aari-work-designs-daily-wear", title: "Simple Aari work designs for daily wear", date: "December 2025" },
     { slug: "aari-motifs-peacock-mango-floral-meaning", title: "Peacock, mango and floral motifs: designs and meaning", date: "January 2026" },
-    { slug: "aari-work-timeline-when-to-book-wedding", title: "How long does Aari work take—and when should you book?", date: "February 2026" }
+    { slug: "aari-work-timeline-when-to-book-wedding", title: "How long does Aari work take and when should you book?", date: "February 2026" }
   ];
 
   const currentSlug = window.location.pathname.replace(/\/+$/, "").split("/").pop();
   const currentIndex = articles.findIndex((article) => article.slug === currentSlug);
   const article = document.querySelector("article");
+  const headings = article ? [...article.querySelectorAll("h2")] : [];
+
+  if (headings.length > 1) {
+    const layout = article.closest(".article-layout, .post-layout");
+    if (layout) {
+      const toc = document.createElement("nav");
+      toc.className = "article-toc";
+      toc.setAttribute("aria-label", "Table of contents");
+
+      const title = document.createElement("span");
+      title.className = "article-toc-title";
+      title.textContent = "On this page";
+
+      const list = document.createElement("ol");
+      const links = headings.map((heading, index) => {
+        if (!heading.id) {
+          const baseId = heading.textContent
+            .trim()
+            .toLowerCase()
+            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/^-|-$/g, "") || `section-${index + 1}`;
+          let id = baseId;
+          let suffix = 2;
+          while (document.getElementById(id)) {
+            id = `${baseId}-${suffix}`;
+            suffix += 1;
+          }
+          heading.id = id;
+        }
+
+        heading.classList.add("article-toc-heading");
+        const item = document.createElement("li");
+        const link = document.createElement("a");
+        link.href = `#${heading.id}`;
+        link.textContent = heading.textContent.trim();
+        link.addEventListener("click", () => setActiveLink(link));
+        item.append(link);
+        list.append(item);
+        return link;
+      });
+
+      function setActiveLink(activeLink) {
+        links.forEach((link) => {
+          if (link === activeLink) {
+            link.setAttribute("aria-current", "location");
+          } else {
+            link.removeAttribute("aria-current");
+          }
+        });
+      }
+
+      toc.append(title, list);
+      layout.classList.add("article-layout--with-toc");
+      layout.insertBefore(toc, article);
+      setActiveLink(links[0]);
+
+      if ("IntersectionObserver" in window) {
+        const observer = new IntersectionObserver((entries) => {
+          const visibleHeading = entries
+            .filter((entry) => entry.isIntersecting)
+            .sort((first, second) => first.boundingClientRect.top - second.boundingClientRect.top)[0];
+          if (!visibleHeading) return;
+          const activeLink = links[headings.indexOf(visibleHeading.target)];
+          if (activeLink) setActiveLink(activeLink);
+        }, { rootMargin: "-15% 0px -70% 0px" });
+
+        headings.forEach((heading) => observer.observe(heading));
+      }
+    }
+  }
+
   const byline = article?.querySelector(".article-byline, .post-byline");
   if (currentIndex === -1 || !article || !byline) return;
 

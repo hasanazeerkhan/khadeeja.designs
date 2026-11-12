@@ -79,6 +79,22 @@ nav {
   font-family: var(--sans); font-size: 11px;
   letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold);
 }
+.site-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  background: var(--black);
+}
+.site-card--interactive {
+  transition: background 0.2s, border-color 0.2s;
+}
+.site-card--interactive:hover {
+  border-color: var(--gold);
+  background: #0d0d0d;
+}
+.site-card--interactive:focus-visible {
+  outline: 2px solid var(--gold-light);
+  outline-offset: -2px;
+}
 .button,
 .btn-gold {
   font-family: var(--sans); font-size: 14px; font-weight: 500;

@@ -46,6 +46,9 @@ The enquiry endpoint is configured in `contact/index.html`.
 Update the Formspree endpoint there if the form account changes.
 
 ### 3. Update site-wide conversion content
+WhatsApp prefilled messages are generated in `shared-nav.js` based on the
+current page, including the design name on product pages and article title on
+blog posts.
 Update `site-config.json` to change the WhatsApp number (digits only, with
 country code), reply window, four ordering steps or permitted testimonials.
 Keep `testimonials` empty until each review and photo has customer permission.
