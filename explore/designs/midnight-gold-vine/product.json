@@ -19,5 +19,9 @@
   "images": [
     "khadeeja_designs_midnight_gold_vine_aari_blouse_front.png",
     "khadeeja_designs_midnight_gold_vine_aari_blouse_back.png"
-  ]
+  ],
+  "priceIncludes": "Hand embroidery work on the customer-supplied blouse or garment, including the design consultation and the work shown in the listed design.",
+  "priceExcludes": "Courier charges, the blouse/garment itself, and any extra material changes beyond the listed design are quoted separately.",
+  "customerSuppliesBlouse": true,
+  "shippingNote": "The customer sends the blouse or saree by courier to the studio; the completed piece is returned by tracked delivery after the embroidery is finished."
 }

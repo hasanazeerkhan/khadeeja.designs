@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta charset="UTF-8">
+<link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <script>
   window.addEventListener("load", function () {
@@ -41,7 +42,7 @@ main{flex:1;}
 
 .filter-row{display:flex;align-items:center;border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:0 52px;overflow-x:auto;gap:0;scrollbar-width:none;}
 .filter-row::-webkit-scrollbar{display:none;}
-.filter-tab{font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--t3);padding:15px 26px;cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;white-space:nowrap;}
+.filter-tab{min-height:44px;font-family:var(--sans);font-size:11px;font-weight:400;letter-spacing:0.14em;text-transform:uppercase;color:var(--t3);padding:15px 26px;cursor:pointer;border:none;background:none;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all 0.2s;white-space:nowrap;}
 .filter-tab:hover{color:var(--t2);}
 .filter-tab.active{color:var(--gold);border-bottom-color:var(--gold);}
 
@@ -51,12 +52,12 @@ main{flex:1;}
 .design-card:focus-visible{z-index:2;}
 .card-top-line{position:absolute;top:0;left:0;right:0;height:1px;background:transparent;transition:background 0.3s;z-index:1;}
 .design-card:hover .card-top-line,.design-card:focus-visible .card-top-line{background:var(--gold);}
-.card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:var(--radius-card) var(--radius-card) 0 0;background:#111;position:relative;}
+.card-img-wrap{width:100%;aspect-ratio:1/1;overflow:hidden;border-radius:var(--radius-card) var(--radius-card) 0 0;background:var(--surface);position:relative;}
 .card-img-wrap picture{display:block;width:100%;height:100%;}
 .card-img{width:100%;height:100%;border-radius:0;object-fit:cover;display:block;filter:brightness(0.92);transition:filter 0.4s,transform 0.5s;}
 .design-card:hover .card-img{filter:brightness(1.05);transform:scale(1.04);}
 .card-img-ph{width:100%;height:100%;display:flex;align-items:center;justify-content:center;}
-.card-img-ph span{font-family:var(--sans);font-size:10px;color:#2a2a2a;letter-spacing:0.1em;text-transform:uppercase;}
+.card-img-ph span{font-family:var(--sans);font-size:10px;color:var(--t3);letter-spacing:0.1em;text-transform:uppercase;}
 .card-body{display:flex;flex:1;flex-direction:column;padding:14px 16px 16px;}
 .card-heading{min-width:0;margin-bottom:12px;text-align:center;}
 .card-title{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-family:var(--serif);font-size:18px;font-weight:400;color:var(--t1);line-height:1.2;}
@@ -64,11 +65,11 @@ main{flex:1;}
 .price-row{display:flex;align-items:baseline;justify-content:center;gap:8px;min-width:0;}
 .price-old{font-family:var(--sans);font-size:12px;color:var(--t3);text-decoration:line-through;}
 .price-new{font-family:var(--sans);font-size:13px;font-weight:500;color:var(--t1);white-space:nowrap;}
-.card-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-width:0;padding:8px 6px;background:transparent;border:1px solid var(--border-mid);border-radius:var(--radius-sm);color:var(--t2);font-family:var(--sans);font-size:9px;font-weight:500;letter-spacing:0.07em;text-transform:uppercase;white-space:nowrap;transition:background 0.2s,border-color 0.2s,color 0.2s;}
+.card-btn{display:inline-flex;align-items:center;justify-content:center;width:100%;min-width:0;min-height:44px;padding:8px 6px;background:transparent;border:1px solid var(--border-mid);border-radius:var(--radius-sm);color:var(--t2);font-family:var(--sans);font-size:10px;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;white-space:nowrap;transition:background 0.2s,border-color 0.2s,color 0.2s;}
 .design-card:hover .card-btn,.design-card:focus-visible .card-btn{background:var(--gold-dim);border-color:var(--gold);color:var(--gold-light);}
 .catalog-status{padding:18px 20px;text-align:center;font:13px/1.6 var(--sans);color:var(--t2);border:1px solid var(--border);border-radius:var(--radius-card);}
 .catalog-status[hidden]{display:none;}
-.catalog-status button{margin-left:10px;padding:6px 12px;color:var(--gold-light);background:transparent;border:1px solid var(--gold);border-radius:var(--radius-sm);font:inherit;cursor:pointer;}
+.catalog-status button{min-height:44px;margin-left:10px;padding:6px 12px;color:var(--gold-light);background:transparent;border:1px solid var(--gold);border-radius:var(--radius-sm);font:inherit;cursor:pointer;}
 .catalog-status button:disabled{opacity:.6;cursor:wait;}
 .seo-copy,.seo-faq{padding:56px 52px;border-top:1px solid var(--border);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px;background-image:var(--gold-glow-right);}
 .seo-copy-card{display:flex;min-width:0;min-height:270px;flex-direction:column;padding:24px;}
@@ -96,10 +97,14 @@ main{flex:1;}
   .card-footer{gap:6px;}
   .price-new{font-size:11px;}
   .price-old{font-size:10px;}
-  .card-btn{padding:7px 6px;font-size:8px;letter-spacing:.04em;}
+  .card-btn{padding:8px 4px;font-size:9px;letter-spacing:.03em;}
   .seo-copy{grid-template-columns:1fr;padding:40px 20px;gap:14px;}
   .seo-copy-card{min-height:0;padding:22px 20px;}
   .seo-faq{padding:36px 20px 48px;}
+}
+@media(max-width:420px){
+  .card-footer{grid-template-columns:1fr;gap:8px;}
+  .price-row{justify-content:center;}
 }
 </style>
 <script type="application/ld+json" data-breadcrumbs>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://khadeejadesigns.in/"},{"@type":"ListItem","position":2,"name":"Aari Blouse Designs","item":"https://khadeejadesigns.in/explore/"}]}</script>
@@ -168,7 +173,7 @@ main{flex:1;}
   <noscript><p class="catalog-status">JavaScript is off. You can still browse all designs; category filters require JavaScript.</p></noscript>
 
   <section class="seo-copy" aria-labelledby="collection-heading">
-    <article class="site-card site-card--interactive seo-copy-card"><h2 id="collection-heading">Bridal Aari Blouse Designs in Trichy</h2><p>Discover bridal Aari blouse designs featuring traditional embroidery details, intricate motifs and decorative embellishments. Explore styles that complement your wedding saree and personal preferences.</p><a href="/product/">Browse bridal designs →</a></article>
+    <article class="site-card site-card--interactive seo-copy-card"><h2 id="collection-heading">Bridal Aari Blouse Designs in Trichy</h2><p>Discover bridal Aari blouse designs featuring traditional embroidery details, intricate motifs and decorative embellishments. Explore styles that complement your wedding saree and personal preferences.</p><a href="/explore/designs/bridal-royal-zardosi/">Browse bridal designs →</a></article>
     <article class="site-card site-card--interactive seo-copy-card"><h2>Aari Work for Kanchipuram Silk Sarees</h2><p>Explore embroidery ideas to complement a silk saree's colour, border and pallu. Share your saree details to discuss suitable patterns, colours and design placement.</p><a href="/faq/">Read about Aari work for silk sarees →</a></article>
     <article class="site-card site-card--interactive seo-copy-card"><h2>Zardosi Aari Blouse Designs</h2><p>Browse ornate blouse styles featuring gold-toned embroidery, beads and decorative accents. The Bridal Royal Zardosi design shows one example; materials and customisation options are confirmed for each enquiry.</p><a href="/explore/designs/bridal-royal-zardosi/">View the Bridal Royal Zardosi blouse →</a></article>
     <article class="site-card site-card--interactive seo-copy-card"><h2>Custom Aari Embroidery, Delivered Across India</h2><p>Discuss colours, motifs, embroidery coverage and placement for a custom blouse or saree order. Khadeeja Designs is based in Trichy and offers delivery across India; timelines and shipping details are confirmed with your quote.</p><a href="/contact/">Discuss custom Aari embroidery →</a></article>
@@ -246,7 +251,7 @@ function renderGrid(products) {
     const title = p.title.replace(/\s+blouse$/i, '');
     const imageName = p.images && p.images[0] || 'main.jpg';
     const imagePath = `designs/${p.id}/${encodeURIComponent(imageName)}`;
-    const webpPath = imagePath.replace(/\.(?:png|jpe?g)$/i, '-card.webp');
+    const webpPath = imagePath.replace(/\.(?:png|jpe?g)$/i, '_card.webp');
     const category = escapeHtml(p.category);
     const originalPrice = parsePriceAmount(p.originalPrice);
     const currentPrice = parsePriceAmount(p.newPrice);

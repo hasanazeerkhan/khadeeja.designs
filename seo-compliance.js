@@ -33,7 +33,7 @@ const CFG = {
   descMin: 70,
   productsDir: 'explore/designs',
   categories: ['bridal', 'designer'],
-  noindexPaths: ['/thankyou/', '/privacy/', '/404.html'],
+  noindexPaths: ['/thankyou/', '/privacy/', '/product/', '/404.html'],
   skipDirs: new Set(['node_modules', '.git', '.github', 'scripts']),
   staleBlogDays: 60,
   maxImageKB: 500,
@@ -270,6 +270,8 @@ if (on('products')) {
     if (j.__parseError) { err('products', 'json-invalid', w, `product.json is invalid JSON: ${j.__parseError}`); continue; }
     if (j.id !== folder) err('products', 'id-folder', w, `id "${j.id}" does not match folder "${folder}"`);
     for (const f of ['title', 'summary', 'description', 'imageAlt', 'category']) if (!j[f]) err('products', 'field-missing', w, `product.json missing "${f}"`);
+    for (const f of ['priceIncludes', 'priceExcludes', 'shippingNote']) if (typeof j[f] !== 'string' || !j[f].trim()) err('products', 'pricing-scope-missing', w, `product.json missing "${f}"`);
+    if (typeof j.customerSuppliesBlouse !== 'boolean') err('products', 'pricing-scope-missing', w, 'product.json missing boolean "customerSuppliesBlouse"');
     if (j.category && !CFG.categories.includes(j.category)) err('products', 'category', w, `category "${j.category}" not in ${CFG.categories.join('/')}`);
     if (!Array.isArray(j.images) || !j.images.length) err('products', 'images', w, 'product.json "images" is empty');
     if (!listedIds.has(folder)) err('products', 'not-in-index', w, `"${folder}" is not listed in ${CFG.productsDir}/index.json`);

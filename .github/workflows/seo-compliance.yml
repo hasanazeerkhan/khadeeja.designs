@@ -2,8 +2,29 @@ name: SEO compliance
 
 on:
   pull_request:
+    paths:
+      - '**/*.html'
+      - '**/*.json'
+      - '**/*.js'
+      - '**/*.css'
+      - 'netlify.toml'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'llms.txt'
+      - '.github/workflows/seo-compliance.yml'
   push:
     branches: [master]
+    paths:
+      - '**/*.html'
+      - '**/*.json'
+      - '**/*.js'
+      - '**/*.css'
+      - 'netlify.toml'
+      - 'robots.txt'
+      - 'sitemap.xml'
+      - 'llms.txt'
+      - '.github/workflows/seo-compliance.yml'
+  workflow_dispatch:
 
 jobs:
   seo-compliance:
@@ -13,5 +34,13 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Run compliance checks
+      - name: Generate sitemap from current content
+        run: node ./tools/generate-sitemap.js
+      - name: Run local compliance checks
         run: node ./seo-compliance.js
+      - name: Validate HTML structure standards
+        run: node ./tools/check-html-standards.js
+      - name: Validate analytics config
+        run: node ./tools/check-analytics-config.js
+      - name: Validate production link crawl
+        run: npx --yes linkinator "https://khadeejadesigns.in" --recurse --skip "instagram|goo.gl"

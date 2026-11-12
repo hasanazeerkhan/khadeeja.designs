@@ -5,7 +5,7 @@
 # etc.
 
 [build]
-  command = "node tools/sync-reply-window.js"
+  command = "node tools/sync-reply-window.js && node tools/generate-sitemap.js"
   publish = "."
 
 [[headers]]
@@ -15,6 +15,12 @@
     Referrer-Policy = "strict-origin-when-cross-origin"
 
 # Canonicalize alternate hostnames while preserving the requested path.
+[[redirects]]
+  from = "https://khadeejadesigns.netlify.app/*"
+  to = "https://khadeejadesigns.in/:splat"
+  status = 301
+  force = true
+
 [[redirects]]
   from = "https://www.khadeejadesigns.in/*"
   to = "https://khadeejadesigns.in/:splat"

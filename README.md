@@ -5,6 +5,7 @@
 ```
 khadeeja-designs/
 ├── index.html            Home
+├── about/                Studio overview and brand story
 ├── explore/              Portfolio and design pages
 │   ├── index.html        Portfolio grid
 │   └── designs/
@@ -36,10 +37,13 @@ khadeeja-designs/
 ### 1. Analytics and privacy
 Microsoft Clarity is configured on the homepage, Explore, Contact, FAQ, Blog,
 the live blog article, and product detail pages. Google Analytics and Meta
-Pixel are not configured in the site source. The event hooks call the GA4 and
-Meta Pixel globals when available; add the real measurement IDs through the
-approved deployment setup before expecting event delivery. Decide consent
-behavior and update the privacy policy before enabling either service.
+Pixel are optional and are configured only when a deployment supplies real IDs
+in `site-config.json` under `analytics.gaMeasurementId` and
+`analytics.metaPixelId`. Leave them blank until the owner provides verified
+IDs. The event hooks call the GA4 and Meta Pixel globals when available; add
+real measurement IDs through the approved deployment setup before expecting
+event delivery. Decide consent behavior and update the privacy policy before
+enabling either service.
 
 ### 2. Form endpoint
 The enquiry endpoint is configured in `contact/index.html`.
@@ -54,6 +58,8 @@ country code), reply window, four ordering steps or permitted testimonials.
 Keep `testimonials` empty until each review and photo has customer permission.
 The Netlify build runs `tools/sync-reply-window.js` to write the configured
 reply window into the FAQ, contact and product-page HTML before publishing.
+`tools/generate-sitemap.js` also rebuilds `sitemap.xml` from the live product and
+blog folders so new pages are indexed automatically without manual drift.
 Other pages with `[data-reply-window]` placeholders are filled by
 `shared-nav.js` when their JavaScript loads.
 The default design prices are single prices; set both `originalPrice` and a
@@ -134,7 +140,9 @@ Done. Product appears in the grid and gets the URL: `/explore/designs/my-new-pro
    - Post byline at bottom
 4. Add a card to `blog/index.html` pointing to the new folder URL
 5. Update the "More from the blog" sidebar in the new post
-6. Add the canonical URL and accurate modification date to `sitemap.xml`.
+6. The build regenerates `sitemap.xml` from the blog folders; no manual sitemap
+   edit is needed. Run `node tools/generate-sitemap.js` locally to preview the
+   generated sitemap before publishing.
 
 ---
 
@@ -146,6 +154,8 @@ After deploying:
 - `/blog/` serves `blog/index.html`
 - Legacy `/product?id=...` links redirect to the matching
   `/explore/designs/<product-id>/` page.
+- Canonical domain stays `https://khadeejadesigns.in/`; the Netlify subdomain
+  should redirect with a 301 to avoid duplicate host indexing.
 
 To deploy:
 1. Push this folder to a GitHub repo

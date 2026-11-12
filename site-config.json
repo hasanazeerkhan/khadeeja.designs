@@ -2,6 +2,10 @@
   "whatsappNumber": "918667454391",
   "replyWindow": "6 hours during studio hours",
   "studioHours": "9 am to 8 pm, Mon to Sat",
+  "analytics": {
+    "gaMeasurementId": "",
+    "metaPixelId": ""
+  },
   "orderingSteps": [
     {
       "title": "Share your brief",

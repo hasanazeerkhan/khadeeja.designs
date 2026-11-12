@@ -57,13 +57,18 @@ function syncContactLinks() {
   const message = "Hi Khadeeja Designs, I'd like to enquire about Aari embroidery.";
   const links = `<!-- contact-quick-links:start -->
       <div class="contact-quick-links" role="group" aria-label="Contact Khadeeja Designs directly">
-        <p class="contact-quick-links__prompt">Prefer WhatsApp? Send us a photo of your saree</p>
         <div class="contact-quick-links__actions">
-          <a class="button button--ghost contact-quick-link" href="${whatsappUrl(message)}" aria-label="WhatsApp Khadeeja Designs about Aari embroidery" data-contact-method="whatsapp">WhatsApp us</a>
+          <a class="button button--ghost contact-quick-link whatsapp-link" href="${whatsappUrl(message)}" aria-label="WhatsApp Khadeeja Designs about Aari embroidery" data-contact-method="whatsapp"><img class="whatsapp-icon" src="/images/whatsapp-icon.png" alt="" aria-hidden="true"><span class="whatsapp-label">WhatsApp</span></a>
           <a class="button button--ghost contact-quick-link" href="tel:+${whatsappNumber}" aria-label="Call Khadeeja Designs at ${displayPhone}" data-contact-method="call">Call ${displayPhone}</a>
         </div>
       </div>
       <!-- contact-quick-links:end -->`;
+  const mobileBar = `<!-- contact-mobile-bar:start -->
+  <div class="mobile-contact-bar contact-contact-bar" role="group" aria-label="Contact Khadeeja Designs">
+    <a class="button mobile-contact-bar__whatsapp whatsapp-link" href="${whatsappUrl(message)}" aria-label="WhatsApp Khadeeja Designs about Aari embroidery" data-contact-method="whatsapp"><img class="whatsapp-icon" src="/images/whatsapp-icon.png" alt="" aria-hidden="true"><span class="whatsapp-label">WhatsApp</span></a>
+    <a class="button mobile-contact-bar__call" href="tel:+${whatsappNumber}" aria-label="Call Khadeeja Designs at ${displayPhone}" data-contact-method="call">Call</a>
+  </div>
+  <!-- contact-mobile-bar:end -->`;
   const markedBlock = /<!-- contact-quick-links:start -->[\s\S]*?<!-- contact-quick-links:end -->/;
   if (markedBlock.test(html)) {
     html = html.replace(markedBlock, links);
@@ -75,6 +80,22 @@ function syncContactLinks() {
     html = html.replace(heading, `${heading}\n      ${links}`);
   }
 
+  const mobileBarBlock = /<!-- contact-mobile-bar:start -->[\s\S]*?<!-- contact-mobile-bar:end -->/;
+  if (mobileBarBlock.test(html)) {
+    html = html.replace(mobileBarBlock, mobileBar);
+  } else {
+    const mainEnd = html.lastIndexOf('</main>');
+    if (mainEnd < 0) throw new Error(`Could not find the main element in ${filePath}.`);
+    html = `${html.slice(0, mainEnd)}${mobileBar}\n${html.slice(mainEnd)}`;
+  }
+  html = html.replace(/<body\b([^>]*)>/i, (bodyTag, attributes) => {
+    const classAttribute = attributes.match(/\bclass=(["'])(.*?)\1/i);
+    if (classAttribute) {
+      if (classAttribute[2].split(/\s+/).includes('contact-page')) return bodyTag;
+      return bodyTag.replace(classAttribute[0], `class=${classAttribute[1]}${classAttribute[2]} contact-page${classAttribute[1]}`);
+    }
+    return `<body class="contact-page"${attributes}>`;
+  });
   fs.writeFileSync(absolutePath, html);
 }
 
@@ -160,7 +181,7 @@ function syncProductContactMarkup(productId, product) {
   const actions = `<!-- product-contact-actions:start -->
 <div class="product-actions" role="group" aria-label="Enquiry options">
   <a class="cta" href="/contact/#id=${encodeURIComponent(productId)}" aria-label="Make the ${escapedTitle} design yours">Make It Yours →</a>
-  <a class="button button--ghost product-whatsapp" href="${escapeHtml(whatsappUrl(message))}" aria-label="Chat about this design on WhatsApp: ${escapedTitle}" data-contact-method="whatsapp">Chat about this design on WhatsApp</a>
+  <a class="button button--ghost product-whatsapp whatsapp-link" href="${escapeHtml(whatsappUrl(message))}" aria-label="Discuss the ${escapedTitle} design on WhatsApp" data-contact-method="whatsapp"><span class="whatsapp-prefix">Discuss on</span><img class="whatsapp-icon" src="/images/whatsapp-icon.png" alt="" aria-hidden="true"></a>
 </div>
 <!-- product-contact-actions:end -->`;
   const actionsBlock = /<!-- product-contact-actions:start -->[\s\S]*?<!-- product-contact-actions:end -->/;
@@ -180,11 +201,11 @@ function syncProductContactMarkup(productId, product) {
   }
 
   const phoneLink = `<a class="button button--ghost product-contact-bar__call" href="tel:+${whatsappNumber}" aria-label="Call Khadeeja Designs at ${displayPhone}" data-contact-method="call">Call</a>`;
-  const whatsappLink = `<a class="button button--gold product-contact-bar__whatsapp" href="${escapeHtml(whatsappUrl(message))}" aria-label="Chat about this design on WhatsApp: ${escapedTitle}" data-contact-method="whatsapp">WhatsApp</a>`;
+  const whatsappLink = `<a class="button button--gold product-contact-bar__whatsapp mobile-contact-bar__whatsapp whatsapp-link" href="${escapeHtml(whatsappUrl(message))}" aria-label="Discuss the ${escapedTitle} design on WhatsApp" data-contact-method="whatsapp"><span class="whatsapp-label">WhatsApp</span></a>`;
   const contactBar = `<!-- product-contact-bar:start -->
-<div class="product-contact-bar" role="group" aria-label="Contact Khadeeja Designs about this design">
+<div class="product-contact-bar mobile-contact-bar" role="group" aria-label="Contact Khadeeja Designs about this design">
   ${whatsappLink}
-  ${phoneLink}
+  ${phoneLink.replace('product-contact-bar__call', 'product-contact-bar__call mobile-contact-bar__call')}
 </div>
 <!-- product-contact-bar:end -->`;
   const barBlock = /<!-- product-contact-bar:start -->[\s\S]*?<!-- product-contact-bar:end -->/;

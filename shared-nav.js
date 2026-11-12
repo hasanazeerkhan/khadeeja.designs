@@ -17,6 +17,7 @@ function initPage(activePage) {
     { id: 'home',    label: 'Home',            href: '/'               },
     { id: 'explore', label: 'Browse Designs', href: '/explore/'       },
     { id: 'blog',    label: 'Blog',            href: '/blog/'          },
+    { id: 'about',   label: 'About',           href: '/about/'        },
     { id: 'faq',     label: 'FAQ',             href: '/faq/'          },
   ];
 
@@ -74,6 +75,13 @@ function initPage(activePage) {
   document.querySelectorAll('.faq, .seo-faq, .contact-faq').forEach(section => {
     if (section.querySelector('details')) section.classList.add('shared-question-section');
   });
+  document.querySelectorAll('.reply-window-note').forEach(note => note.classList.add('reply-alert'));
+  document.querySelectorAll('.product-contact-bar').forEach(bar => {
+    bar.classList.add('mobile-contact-bar');
+    bar.querySelector('.product-contact-bar__whatsapp')?.classList.add('mobile-contact-bar__whatsapp');
+    bar.querySelector('.product-contact-bar__call')?.classList.add('mobile-contact-bar__call');
+  });
+  decorateWhatsAppLinks();
 
   preserveCampaignParams();
   installContactLinkTracking();
@@ -81,6 +89,7 @@ function initPage(activePage) {
   addBreadcrumbSchema(activePage);
   trackDesignView();
   renderProductGallery();
+  renderProductPricingScope();
   renderProductDetailAccordions();
   updateProductPrice();
   renderRelatedLinks();
@@ -159,6 +168,38 @@ async function renderProductGallery() {
 
 // Keep dynamically generated portfolio images accessible and stable for search
 // and assistive technology when product data is loaded client-side.
+function initialiseAnalyticsFromConfig(config) {
+  const analytics = (config && config.analytics) || {};
+  const gaMeasurementId = String(analytics.gaMeasurementId || '').trim();
+  const metaPixelId = String(analytics.metaPixelId || '').trim();
+  if (gaMeasurementId && !/^(G-|UA-|AW-)?(TEST|TODO|PLACEHOLDER|XXXX|000000|123456)/i.test(gaMeasurementId)) {
+    if (!window.dataLayer) window.dataLayer = [];
+    if (!window.gtag) {
+      window.gtag = function gtag() {
+        window.dataLayer.push(arguments);
+      };
+    }
+    window.gtag('js', new Date());
+    window.gtag('config', gaMeasurementId, { send_page_view: true });
+  }
+
+  if (metaPixelId && !/^(1234567890|000000000000000|TEST|TODO|PLACEHOLDER|XXXX)/i.test(metaPixelId)) {
+    if (!window.fbq) {
+      window.fbq = function fbq() { (window.fbq.q = window.fbq.q || []).push(arguments); };
+      window.fbq.q = window.fbq.q || [];
+    }
+    if (!window.fbq.loaded) {
+      const script = document.createElement('script');
+      script.async = true;
+      script.src = `https://connect.facebook.net/en_US/fbevents.js`;
+      document.head.appendChild(script);
+      window.fbq.loaded = true;
+    }
+    window.fbq('init', metaPixelId);
+    window.fbq('track', 'PageView');
+  }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('img').forEach((img, index) => {
     if (!img.alt || /^View \d+$/.test(img.alt)) img.alt = `Khadeeja Designs Aari embroidery detail ${index + 1}`;
@@ -166,6 +207,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (!img.hasAttribute('height')) img.setAttribute('height', '600');
     if (!img.loading) img.loading = index === 0 ? 'eager' : 'lazy';
   });
+
+  getSiteConfig()
+    .then(config => initialiseAnalyticsFromConfig(config))
+    .catch(error => console.warn('Analytics config is unavailable right now', error));
 });
 
 function preserveCampaignParams() {
@@ -428,43 +473,70 @@ function trackDesignView() {
   });
 }
 
+async function renderProductPricingScope() {
+  const product = document.querySelector('main.product');
+  if (!product) return;
+
+  const id = window.location.pathname.match(/\/explore\/designs\/([a-z0-9-]+)\//)?.[1];
+  if (!id) return;
+
+  try {
+    const response = await fetch(`/explore/designs/${encodeURIComponent(id)}/product.json`);
+    if (!response.ok) throw new Error(`Product request failed: ${response.status}`);
+    const data = await response.json();
+    const priceDetails = document.createElement('details');
+    priceDetails.className = 'product-accordion product-accordion--price-scope';
+    const summary = document.createElement('summary');
+    summary.textContent = 'What this price covers';
+    const scope = document.createElement('div');
+    scope.className = 'pricing-scope content-panel';
+    scope.innerHTML = `
+      <h3>Listed design</h3>
+      <p>The listed rate applies to the embroidery shown in this design.</p>
+      <ul>
+        <li><strong>Garment:</strong> ${data.customerSuppliesBlouse ? 'The customer supplies the blouse or garment for embroidery.' : 'The studio supplies the base fabric or blouse for the work.'}</li>
+        <li><strong>Delivery:</strong> ${escapeHtml(data.shippingNote || 'Delivery arrangements are confirmed with the quote.')}</li>
+      </ul>
+    `;
+    priceDetails.append(summary, scope);
+    const lastPricingAccordion = product.querySelector('.product-accordion--price-excludes')
+      || product.querySelector('.product-accordion--price-includes')
+      || product.querySelector('.product-accordion--pricing');
+    if (lastPricingAccordion) lastPricingAccordion.after(priceDetails);
+  } catch (error) {
+    console.error('Could not render the pricing scope', error);
+  }
+}
+
 function renderProductDetailAccordions() {
   const product = document.querySelector('main.product');
   const content = product?.querySelector('.layout > div:last-child');
   const headings = content ? Array.from(content.querySelectorAll(':scope > h2')) : [];
   if (!content || headings.length < 3 || content.querySelector('.product-accordion')) return;
 
-  const sections = [
-    { heading: headings[0], title: 'Design Details', content: headings[0].nextElementSibling },
-    { heading: headings[1], title: 'Embroidery Details', content: headings[1].nextElementSibling },
-    { heading: headings[2], title: 'Pricing', content: headings[2].nextElementSibling }
-  ];
-
-  const accordions = sections.map(({ heading, title, content: sectionContent }) => {
-    if (!sectionContent || !sectionContent.matches('.copy, .specs')) return null;
+  headings.forEach((heading, index) => {
+    const sectionContent = heading.nextElementSibling;
+    if (!sectionContent || !sectionContent.matches('.copy, .specs')) return;
+    const title = index === 0
+      ? 'Design Details'
+      : index === 1
+        ? 'Embroidery Details'
+        : index === 2
+          ? 'Pricing'
+          : heading.textContent.trim();
     const accordion = document.createElement('details');
-    accordion.className = `product-accordion${title === 'Pricing' ? ' product-accordion--pricing' : ''}`;
+    accordion.className = 'product-accordion';
+    if (index === 2) accordion.classList.add('product-accordion--pricing');
+    if (/what the listed price includes/i.test(title)) accordion.classList.add('product-accordion--price-includes');
+    if (/what is quoted separately/i.test(title)) accordion.classList.add('product-accordion--price-excludes');
     const summary = document.createElement('summary');
     summary.textContent = title;
     accordion.append(summary, sectionContent);
     heading.replaceWith(accordion);
-    return accordion;
   });
 
-  const pricingAccordion = accordions[2];
-  const existingActions = content.querySelector(':scope > .product-actions');
-  const enquiryLink = existingActions?.querySelector(':scope > .cta')
-    || content.querySelector(':scope > .cta');
-  if (!pricingAccordion || !enquiryLink) return;
-  if (existingActions) return;
-
-  const actions = document.createElement('div');
-  actions.className = 'product-actions';
-  actions.setAttribute('role', 'group');
-  actions.setAttribute('aria-label', 'Enquiry options');
-  enquiryLink.textContent = 'Make It Yours';
-  actions.appendChild(enquiryLink);
-  pricingAccordion.after(actions);
+  const enquiryLink = content.querySelector(':scope > .product-actions > .cta, :scope > .cta');
+  if (enquiryLink) enquiryLink.textContent = 'Make It Yours';
 }
 
 async function updateProductPrice() {
@@ -580,6 +652,7 @@ function _toggleMobileMenu() {
     { label: 'Home',           href: '/'               },
     { label: 'Browse Designs', href: '/explore/'       },
     { label: 'Blog',           href: '/blog/'          },
+    { label: 'About',          href: '/about/'         },
     { label: 'FAQ',            href: '/faq/'           },
   ];
 
@@ -634,6 +707,46 @@ function _toggleMobileMenu() {
     _closeMobileMenu(false);
   }));
   setTimeout(() => m.querySelector('a')?.focus(), 0);
+}
+
+function decorateWhatsAppLinks() {
+  document.querySelectorAll('a[href*="wa.me/"]').forEach(link => {
+    const isProductLink = link.classList.contains('product-whatsapp');
+    let icon = link.querySelector('.whatsapp-icon');
+    let label = isProductLink ? null : link.querySelector('.whatsapp-label');
+    let prefix = link.querySelector('.whatsapp-prefix');
+    if (!icon) {
+      icon = document.createElement('img');
+      icon.className = 'whatsapp-icon';
+      icon.src = '/images/whatsapp-icon.png';
+      icon.alt = '';
+      icon.setAttribute('aria-hidden', 'true');
+    }
+    if (!label) {
+      label = document.createElement('span');
+      label.className = 'whatsapp-label';
+    }
+    if (isProductLink && !prefix) {
+      prefix = document.createElement('span');
+      prefix.className = 'whatsapp-prefix';
+    }
+    if (isProductLink) {
+      link.replaceChildren(prefix, icon);
+      prefix.textContent = 'Discuss on';
+    } else {
+      if (!label) {
+        label = document.createElement('span');
+        label.className = 'whatsapp-label';
+      }
+      link.replaceChildren(icon, label);
+      label.textContent = 'WhatsApp';
+    }
+    link.classList.add('whatsapp-link');
+    if (isProductLink) {
+      const currentLabel = link.getAttribute('aria-label') || '';
+      link.setAttribute('aria-label', currentLabel.replace(/^Chat about this design on WhatsApp/i, 'Discuss this design on WhatsApp'));
+    }
+  });
 }
 
 function _closeMobileMenu(returnFocus) {
