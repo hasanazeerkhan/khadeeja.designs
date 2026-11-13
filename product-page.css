@@ -327,3 +327,40 @@
 
   .pricing-scope { margin-right: 0; padding: 14px; }
 }
+
+/* Design page spec list: saree pairings, pricing and booking at a glance. */
+.design-specs {
+  display: grid;
+  gap: 0;
+  max-width: 760px;
+  margin: 28px 0 0;
+  padding: 0;
+  list-style: none;
+  border-top: 1px solid var(--border);
+}
+
+.design-specs li {
+  padding: 18px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.design-specs strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--gold);
+  font: 500 10px var(--sans);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+}
+
+.design-specs span {
+  display: block;
+  color: var(--t2);
+  font: 300 13.5px/1.8 var(--sans);
+}
+
+@media (max-width: 600px) {
+  .design-specs { margin-top: 22px; }
+  .design-specs li { padding: 16px 0; }
+  .design-specs span { font-size: 13px; line-height: 1.75; }
+}

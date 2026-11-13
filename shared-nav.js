@@ -14,11 +14,11 @@ function getSiteConfig() {
 
 function initPage(activePage) {
   const NAV_PAGES = [
-    { id: 'home',    label: 'Home',      href: '/'         },
-    { id: 'explore', label: 'Designs',   href: '/explore/' },
-    { id: 'blog',    label: 'Blog',      href: '/blog/'    },
-    { id: 'about',   label: 'About',     href: '/about/'   },
-    { id: 'faq',     label: 'FAQ',       href: '/faq/'     },
+    { id: 'home',    label: 'Home',            href: '/'         },
+    { id: 'explore', label: 'Explore Designs', href: '/explore/' },
+    { id: 'blog',    label: 'Blog',            href: '/blog/'    },
+    { id: 'about',   label: 'About',           href: '/about/'   },
+    { id: 'faq',     label: 'FAQ',             href: '/faq/'     },
   ];
 
   /* Render the complete header from one source on every page. */
@@ -46,7 +46,7 @@ function initPage(activePage) {
           <p class="footer-tagline">Boutique Aari embroidery, handcrafted in Trichy</p>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="/explore/">Designs</a>
+          <a href="/explore/">Explore Designs</a>
           <span class="footer-separator" aria-hidden="true">·</span>
           <a href="/blog/">Blog</a>
           <span class="footer-separator" aria-hidden="true">·</span>
@@ -76,7 +76,7 @@ function initPage(activePage) {
         </nav>
       </div>
       <div class="footer-bottom">
-        <span class="footer-copy">© Khadeeja Designs. All rights reserved.</span>
+        <span class="footer-copy">&copy; Khadeeja Designs. All rights reserved.</span>
         <span class="footer-bottom-separator" aria-hidden="true">·</span>
         <div class="footer-legal">
           <a href="/privacy/">Privacy Policy</a>
@@ -445,6 +445,8 @@ function addLocalBusinessSchema(activePage) {
 }
 
 function addBreadcrumbSchema(activePage) {
+  /* The homepage is the top-level node of the site and has no breadcrumb trail. */
+  if (activePage === 'home' || window.location.pathname === '/') return;
   const existing = [...document.querySelectorAll('script[type="application/ld+json"]')].some(script => {
     try { return JSON.parse(script.textContent)['@type'] === 'BreadcrumbList'; }
     catch { return false; }
@@ -457,14 +459,21 @@ function addBreadcrumbSchema(activePage) {
     crumbs.push({name: 'Explore Designs', item: 'https://khadeejadesigns.in/explore/'});
     if (title) crumbs.push({name: title, item: window.location.href.split('?')[0]});
   } else if (activePage && activePage !== 'home') {
+    const SECTION_LABELS = {
+      explore: 'Explore Designs',
+      blog: 'Blog',
+      about: 'About Us',
+      contact: 'Contact',
+      faq: 'FAQ'
+    };
     const link = document.querySelector('link[rel="canonical"]');
-    const title = document.querySelector('h1')?.textContent.trim() || document.title;
+    const title = SECTION_LABELS[activePage] || document.querySelector('h1')?.textContent.trim() || document.title;
     crumbs.push({name: title, item: link?.href || window.location.href.split('?')[0]});
   } else if (window.location.pathname !== '/') {
     const title = document.querySelector('h1')?.textContent.trim() || document.title;
     crumbs.push({name: title, item: window.location.href.split('?')[0]});
   }
-  if (!crumbs.length) return;
+  if (crumbs.length < 2) return;
   appendJsonLd({
     '@context': 'https://schema.org',
     '@type': 'BreadcrumbList',
@@ -665,11 +674,11 @@ function _toggleMobileMenu() {
   if (existing) { _closeMobileMenu(true); return; }
 
   const pages = [
-    { label: 'Home',           href: '/'               },
-    { label: 'Browse Designs', href: '/explore/'       },
-    { label: 'Blog',           href: '/blog/'          },
-    { label: 'About',          href: '/about/'         },
-    { label: 'FAQ',            href: '/faq/'           },
+    { label: 'Home',            href: '/'          },
+    { label: 'Explore Designs', href: '/explore/'  },
+    { label: 'Blog',            href: '/blog/'     },
+    { label: 'About',           href: '/about/'    },
+    { label: 'FAQ',             href: '/faq/'      },
   ];
 
   const navH = document.querySelector('nav').offsetHeight;
@@ -689,7 +698,7 @@ function _toggleMobileMenu() {
   });
 
   const cta = document.createElement('a');
-  cta.textContent = 'Send Enquiry';
+  cta.textContent = 'Contact';
   cta.href = '/contact/';
   cta.className = 'button button--gold';
   m.appendChild(cta);

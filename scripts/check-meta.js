@@ -87,7 +87,7 @@ function findSchema(schemas, type) {
 
 function faqPairs(html) {
   const pairs = [];
-  const questionPattern = /<div class="faq-item">\s*<button\b[^>]*>[\s\S]*?<span class="faq-q">([\s\S]*?)<\/span>[\s\S]*?<\/button>\s*<div class="faq-a">([\s\S]*?)<\/div>\s*<\/div>/gi;
+  const questionPattern = /<div class="faq-item">\s*<button\b[^>]*>[\s\S]*?<h3 class="faq-q">([\s\S]*?)<\/h3>[\s\S]*?<\/button>\s*<div class="faq-a">([\s\S]*?)<\/div>\s*<\/div>/gi;
   for (const match of html.matchAll(questionPattern)) {
     pairs.push([stripMarkup(match[1]), stripMarkup(match[2])]);
   }
@@ -168,7 +168,9 @@ for (const [pagePath, configured] of Object.entries(metadata)) {
   const schemas = parseSchemas(head, relativePath);
   if (!schemas.length) failures.push(`${relativePath}: JSON-LD is missing`);
   const breadcrumb = findSchema(schemas, 'BreadcrumbList');
-  if (!breadcrumb) failures.push(`${relativePath}: BreadcrumbList schema is missing`);
+  if (relativePath === 'index.html') {
+    if (breadcrumb) failures.push(`${relativePath}: the homepage should not have BreadcrumbList schema`);
+  } else if (!breadcrumb) failures.push(`${relativePath}: BreadcrumbList schema is missing`);
   else {
     const items = breadcrumb.itemListElement || [];
     if (!items.length || items[items.length - 1].item !== expectedCanonical) {
