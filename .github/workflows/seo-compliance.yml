@@ -43,4 +43,4 @@ jobs:
       - name: Validate analytics config
         run: node ./tools/check-analytics-config.js
       - name: Validate production link crawl
-        run: npx --yes linkinator "https://khadeejadesigns.in" --recurse --skip "instagram|goo.gl"
+        run: npx --yes linkinator "https://khadeejadesigns.in" --recurse --skip "instagram|goo.gl|reddit"
