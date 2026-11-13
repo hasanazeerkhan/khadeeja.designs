@@ -1,52 +1,58 @@
 {
   "index.html": {
-    "title": "Aari Work Blouse Trichy | Bridal Designs | Khadeeja Designs",
-    "description": "Discover handcrafted Aari embroidery and custom bridal blouses in Tiruchirappalli. Pan-India delivery available. Explore designs and book a consultation.",
+    "title": "Custom Bridal Blouses & Aari Studio | Khadeeja Designs",
+    "description": "Khadeeja Designs creates custom bridal blouses and Aari embroidery in Trichy with detailed styling and wedding-ready craftsmanship for brides.",
     "ogImage": "https://khadeejadesigns.in/explore/designs/bridal-royal-zardosi/khadeeja_designs_bridal_royal_zardosi_blouse_front.webp"
   },
   "explore/index.html": {
-    "title": "Aari Blouse Designs with Prices | Khadeeja Designs",
-    "description": "Browse Aari work blouse designs from Trichy with listed prices from {{minPrice}} to {{maxPrice}}. Bridal and designer styles, delivered across India."
+    "title": "Designs | Bridal Blouses & Aari Work | Khadeeja Designs",
+    "description": "Browse handcrafted Aari blouse designs and bridal looks from Khadeeja Designs with pricing, motifs, styling guidance, and custom support in Trichy."
   },
   "contact/index.html": {
-    "title": "Custom Aari Embroidery Enquiry | Khadeeja Designs",
-    "description": "Send your Aari embroidery enquiry to our Trichy studio. We reply within 6 hours during studio hours. Share a design or saree photo."
+    "title": "Contact Us | Custom Bridal Aari Studio | Khadeeja Designs",
+    "description": "Share your saree, occasion, and design ideas with Khadeeja Designs to request a custom bridal or Aari work quote in Trichy and across India."
   },
   "faq/index.html": {
-    "title": "Aari Work FAQs: Price & Delivery | Khadeeja Designs",
-    "description": "Answers about Aari work, pricing, custom orders and delivery from our Tiruchirappalli studio. We reply within 6 hours during studio hours."
+    "title": "FAQ | Custom Aari Embroidery Answers | Khadeeja Designs",
+    "description": "Find answers on custom Aari work pricing, timelines, silk blouse design, shipping, and bridal embroidery care with Khadeeja Designs in Trichy."
+  },
+  "about/index.html": {
+    "title": "About Us | Bridal Studio in Trichy | Khadeeja Designs",
+    "description": "Meet Khadeeja Designs, a boutique bridal Aari studio in Trichy creating bespoke blouses, embroidered details, and personalised wedding craftsmanship."
   },
   "privacy/index.html": {
-    "title": "Privacy Policy | Khadeeja Designs",
-    "description": "Privacy policy for Khadeeja Designs. How we collect, use, and protect your personal information."
+    "title": "Our Customer Privacy & Data Use Policy | Khadeeja Designs",
+    "description": "Read how Khadeeja Designs collects, uses, stores, and protects personal information shared through our website, enquiries, and order communications.",
+    "robots": "noindex,follow"
   },
   "blog/index.html": {
-    "title": "Aari Embroidery Guides for Bridal Blouses | Khadeeja Designs",
-    "description": "Read guides to bridal Aari blouses for Kanchipuram silk, blouse pricing, saree colour matching, care, motifs and wedding timelines."
+    "title": "Bridal Aari Embroidery Guides & Tips | Khadeeja Designs",
+    "description": "Read expert guides on bridal Aari blouse designs, Kanchipuram silk saree pairings, pricing breakdowns, and blouse care tips from our Trichy studio.",
+    "ogImage": "https://khadeejadesigns.in/blog/aari-work-timeline-when-to-book-wedding/aari-work-wedding-booking-timeline_1536w.webp"
   },
   "blog/aari-embroidery-care-washing-guide/index.html": {
-    "title": "Aari Embroidery Care Guide | Khadeeja Designs",
-    "description": "Learn how to care for an Aari embroidered blouse: safe storage, spot cleaning, washing precautions, drying and when to ask a specialist cleaner."
+    "title": "How to Wash & Care for Aari Blouses | Khadeeja Designs",
+    "description": "Protect your bridal Aari blouse from tarnishing and stone damage. Learn safe dry-cleaning, steaming, and folding tips for embroidered silk blouses."
   },
   "blog/aari-motifs-peacock-mango-floral-meaning/index.html": {
     "title": "Aari Motifs: Peacock, Mango & Floral | Khadeeja Designs",
-    "description": "Explore peacock, mango and floral Aari embroidery motifs, their common cultural associations and how to place them on a blouse design."
+    "description": "Discover traditional peacock, mango, and floral Aari embroidery motifs, their cultural meaning, and how to place them on bridal blouse sleeves."
   },
   "blog/aari-vs-maggam-vs-zardosi/index.html": {
-    "title": "Aari Embroidery Styles Compared | Khadeeja Designs",
-    "description": "Compare Aari work and Zardosi embroidery by technique, texture, look, comfort and use to choose a blouse embellishment."
+    "title": "Aari vs Maggam vs Zardosi Embroidery | Khadeeja Designs",
+    "description": "Compare Aari work, Maggam work, and Zardosi embroidery by stitching technique, texture, weight, and comfort to pick the best bridal finish for you."
   },
   "blog/aari-work-blouse-price-guide/index.html": {
-    "title": "Aari Work Blouse Price Guide | Khadeeja Designs",
-    "description": "A practical Aari work blouse price guide explaining light, medium and heavy design bands and how coverage, materials, motifs and deadline affect a custom quote."
+    "title": "Aari Work Blouse Price Guide 2026 India | Khadeeja Designs",
+    "description": "Wondering how much Aari work costs? Compare pricing for simple, medium, and heavy bridal blouse designs by threadwork, stones, and motif density."
   },
   "blog/aari-work-timeline-when-to-book-wedding/index.html": {
-    "title": "Aari Work Timeline: When to Book | Khadeeja Designs",
-    "description": "Find out what affects Aari embroidery turnaround and when to book a wedding blouse. Plan around design approval, fabric readiness, workload and fitting."
+    "title": "How Long Does Aari Work Take? Timeline | Khadeeja Designs",
+    "description": "Find out how many weeks bridal Aari embroidery takes and when to book your wedding blouse in Trichy so your outfit is ready well before the date."
   },
   "blog/bridal-aari-work-blouse-kanchipuram-silk-sarees/index.html": {
-    "title": "Aari Blouse for Kanchipuram Silk Sarees | Khadeeja Designs",
-    "description": "Choose a bridal Aari work blouse for a Kanchipuram silk saree with tips on colour, border, motifs, embroidery coverage and a balanced wedding look."
+    "title": "Bridal Aari Blouses for Kanchipuram Silk | Khadeeja Designs",
+    "description": "Explore bridal Aari blouse designs made for Kanchipuram silk sarees, with tips on colour contrast, border motifs, and balanced sleeve coverage."
   },
   "blog/choose-aari-work-wedding-saree-colour/index.html": {
     "title": "Aari Work for Wedding Saree Colours | Khadeeja Designs",
@@ -54,11 +60,11 @@
   },
   "blog/how-to-choose-aari-embroidery-bridal-blouse/index.html": {
     "title": "Wedding Blouse Aari Embroidery Guide | Khadeeja Designs",
-    "description": "Choose Aari embroidery for your wedding blouse with this guide to Zardosi, threadwork, saree and jewellery pairing, and neckline styles."
+    "description": "Plan your bridal Aari blouse with confidence. Learn how to pair Zardosi, beadwork, and neckline styles with your wedding saree and jewellery."
   },
   "blog/simple-aari-work-designs-daily-wear/index.html": {
-    "title": "Simple Aari Designs for Daily Wear | Khadeeja Designs",
-    "description": "Explore simple Aari work designs for daily wear blouses, including fine necklines, sleeve borders, small floral motifs and easy-care placement ideas."
+    "title": "Simple Aari Work Designs for Daily Wear | Khadeeja Designs",
+    "description": "Browse lightweight, simple Aari blouse designs for daily and festive wear—featuring delicate necklines, subtle sleeve borders, and easy-care motifs."
   },
   "explore/designs/bridal-royal-zardosi/index.html": {
     "source": "product.json"
@@ -80,5 +86,23 @@
   },
   "explore/designs/violet-gold-vine/index.html": {
     "source": "product.json"
+  },
+  "404.html": {
+    "title": "Page Not Found: Aari Designs in Trichy | Khadeeja Designs",
+    "description": "This page could not be found. Browse Khadeeja Designs' handcrafted Aari blouse collection or visit the blog, FAQs, and contact page for help.",
+    "robots": "noindex,follow",
+    "ogImage": "https://khadeejadesigns.in/blog/aari-vs-maggam-vs-zardosi/aari-maggam-zardosi-embroidery-comparison_1536w.webp"
+  },
+  "product/index.html": {
+    "title": "Aari Blouse Collection Now at Explore | Khadeeja Designs",
+    "description": "The Aari blouse portfolio has moved. Browse handcrafted designs, view listed prices, and open each product page to review details or send an enquiry.",
+    "robots": "noindex,follow",
+    "ogImage": "https://khadeejadesigns.in/explore/designs/sunset-garden/khadeeja_designs_sunset_garden_back.webp"
+  },
+  "thankyou/index.html": {
+    "title": "Thank You for Your Aari Blouse Enquiry | Khadeeja Designs",
+    "description": "Your Aari blouse enquiry has reached Khadeeja Designs. We will review your brief and respond during studio hours with the next steps for your order.",
+    "robots": "noindex,follow",
+    "ogImage": "https://khadeejadesigns.in/explore/designs/emerald-jhumka-elegance/khadeeja_designs_emerald_jhumka_embroidered_blouse_back.webp"
   }
 }

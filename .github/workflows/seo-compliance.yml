@@ -36,6 +36,8 @@ jobs:
           node-version: 20
       - name: Generate sitemap from current content
         run: node ./tools/generate-sitemap.js
+      - name: Validate metadata and SEO structure
+        run: node ./scripts/check-meta.js
       - name: Run local compliance checks
         run: node ./seo-compliance.js
       - name: Validate HTML structure standards

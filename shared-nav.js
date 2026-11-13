@@ -14,11 +14,11 @@ function getSiteConfig() {
 
 function initPage(activePage) {
   const NAV_PAGES = [
-    { id: 'home',    label: 'Home',            href: '/'               },
-    { id: 'explore', label: 'Browse Designs', href: '/explore/'       },
-    { id: 'blog',    label: 'Blog',            href: '/blog/'          },
-    { id: 'about',   label: 'About',           href: '/about/'        },
-    { id: 'faq',     label: 'FAQ',             href: '/faq/'          },
+    { id: 'home',    label: 'Home',      href: '/'         },
+    { id: 'explore', label: 'Designs',   href: '/explore/' },
+    { id: 'blog',    label: 'Blog',      href: '/blog/'    },
+    { id: 'about',   label: 'About',     href: '/about/'   },
+    { id: 'faq',     label: 'FAQ',       href: '/faq/'     },
   ];
 
   /* Render the complete header from one source on every page. */
@@ -30,7 +30,7 @@ function initPage(activePage) {
       <a class="brand" href="/" aria-label="Khadeeja Designs home">Khadeeja Designs</a>
       <div class="nav-center">
         ${NAV_PAGES.map(p => `<a class="nav-link${p.id === activePage ? ' active' : ''}" href="${p.href}"${p.id === activePage ? ' aria-current="page"' : ''}>${p.label}</a>`).join('')}
-        <a class="nav-cta button button--gold" data-button="gold" href="/contact/">Send Enquiry</a>
+        <a class="nav-cta button button--gold" data-button="gold" href="/contact/">Contact</a>
       </div>
       <button class="hamburger" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span><span></span></button>`;
     header.querySelector('.hamburger').addEventListener('click', _toggleMobileMenu);
@@ -46,7 +46,7 @@ function initPage(activePage) {
           <p class="footer-tagline">Boutique Aari embroidery, handcrafted in Trichy</p>
         </div>
         <nav class="footer-nav" aria-label="Footer navigation">
-          <a href="/explore/">Portfolio</a>
+          <a href="/explore/">Designs</a>
           <span class="footer-separator" aria-hidden="true">·</span>
           <a href="/blog/">Blog</a>
           <span class="footer-separator" aria-hidden="true">·</span>
@@ -54,7 +54,7 @@ function initPage(activePage) {
           <span class="footer-separator" aria-hidden="true">·</span>
           <a href="/faq/">FAQ</a>
           <span class="footer-separator" aria-hidden="true">·</span>
-          <a href="/contact/">Send Enquiry</a>
+          <a href="/contact/">Contact</a>
         </nav>
         <nav class="footer-social" aria-label="Social and community links">
           <a href="https://instagram.com/khadeeja.designs" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile of Khadeeja Designs">
