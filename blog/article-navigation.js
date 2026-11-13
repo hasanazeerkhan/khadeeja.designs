@@ -113,7 +113,45 @@
     navigation.append(link);
   };
 
-  addLink(articles[currentIndex - 1], "← Previous article", "article-pagination-link--previous");
-  addLink(articles[currentIndex + 1], "Next article →", "article-pagination-link--next");
+  if (currentIndex === 0) {
+    addLink(articles[1], "Next article →", "article-pagination-link--previous");
+    addLink(articles[2], "Also read", "article-pagination-link--next");
+  } else if (currentIndex === articles.length - 1) {
+    addLink(articles[currentIndex - 1], "← Previous article", "article-pagination-link--previous");
+    addLink(articles[currentIndex - 2], "Also read", "article-pagination-link--next");
+  } else {
+    addLink(articles[currentIndex - 1], "← Previous article", "article-pagination-link--previous");
+    addLink(articles[currentIndex + 1], "Next article →", "article-pagination-link--next");
+  }
   byline.after(navigation);
+
+  const conversation = document.createElement("section");
+  conversation.className = "article-community";
+  conversation.setAttribute("aria-labelledby", "article-community-title");
+
+  const conversationTitle = document.createElement("h2");
+  conversationTitle.id = "article-community-title";
+  conversationTitle.textContent = "Continue the Conversation & Read More";
+
+  const conversationCopy = document.createElement("p");
+  conversationCopy.textContent = "Discuss Aari embroidery techniques, bridal blouse styling, or share your thoughts with our community.";
+
+  const conversationLinks = document.createElement("div");
+  conversationLinks.className = "article-community-links";
+
+  const addExternalLink = (href, label, ariaLabel) => {
+    const link = document.createElement("a");
+    link.href = href;
+    link.target = "_blank";
+    link.rel = "noopener noreferrer";
+    link.setAttribute("aria-label", ariaLabel);
+    link.textContent = label;
+    conversationLinks.append(link);
+  };
+
+  addExternalLink("https://www.reddit.com/r/AariEmbroidery/", "Join the community thread ↗", "Discuss Aari embroidery in the r/AariEmbroidery Community");
+  addExternalLink("https://medium.com/@khadeejadesigns", "Follow our articles on Medium ↗", "Follow Khadeeja Designs articles on Medium");
+
+  conversation.append(conversationTitle, conversationCopy, conversationLinks);
+  navigation.after(conversation);
 })();

@@ -85,8 +85,12 @@ to avoid a render-blocking Google Fonts stylesheet. Keep the included OFL
 license files with those font assets.
 
 ### 6. Add blog cover image
-Save to: images/blog/bridal-blouse-guide.jpg
-Recommended size: 1400×500px, landscape
+Save each cover image inside its article folder, using a lowercase,
+hyphen-separated filename that describes the article topic. Reference that
+file in the article hero, Open Graph and Twitter metadata, and Article JSON-LD.
+Provide `_480w.webp`, `_720w.webp`, `_960w.webp`, and full-size `_1536w.webp`
+variants for the hero `srcset`; use the full-size WebP for social and schema
+metadata. Keep descriptive alt text and the image's actual intrinsic dimensions.
 
 ---
 
@@ -144,9 +148,9 @@ Done. Product appears in the grid and gets the URL: `/explore/designs/my-new-pro
    - `.post-meta` (category, date, read time)
    - `<h1 class="post-title">` and `.post-intro`
    - All `<article>` content
-   - Hero image src (add to images/blog/) and 480w, 720w, and 960w WebP
-     derivatives; wire all image URLs into the hero `<source srcset>` with
-     accurate `sizes` so mobile and desktop download an appropriate size.
+   - Add a descriptive image and 480w, 720w, 960w, and full-size WebP variants
+     to the article folder. Use the variants in the hero `<picture>` `srcset`
+     and update the Open Graph, Twitter, and Article JSON-LD image URLs.
    - Post byline at bottom
 4. Add a card to `blog/index.html` pointing to the new folder URL
 5. Update the "More from the blog" sidebar in the new post
