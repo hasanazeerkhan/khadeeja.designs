@@ -1,5 +1,36 @@
 # Khadeeja Designs - Website v3
 
+## How the site is built (read this first)
+
+Every fact lives in one data file. A build step writes it into the static HTML, so search
+engines, AI assistants and visitors all see the same thing and no JavaScript rewrites the page.
+
+| Change this… | …in this file |
+|---|---|
+| Hours, address, phone, analytics IDs (Meta Pixel, GA4, Clarity), testimonials, ordering steps, advance %, turnaround | `site-config.json` |
+| A design's price, images, FAQs, description | `explore/designs/<id>/product.json` |
+| Page titles and meta descriptions | `seo-meta.json` (designs use `seoTitle` / `seoDescription` in product.json) |
+| Order, advance and refund terms | `policies/index.html` |
+
+Then run:
+
+```bash
+node tools/build.js --no-dist
+```
+
+This runs `scripts/sync-meta.js`, `tools/sync-reply-window.js`, `tools/sync-site.js` (nav, footer,
+analytics, the single business JSON-LD, testimonials, product galleries, prices, FAQs, Product
+schema, the price-guide table), regenerates `sitemap.xml` (lastmod = last git commit) and
+`llms-full.txt`, then runs every checker. Commit the result. Netlify runs `node tools/build.js`,
+which does the same and publishes only public files from `dist/`. **Any checker error blocks the
+deploy**, and CI fails if the committed HTML is out of sync with the data files.
+
+After adding a design or blog post, also run `python3 tools/make-og-images.py` to create its
+1200×630 JPG share image (WhatsApp does not reliably preview WebP).
+
+To switch on ad tracking, put the IDs in `site-config.json → analytics.metaPixelId` and
+`analytics.gaMeasurementId`, then build. The Pixel and GA4 load inline in every page's head.
+
 ## File structure
 
 ```
@@ -18,7 +49,7 @@ khadeeja-designs/
 ├── shared.css            Design system - shared by all pages
 ├── shared-nav.js         Nav + footer injection for all pages
 ├── site-config.json      WhatsApp, reply window, ordering steps and testimonials
-├── netlify.toml          Clean URL config for Netlify
+├── netlify.toml          Build command, redirects and security headers
 │
 ├── blog/
 │   ├── index.html        Blog listing

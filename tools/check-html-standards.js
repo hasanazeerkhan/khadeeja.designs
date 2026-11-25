@@ -8,7 +8,7 @@ function walk(dir) {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) {
-      if (['.git', 'node_modules', '.github'].includes(entry.name)) continue;
+      if (['.git', 'node_modules', '.github', 'dist'].includes(entry.name)) continue;
       walk(full);
     } else if (entry.isFile() && entry.name.toLowerCase().endsWith('.html')) {
       htmlFiles.push(full);

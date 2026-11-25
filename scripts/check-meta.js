@@ -87,9 +87,10 @@ function findSchema(schemas, type) {
 
 function faqPairs(html) {
   const pairs = [];
-  const questionPattern = /<div class="faq-item">\s*<button\b[^>]*>[\s\S]*?<h3 class="faq-q">([\s\S]*?)<\/h3>[\s\S]*?<\/button>\s*<div class="faq-a">([\s\S]*?)<\/div>\s*<\/div>/gi;
+  const questionPattern = /<details class="faq-item">\s*<summary\b[^>]*>[\s\S]*?<h3 class="faq-q">([\s\S]*?)<\/h3>[\s\S]*?<\/summary>\s*<div class="faq-a">([\s\S]*?)<\/div>\s*<\/details>/gi;
   for (const match of html.matchAll(questionPattern)) {
-    pairs.push([stripMarkup(match[1]), stripMarkup(match[2])]);
+    const inline = value => value.replace(/<\/?(?:a|strong|em|span|b|i|code)\b[^>]*>/gi, '');
+    pairs.push([stripMarkup(inline(match[1])), stripMarkup(inline(match[2]))]);
   }
   return pairs;
 }
@@ -203,6 +204,10 @@ for (const [pagePath, configured] of Object.entries(metadata)) {
     }
   }
 
+  if (pagePath === 'index.html' && schemas.filter(schema => ['LocalBusiness', 'ClothingStore'].includes(schema['@type'])).length !== 1) {
+    failures.push(`${relativePath}: expected exactly one business entity`);
+  }
+
   if (pagePath === 'faq/index.html') {
     const faq = findSchema(schemas, 'FAQPage');
     const visiblePairs = faqPairs(html);
@@ -259,7 +264,7 @@ for (const [pagePath, configured] of Object.entries(metadata)) {
     if (!schema || !schema.image || !schema.description || schema.brand?.name !== 'Khadeeja Designs' ||
         typeof schema.offers?.price !== 'number' || schema.offers.price !== numericPrice ||
         schema.offers.priceCurrency !== 'INR' ||
-        schema.offers.availability !== 'https://schema.org/InStock') {
+        !['https://schema.org/InStock', 'https://schema.org/MadeToOrder'].includes(schema.offers.availability)) {
       failures.push(`${relativePath}: Product schema is missing valid product or Offer data`);
     }
     const story = html.match(/<section class="product-story" aria-labelledby="product-story-title">([\s\S]*?)<\/section>/i);
@@ -277,10 +282,14 @@ for (const [pagePath, configured] of Object.entries(metadata)) {
     }
     if (!/<h1\b[^>]*>[\s\S]*?<\/h1>/i.test(html)) failures.push(`${relativePath}: static product h1 is missing`);
     const bodyPrice = html.match(/<div class="price"[^>]*>([\s\S]*?)<\/div>/i);
-    if (!bodyPrice || parsePrice(stripMarkup(bodyPrice[1]).replace(/^₹/, '')) !== numericPrice) {
+    const shownPrice = stripMarkup(bodyPrice?.[1] || '').match(/₹\s*([\d,]+)\s*(?:embroidery)?\s*$/)?.[1];
+    if (!bodyPrice || parsePrice(shownPrice) !== numericPrice) {
       failures.push(`${relativePath}: visible product price differs from product.json`);
     }
-    for (const image of html.matchAll(/<img\b[^>]*>/gi)) {
+    // Decorative images (gallery thumbnails inside labelled buttons, icons marked aria-hidden) may use alt="".
+    const contentHtml = html.replace(/<div class="product-gallery__thumbnails"[\s\S]*?<\/div>/gi, '');
+    for (const image of contentHtml.matchAll(/<img\b[^>]*>/gi)) {
+      if (/\baria-hidden\s*=\s*(["'])true\1/i.test(image[0])) continue;
       if (!/\balt\s*=\s*(["'])\s*[^"']+\1/i.test(image[0])) {
         failures.push(`${relativePath}: product image is missing descriptive alt text`);
       }

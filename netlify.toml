@@ -5,14 +5,29 @@
 # etc.
 
 [build]
-  command = "node tools/sync-reply-window.js && node tools/generate-sitemap.js"
-  publish = "."
+  # Syncs shared blocks, runs the SEO/HTML/price checks (a failure blocks the deploy),
+  # then publishes only public files from dist/ (no README, scripts, tools or reports).
+  command = "node tools/build.js"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
 
 [[headers]]
   for = "/*"
   [headers.values]
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "DENY"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000"
+    # Report-only first: watch the browser console for violations, then rename to Content-Security-Policy.
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.clarity.ms https://*.clarity.ms https://connect.facebook.net https://www.googletagmanager.com; connect-src 'self' https://formspree.io https://*.clarity.ms https://www.facebook.com https://connect.facebook.net https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; img-src 'self' data: https://www.facebook.com https://*.clarity.ms https://www.google-analytics.com https://*.google-analytics.com https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; font-src 'self'; frame-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self' https://formspree.io; object-src 'none'"
+
+[[headers]]
+  for = "/fonts/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
 
 # Canonicalize alternate hostnames while preserving the requested path.
 [[redirects]]
@@ -57,22 +72,34 @@
   to   = "/privacy/"
   status = 301
 
+[[redirects]]
+  from = "/policies"
+  to   = "/policies/"
+  status = 301
+
+[[redirects]]
+  from = "/bridal-aari-blouse"
+  to   = "/bridal-aari-blouse/"
+  status = 301
+
 # Redirect /thankyou to /thankyou/ for consistency
 [[redirects]]
   from = "/thankyou"
   to   = "/thankyou/"
   status = 301
 
-# Redirect /product to the portfolio permanently
+# Redirect /product to the portfolio permanently (force: never serve a stale file at this path)
 [[redirects]]
   from = "/product"
   to   = "/explore/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/product/"
   to   = "/explore/"
   status = 301
+  force = true
 
 [[redirects]]
   from = "/explore/product.html"

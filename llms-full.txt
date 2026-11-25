@@ -1,64 +1,79 @@
 # Khadeeja Designs - Full Site Content
 
-> Full-text export of the public website for AI assistants and crawlers. The canonical source pages are linked below.
+> Full-text export of the public website for AI assistants and crawlers, generated from the live pages at build time. The canonical source pages are linked below. Key facts are in https://khadeejadesigns.in/llms.txt.
 
 ## Contents
 
-- [Aari Work Blouse Trichy & Tiruchirappalli | Khadeeja Designs](https://khadeejadesigns.in/)
-- [About Khadeeja Designs | Aari Embroidery Studio in Trichy](https://khadeejadesigns.in/about/)
-- [Aari Embroidery Guides for Bridal Blouses | Khadeeja Designs](https://khadeejadesigns.in/blog/)
-- [Aari Embroidery Care Guide | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-embroidery-care-washing-guide/)
+- [Custom Bridal Blouses & Aari Studio | Khadeeja Designs](https://khadeejadesigns.in/)
+- [About Us | Bridal Studio in Trichy | Khadeeja Designs](https://khadeejadesigns.in/about/)
+- [Bridal Aari Embroidery Guides & Tips | Khadeeja Designs](https://khadeejadesigns.in/blog/)
+- [How to Wash & Care for Aari Blouses | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-embroidery-care-washing-guide/)
 - [Aari Motifs: Peacock, Mango & Floral | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-motifs-peacock-mango-floral-meaning/)
-- [Aari Embroidery Styles Compared | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-vs-maggam-vs-zardosi/)
-- [Aari Work Blouse Price Guide | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-work-blouse-price-guide/)
-- [Aari Work Timeline: When to Book | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-work-timeline-when-to-book-wedding/)
-- [Aari Blouse for Kanchipuram Silk Sarees | Khadeeja Designs](https://khadeejadesigns.in/blog/bridal-aari-work-blouse-kanchipuram-silk-sarees/)
+- [Aari vs Maggam vs Zardosi Embroidery | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-vs-maggam-vs-zardosi/)
+- [Aari Work Blouse Price Guide 2026 India | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-work-blouse-price-guide/)
+- [How Long Does Aari Work Take? Timeline | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-work-timeline-when-to-book-wedding/)
+- [Bridal Aari Blouses for Kanchipuram Silk | Khadeeja Designs](https://khadeejadesigns.in/blog/bridal-aari-work-blouse-kanchipuram-silk-sarees/)
 - [Aari Work for Wedding Saree Colours | Khadeeja Designs](https://khadeejadesigns.in/blog/choose-aari-work-wedding-saree-colour/)
 - [Wedding Blouse Aari Embroidery Guide | Khadeeja Designs](https://khadeejadesigns.in/blog/how-to-choose-aari-embroidery-bridal-blouse/)
-- [Simple Aari Designs for Daily Wear | Khadeeja Designs](https://khadeejadesigns.in/blog/simple-aari-work-designs-daily-wear/)
-- [Custom Aari Embroidery Enquiry | Khadeeja Designs](https://khadeejadesigns.in/contact/)
-- [Aari Blouse Designs with Prices | Khadeeja Designs](https://khadeejadesigns.in/explore/)
-- [Bridal Royal Zardosi Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/bridal-royal-zardosi/)
-- [Emerald Jhumka Elegance Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/emerald-jhumka-elegance/)
-- [Magenta Midnight Bloom Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/magenta-midnight-bloom/)
-- [Midnight Gold Vine Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/midnight-gold-vine/)
-- [Midnight Grace Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/midnight-grace/)
-- [Sunset Garden Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/sunset-garden/)
-- [Violet Gold Vine Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/violet-gold-vine/)
-- [Aari Work FAQs: Price & Delivery | Khadeeja Designs](https://khadeejadesigns.in/faq/)
-- [Privacy Policy | Khadeeja Designs](https://khadeejadesigns.in/privacy/)
+- [Simple Aari Work Designs for Daily Wear | Khadeeja Designs](https://khadeejadesigns.in/blog/simple-aari-work-designs-daily-wear/)
+- [Bridal Aari Blouse in Trichy from ₹6,499 | Khadeeja Designs](https://khadeejadesigns.in/bridal-aari-blouse/)
+- [Contact Us | Custom Bridal Aari Studio | Khadeeja Designs](https://khadeejadesigns.in/contact/)
+- [Designs | Bridal Blouses & Aari Work | Khadeeja Designs](https://khadeejadesigns.in/explore/)
+- [Bridal Royal Zardosi Aari Blouse ₹7,499 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/bridal-royal-zardosi/)
+- [Emerald Jhumka Aari Blouse Design ₹4,999 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/emerald-jhumka-elegance/)
+- [Magenta Midnight Bloom Blouse ₹4,499 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/magenta-midnight-bloom/)
+- [Midnight Gold Vine Aari Blouse ₹6,499 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/midnight-gold-vine/)
+- [Midnight Grace Aari Blouse Design ₹1,999 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/midnight-grace/)
+- [Sunset Garden Aari Blouse Design ₹8,499 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/sunset-garden/)
+- [Violet Gold Vine Aari Blouse ₹6,999 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/violet-gold-vine/)
+- [FAQ | Custom Aari Embroidery Answers | Khadeeja Designs](https://khadeejadesigns.in/faq/)
+- [Order and Refund Policy | Aari Studio | Khadeeja Designs](https://khadeejadesigns.in/policies/)
 
 ---
 
-## [Aari Work Blouse Trichy & Tiruchirappalli | Khadeeja Designs](https://khadeejadesigns.in/)
+## [Custom Bridal Blouses & Aari Studio | Khadeeja Designs](https://khadeejadesigns.in/)
 
 Source: https://khadeejadesigns.in/
 
 Boutique Aari Embroidery · Trichy
 
-# Handcrafted Aari Embroidery & Bridal Blouse Designs in Trichy
+# Handcrafted Aari Work Blouses & Bridal Embroidery in Trichy
 
-Discover handcrafted Aari embroidery for bridal blouses, silk sarees and special occasions. Based in Tiruchirappalli, we create custom embroidery for weddings and events across India. Explore our designs, customise your preferred style and enquire with Khadeeja Designs.
+Hand Aari on your own blouse. Prices from ₹1,999. Ready in about 14–21 days.
 
-Browse designs Contact us
+WhatsApp us your saree photo
+Browse designs
+
+We reply within 6 hours during studio hours.
 
 ---
 
-## [About Khadeeja Designs | Aari Embroidery Studio in Trichy](https://khadeejadesigns.in/about/)
+## [About Us | Bridal Studio in Trichy | Khadeeja Designs](https://khadeejadesigns.in/about/)
 
 Source: https://khadeejadesigns.in/about/
 
-# About Khadeeja Designs
+# About Us
 
 A boutique Aari embroidery studio in Trichy creating custom bridal blouses, heirloom details, and carefully crafted embroidery for women who want each stitch to feel personal.
 
-Studio Trichy Craft Hand Aari Focus Custom
+Studio
+Trichy
+
+Craft
+Hand Aari
+
+Focus
+Custom
 
 Khadeeja Designs is rooted in the artistry of Aari embroidery, with each piece designed to balance tradition, craftsmanship, and modern bridal styling.
 
 From bridal blouses to special-occasion garments, the studio focuses on custom work that begins with your reference, your silhouette, and the mood you want your final piece to carry. Every order is discussed closely so the embroidery feels considered, not generic.
 
 We work on customer-supplied garments, keeping the process transparent from the first enquiry to the final finishing details. Designs are handcrafted in studio and tailored to the garment you already love.
+
+“
+
+Thoughtful embroidery, made for real moments and personal stories.
 
 ## Handcrafted
 
@@ -72,11 +87,56 @@ We begin with your garment, your moodboard, and your occasion. The outcome is ta
 
 Appointments are available by request, and the process is designed to be clear, organised, and responsive for each enquiry.
 
-Looking for a custom embroidery brief? Share your blouse or garment details and we’ll guide you through the next steps. Send Enquiry
+Client reviews
+
+## What our clients say
+
+★★★★★
+
+Simple process
+
+## How ordering works
+
+- Step 01
+
+### Share your brief
+
+Send your saree photo, occasion, event date and any reference on WhatsApp or through the enquiry form.
+
+- Step 02
+
+### Get your quote
+
+We confirm the design, the embroidery price, the courier charge and a delivery date for your event.
+
+- Step 03
+
+### Pay the advance and post your blouse
+
+Pay a 50% advance and courier your blouse or saree to our Trichy studio.
+
+- Step 04
+
+### We embroider and ship it back
+
+Your piece is hand-embroidered in about 14–21 days. Pay the balance and we send it back by tracked courier.
+
+Full terms: order, advance and refund policy.
+
+## Join Our Embroidery Community
+
+Follow our behind-the-scenes process, ask questions about Aari work and silk saree coordination, and connect with brides and embroidery enthusiasts. For longer stories and studio insights, explore our Medium articles.
+
+Join the r/AariEmbroidery Community ↗
+Read our extended stories on Medium ↗
+
+Looking for a custom embroidery brief? Share your blouse or garment details and we’ll guide you through the next steps.
+
+Send enquiry
 
 ---
 
-## [Aari Embroidery Guides for Bridal Blouses | Khadeeja Designs](https://khadeejadesigns.in/blog/)
+## [Bridal Aari Embroidery Guides & Tips | Khadeeja Designs](https://khadeejadesigns.in/blog/)
 
 Source: https://khadeejadesigns.in/blog/
 
@@ -86,55 +146,73 @@ Journal
 
 Practical guides to bridal Aari blouses, Kanchipuram silk pairings, embroidery techniques and pricing, saree colours, blouse care, everyday designs, traditional motifs and wedding planning.
 
-Explore the latest guide ↓ BridalMarch 2026
+Explore the latest guide ↓
+
+BridalMarch 2026
 
 ## How to choose the right Aari embroidery style for your wedding blouse
 
 Heavy Zardosi or delicate thread work? Full coverage or neckline-only? Here's how to match the embroidery to your saree, jewellery, and occasion.
 
-Read article → BridalApril 2026
+Read article →
+
+BridalApril 2026
 
 ## Bridal Aari work blouse designs for Kanchipuram silk sarees
 
 Coordinate Aari embroidery, blouse colour, motifs and coverage with the silk, zari border and wedding jewellery.
 
-Read article → Embroidery guideMay 2026
+Read article →
+
+Embroidery guideMay 2026
 
 ## Aari work vs Maggam work vs Zardosi
 
 Understand the differences in technique, texture, materials and comfort before choosing blouse embroidery.
 
-Read article → Pricing guideJune 2026
+Read article →
+
+Pricing guideJune 2026
 
 ## Aari work blouse price guide: what changes the cost?
 
 Compare light, medium and heavy work scopes and learn how coverage, materials and motifs affect a custom quote.
 
-Read article → Bridal stylingJuly 2026
+Read article →
+
+Bridal stylingJuly 2026
 
 ## How to choose Aari work for your wedding saree colour
 
 Use undertones, zari and thoughtful contrast to pair embroidery with red, green, pink, blue or pastel sarees.
 
-Read article → Garment careAugust 2026
+Read article →
+
+Garment careAugust 2026
 
 ## Aari embroidery care and washing guide
 
 Protect delicate blouse embroidery with practical storage, spot-cleaning and washing precautions.
 
-Read article → Everyday styleSeptember 2026
+Read article →
+
+Everyday styleSeptember 2026
 
 ## Simple Aari work designs for daily wear
 
 Discover light neckline, sleeve-border and motif ideas for comfortable everyday saree blouses.
 
-Read article → Motif guideOctober 2026
+Read article →
+
+Motif guideOctober 2026
 
 ## Peacock, mango and floral motifs: designs and meaning
 
 Explore familiar Aari motifs, their common cultural associations and ideas for placement on a blouse.
 
-Read article → Wedding planningNovember 2026
+Read article →
+
+LatestWedding planningNovember 2026
 
 ## How long does Aari work take and when should you book?
 
@@ -144,11 +222,11 @@ Read article →
 
 ---
 
-## [Aari Embroidery Care Guide | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-embroidery-care-washing-guide/)
+## [How to Wash & Care for Aari Blouses | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-embroidery-care-washing-guide/)
 
 Source: https://khadeejadesigns.in/blog/aari-embroidery-care-washing-guide/
 
-← Back to the blogGarment careAugust 2026
+Garment careAugust 2026
 
 # Aari embroidery care and washing guide
 
@@ -167,11 +245,8 @@ For a structured blouse, support the shape with acid-free tissue or a soft cloth
 ## Spot cleaning and stain response
 
 - Act promptly by gently blotting a fresh spill with a clean, dry, lint-free cloth. Do not rub or scrape the embroidery.
-
 - Keep stain removers, bleach, alcohol, perfume and household detergents away from the work unless a professional confirms they are safe.
-
 - Do not pull at a loose thread, bead or stone. Secure the garment and ask an experienced tailor or embroiderer to assess it.
-
 - If the mark remains, take the blouse to a cleaner and explain the fabric and embellishments before treatment.
 
 ## Can you wash an Aari work blouse?
@@ -188,13 +263,23 @@ With careful storage and cleaning choices, you can help preserve your blouse for
 
 Written by Khadeeja Designs · Trichy
 
+Preserve your piece
+
+## Care starts with knowing the work.
+
+Ask about the materials and recommended care when you discuss a custom embroidery design.
+
+Ask about a design →
+
+Related guidesTechniquesCompare Aari, Maggam and ZardosiEveryday styleSimple Aari work for daily wear
+
 ---
 
 ## [Aari Motifs: Peacock, Mango & Floral | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-motifs-peacock-mango-floral-meaning/)
 
 Source: https://khadeejadesigns.in/blog/aari-motifs-peacock-mango-floral-meaning/
 
-← Back to the blogMotif guideOctober 2026
+Motif guideOctober 2026
 
 # Peacock, mango and floral motifs: designs and meaning
 
@@ -217,13 +302,9 @@ Floral motifs can represent beauty, renewal and the natural world. Roses, lotuse
 ## Choose motif scale and placement
 
 - Start from the saree: Borrow one motif or shape from its border or pallu to create a visual connection.
-
 - Match the scale: Small motifs suit narrow borders and simpler blouses; larger motifs need breathing room.
-
 - Think about movement: Curved vines can follow a neckline or sleeve edge; centred motifs create a focal point.
-
 - Keep the design legible: Too many dense details can obscure the outline, especially on a small motif.
-
 - Choose materials deliberately: Thread colour can define the design without making every section heavy with stones or metallic elements.
 
 For a bridal design, discuss how a motif will sit alongside your jewellery and saree work. For a frequently worn blouse, a smaller thread-led motif can preserve comfort and practicality. Our guide to matching Aari work to your saree colour can help coordinate thread and border shades.
@@ -234,13 +315,23 @@ Bring a reference image, but treat it as a starting point. Ask whether the desig
 
 Written by Khadeeja Designs · Trichy
 
+Have a motif in mind?
+
+## Build a design around your story.
+
+Share a reference and the blouse details to discuss scale, placement and colour.
+
+Discuss a motif →
+
+Related guidesColour pairingChoose Aari work for your saree colourSimple designsMotifs for everyday blouses
+
 ---
 
-## [Aari Embroidery Styles Compared | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-vs-maggam-vs-zardosi/)
+## [Aari vs Maggam vs Zardosi Embroidery | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-vs-maggam-vs-zardosi/)
 
 Source: https://khadeejadesigns.in/blog/aari-vs-maggam-vs-zardosi/
 
-← Back to the blogEmbroidery guideMay 2026
+Embroidery guideMay 2026
 
 # Aari work vs Maggam work vs Zardosi
 
@@ -263,11 +354,8 @@ Zardosi (also written Zardozi) is a style of ornate embroidery traditionally ass
 ## Quick comparison for blouse embroidery
 
 - Technique: Aari describes a hooked-needle stitch; Maggam often describes frame-based embellished work; Zardosi describes a decorative metallic embroidery style.
-
 - Visual effect: Aari can range from fine lines to dense fills. Maggam often has a dimensional embellished appearance. Zardosi tends to emphasize metallic, ornate detail.
-
 - Comfort: Thread-led, spaced embroidery usually feels lighter. Dense beads, stones and metal components add weight and can feel less flexible.
-
 - Best use: Choose fine Aari for detailed motifs and lighter coverage; consider richer Maggam or Zardosi elements when you want a formal statement, especially on a bridal blouse.
 
 These are useful guidelines, not strict categories. An Aari blouse may include Zardosi accents, while a Maggam design may use chain stitch and stones together. Fabric, backing, stitch density and placement all contribute to the final result.
@@ -281,34 +369,48 @@ See examples in our blouse design portfolio, then read the Aari blouse price gui
 ## Questions worth asking before you order
 
 - Which parts are hand-embroidered and which materials are being used?
-
 - How dense and heavy will the finished design feel?
-
 - Will the embroidery be comfortable with my chosen neckline and jewellery?
-
 - How should I store and clean the completed blouse?
 
 When the technique names are clarified in practical terms, it becomes much easier to choose embroidery that looks right, suits the occasion and feels comfortable to wear.
 
 Written by Khadeeja Designs · Trichy
 
+Need design guidance?
+
+## Let's discuss your blouse.
+
+Share your saree and reference images to talk through technique, finish and coverage.
+
+Send a design enquiry →
+
+Related guidesPricingWhat changes the cost of Aari work?AftercareCare for embroidered blouses
+
 ---
 
-## [Aari Work Blouse Price Guide | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-work-blouse-price-guide/)
+## [Aari Work Blouse Price Guide 2026 India | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-work-blouse-price-guide/)
 
 Source: https://khadeejadesigns.in/blog/aari-work-blouse-price-guide/
 
-← Back to the blogPricing guideJune 2026
+Pricing guideJune 2026
 
 # Aari work blouse price guide: what changes the cost?
 
-There is no single price for a custom Aari blouse. This guide explains how to compare light, medium and heavy design scopes and what details an embroiderer needs to give you a clear quote.
+There is no single price for a custom Aari blouse. This guide gives our real rupee prices for light, medium and heavy Aari work and explains what changes the cost.
 
 Searching for an Aari work blouse price is a sensible first step, but a useful quote depends on the specific design. Two blouses described as “bridal Aari work” can require very different amounts of handwork, materials and finishing. Instead of relying on a generic online figure, compare the proposed scope and ask what the price includes.
 
-About these bands: The ranges below describe relative design scope, not rupee prices. Khadeeja Designs quotes custom work after reviewing your brief; no fixed price is implied by these categories.
+Our actual prices: The table below lists Khadeeja Designs' current starting prices for hand Aari embroidery on a blouse you supply, grouped by how much work each design needs. The blouse itself and courier are not included. Your final quote depends on the changes you ask for.
 
-## Three Aari blouse price bands by work scope
+Khadeeja Designs Aari embroidery prices (embroidery on your blouse; blouse and courier not included)
+
+- Work level | Price | Typical coverage | Our designs |
+- Light / accent work | from ₹1,999 | Neckline and sleeve borders, scattered motifs | Midnight Grace (₹1,999) |
+- Medium / balanced work | ₹4,499–₹4,999 | Several coordinated sections, beads and tassels | Magenta Midnight Bloom (₹4,499), Emerald Jhumka Elegance (₹4,999) |
+- Heavy / bridal work | ₹6,499–₹8,499 | Dense motifs over most of the blouse, layered embellishment | Midnight Gold Vine (₹6,499), Violet Gold Vine (₹6,999), Bridal Royal Zardosi (₹7,499), Sunset Garden (₹8,499) |
+
+## What each price band looks like
 
 ### Light / accent work
 
@@ -325,13 +427,9 @@ Typically covers a larger part of the blouse with dense motifs, layered material
 ## What affects an Aari blouse quote?
 
 - Coverage and density: The embroidered area and how tightly the stitches or embellishments are packed are major contributors.
-
 - Materials: Thread-only work differs from work that includes stones, beads, sequins, metallic elements or multiple material types.
-
 - Motif complexity: Fine outlines and small repeated motifs take a different effort from layered peacocks, florals or custom compositions.
-
 - Placement and finish: Front, back, sleeves and borders each add design and execution steps. Fabric condition and backing needs can matter too.
-
 - Timeline: A requested rush deadline may affect feasibility and scheduling. Confirm this before accepting a quote rather than assuming it can be expedited.
 
 ## How to get a more accurate custom embroidery quote
@@ -344,13 +442,23 @@ If you are comparing embellishment styles, our guide to Aari work vs Maggam work
 
 Written by Khadeeja Designs · Trichy
 
+Want a tailored estimate?
+
+## Share your design brief.
+
+Send your blouse fabric, reference design, coverage and event date for a quote based on your requirements.
+
+Request a custom quote
+
+Related guidesCompare techniquesAari, Maggam and Zardosi explainedPlan aheadHow long Aari embroidery takes
+
 ---
 
-## [Aari Work Timeline: When to Book | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-work-timeline-when-to-book-wedding/)
+## [How Long Does Aari Work Take? Timeline | Khadeeja Designs](https://khadeejadesigns.in/blog/aari-work-timeline-when-to-book-wedding/)
 
 Source: https://khadeejadesigns.in/blog/aari-work-timeline-when-to-book-wedding/
 
-← Back to the blogWedding planningNovember 2026
+Wedding planningNovember 2026
 
 # How long does Aari work take and when should you book?
 
@@ -367,25 +475,17 @@ If your blouse is already stitched or your design is simple, the process may be 
 ## What affects an Aari embroidery timeline?
 
 - Design scale and stitch density: Large motifs and dense coverage require more handwork than a small neckline or sleeve border.
-
 - Number of pieces: Multiple blouses or matching garments need coordinated planning.
-
 - Material and design approvals: Changes made after work starts can add steps; late decisions may delay the agreed schedule.
-
 - Fabric readiness: Confirm whether the studio needs unstitched fabric, a stitched blouse or a pattern/template, and when it must arrive.
-
 - Fittings and finishing: Leave time for tailoring, alterations, inspection and safe packing before travel or the event.
-
 - Seasonal workload: Wedding dates cluster, so a studio's available capacity varies throughout the year.
 
 ## Work backwards from your wedding date
 
 - As early as possible: Share your date, saree details, reference images and budget preferences; ask about availability and lead time.
-
 - Before production: Finalise design placement, colours, materials, coverage, quote and the date the studio expects the blouse or fabric.
-
 - During the work: Respond promptly if a design clarification or approval is needed.
-
 - Before the event: Reserve time for fitting, final checks and collection or delivery. Avoid scheduling completion for the day before travel.
 
 ## What if the wedding is soon?
@@ -396,13 +496,23 @@ Read our Aari work blouse price guide to see how design scope affects quotes, an
 
 Written by Khadeeja Designs · Trichy
 
+Wedding date in mind?
+
+## Check availability early.
+
+Share your event date, saree and design reference so the timeline can be discussed clearly.
+
+Ask about availability →
+
+Related guidesPricingWhat changes an Aari blouse quote?Bridal designAari blouses for Kanchipuram silk
+
 ---
 
-## [Aari Blouse for Kanchipuram Silk Sarees | Khadeeja Designs](https://khadeejadesigns.in/blog/bridal-aari-work-blouse-kanchipuram-silk-sarees/)
+## [Bridal Aari Blouses for Kanchipuram Silk | Khadeeja Designs](https://khadeejadesigns.in/blog/bridal-aari-work-blouse-kanchipuram-silk-sarees/)
 
 Source: https://khadeejadesigns.in/blog/bridal-aari-work-blouse-kanchipuram-silk-sarees/
 
-← Back to the blogBridal stylingApril 2026
+Bridal stylingApril 2026
 
 # Bridal Aari work blouse designs for Kanchipuram silk sarees
 
@@ -419,9 +529,7 @@ For a coordinated Kanchipuram silk saree blouse, sample thread and embellishment
 ## Choose coverage that suits the occasion
 
 - Border-focused Aari work: A neat frame around the neckline and sleeves complements a saree with a prominent zari border.
-
 - Motif placement: One or two peacocks, paisleys or floral clusters can connect the blouse to the saree's pallu without making the whole outfit busy.
-
 - Heavier bridal embroidery: Consider a more ornate back or sleeve when the saree is comparatively simple and the blouse is intended to be a focal point.
 
 Think about how the blouse will feel through the ceremony too. Dense stones and metal elements add weight; lighter thread-led Aari work can be more comfortable for a long wedding day.
@@ -435,16 +543,23 @@ For styling inspiration, browse our bridal Aari blouse designs and note the deta
 ## Before you commission a Kanchipuram bridal blouse
 
 - Bring the saree or clear daylight photos that show its body, border and pallu.
-
 - Share your blouse fabric, preferred neckline and sleeve length.
-
 - Tell your embroiderer what jewellery you plan to wear and which areas should stay light.
-
 - Approve a design placement and quote before work begins.
 
 The best Aari work blouse for a Kanchipuram silk saree feels considered rather than crowded. A clear colour relationship, one strong design idea and thoughtful placement can make the bridal outfit feel personal while respecting the beauty of the silk.
 
 Written by Khadeeja Designs · Trichy
+
+Planning your blouse?
+
+## Share your saree details.
+
+Tell us the colour, fabric and occasion so we can discuss suitable embroidery options and timing.
+
+Send a design enquiry →
+
+Related guidesColour guideCoordinate Aari embroidery with your sareeWedding planningWhen to book your Aari blouse
 
 ---
 
@@ -452,7 +567,7 @@ Written by Khadeeja Designs · Trichy
 
 Source: https://khadeejadesigns.in/blog/choose-aari-work-wedding-saree-colour/
 
-← Back to the blogBridal stylingJuly 2026
+Bridal stylingJuly 2026
 
 # How to choose Aari work for your wedding saree colour
 
@@ -469,13 +584,9 @@ Exact matching is not always necessary. A close but slightly different shade can
 ## Ideas for common bridal saree colours
 
 - Red and maroon: Gold, antique-gold and warm-toned thread can reinforce a traditional palette. Add a contrasting accent only if it appears elsewhere in the saree or styling.
-
 - Green: Gold is a classic companion; pink, red or a lighter green can work as a selective motif detail. Check that the shades do not compete with the border.
-
 - Pink and magenta: Gold creates warmth, while tonal pinks keep the look cohesive. A small green or blue accent can add definition when the saree already carries that colour.
-
 - Blue and violet: Gold can bring warmth and visibility; silver-toned or cool thread can create a quieter, coordinated look.
-
 - Pastels and cream: Fine tonal thread or restrained metallic details preserve the softer effect. Dense high-contrast work changes the mood and becomes the focal point.
 
 ## Balance colour with embroidery coverage
@@ -485,18 +596,24 @@ If your saree has a colourful border or elaborate pallu, let one of those featur
 ## Make a reliable colour decision
 
 - Bring the saree or a daylight photograph with a neutral colour reference.
-
 - Choose the main embroidery shade from the saree body, border or jewellery.
-
 - Limit accent colours and repeat them deliberately rather than adding many unrelated shades.
-
 - Review the sample in daylight and warm indoor light before approving it.
-
 - Consider whether the embroidery should stand out in portraits or blend into the overall outfit.
 
 For more ideas, see our guide to Kanchipuram silk bridal blouses and browse the Aari blouse portfolio. A considered colour plan is one that feels right beside your actual saree not just in an inspiration image.
 
 Written by Khadeeja Designs · Trichy
+
+Need help pairing colours?
+
+## Start with your saree.
+
+Share a daylight photo, saree border and your preferred blouse fabric to discuss a coordinated design.
+
+Discuss your design →
+
+Related guidesBridal blouseAari designs for Kanchipuram silkMotifsPeacock, mango and floral design ideas
 
 ---
 
@@ -504,13 +621,15 @@ Written by Khadeeja Designs · Trichy
 
 Source: https://khadeejadesigns.in/blog/how-to-choose-aari-embroidery-bridal-blouse/
 
-← Back to Blog Bridal March 2026 · 6 min read
+Bridal
+March 2026
+· 6 min read
 
 # How to choose the right Aari embroidery style for your wedding blouse
 
 Heavy Zardosi or delicate thread work? Full coverage or neckline-only? Here's a practical guide to matching the embroidery to your saree, jewellery, and event.
 
-![Aari embroidery bridal blouse guide](https://khadeejadesigns.in/blog/how-to-choose-aari-embroidery-bridal-blouse/aari-embroidery-bridal-blouse-guide_1536w.webp)
+Image unavailable: aari-embroidery-bridal-blouse-guide.png
 
 Choosing embroidery for your wedding blouse is one of those decisions that sounds simple until you actually start doing it. There are dozens of styles, multiple techniques, and no shortage of opinions from everyone around you. After years of working with brides across Tamil Nadu, these are the questions we ask every customer before touching the needle.
 
@@ -586,13 +705,32 @@ If you have even half of these answers, we have enough to start the conversation
 
 Written by Khadeeja Designs · Trichy · June 2025
 
+Ready to order?
+
+### Start with your design brief.
+
+No commitment. We reply within 6 hours during studio hours. Share your saree details for options and pricing.
+
+Enquire about a bridal Aari blouse in Trichy →
+
+More from the blog
+
+Guide
+Explore bridal Aari blouse designs in Trichy
+
+Care
+How to care for your embroidered blouse after the wedding
+
+FAQ
+Common questions about ordering
+
 ---
 
-## [Simple Aari Designs for Daily Wear | Khadeeja Designs](https://khadeejadesigns.in/blog/simple-aari-work-designs-daily-wear/)
+## [Simple Aari Work Designs for Daily Wear | Khadeeja Designs](https://khadeejadesigns.in/blog/simple-aari-work-designs-daily-wear/)
 
 Source: https://khadeejadesigns.in/blog/simple-aari-work-designs-daily-wear/
 
-← Back to the blogEveryday styleSeptember 2026
+Everyday styleSeptember 2026
 
 # Simple Aari work designs for daily wear
 
@@ -603,13 +741,9 @@ Daily wear blouse embroidery works best when it fits your routine. If you wear t
 ## Five simple Aari blouse design ideas
 
 - Fine neckline outline: A slim chain-stitch line defines a round, square or V neckline while keeping the rest of the blouse clean.
-
 - Sleeve-edge border: A narrow vine or repeated dot-and-leaf pattern adds a finished look to short or elbow sleeves.
-
 - Small floral cluster: Place a few flowers near the shoulder or sleeve rather than repeating them across every panel.
-
 - Single back motif: A modest paisley, flower or geometric element can make the back interesting without adding all-over weight.
-
 - Tonal thread detail: A thread shade close to the blouse fabric gives subtle texture that pairs easily with printed or woven sarees.
 
 ## Choose comfort-first placement
@@ -630,65 +764,233 @@ Simple Aari work does not mean generic. A thoughtfully placed flower, a fine bor
 
 Written by Khadeeja Designs · Trichy
 
+A custom everyday blouse
+
+## Keep it personal and wearable.
+
+Tell us the saree, blouse fabric and how you plan to wear it.
+
+Discuss a simple design →
+
+Related guidesGarment careWash and store embroidery thoughtfullyMotif ideasChoose a motif with meaning
+
 ---
 
-## [Custom Aari Embroidery Enquiry | Khadeeja Designs](https://khadeejadesigns.in/contact/)
+## [Bridal Aari Blouse in Trichy from ₹6,499 | Khadeeja Designs](https://khadeejadesigns.in/bridal-aari-blouse/)
+
+Source: https://khadeejadesigns.in/bridal-aari-blouse/
+
+Bridal embroidery · Trichy
+
+# Bridal Aari Work Blouses in Trichy
+
+Hand Aari embroidery on your own wedding blouse, matched to your saree and delivered anywhere in India.
+
+- From ₹6,499bridal embroidery on your blouse
+
+- 14–21 daysat the frame after your blouse arrives
+
+- Pan-Indiatracked courier both ways
+
+WhatsApp your wedding date
+See bridal designs
+
+We reply within 6 hours during studio hours. Blouse and courier are not included in the price.
+
+Bridal designs
+
+## What our brides choose
+
+Each design can be adapted: thread colours matched to your saree, a lighter or denser fill, or a different neckline and sleeve. Prices are for the hand embroidery on the blouse you send us.
+
+Muhurtham · heaviest
+
+### Bridal Royal Zardosi Blouse
+
+₹7,499 embroidery on your blouse
+
+Reception · rich
+
+### Midnight Gold Vine Blouse
+
+₹6,499 embroidery on your blouse
+
+Engagement · festive
+
+### Emerald Jhumka Elegance Blouse
+
+₹4,999 embroidery on your blouse
+
+Client reviews
+
+## What our clients say
+
+★★★★★
+
+Simple process
+
+## How ordering works
+
+- Step 01
+
+### Share your brief
+
+Send your saree photo, occasion, event date and any reference on WhatsApp or through the enquiry form.
+
+- Step 02
+
+### Get your quote
+
+We confirm the design, the embroidery price, the courier charge and a delivery date for your event.
+
+- Step 03
+
+### Pay the advance and post your blouse
+
+Pay a 50% advance and courier your blouse or saree to our Trichy studio.
+
+- Step 04
+
+### We embroider and ship it back
+
+Your piece is hand-embroidered in about 14–21 days. Pay the balance and we send it back by tracked courier.
+
+Full terms: order, advance and refund policy.
+
+## Bridal blouse questions
+
+### How much does a bridal Aari blouse cost?
+
+Our bridal designs are listed at ₹6,499 (Midnight Gold Vine) and ₹7,499 (Bridal Royal Zardosi) for the hand embroidery on your blouse. Lighter festive designs start at ₹1,999. The blouse and courier are not included. Changes to coverage, stones or motifs can move the price up or down; we confirm it in writing before you pay.
+
+### How early should I book for my wedding?
+
+At least 4–6 weeks before the wedding. The embroidery takes about 14–21 days at the frame, and courier both ways adds a few days. In peak wedding months, book earlier so we can hold a slot for you.
+
+### Can you match the blouse to my Kanchipuram silk saree?
+
+Yes. Send a daylight photo of the saree body, border and pallu on WhatsApp. We pick thread, zari and bead shades against it and suggest motifs that echo the border.
+
+### I live outside Trichy. Can I still order?
+
+Yes. Most of our brides order by courier from across Tamil Nadu and India. You post the blouse to our Trichy studio and we return it by tracked courier.
+
+### What if something is not right when it arrives?
+
+Tell us within 7 days with photos. We fix anything that does not match the approved design free of charge. See our order and refund policy.
+
+## Tell us your wedding date
+
+Send a photo of your saree and your wedding date. We will suggest a design, confirm the price and courier charge, and tell you the latest date to post your blouse.
+
+WhatsApp your wedding date
+Use the enquiry form
+
+---
+
+## [Contact Us | Custom Bridal Aari Studio | Khadeeja Designs](https://khadeejadesigns.in/contact/)
 
 Source: https://khadeejadesigns.in/contact/
 
 Get in touch
 
-# Get a Custom Aari Blouse Quote
+# Contact Us
 
 Tell us your saree, occasion and event date. We'll discuss the design, price and timeline before you confirm.
 
-Reach us directly Emailcontact@khadeejadesigns.in Phone+91 86674 54391 Instagram@khadeeja.designs HoursMon–Sat: 10:00 AM–7:00 PMSunday: By appointment Studio address
+Reach us directly
 
-17 East Sayakara LaneJaffersha StreetTrichy – 620008
+Emailcontact@khadeejadesigns.in
+
+Phone+91 86674 54391
+
+Instagram@khadeeja.designs
+
+HoursMon–Sat: 10:00 AM–7:00 PM
+Sunday: By appointment
+
+Studio address
+17 East Sayakara Lane
+Jaffersha Street
+Trichy – 620008
 
 View on Google Maps
 
 ## Send your enquiry.
 
-WhatsApp Call +91 86674 54391
+WhatsApp
+Call +91 86674 54391
 
 We reply within 6 hours during studio hours. We'll share pricing and next steps.
 
+Prefer photos? Send your saree and reference pictures on WhatsApp. Only your name and mobile number are required below.
+
 Have questions before enquiring? Read our FAQ →
 
-Selected design Change design → Your name Please enter your name. Mobile number Please enter a valid mobile number. City Please enter your city. Event date · optional Brief or message · optional Leave this field empty
+Client reviews
 
-Formspree securely delivers your enquiry to us. Privacy details
+## What our clients say
 
-Send Enquiry →
+★★★★★
+
+Simple process
+
+## How ordering works
+
+- Step 01
+
+### Share your brief
+
+Send your saree photo, occasion, event date and any reference on WhatsApp or through the enquiry form.
+
+- Step 02
+
+### Get your quote
+
+We confirm the design, the embroidery price, the courier charge and a delivery date for your event.
+
+- Step 03
+
+### Pay the advance and post your blouse
+
+Pay a 50% advance and courier your blouse or saree to our Trichy studio.
+
+- Step 04
+
+### We embroider and ship it back
+
+Your piece is hand-embroidered in about 14–21 days. Pay the balance and we send it back by tracked courier.
+
+Full terms: order, advance and refund policy.
 
 ## Before You Send an Enquiry
 
-How can I order Aari embroidery from Khadeeja Designs?
+### How can I order Aari embroidery from Khadeeja Designs?
 
-Browse our design collection, select a design you like and use the enquiry option to share your requirements. You can also contact us through Instagram or email to discuss a customised order.
+Send your saree photo and event date on WhatsApp, or fill in the form above. We confirm the design, price, courier charge and delivery date. You then pay a 50% advance and courier your blouse to our Trichy studio. Full terms are on the order and refund policy page.
 
-Do you accept customised bridal blouse orders?
+### Do you accept customised bridal blouse orders?
 
 Yes, you can discuss customised bridal blouse embroidery according to your preferred colours, motifs, neckline and sleeve details. Share your reference image and event date to help us understand your requirements.
 
-Can I share my design reference?
+### Can I share my design reference?
 
-Yes, you can share design reference images and your requirements through Instagram, email, or the enquiry form. This helps us understand your preferred embroidery style before discussing the quotation.
+Yes, you can share design reference images and your requirements on WhatsApp (easiest for photos), Instagram, email or the enquiry form. This helps us understand your preferred embroidery style before discussing the quotation.
 
-Do you accept Aari embroidery orders from other cities?
+### Do you accept Aari embroidery orders from other cities?
 
 Yes, Khadeeja Designs is based in Trichy, Tamil Nadu, and offers delivery across India. Contact us to discuss your requirements and shipping arrangements.
 
-How soon will I receive a response to my enquiry?
+### How soon will I receive a response to my enquiry?
 
-We reply within 6 hours during studio hours (9 am to 8 pm, Mon to Sat). Please share your design requirements, preferred timeline and contact information so we can assist you. See the full FAQ page for more answers.
+We reply within 6 hours during studio hours (10 am to 7 pm, Mon to Sat (Sunday by appointment)). Please share your design requirements, preferred timeline and contact information so we can assist you. See the full FAQ page for more answers.
 
-WhatsApp Call
+WhatsApp
+Call
 
 ---
 
-## [Aari Blouse Designs with Prices | Khadeeja Designs](https://khadeejadesigns.in/explore/)
+## [Designs | Bridal Blouses & Aari Work | Khadeeja Designs](https://khadeejadesigns.in/explore/)
 
 Source: https://khadeejadesigns.in/explore/
 
@@ -698,19 +1000,49 @@ Portfolio
 
 Browse handcrafted Aari blouse designs from Khadeeja Designs in Trichy, including bridal and designer styles with floral motifs, gold embroidery, beadwork and Zardosi-inspired details. Each design page shows images, embroidery details and its listed price. Use the collection filters to explore bridal or designer pieces, then open a design to review its details. For Aari work to complement a Kanchipuram silk saree, share the saree colour, border and occasion when you enquire. We can discuss customisation, including colour, motif and placement preferences, before confirming a quote. Orders can be delivered across India; timelines and shipping details are confirmed with your enquiry.
 
-All
+How pricing works: every price is for hand Aari embroidery on the blouse you send us. The blouse and courier are not included. How ordering works
 
-Bridal
+Bridal Royal Zardosi
 
-Designer
+₹7,499embroidery on your blouse
 
-Bridal Royal Zardosi₹7,499View Design → Emerald Jhumka Elegance₹4,999View Design → Magenta Midnight Bloom₹4,499View Design → Midnight Gold Vine₹6,499View Design → Sunset Garden₹8,499View Design → Violet Gold Vine₹6,999View Design → Midnight Grace₹1,999View Design →
+View design
 
-Showing the saved catalogue. It could not be refreshed just now.
+Emerald Jhumka Elegance
 
-Retry
+₹4,999embroidery on your blouse
 
-JavaScript is off. You can still browse all designs; category filters require JavaScript.
+View design
+
+Magenta Midnight Bloom
+
+₹4,499embroidery on your blouse
+
+View design
+
+Midnight Gold Vine
+
+₹6,499embroidery on your blouse
+
+View design
+
+Sunset Garden
+
+₹8,499embroidery on your blouse
+
+View design
+
+Violet Gold Vine
+
+₹6,999embroidery on your blouse
+
+View design
+
+Midnight Grace
+
+₹1,999embroidery on your blouse
+
+View design
 
 ## Bridal Aari Blouse Designs in Trichy
 
@@ -738,509 +1070,698 @@ Discuss custom Aari embroidery →
 
 ## Aari Blouse Design Questions
 
-What types of Aari blouse designs are available?
+### What types of Aari blouse designs are available?
 
 Khadeeja Designs showcases different styles of handcrafted blouse embroidery, including bridal-inspired designs, floral motifs, traditional patterns and decorative gold embroidery. Browse our collection to explore available designs.
 
-What is the price range of Aari work blouses?
+### What is the price range of Aari work blouses?
 
 The price of an Aari work blouse depends on the design, embroidery coverage, materials and level of detailing. Each design in our portfolio displays its listed price. Customised requirements may have a different quotation depending on the requested work.
 
-Are Aari blouse designs handmade?
+### Are Aari blouse designs handmade?
 
 Khadeeja Designs focuses on handcrafted Aari embroidery. Each order is planned according to the selected design and embroidery requirements. Contact us if you would like to know more about the techniques used for a particular design.
 
-Which Aari blouse designs are suitable for silk sarees?
+### Which Aari blouse designs are suitable for silk sarees?
 
 The right Aari blouse design depends on your saree colour, fabric, border, pallu and jewellery. Traditional gold embroidery, floral motifs and carefully selected decorative patterns can complement silk sarees. We can help you discuss suitable design options.
 
-Can I order a design shown in the portfolio?
+### Can I order a design shown in the portfolio?
 
 You can enquire about any design displayed in our portfolio. Select your preferred design and use the enquiry option to share your requirements. We will discuss availability, customisation and pricing before confirming your order.
 
-How do I enquire about a particular Aari blouse design?
+### How do I enquire about a particular Aari blouse design?
 
 Open your preferred design, review its details and select the Make It Yours option. You will be directed to our enquiry page, where you can share your contact information and design requirements. We reply within 6 hours during studio hours.
 
 ---
 
-## [Bridal Royal Zardosi Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/bridal-royal-zardosi/)
+## [Bridal Royal Zardosi Aari Blouse ₹7,499 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/bridal-royal-zardosi/)
 
 Source: https://khadeejadesigns.in/explore/designs/bridal-royal-zardosi/
 
-Home / Explore Designs / Bridal Royal Zardosi BlouseBridal Blouse
+Bridal Blouse · Hand Aari on your blouse
 
 # Bridal Royal Zardosi Blouse
 
 ₹7,499
 
+Hand Aari work on the blouse you send us. The price covers the embroidery. The blouse and courier are not included.
+
 A statement bridal blouse featuring dense gold-toned embroidery, pearl accents and red bead detailing.
 
-## Bridal Royal Zardosi: Design Details
+### Design Details
 
 A richly embellished bridal blouse with a softly structured neckline, detailed sleeve work and decorative bead accents.
 
-## Bridal Royal Zardosi: Embroidery Details
+### Embroidery Details
 
-Category: Bridal BlouseWork type: Aari-style embroidery · Zardosi-style embellishment · BeadworkColour and motifs: gold-toned embroidery with red and pearl-like accents
+Category: Bridal Blouse
+Work type: Aari-style embroidery · Zardosi-style embellishment · Beadwork
+Colour and motifs: gold-toned embroidery with red and pearl-like accents
 
-## What makes this blouse distinctive?
+### What makes this blouse distinctive?
 
-This bridal royal zardosi blouse brings together aari-style embroidery · zardosi-style embellishment · beadwork with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
+This bridal royal zardosi blouse brings together aari-style embroidery, zardosi-style embellishment, and beadwork with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
 
-## What the listed price includes
+### What the listed price includes
 
 Hand embroidery work on the customer-supplied blouse or garment, including the design consultation and the work shown in the listed design.
 
-## What is quoted separately
+### What is quoted separately
 
 Courier charges, the blouse/garment itself, and any extra material changes beyond the listed design are quoted separately.
 
+### How delivery works
+
+- Garment: You supply the blouse or garment. We embroider it.
+- Delivery: The customer sends the blouse or saree by courier to the studio; the completed piece is returned by tracked delivery after the embroidery is finished.
+- Courier: Courier charges both ways are quoted separately and shown in your quote before you pay anything.
+
+See the full order and refund policy.
+
 We reply within 6 hours during studio hours.
 
-Make It Yours → Chat about this design on WhatsApp
+Make It Yours
+Discuss on
+
+- 1. Post your blouseCourier it to our Trichy studio after you confirm the quote.
+- 2. We hand-embroider itAbout 14–21 days at the frame.
+- 3. Tracked delivery backAnywhere in India, with a tracking link.
+
+## Bridal Royal Zardosi Blouse: Materials, Styling and Timing
+
+There is a certain hush that settles around a red-and-gold bridal blouse, and Bridal Royal Zardosi is made for that moment. A softly structured neckline is traced in dense gold-toned zardosi-style embroidery, while red beads and pearl-like accents catch the light with every turn. Detailed sleeve work carries the richness outward, so the blouse feels complete from every angle, and the silhouette stays graceful rather than heavy. From the first fitting to the final photograph, it is a piece meant to be remembered.
+
+Held against a Kanchipuram silk, the warm gold and red palette glows, especially in deep maroon, rust or classic red. Our artisans hand-embroider every piece to order in Trichy, shaping the density and placement around your saree, your jewellery and the way you want to feel on the day.
+
+- Saree pairingsDeep maroon, ruby red, rust and traditional gold Kanchipuram silk all sit beautifully with this gold-and-red palette. Cream or deep green works when the saree border echoes those tones. Share a daylight photo of your saree and we will match the exact shade together.
+- Pricing noteCustom hand embroidery starts at ₹7,499 on blouse fabric you supply. Garment stitching, material customisations and courier charges are separate.
+- Booking & timelineEach piece is handcrafted to order in Trichy. Share your wedding or event date on WhatsApp or through the enquiry form and we will confirm the exact delivery timeline for your brief.
+
+Client reviews
+
+## What our clients say
+
+★★★★★
 
 ## Bridal Royal Zardosi FAQs
 
-What makes the Bridal Royal Zardosi blouse design unique?
+### Is Bridal Royal Zardosi suitable for the muhurtham?
 
-A statement bridal blouse featuring dense gold-toned embroidery, pearl accents and red bead detailing. A richly embellished bridal blouse with a softly structured neckline, detailed sleeve work and decorative bead accents.
+Yes, this is our heaviest bridal design. Dense gold work with pearl and red accents is made to hold its own next to a rich Kanchipuram silk and temple jewellery in wedding photographs.
 
-Is the Bridal Royal Zardosi Blouse design suitable for bridal wear?
+### Which sarees go well with Bridal Royal Zardosi?
 
-This design is listed in the bridal category and is presented as a bridal blouse option. Suitability for your wedding saree and occasion should be discussed with Khadeeja Designs.
+Deep maroon, ruby red, rust and traditional gold Kanchipuram silk. Cream or deep green also works when the border has red and gold in it. Send a daylight photo of your saree and we will match the thread shades to it.
 
-What embroidery techniques are used in the Bridal Royal Zardosi Blouse design?
+### How early should I book a bridal design like this?
 
-The product data describes the work as Aari-style embroidery · Zardosi-style embellishment · Beadwork.
+Book at least 4–6 weeks before the wedding. The embroidery itself takes about 14–21 days; the rest covers courier time, a fitting check and any changes. In peak wedding months, earlier is safer.
 
-Can I customise the colours and motifs of this design?
+### Can you change the colours or motifs on Bridal Royal Zardosi?
 
-You can discuss changes to colours, motifs, placement, embroidery density, neckline and sleeve details. Feasibility is confirmed after reviewing your requirements.
+Yes. Most brides change something: the thread colour to match their saree, a denser or lighter fill, or a different neckline and sleeve finish. Send your saree photo on WhatsApp and we will tell you what works and whether it changes the price.
 
-Which saree colours complement the Bridal Royal Zardosi blouse?
+### How do I order Bridal Royal Zardosi?
 
-As a suggestion, sarees that coordinate with gold-toned embroidery with red and pearl-like accents may complement this blouse. Final matching depends on the saree fabric, border, pallu and jewellery.
+Tap WhatsApp or Make It Yours and send your saree photo and event date. We confirm the design, price, courier charge and delivery date. You pay a 50% advance, courier your blouse to our Trichy studio, and we send it back by tracked courier once the work is done.
 
-Can I request changes to the neckline and sleeve details?
-
-You can discuss neckline and sleeve changes with the studio. The team will confirm whether a requested alteration is feasible for this design.
-
-How can I order the Bridal Royal Zardosi blouse?
-
-To enquire about the Bridal Royal Zardosi Blouse, select the Make It Yours option on this page. Share your contact information and requirements through our enquiry form. Our team will get back to you within 6 hours during studio hours to discuss pricing and next steps.
+From our blogRelated guideHow to choose an Aari embroidery style for your wedding blouse
 
 ---
 
-## [Emerald Jhumka Elegance Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/emerald-jhumka-elegance/)
+## [Emerald Jhumka Aari Blouse Design ₹4,999 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/emerald-jhumka-elegance/)
 
 Source: https://khadeejadesigns.in/explore/designs/emerald-jhumka-elegance/
 
-Home / Explore Designs / Emerald Jhumka Elegance BlouseDesigner Blouse
+Designer Blouse · Hand Aari on your blouse
 
 # Emerald Jhumka Elegance Blouse
 
 ₹4,999
 
+Hand Aari work on the blouse you send us. The price covers the embroidery. The blouse and courier are not included.
+
 An emerald green blouse with ornate gold oval borders, scattered motifs and traditional jhumka-style back tassels.
 
-## Emerald Jhumka Elegance: Design Details
+### Design Details
 
 The front showcases a rounded neckline framed by repeated gold oval motifs, matching embellished sleeve cuffs and a coordinated lower border. The back features a wide U-shaped neckline and jhumka-style tassels.
 
-## Emerald Jhumka Elegance: Embroidery Details
+### Embroidery Details
 
-Category: Designer BlouseWork type: Aari-style gold embroidery · Beadwork · Jhumka-style tasselsColour and motifs: emerald green and gold
+Category: Designer Blouse
+Work type: Aari-style gold embroidery · Beadwork · Jhumka-style tassels
+Colour and motifs: emerald green and gold
 
-## What makes this blouse distinctive?
+### What makes this blouse distinctive?
 
-This emerald jhumka elegance blouse brings together aari-style gold embroidery · beadwork · jhumka-style tassels with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
+This emerald jhumka elegance blouse brings together aari-style gold embroidery, beadwork, and jhumka-style tassels with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
 
-## What the listed price includes
+### What the listed price includes
 
 Hand embroidery work on the customer-supplied blouse or garment, including the design consultation and the work shown in the listed design.
 
-## What is quoted separately
+### What is quoted separately
 
 Courier charges, the blouse/garment itself, and any extra material changes beyond the listed design are quoted separately.
 
+### How delivery works
+
+- Garment: You supply the blouse or garment. We embroider it.
+- Delivery: The customer sends the blouse or saree by courier to the studio; the completed piece is returned by tracked delivery after the embroidery is finished.
+- Courier: Courier charges both ways are quoted separately and shown in your quote before you pay anything.
+
+See the full order and refund policy.
+
 We reply within 6 hours during studio hours.
 
-Make It Yours → Chat about this design on WhatsApp
+Make It Yours
+Discuss on
+
+- 1. Post your blouseCourier it to our Trichy studio after you confirm the quote.
+- 2. We hand-embroider itAbout 14–21 days at the frame.
+- 3. Tracked delivery backAnywhere in India, with a tracking link.
+
+## Emerald Jhumka Elegance Blouse: Materials, Styling and Timing
+
+Emerald Jhumka Elegance begins with a deep emerald base that seems to hold the light rather than reflect it. At the front, a rounded neckline is framed by a rhythm of gold oval motifs, repeated along the sleeve cuffs and lower border for a beautifully composed finish. Turn, and the wide U-shaped back reveals jhumka-style tassels that sway softly as you move.
+
+The silhouette is classic and flattering, made to sit gracefully under a silk saree without competing with it. Pair it with bottle green, gold, or a bright contrast like red or cream, and the motifs find their echo in the border and pallu. Each blouse is handcrafted to order in our Trichy studio, where the gold aari work, beadwork and tassel detail come together.
+
+- Saree pairingsBottle green, emerald, gold and warm cream Kanchipuram silk flatter the motif work most naturally. A bright red or deep maroon saree makes the gold ovals sing. Send us a daylight photo of your saree and we will match its exact shade.
+- Pricing noteCustom hand embroidery starts at ₹4,999 on blouse fabric you supply. Garment stitching, material customisations and courier charges are separate.
+- Booking & timelineEach piece is handcrafted to order in Trichy. Share your wedding or event date on WhatsApp or through the enquiry form and we will confirm the exact delivery timeline for your brief.
+
+Client reviews
+
+## What our clients say
+
+★★★★★
 
 ## Emerald Jhumka Elegance FAQs
 
-What makes the Emerald Jhumka Elegance blouse design unique?
+### What occasion is Emerald Jhumka Elegance best for?
 
-An emerald green blouse with ornate gold oval borders, scattered motifs and traditional jhumka-style back tassels. The front showcases a rounded neckline framed by repeated gold oval motifs, matching embellished sleeve cuffs and a coordinated lower border. The back features a wide U-shaped neckline and jhumka-style tassels.
+Engagements, receptions, sangeet and festive family functions. The jhumka tassels on the back and the gold oval motifs give a traditional look without full bridal weight.
 
-Is the Emerald Jhumka Elegance Blouse design suitable for bridal wear?
+### Which sarees go well with Emerald Jhumka Elegance?
 
-This design is listed in the bridal category and is presented as a bridal blouse option. Suitability for your wedding saree and occasion should be discussed with Khadeeja Designs.
+Bottle green, emerald, gold and warm cream silk match it most naturally. A bright red or deep maroon saree makes the gold ovals stand out. Send us a daylight photo of your saree and we will confirm the match.
 
-What embroidery techniques are used in the Emerald Jhumka Elegance Blouse design?
+### Can I keep the tassels but change the back neckline?
 
-The product data describes the work as Aari-style gold embroidery · Beadwork · Jhumka-style tassels.
+Yes. The jhumka tassels can be added to most back necklines. Tell us the shape you want and we will confirm how the oval border will sit around it.
 
-Can I customise the colours and motifs of this design?
+### Can you change the colours or motifs on Emerald Jhumka Elegance?
 
-You can discuss changes to colours, motifs, placement, embroidery density, neckline and sleeve details. Feasibility is confirmed after reviewing your requirements.
+Yes. Most brides change something: the thread colour to match their saree, a denser or lighter fill, or a different neckline and sleeve finish. Send your saree photo on WhatsApp and we will tell you what works and whether it changes the price.
 
-Which saree colours complement the Emerald Jhumka Elegance blouse?
+### How do I order Emerald Jhumka Elegance?
 
-As a suggestion, sarees that coordinate with emerald green and gold may complement this blouse. Final matching depends on the saree fabric, border, pallu and jewellery.
+Tap WhatsApp or Make It Yours and send your saree photo and event date. We confirm the design, price, courier charge and delivery date. You pay a 50% advance, courier your blouse to our Trichy studio, and we send it back by tracked courier once the work is done.
 
-Can I request changes to the neckline and sleeve details?
-
-You can discuss neckline and sleeve changes with the studio. The team will confirm whether a requested alteration is feasible for this design.
-
-How can I order the Emerald Jhumka Elegance blouse?
-
-To enquire about the Emerald Jhumka Elegance Blouse, select the Make It Yours option on this page. Share your contact information and requirements through our enquiry form. Our team will get back to you within 6 hours during studio hours to discuss pricing and next steps.
+From our blogRelated guideHow to choose Aari work colours for your wedding saree
 
 ---
 
-## [Magenta Midnight Bloom Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/magenta-midnight-bloom/)
+## [Magenta Midnight Bloom Blouse ₹4,499 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/magenta-midnight-bloom/)
 
 Source: https://khadeejadesigns.in/explore/designs/magenta-midnight-bloom/
 
-Home / Explore Designs / Magenta Midnight Bloom BlouseDesigner Blouse
+Designer Blouse · Hand Aari on your blouse
 
 # Magenta Midnight Bloom Blouse
 
 ₹4,499
 
+Hand Aari work on the blouse you send us. The price covers the embroidery. The blouse and courier are not included.
+
 A rich magenta blouse with delicate gold sprig embroidery, navy floral accents and puff sleeves.
 
-## Magenta Midnight Bloom: Design Details
+### Design Details
 
 The front design features a broad rounded neckline with radiating gold-toned motifs, small navy floral accents and matching embroidered borders along the sleeves and hem.
 
-## Magenta Midnight Bloom: Embroidery Details
+### Embroidery Details
 
-Category: Designer BlouseWork type: Aari-style embroidery · Floral motifs · BeadworkColour and motifs: magenta with gold and navy floral accents
+Category: Designer Blouse
+Work type: Aari-style embroidery · Floral motifs · Beadwork
+Colour and motifs: magenta with gold and navy floral accents
 
-## What makes this blouse distinctive?
+### What makes this blouse distinctive?
 
-This magenta midnight bloom blouse brings together aari-style embroidery · floral motifs · beadwork with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
+This magenta midnight bloom blouse brings together aari-style embroidery, floral motifs, and beadwork with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
 
-## What the listed price includes
+### What the listed price includes
 
 Hand embroidery work on the customer-supplied blouse or garment, including the design consultation and the work shown in the listed design.
 
-## What is quoted separately
+### What is quoted separately
 
 Courier charges, the blouse/garment itself, and any extra material changes beyond the listed design are quoted separately.
 
+### How delivery works
+
+- Garment: You supply the blouse or garment. We embroider it.
+- Delivery: The customer sends the blouse or saree by courier to the studio; the completed piece is returned by tracked delivery after the embroidery is finished.
+- Courier: Courier charges both ways are quoted separately and shown in your quote before you pay anything.
+
+See the full order and refund policy.
+
 We reply within 6 hours during studio hours.
 
-Make It Yours → Chat about this design on WhatsApp
+Make It Yours
+Discuss on
+
+- 1. Post your blouseCourier it to our Trichy studio after you confirm the quote.
+- 2. We hand-embroider itAbout 14–21 days at the frame.
+- 3. Tracked delivery backAnywhere in India, with a tracking link.
+
+## Magenta Midnight Bloom Blouse: Materials, Styling and Timing
+
+Magenta Midnight Bloom is for the woman who likes her colour with a little drama. A rich magenta base is scattered with fine gold sprig Aari embroidery and beadwork, while navy floral accents deepen the palette and give the design its midnight mood. Radiating gold-toned motifs frame a broad rounded neckline, and matching borders trace the sleeves and hem. Puff sleeves lend a soft, romantic shape that photographs beautifully in candlelight. It is a blouse that flatters in photographs and in person.
+
+Wear it with a magenta or wine saree for a tonal look, or let navy, midnight blue, cream or gold pick up the contrasting blossoms. The blouse is hand-embroidered to order in Trichy, with motif placement and colour adjustments discussed before work begins so the finished piece feels entirely yours.
+
+- Saree pairingsA magenta or wine silk gives a rich tonal finish, while navy, midnight blue, cream or gold silk picks up the floral accents. Choose a saree whose zari or border repeats one of those notes. Share a daylight photo and we will fine-tune the shade together.
+- Pricing noteCustom hand embroidery starts at ₹4,499 on blouse fabric you supply. Garment stitching, material customisations and courier charges are separate.
+- Booking & timelineEach piece is handcrafted to order in Trichy. Share your wedding or event date on WhatsApp or through the enquiry form and we will confirm the exact delivery timeline for your brief.
+
+Client reviews
+
+## What our clients say
+
+★★★★★
 
 ## Magenta Midnight Bloom FAQs
 
-What makes the Magenta Midnight Bloom blouse design unique?
+### What occasion is Magenta Midnight Bloom best for?
 
-A rich magenta blouse with delicate gold sprig embroidery, navy floral accents and puff sleeves. The front design features a broad rounded neckline with radiating gold-toned motifs, small navy floral accents and matching embroidered borders along the sleeves and hem.
+Engagements, baby showers, festive functions and wedding guest looks. The puff sleeves and navy floral accents give a soft, romantic feel.
 
-Is the Magenta Midnight Bloom Blouse design suitable for bridal wear?
+### Which sarees go well with Magenta Midnight Bloom?
 
-This design is listed in the designer collection rather than the bridal category. Discuss your occasion and saree details with Khadeeja Designs before selecting it for bridal wear.
+Magenta or wine silk for a tonal look, or navy, midnight blue, cream or gold silk to pick up the floral accents. A saree border that repeats one of these colours ties it together.
 
-What embroidery techniques are used in the Magenta Midnight Bloom Blouse design?
+### Does the design need puff sleeves?
 
-The product data describes the work as Aari-style embroidery · Floral motifs · Beadwork.
+No. The motifs can be placed on straight, elbow-length or short sleeves. Let us know your sleeve style and we will adapt the border to it.
 
-Can I customise the colours and motifs of this design?
+### Can you change the colours or motifs on Magenta Midnight Bloom?
 
-You can discuss changes to colours, motifs, placement, embroidery density, neckline and sleeve details. Feasibility is confirmed after reviewing your requirements.
+Yes. Most brides change something: the thread colour to match their saree, a denser or lighter fill, or a different neckline and sleeve finish. Send your saree photo on WhatsApp and we will tell you what works and whether it changes the price.
 
-Which saree colours complement the Magenta Midnight Bloom blouse?
+### How do I order Magenta Midnight Bloom?
 
-As a suggestion, sarees that coordinate with magenta with gold and navy floral accents may complement this blouse. Final matching depends on the saree fabric, border, pallu and jewellery.
+Tap WhatsApp or Make It Yours and send your saree photo and event date. We confirm the design, price, courier charge and delivery date. You pay a 50% advance, courier your blouse to our Trichy studio, and we send it back by tracked courier once the work is done.
 
-Can I request changes to the neckline and sleeve details?
-
-You can discuss neckline and sleeve changes with the studio. The team will confirm whether a requested alteration is feasible for this design.
-
-How can I order the Magenta Midnight Bloom blouse?
-
-To enquire about the Magenta Midnight Bloom Blouse, select the Make It Yours option on this page. Share your contact information and requirements through our enquiry form. Our team will get back to you within 6 hours during studio hours to discuss pricing and next steps.
+From our blogRelated guideHow to choose Aari work colours for your wedding saree
 
 ---
 
-## [Midnight Gold Vine Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/midnight-gold-vine/)
+## [Midnight Gold Vine Aari Blouse ₹6,499 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/midnight-gold-vine/)
 
 Source: https://khadeejadesigns.in/explore/designs/midnight-gold-vine/
 
-Home / Explore Designs / Midnight Gold Vine BlouseBridal Blouse
+Bridal Blouse · Hand Aari on your blouse
 
 # Midnight Gold Vine Blouse
 
 ₹6,499
 
+Hand Aari work on the blouse you send us. The price covers the embroidery. The blouse and courier are not included.
+
 A black blouse featuring antique-gold vine embroidery, floral accents and statement puff sleeves.
 
-## Midnight Gold Vine: Design Details
+### Design Details
 
 The front showcases branching vine motifs and small floral clusters across the bodice and puff sleeves, with an embellished V-shaped neckline and matching sleeve and hem borders.
 
-## Midnight Gold Vine: Embroidery Details
+### Embroidery Details
 
-Category: Bridal BlouseWork type: Aari-style gold embroidery · Vine and floral motifs · BeadworkColour and motifs: black with antique-gold vine and floral embroidery
+Category: Bridal Blouse
+Work type: Aari-style gold embroidery · Vine and floral motifs · Beadwork
+Colour and motifs: black with antique-gold vine and floral embroidery
 
-## What makes this blouse distinctive?
+### What makes this blouse distinctive?
 
-This midnight gold vine blouse brings together aari-style gold embroidery · vine and floral motifs · beadwork with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
+This midnight gold vine blouse brings together aari-style gold embroidery, vine and floral motifs, and beadwork with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
 
-## What the listed price includes
+### What the listed price includes
 
 Hand embroidery work on the customer-supplied blouse or garment, including the design consultation and the work shown in the listed design.
 
-## What is quoted separately
+### What is quoted separately
 
 Courier charges, the blouse/garment itself, and any extra material changes beyond the listed design are quoted separately.
 
+### How delivery works
+
+- Garment: You supply the blouse or garment. We embroider it.
+- Delivery: The customer sends the blouse or saree by courier to the studio; the completed piece is returned by tracked delivery after the embroidery is finished.
+- Courier: Courier charges both ways are quoted separately and shown in your quote before you pay anything.
+
+See the full order and refund policy.
+
 We reply within 6 hours during studio hours.
 
-Make It Yours → Chat about this design on WhatsApp
+Make It Yours
+Discuss on
+
+- 1. Post your blouseCourier it to our Trichy studio after you confirm the quote.
+- 2. We hand-embroider itAbout 14–21 days at the frame.
+- 3. Tracked delivery backAnywhere in India, with a tracking link.
+
+## Midnight Gold Vine Blouse: Materials, Styling and Timing
+
+Midnight Gold Vine draws its drama from contrast: a deep black base, and antique-gold Aari vines branching across the bodice and puff sleeves. Small floral clusters soften the line, while an embellished V-shaped neckline and matching sleeve and hem borders frame the design with quiet symmetry. The gold is warm rather than bright, giving the embroidery and beadwork an old-world, jewel-box quality that feels quietly expensive. It looks hand-made in the best sense, never mass-produced.
+
+It sits beautifully against black, antique gold, maroon or emerald silk, especially when the saree's zari repeats the vine's tone. Statement puff sleeves make it a natural choice for receptions and festive evenings. Every piece is handcrafted to order in our Trichy studio, with the coverage and placement shaped around your saree.
+
+- Saree pairingsBlack, antique gold, maroon and emerald Kanchipuram silk all complement the vine work. A jewel-toned border that echoes the gold gives the outfit a considered finish. Send a daylight photo of your saree and we will confirm the closest match.
+- Pricing noteCustom hand embroidery starts at ₹6,499 on blouse fabric you supply. Garment stitching, material customisations and courier charges are separate.
+- Booking & timelineEach piece is handcrafted to order in Trichy. Share your wedding or event date on WhatsApp or through the enquiry form and we will confirm the exact delivery timeline for your brief.
+
+Client reviews
+
+## What our clients say
+
+★★★★★
 
 ## Midnight Gold Vine FAQs
 
-What makes the Midnight Gold Vine blouse design unique?
+### Is Midnight Gold Vine a bridal design?
 
-A black blouse featuring antique-gold vine embroidery, floral accents and statement puff sleeves. The front showcases branching vine motifs and small floral clusters across the bodice and puff sleeves, with an embellished V-shaped neckline and matching sleeve and hem borders.
+Yes. The vine and floral work covers the bodice and sleeves with an embellished V-neckline, so it suits a reception or a wedding where you want a rich but less traditional look than full red-and-gold.
 
-Is the Midnight Gold Vine Blouse design suitable for bridal wear?
+### Which sarees go well with Midnight Gold Vine?
 
-This design is listed in the bridal category and is presented as a bridal blouse option. Suitability for your wedding saree and occasion should be discussed with Khadeeja Designs.
+Black, antique gold, maroon and emerald Kanchipuram silk all work with the gold vines. A jewel-toned border that echoes the gold gives the outfit a finished look. Send a daylight photo and we will confirm the closest match.
 
-What embroidery techniques are used in the Midnight Gold Vine Blouse design?
+### Can the vine work be made on a colour other than black?
 
-The product data describes the work as Aari-style gold embroidery · Vine and floral motifs · Beadwork.
+Yes. The same gold vine pattern sits well on maroon, bottle green or navy. Send us your blouse fabric colour and we will suggest thread shades.
 
-Can I customise the colours and motifs of this design?
+### Can you change the colours or motifs on Midnight Gold Vine?
 
-You can discuss changes to colours, motifs, placement, embroidery density, neckline and sleeve details. Feasibility is confirmed after reviewing your requirements.
+Yes. Most brides change something: the thread colour to match their saree, a denser or lighter fill, or a different neckline and sleeve finish. Send your saree photo on WhatsApp and we will tell you what works and whether it changes the price.
 
-Which saree colours complement the Midnight Gold Vine blouse?
+### How do I order Midnight Gold Vine?
 
-As a suggestion, sarees that coordinate with black with antique-gold vine and floral embroidery may complement this blouse. Final matching depends on the saree fabric, border, pallu and jewellery.
+Tap WhatsApp or Make It Yours and send your saree photo and event date. We confirm the design, price, courier charge and delivery date. You pay a 50% advance, courier your blouse to our Trichy studio, and we send it back by tracked courier once the work is done.
 
-Can I request changes to the neckline and sleeve details?
-
-You can discuss neckline and sleeve changes with the studio. The team will confirm whether a requested alteration is feasible for this design.
-
-How can I order the Midnight Gold Vine blouse?
-
-To enquire about the Midnight Gold Vine Blouse, select the Make It Yours option on this page. Share your contact information and requirements through our enquiry form. Our team will get back to you within 6 hours during studio hours to discuss pricing and next steps.
+From our blogRelated guideHow to choose an Aari embroidery style for your wedding blouse
 
 ---
 
-## [Midnight Grace Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/midnight-grace/)
+## [Midnight Grace Aari Blouse Design ₹1,999 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/midnight-grace/)
 
 Source: https://khadeejadesigns.in/explore/designs/midnight-grace/
 
-Home / Explore Designs / Midnight Grace BlouseDesigner Blouse
+Designer Blouse · Hand Aari on your blouse
 
 # Midnight Grace Blouse
 
 ₹1,999
 
+Hand Aari work on the blouse you send us. The price covers the embroidery. The blouse and courier are not included.
+
 An elegant black blouse featuring delicate maroon and antique-gold Aari embroidery with subtle scattered motifs.
 
-## Midnight Grace: Design Details
+### Design Details
 
 Midnight Grace brings understated elegance through a deep black fabric base, intricate maroon and antique-gold embroidery, a detailed neckline border and matching sleeve borders.
 
-## Midnight Grace: Embroidery Details
+### Embroidery Details
 
-Category: Designer BlouseWork type: Aari Embroidery · Gold Threadwork · Bead EmbellishmentColour and motifs: black with maroon and antique-gold embroidery
+Category: Designer Blouse
+Work type: Aari Embroidery · Gold Threadwork · Bead Embellishment
+Colour and motifs: black with maroon and antique-gold embroidery
 
-## What makes this blouse distinctive?
+### What makes this blouse distinctive?
 
-This midnight grace blouse brings together aari embroidery · gold threadwork · bead embellishment with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
+This midnight grace blouse brings together aari embroidery, gold threadwork, and bead embellishment with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
 
-## What the listed price includes
+### What the listed price includes
 
 Hand embroidery work on the customer-supplied blouse or garment, including the design consultation and the work shown in the listed design.
 
-## What is quoted separately
+### What is quoted separately
 
 Courier charges, the blouse/garment itself, and any extra material changes beyond the listed design are quoted separately.
 
+### How delivery works
+
+- Garment: You supply the blouse or garment. We embroider it.
+- Delivery: The customer sends the blouse or saree by courier to the studio; the completed piece is returned by tracked delivery after the embroidery is finished.
+- Courier: Courier charges both ways are quoted separately and shown in your quote before you pay anything.
+
+See the full order and refund policy.
+
 We reply within 6 hours during studio hours.
 
-Make It Yours → Chat about this design on WhatsApp
+Make It Yours
+Discuss on
+
+- 1. Post your blouseCourier it to our Trichy studio after you confirm the quote.
+- 2. We hand-embroider itAbout 14–21 days at the frame.
+- 3. Tracked delivery backAnywhere in India, with a tracking link.
+
+## Midnight Grace Blouse: Materials, Styling and Timing
+
+Midnight Grace proves that restraint can be the most luxurious choice. A deep black base is worked with delicate maroon and antique-gold aari embroidery and beadwork, scattered motifs, a fine neckline border and matching sleeve edges, so the detail reveals itself slowly. The effect is intimate rather than overwhelming, the kind of blouse that draws the eye closer instead of asking for attention. Worn with the right saree, it becomes an heirloom.
+
+It pairs effortlessly with black, maroon, antique gold or deep red silk, and works beautifully for evening dinners, receptions and quieter celebrations. Because the coverage is light, the blouse stays comfortable through long hours of wear. Each piece is hand-embroidered to order in Trichy, and we are always happy to discuss small adjustments to motifs or colour.
+
+- Saree pairingsBlack, maroon, antique gold and deep red silk are the most natural partners for the maroon-and-gold embroidery. A lightly bordered Kanchipuram keeps the look understated. Share a daylight photo of your saree and we will match the shade precisely.
+- Pricing noteCustom hand embroidery starts at ₹1,999 on blouse fabric you supply. Garment stitching, material customisations and courier charges are separate.
+- Booking & timelineEach piece is handcrafted to order in Trichy. Share your wedding or event date on WhatsApp or through the enquiry form and we will confirm the exact delivery timeline for your brief.
+
+Client reviews
+
+## What our clients say
+
+★★★★★
 
 ## Midnight Grace FAQs
 
-What makes the Midnight Grace blouse design unique?
+### What occasion is Midnight Grace best for?
 
-An elegant black blouse featuring delicate maroon and antique-gold Aari embroidery with subtle scattered motifs. Midnight Grace brings understated elegance through a deep black fabric base, intricate maroon and antique-gold embroidery, a detailed neckline border and matching sleeve borders.
+Receptions, evening functions and festive dinners where you want quiet detail rather than heavy coverage. The black base lets the maroon and antique-gold work show up under evening light without looking loud.
 
-Is the Midnight Grace Blouse design suitable for bridal wear?
+### Which sarees go well with Midnight Grace?
 
-This design is listed in the designer collection rather than the bridal category. Discuss your occasion and saree details with Khadeeja Designs before selecting it for bridal wear.
+Black, maroon, antique gold and deep red silk are the easiest matches. A Kanchipuram with a thin gold border keeps the look understated. Send us a daylight photo of your saree and we will check the shade before you confirm.
 
-What embroidery techniques are used in the Midnight Grace Blouse design?
+### Is the work light enough to wear for a whole evening?
 
-The product data describes the work as Aari Embroidery · Gold Threadwork · Bead Embellishment.
+Yes. Coverage is light: scattered motifs, a neckline border and matching sleeve borders, so the blouse stays comfortable through a long function.
 
-Can I customise the colours and motifs of this design?
+### Can you change the colours or motifs on Midnight Grace?
 
-You can discuss changes to colours, motifs, placement, embroidery density, neckline and sleeve details. Feasibility is confirmed after reviewing your requirements.
+Yes. Most brides change something: the thread colour to match their saree, a denser or lighter fill, or a different neckline and sleeve finish. Send your saree photo on WhatsApp and we will tell you what works and whether it changes the price.
 
-Which saree colours complement the Midnight Grace blouse?
+### How do I order Midnight Grace?
 
-As a suggestion, sarees that coordinate with black with maroon and antique-gold embroidery may complement this blouse. Final matching depends on the saree fabric, border, pallu and jewellery.
+Tap WhatsApp or Make It Yours and send your saree photo and event date. We confirm the design, price, courier charge and delivery date. You pay a 50% advance, courier your blouse to our Trichy studio, and we send it back by tracked courier once the work is done.
 
-Can I request changes to the neckline and sleeve details?
-
-You can discuss neckline and sleeve changes with the studio. The team will confirm whether a requested alteration is feasible for this design.
-
-How can I order the Midnight Grace blouse?
-
-To enquire about the Midnight Grace Blouse, select the Make It Yours option on this page. Share your contact information and requirements through our enquiry form. Our team will get back to you within 6 hours during studio hours to discuss pricing and next steps.
+From our blogRelated guideHow to choose Aari work colours for your wedding saree
 
 ---
 
-## [Sunset Garden Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/sunset-garden/)
+## [Sunset Garden Aari Blouse Design ₹8,499 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/sunset-garden/)
 
 Source: https://khadeejadesigns.in/explore/designs/sunset-garden/
 
-Home / Explore Designs / Sunset Garden BlouseDesigner Blouse
+Designer Blouse · Hand Aari on your blouse
 
 # Sunset Garden Blouse
 
 ₹8,499
 
+Hand Aari work on the blouse you send us. The price covers the embroidery. The blouse and courier are not included.
+
 A burnt-orange blouse with multicolour floral embroidery, pearl accents and embellished puff sleeves.
 
-## Sunset Garden: Design Details
+### Design Details
 
 The front features a warm orange base decorated with colourful floral and paisley-inspired motifs, pearl-like accents, gold-toned beadwork and detailed puff sleeves.
 
-## Sunset Garden: Embroidery Details
+### Embroidery Details
 
-Category: Designer BlouseWork type: Aari-style floral embroidery · Beadwork · Pearl-style embellishmentColour and motifs: burnt orange with multicolour floral and gold accents
+Category: Designer Blouse
+Work type: Aari-style floral embroidery · Beadwork · Pearl-style embellishment
+Colour and motifs: burnt orange with multicolour floral and gold accents
 
-## What makes this blouse distinctive?
+### What makes this blouse distinctive?
 
-This sunset garden blouse brings together aari-style floral embroidery · beadwork · pearl-style embellishment with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
+This sunset garden blouse brings together aari-style floral embroidery, beadwork, and pearl-style embellishment with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
 
-## What the listed price includes
+### What the listed price includes
 
 Hand embroidery work on the customer-supplied blouse or garment, including the design consultation and the work shown in the listed design.
 
-## What is quoted separately
+### What is quoted separately
 
 Courier charges, the blouse/garment itself, and any extra material changes beyond the listed design are quoted separately.
 
+### How delivery works
+
+- Garment: You supply the blouse or garment. We embroider it.
+- Delivery: The customer sends the blouse or saree by courier to the studio; the completed piece is returned by tracked delivery after the embroidery is finished.
+- Courier: Courier charges both ways are quoted separately and shown in your quote before you pay anything.
+
+See the full order and refund policy.
+
 We reply within 6 hours during studio hours.
 
-Make It Yours → Chat about this design on WhatsApp
+Make It Yours
+Discuss on
+
+- 1. Post your blouseCourier it to our Trichy studio after you confirm the quote.
+- 2. We hand-embroider itAbout 14–21 days at the frame.
+- 3. Tracked delivery backAnywhere in India, with a tracking link.
+
+## Sunset Garden Blouse: Materials, Styling and Timing
+
+Sunset Garden feels like the last warm light of the day. A burnt-orange base carries Aari-worked multicolour floral and paisley-inspired motifs, scattered gold-toned beadwork and pearl-style accents that glint across the bodice. Embellished puff sleeves add a romantic, vintage silhouette, while the warm ground keeps every colour grounded and easy to wear. It is colour that feels celebratory without ever shouting, and the beadwork keeps it refined.
+
+Pair it with an orange or rust silk for a sun-washed look, or with cream and gold to let the florals sing. A border that repeats one of the accent colours ties the whole outfit together. This is a piece for haldi mornings, mehendi evenings and celebrations that call for colour, handcrafted to order in our Trichy studio.
+
+- Saree pairingsBurnt orange, rust, warm gold and cream silk let the multicolour florals breathe; a deep green or maroon saree adds a striking contrast. Look for a border that repeats one of the accent colours. Send a daylight photo and we will match the palette together.
+- Pricing noteCustom hand embroidery starts at ₹8,499 on blouse fabric you supply. Garment stitching, material customisations and courier charges are separate.
+- Booking & timelineEach piece is handcrafted to order in Trichy. Share your wedding or event date on WhatsApp or through the enquiry form and we will confirm the exact delivery timeline for your brief.
+
+Client reviews
+
+## What our clients say
+
+★★★★★
 
 ## Sunset Garden FAQs
 
-What makes the Sunset Garden blouse design unique?
+### What occasion is Sunset Garden best for?
 
-A burnt-orange blouse with multicolour floral embroidery, pearl accents and embellished puff sleeves. The front features a warm orange base decorated with colourful floral and paisley-inspired motifs, pearl-like accents, gold-toned beadwork and detailed puff sleeves.
+Haldi, mehendi and daytime festive functions. The warm orange base with multicolour florals looks bright in daylight photographs.
 
-Is the Sunset Garden Blouse design suitable for bridal wear?
+### Which sarees go well with Sunset Garden?
 
-This design is listed in the designer collection rather than the bridal category. Discuss your occasion and saree details with Khadeeja Designs before selecting it for bridal wear.
+Burnt orange, rust, warm gold and cream silk let the florals stand out. Deep green or maroon gives a striking contrast. Pick a border that repeats one of the accent colours.
 
-What embroidery techniques are used in the Sunset Garden Blouse design?
+### Why is Sunset Garden priced higher than other designs?
 
-The product data describes the work as Aari-style floral embroidery · Beadwork · Pearl-style embellishment.
+It has the most hand work of our designer pieces: multicolour floral and paisley motifs, pearl-style accents, gold beadwork and detailed puff sleeve edging. More stitching and more embellishment mean more hours at the frame.
 
-Can I customise the colours and motifs of this design?
+### Can you change the colours or motifs on Sunset Garden?
 
-You can discuss changes to colours, motifs, placement, embroidery density, neckline and sleeve details. Feasibility is confirmed after reviewing your requirements.
+Yes. Most brides change something: the thread colour to match their saree, a denser or lighter fill, or a different neckline and sleeve finish. Send your saree photo on WhatsApp and we will tell you what works and whether it changes the price.
 
-Which saree colours complement the Sunset Garden blouse?
+### How do I order Sunset Garden?
 
-As a suggestion, sarees that coordinate with burnt orange with multicolour floral and gold accents may complement this blouse. Final matching depends on the saree fabric, border, pallu and jewellery.
+Tap WhatsApp or Make It Yours and send your saree photo and event date. We confirm the design, price, courier charge and delivery date. You pay a 50% advance, courier your blouse to our Trichy studio, and we send it back by tracked courier once the work is done.
 
-Can I request changes to the neckline and sleeve details?
-
-You can discuss neckline and sleeve changes with the studio. The team will confirm whether a requested alteration is feasible for this design.
-
-How can I order the Sunset Garden blouse?
-
-To enquire about the Sunset Garden Blouse, select the Make It Yours option on this page. Share your contact information and requirements through our enquiry form. Our team will get back to you within 6 hours during studio hours to discuss pricing and next steps.
+From our blogRelated guideHow to choose Aari work colours for your wedding saree
 
 ---
 
-## [Violet Gold Vine Aari Work Blouse | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/violet-gold-vine/)
+## [Violet Gold Vine Aari Blouse ₹6,999 | Khadeeja Designs](https://khadeejadesigns.in/explore/designs/violet-gold-vine/)
 
 Source: https://khadeejadesigns.in/explore/designs/violet-gold-vine/
 
-Home / Explore Designs / Violet Gold Vine BlouseDesigner Blouse
+Designer Blouse · Hand Aari on your blouse
 
 # Violet Gold Vine Blouse
 
 ₹6,999
 
+Hand Aari work on the blouse you send us. The price covers the embroidery. The blouse and courier are not included.
+
 A rich violet blouse featuring linear stone embellishment on the sleeves and intricate antique-gold floral vine embroidery.
 
-## Violet Gold Vine: Design Details
+### Design Details
 
 This violet blouse pairs rows of fine linear embellishment across the sleeves with ornate gold-toned floral vines and leaf motifs along the sleeve edges, neckline and blouse borders.
 
-## Violet Gold Vine: Embroidery Details
+### Embroidery Details
 
-Category: Designer BlouseWork type: Aari embroidery · Gold threadwork · Stone and bead embellishmentColour and motifs: violet with antique-gold floral vines and stone accents
+Category: Designer Blouse
+Work type: Aari embroidery · Gold threadwork · Stone and bead embellishment
+Colour and motifs: violet with antique-gold floral vines and stone accents
 
-## What makes this blouse distinctive?
+### What makes this blouse distinctive?
 
-This violet gold vine blouse brings together aari embroidery · gold threadwork · stone and bead embellishment with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
+This violet gold vine blouse brings together aari embroidery, gold threadwork, and stone and bead embellishment with a standout silhouette for weddings and festive styling. The finish is designed to look rich in person while still pairing naturally with silk sarees and statement jewellery.
 
-## What the listed price includes
+### What the listed price includes
 
 Hand embroidery work on the customer-supplied blouse or garment, including the design consultation and the work shown in the listed design.
 
-## What is quoted separately
+### What is quoted separately
 
 Courier charges, the blouse/garment itself, and any extra material changes beyond the listed design are quoted separately.
 
+### How delivery works
+
+- Garment: You supply the blouse or garment. We embroider it.
+- Delivery: The customer sends the blouse or saree by courier to the studio; the completed piece is returned by tracked delivery after the embroidery is finished.
+- Courier: Courier charges both ways are quoted separately and shown in your quote before you pay anything.
+
+See the full order and refund policy.
+
 We reply within 6 hours during studio hours.
 
-Make It Yours → Chat about this design on WhatsApp
+Make It Yours
+Discuss on
+
+- 1. Post your blouseCourier it to our Trichy studio after you confirm the quote.
+- 2. We hand-embroider itAbout 14–21 days at the frame.
+- 3. Tracked delivery backAnywhere in India, with a tracking link.
+
+## Violet Gold Vine Blouse: Materials, Styling and Timing
+
+Violet Gold Vine is a study in quiet opulence. A rich violet base is traced with antique-gold Aari floral vines and leaf motifs that travel from the neckline to the sleeve edges and blouse borders, their curves echoed by fine linear stone embellishment across the sleeves. The back carries a coordinating detail, so the design reads beautifully from every side. It is a blouse for the woman who prefers her luxury understated, and it grows more beautiful the closer you look.
+
+Violet flatters across skin tones, and it pairs wonderfully with purple, gold, cream or a considered contrast in silk. The botanicals keep the look romantic; the stonework keeps it occasion-ready. Every blouse is hand-embroidered to order in Trichy, with placement and coverage shaped around your saree and jewellery.
+
+- Saree pairingsViolet, purple, antique gold and cream silk harmonise with the vine embroidery, while a contrast like deep green or wine adds drama. Choose a saree whose zari echoes the gold. Share a daylight photo of your saree and we will match its exact shade.
+- Pricing noteCustom hand embroidery starts at ₹6,999 on blouse fabric you supply. Garment stitching, material customisations and courier charges are separate.
+- Booking & timelineEach piece is handcrafted to order in Trichy. Share your wedding or event date on WhatsApp or through the enquiry form and we will confirm the exact delivery timeline for your brief.
+
+Client reviews
+
+## What our clients say
+
+★★★★★
 
 ## Violet Gold Vine FAQs
 
-What makes the Violet Gold Vine blouse design unique?
+### What occasion is Violet Gold Vine best for?
 
-A rich violet blouse featuring linear stone embellishment on the sleeves and intricate antique-gold floral vine embroidery. This violet blouse pairs rows of fine linear embellishment across the sleeves with ornate gold-toned floral vines and leaf motifs along the sleeve edges, neckline and blouse borders.
+Receptions, engagements and festive evenings. The sleeve work is the highlight, so it suits sarees draped to show the arms.
 
-Is the Violet Gold Vine Blouse design suitable for bridal wear?
+### Which sarees go well with Violet Gold Vine?
 
-This design is listed in the designer collection rather than the bridal category. Discuss your occasion and saree details with Khadeeja Designs before selecting it for bridal wear.
+Violet, purple, antique gold and cream silk blend with the vine embroidery. Deep green or wine gives more contrast. Choose a saree whose zari echoes the gold.
 
-What embroidery techniques are used in the Violet Gold Vine Blouse design?
+### Can the sleeve embellishment be lighter?
 
-The product data describes the work as Aari embroidery · Gold threadwork · Stone and bead embellishment.
+Yes. We can space out the linear rows or drop the stones and keep only the gold vines. That usually brings the price down too. We confirm the change before you pay.
 
-Can I customise the colours and motifs of this design?
+### Can you change the colours or motifs on Violet Gold Vine?
 
-You can discuss changes to colours, motifs, placement, embroidery density, neckline and sleeve details. Feasibility is confirmed after reviewing your requirements.
+Yes. Most brides change something: the thread colour to match their saree, a denser or lighter fill, or a different neckline and sleeve finish. Send your saree photo on WhatsApp and we will tell you what works and whether it changes the price.
 
-Which saree colours complement the Violet Gold Vine blouse?
+### How do I order Violet Gold Vine?
 
-As a suggestion, sarees that coordinate with violet with antique-gold floral vines and stone accents may complement this blouse. Final matching depends on the saree fabric, border, pallu and jewellery.
+Tap WhatsApp or Make It Yours and send your saree photo and event date. We confirm the design, price, courier charge and delivery date. You pay a 50% advance, courier your blouse to our Trichy studio, and we send it back by tracked courier once the work is done.
 
-Can I request changes to the neckline and sleeve details?
-
-You can discuss neckline and sleeve changes with the studio. The team will confirm whether a requested alteration is feasible for this design.
-
-How can I order the Violet Gold Vine blouse?
-
-To enquire about the Violet Gold Vine Blouse, select the Make It Yours option on this page. Share your contact information and requirements through our enquiry form. Our team will get back to you within 6 hours during studio hours to discuss pricing and next steps.
+From our blogRelated guideHow to choose Aari work colours for your wedding saree
 
 ---
 
-## [Aari Work FAQs: Price & Delivery | Khadeeja Designs](https://khadeejadesigns.in/faq/)
+## [FAQ | Custom Aari Embroidery Answers | Khadeeja Designs](https://khadeejadesigns.in/faq/)
 
 Source: https://khadeejadesigns.in/faq/
 
@@ -1254,67 +1775,97 @@ Ordering & Delivery
 
 ## Before you order
 
-How do I place an order?
+###
 
-Browse the portfolio, find a style you like, and click "Make It Yours." This takes you to our enquiry form where you share your name, contact number, and a brief description of what you need. We reply within 6 hours during studio hours (9 am to 8 pm, Mon to Sat). You'll receive a quote and next steps. No payment is needed to enquire.
+### How do I place an order?
 
-How long does an order take?
+Browse the portfolio, find a style you like, and click "Make It Yours." This takes you to our enquiry form where you share your name, contact number, and a brief description of what you need. We reply within 6 hours during studio hours (10 am to 7 pm, Mon to Sat (Sunday by appointment)). You'll receive a quote and next steps. No payment is needed to enquire.
+
+###
+
+### How long does an order take?
 
 Bridal blouses and heavy work typically take 14–21 days after the design brief is confirmed. Saree border and lighter work takes 10–14 days. We'll confirm the exact timeline with your quote. If you have an urgent event date, mention it in the enquiry and we'll check availability.
 
-Can I customise a design from the portfolio?
+###
+
+### Can I customise a design from the portfolio?
 
 Yes. Every order is made to your brief. You can change colours, motif placement, density, neckline style, and sleeve work. Share a reference photo or describe your idea and we'll work from there. Most customers combine elements from multiple designs.
 
-What if I don't have a design in mind yet?
+###
+
+### What if I don't have a design in mind yet?
 
 That's completely fine. Tell us your occasion, the fabric colour, and your rough budget. We'll suggest options and share reference designs to help you decide. There's no commitment at this stage.
 
-What are the payment terms?
+###
 
-We collect an advance payment after the design brief is confirmed and before work begins. The remaining balance is due on completion, before shipping. The exact advance amount is shared with your quote. We accept UPI, bank transfer, and other standard digital payment methods.
+### What are the payment terms?
 
-Do you deliver outside Trichy?
+We collect a 50% advance after the design brief and quote are confirmed, before work begins. The balance is due when the embroidery is finished, before we ship it back. We accept UPI and bank transfer. See the order and refund policy for cancellations and rework.
 
-Yes, we deliver across India with tracked shipping. You'll receive a tracking link once your order is dispatched. Delivery typically takes 2–4 business days after the embroidery is complete. Shipping cost, if any, is included in your quote.
+###
 
-Do I need to send my blouse or fabric to you?
+### Do you deliver outside Trichy?
 
-Yes, for blouse embroidery you'll need to courier the stitched or unstitched blouse to us. For saree work, the saree is sent to us. We'll share the studio address and courier instructions with your order confirmation. The item is returned to you with the completed embroidery.
+Yes, we deliver across India with tracked shipping. You'll receive a tracking link once your order is dispatched. Delivery typically takes 2–4 business days after the embroidery is complete. Courier charges are quoted separately and shown in your quote before you pay anything.
+
+###
+
+### Do I need to send my blouse or fabric to you?
+
+Yes, for blouse embroidery you'll need to courier the stitched or unstitched blouse to us. For saree work, the saree is sent to us. We'll share the studio address and packing instructions with your order confirmation; the order policy page explains how to pack it. The item is returned to you with the completed embroidery.
 
 Understanding Aari Embroidery
 
 ## Understanding Aari Embroidery
 
-What is Aari embroidery?
+###
+
+### What is Aari embroidery?
 
 Aari is a traditional Indian embroidery technique done with a hooked needle called an Aari needle. It's used to pull thread loops through fabric from below, creating fine continuous chain stitch patterns. It's one of the most intricate forms of hand embroidery and is especially popular for bridal and occasion wear in South India.
 
-What is an Aari needle?
+###
+
+### What is an Aari needle?
 
 An Aari needle is a specialised hooked embroidery needle used to create chain stitches. Its hooked tip helps the artisan pull thread through the fabric repeatedly, making it suitable for detailed embroidery patterns.
 
-What is the difference between Aari, Maggam and Zardosi work?
+###
+
+### What is the difference between Aari, Maggam and Zardosi work?
 
 Aari describes the hooked-needle chain-stitch technique. Maggam commonly refers to embroidery worked on a frame and is sometimes used interchangeably with Aari in local usage. Zardosi describes metallic-thread and embellishment styles that may be worked using Aari techniques. Names vary by region and studio, so ask about the specific materials and method used for a design.
 
-What fabrics work best for Aari embroidery?
+###
+
+### What fabrics work best for Aari embroidery?
 
 Silk, raw silk, velvet, georgette, and net are the most popular. Cotton and linen can also be embroidered but require additional backing. Stretch fabrics like lycra are not suitable as the embroidery restricts movement. Share your fabric type when you enquire and we'll advise accordingly.
 
-How should I care for Aari embroidered garments?
+###
+
+### How should I care for Aari embroidered garments?
 
 Always dry clean Aari embroidered pieces. Avoid machine washing as agitation can loosen threads and dislodge stones. Store flat or rolled - do not fold at the embroidered section. Keep away from moisture and direct sunlight. A light pressing with a cloth on the reverse side is safe if needed.
 
-Will the embroidery be heavy to wear?
+###
+
+### Will the embroidery be heavy to wear?
 
 It depends on the design. Thread-only Aari work is very lightweight and comfortable for extended wear. Designs with stones and dense Zardosi work add weight but are designed for occasions where you won't be in constant movement. We always consider wearability when planning stitch density and material placement.
 
-Can embroidery be added to a readymade blouse?
+###
+
+### Can embroidery be added to a readymade blouse?
 
 Yes, we work on both stitched and unstitched blouses. For stitched blouses, the embroidery is worked directly on the garment. We place the blouse on a frame and embroider within the finished shape, so measurements and seams are respected.
 
-Is every piece truly handmade?
+###
+
+### Is every piece truly handmade?
 
 Yes, entirely. Every stitch on every piece is done by hand using the Aari needle. There is no machine embroidery involved at any stage. This is why timelines are what they are - handmade work cannot be rushed without compromising quality, and we won't do that.
 
@@ -1322,23 +1873,33 @@ Designs & Styling
 
 ## Aari Blouse Designs
 
-Which Aari blouse designs are best for bridal wear?
+###
+
+### Which Aari blouse designs are best for bridal wear?
 
 Bridal Aari blouse designs often feature traditional motifs, detailed neckline embroidery, decorative sleeve patterns and embellishments. The ideal design depends on your saree, jewellery, wedding occasion and preferred level of embroidery.
 
-Can Aari work be done on Kanchipuram silk blouses?
+###
+
+### Can Aari work be done on Kanchipuram silk blouses?
 
 Yes, Aari embroidery is commonly used to enhance traditional silk blouse designs. The embroidery pattern, colours and coverage can be selected to complement the saree's border, pallu and overall appearance.
 
-Can I customise an Aari blouse using a reference image?
+###
+
+### Can I customise an Aari blouse using a reference image?
 
 Yes, you can share reference images from our portfolio, Pinterest or Instagram to explain your preferred design. We can discuss possible customisations to colours, motifs, placement and embroidery coverage.
 
-What are popular Aari blouse neckline designs?
+###
+
+### What are popular Aari blouse neckline designs?
 
 Popular blouse neckline styles include round, square, V-shaped and other traditional or contemporary neckline patterns. Aari embroidery can be planned around the neckline to create decorative borders and detailed motifs.
 
-Is heavy Aari embroidery comfortable to wear?
+###
+
+### Is heavy Aari embroidery comfortable to wear?
 
 Comfort depends on the embroidery density and materials used. Thread-only embroidery is generally lighter, while designs featuring dense metallic work, beads and stones can add weight.
 
@@ -1346,59 +1907,85 @@ Pricing & Quotes
 
 ## Aari Embroidery Pricing
 
-How much does an Aari work blouse cost?
+###
+
+### How much does an Aari work blouse cost?
 
 The listed price covers the Aari embroidery work on the blouse or garment you supply. The customer sends the blouse or saree by courier to the studio; courier and any extra material changes beyond the listed design are quoted separately.
 
-What does this price cover?
+###
+
+### What does this price cover?
 
 The listed price covers the Aari embroidery work shown on the customer-supplied blouse or garment. The garment itself, courier charges and any extra material changes beyond the listed design are quoted separately.
 
-What factors affect Aari embroidery pricing?
+###
+
+### What factors affect Aari embroidery pricing?
 
 Pricing is influenced by design complexity, number of motifs, embroidery coverage, materials, embellishments and time required.
 
-Why does bridal Aari work cost more?
+###
+
+### Why does bridal Aari work cost more?
 
 Bridal embroidery can involve intricate patterns, detailed motifs, additional embellishments and extensive handwork. The final cost depends on the design and amount of embroidery.
 
-Does the complexity of the design affect the price?
+###
+
+### Does the complexity of the design affect the price?
 
 Yes. More detailed designs may require additional materials and working time. The final quotation depends on the embroidery requirements and selected design.
 
-Is an advance payment required for Aari embroidery?
+###
 
-An advance payment is collected after the design brief is approved and before work begins. The advance amount and remaining payment details are shared during quotation.
+### Is an advance payment required for Aari embroidery?
 
-Are shipping charges included in the quoted price?
+Yes. We collect a 50% advance after the design brief is approved and before work begins. The balance is due on completion, before dispatch. Full terms are on the order and refund policy page.
 
-Shipping details and applicable charges are communicated during quotation. Please confirm the final shipping amount before placing your order.
+###
+
+### Are shipping charges included in the quoted price?
+
+No. Courier charges (your blouse to our studio, and the finished piece back to you) are quoted separately. We show the courier amount in your quote before you pay the advance.
 
 Ordering & Delivery
 
 ## Plan your order
 
-How far in advance should I book a bridal Aari blouse?
+###
+
+### How far in advance should I book a bridal Aari blouse?
 
 Enquire as early as possible, especially for bridal orders. Timing depends on embroidery complexity and current workload. Share your event date so we can confirm whether your timeline is achievable.
 
-Can I send my own fabric for embroidery?
+###
+
+### Can I send my own fabric for embroidery?
 
 Customers can discuss sending their own fabric or blouse. Share fabric details and requirements before arranging shipment so suitability and instructions can be confirmed.
 
-Can I get Aari work for a lehenga or half saree?
+###
+
+### Can I get Aari work for a lehenga or half saree?
 
 For a lehenga or half saree, share a photo and garment details first. Suitability depends on the fabric, construction, design and timeline; we will confirm feasibility before accepting the item.
 
-Do you accept Aari embroidery orders from outside Tamil Nadu?
+###
+
+### Do you accept Aari embroidery orders from outside Tamil Nadu?
 
 Yes, Khadeeja Designs accepts enquiries across India and offers pan-India delivery. Contact us to discuss ordering and shipping.
 
-Can I track my Aari blouse order?
+###
+
+### Can I track my Aari blouse order?
 
 For orders dispatched through a trackable shipping service, tracking information is shared after dispatch. Contact us for an order update.
 
-Can I place an urgent Aari embroidery order?
+###
+
+### Can I place an urgent Aari embroidery order?
 
 Urgent orders depend on design complexity, completion date and workload. Share your event date and reference so we can check feasibility.
 
@@ -1406,94 +1993,123 @@ Care & Maintenance
 
 ## Caring for Aari Embroidery
 
-How should I wash an Aari embroidered blouse?
+###
+
+### How should I wash an Aari embroidered blouse?
 
 Avoid machine washing because agitation can loosen threads and damage embellishments. Dry cleaning is generally recommended for heavily embellished garments; follow care instructions for the specific fabric.
 
-Can Aari work blouses be dry cleaned?
+###
+
+### Can Aari work blouses be dry cleaned?
 
 Professional dry cleaning is generally recommended, particularly for garments with beads, stones or metallic embellishments. Inform the cleaner about the embroidery.
 
-How should I store an Aari embroidered blouse?
+###
+
+### How should I store an Aari embroidered blouse?
 
 Store it in a clean, dry place away from sunlight and moisture. Use a soft protective cover and avoid placing heavy objects on embroidered areas.
 
-How do I prevent Aari embroidery from getting damaged?
+###
+
+### How do I prevent Aari embroidery from getting damaged?
 
 Avoid pulling threads, rough surfaces and aggressive washing. Store the blouse carefully and handle it gently when wearing or transporting it.
 
-How long does handmade Aari embroidery last?
+###
+
+### How long does handmade Aari embroidery last?
 
 Lifespan depends on materials, workmanship, use and maintenance. Proper cleaning, careful handling and suitable storage can help preserve the embroidery for many years.
 
-Still have a question?Just send us a message.
+Still have a question?
+Just send us a message.
 
-No commitment. We reply within 6 hours during studio hours (9 am to 8 pm, Mon to Sat).
+No commitment. We reply within 6 hours during studio hours (10 am to 7 pm, Mon to Sat (Sunday by appointment)).
 
 Send Enquiry →
 
 ---
 
-## [Privacy Policy | Khadeeja Designs](https://khadeejadesigns.in/privacy/)
+## [Order and Refund Policy | Aari Studio | Khadeeja Designs](https://khadeejadesigns.in/policies/)
 
-Source: https://khadeejadesigns.in/privacy/
+Source: https://khadeejadesigns.in/policies/
 
-Legal
+How we work
 
-# Privacy Policy
+# Order, advance & refund policy
 
-Last updated: November 1, 2026
+Last updated: November 25, 2026
 
-Khadeeja Designs ("we", "our", "us") is a boutique Aari embroidery studio based in Trichy, Tamil Nadu. We are committed to protecting your personal information. This policy explains what data we collect, why we collect it, and how we handle it.
+Every Khadeeja Designs piece is hand-embroidered to order on the blouse or saree you send us. This page sets out what you pay, when, and what happens if plans change. If anything here is unclear, ask us on WhatsApp before you pay.
 
-## What data we collect
+## What the price covers
 
-Information you give us directly:
+- Listed prices are for the hand Aari embroidery shown in the design, done on the blouse or garment you supply.
 
-- Your name and mobile number when you submit an enquiry form
+- The blouse or fabric itself, blouse stitching, extra materials beyond the listed design, and courier charges are not included.
 
-- Your city and optional event date
+- Your written quote on WhatsApp or email lists the embroidery price, any changes you asked for, the courier charge and the delivery date. Nothing is charged before you accept it.
 
-- Your design brief and any message you include in the form
+## Payment
 
-When enabled, third-party analytics tools may collect:
+- 50% advance once you accept the quote. Work is scheduled only after the advance is received.
 
-- Pages visited on our website and time spent on each page
+- Balance 50% when the embroidery is finished. We send you photos of the finished piece first, then dispatch it after the balance is paid.
 
-- Device and browser type
+- We accept UPI and bank transfer. We may send a payment link for your quote; we will never ask for card details or an OTP on WhatsApp.
 
-- General location at city or region level - not your exact address
+## Timeline
 
-## Why we collect it
+- Most pieces take about 14–21 days at the frame after we receive your blouse and the advance. Heavy bridal work can take longer; your quote states the date.
 
-- To respond to your enquiry and provide a quote
+- Courier time is extra: usually 2–4 days each way within India.
 
-- To understand how visitors use our site so we can improve it
+- For weddings, enquire at least 4–6 weeks before the event.
 
-## Third-party tools we use
+## Sending your blouse
 
-Microsoft Clarity: We use Microsoft Clarity on selected pages to understand how visitors interact with our site and improve its design and usability. Clarity may collect technical information, pages visited, clicks, scrolling and other interaction data, and may create session recordings or heatmaps. Do not enter sensitive personal information anywhere on the site. For details about Clarity and available controls, see Microsoft's privacy statement.
+- We share the studio address with your order confirmation.
 
-Google Analytics and Meta Pixel: The site can send page, product-view, successful-enquiry and WhatsApp-click events when these tags are enabled in the deployment. The event payload may include a design name, but does not include form contact details. Check the deployment's tag and consent settings for current configuration.
+- Fold the blouse inside a clean plastic cover, put it in a padded envelope or box, and include a note with your name, phone number and design name.
 
-Formspree: When you submit our enquiry form, data is processed by Formspree and delivered to our email. See Formspree's privacy policy for details.
+- If you want the work placed to fit you, send a well-fitting blouse as a measurement reference or share your measurements on WhatsApp.
 
-## How we store your data
+- Use a tracked courier and send us the tracking number. We message you when it arrives.
 
-When you submit an enquiry, the information you provide is sent to Formspree so it can be delivered to us by email. We use it to respond to your request and discuss a possible order. We do not store enquiry data in our own website database or CRM. Formspree processes the submission on our behalf; see Formspree's privacy policy.
+## Cancellation and refunds
 
-## Your rights
+- Before work starts: cancel before we begin embroidering and we refund your advance minus any courier we have already paid, and return your blouse at your cost.
 
-You have the right to ask us to delete any personal information you have shared with us. Contact us at contact@khadeejadesigns.in and we will remove your data within 7 working days.
+- After work starts: the advance is not refundable, because the embroidery is made for your garment and cannot be resold. We return your blouse with the work completed so far.
 
-Under India's Digital Personal Data Protection Act 2023 (DPDP Act), you have the right to access, correct, and request erasure of your personal data.
+- Refunds are paid back to the original UPI or bank account within 7 working days.
 
-## Cookies
+## Rework and quality
 
-Microsoft Clarity may use cookies or similar technologies on pages where it is enabled. You can manage or delete cookies using your browser settings. GA4 and Meta Pixel may also use cookies or similar technologies when enabled in the deployment; review the deployed consent settings before use.
+- Check your piece when it arrives. If something does not match the agreed design (a missed motif, loose stitching, wrong thread colour against the approved sample), tell us on WhatsApp within 7 days of delivery with photos.
 
-When an enquiry link includes campaign parameters such as UTM tags or advertising click IDs, the site may retain those values in session storage for the current browser session and include them in the enquiry. WhatsApp links open with a page-specific message prefilled, such as the design or blog title where relevant; you choose whether to send it.
+- We fix agreed-design issues free of charge, including return courier.
+
+- Changes to the design after it was approved are treated as a new request and quoted separately.
+
+- Hand embroidery has small, natural variations from the photos on this site. That is part of handmade work and is not a defect.
+
+## Returns
+
+Because each piece is embroidered on your own garment to your brief, we cannot accept returns for a change of mind. The rework and cancellation terms above apply instead.
+
+## Delivery back to you
+
+We ship anywhere in India by tracked courier and send you the tracking link on dispatch. We are not responsible for courier delays, but we will help you follow up with the courier company.
 
 ## Contact us
 
-Khadeeja Designs17 East Sayakara Lane, Jaffersha StreetTrichy – 620008, Tamil Naducontact@khadeejadesigns.in
+Khadeeja Designs
+17 East Sayakara Lane, Jaffersha Street
+Trichy – 620008, Tamil Nadu
+Phone / WhatsApp: +91 86674 54391
+contact@khadeejadesigns.in
+Studio hours: 10 am to 7 pm, Mon to Sat (Sunday by appointment)
+
