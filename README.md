@@ -25,6 +25,11 @@ schema, the price-guide table), regenerates `sitemap.xml` (lastmod = last git co
 which does the same and publishes only public files from `dist/`. **Any checker error blocks the
 deploy**, and CI fails if the committed HTML is out of sync with the data files.
 
+**Deploys come only from GitHub (audit K-1).** A production build refuses to run if the files
+differ from a commit, and every deploy publishes `/version.json` with the commit it was built
+from. Check the live site matches GitHub with `curl https://khadeejadesigns.in/version.json`.
+Don't use Netlify drag-and-drop or `netlify deploy --prod`; push to `master` instead.
+
 After adding a design or blog post, also run `python3 tools/make-og-images.py` to create its
 1200×630 JPG share image (WhatsApp does not reliably preview WebP).
 
