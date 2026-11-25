@@ -13,6 +13,7 @@ const pageRoots = [
   '/contact/',
   '/bridal-aari-blouse/',
   '/policies/',
+  '/aari-work-trichy/',
 ];
 
 function xmlEscape(value) {

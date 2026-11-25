@@ -65,6 +65,7 @@ function businessSchema() {
     '@type': biz.type,
     '@id': biz.id,
     name: biz.name,
+    alternateName: biz.alternateName,
     description: biz.description,
     url: biz.url,
     email: biz.email,
@@ -87,7 +88,14 @@ function businessSchema() {
       opens: biz.opens,
       closes: biz.closes,
     }],
-    areaServed: biz.areaServed,
+    // The city by its official name, linked to Wikipedia so search engines resolve
+    // "Trichy", "Tiruchirappalli", "Tiruchchirappalli" and "Tiruchi" to the same place.
+    areaServed: [
+      { '@type': 'City', name: 'Tiruchirappalli', alternateName: ['Trichy', 'Tiruchchirappalli', 'Tiruchi'], sameAs: 'https://en.wikipedia.org/wiki/Tiruchirappalli' },
+      { '@type': 'State', name: 'Tamil Nadu' },
+      { '@type': 'Country', name: 'India' },
+    ],
+    knowsAbout: ['Aari embroidery', 'Bridal blouse embroidery', 'Zardosi embroidery', 'Kanchipuram silk saree blouses'],
     hasMap: biz.hasMap,
     sameAs: biz.sameAs,
   };
@@ -139,9 +147,9 @@ const ICONS = {
 };
 
 function footerBlock() {
-  const nav = [['/explore/', 'Explore Designs'], ['/bridal-aari-blouse/', 'Bridal Aari Blouses'], ['/blog/', 'Blog'], ['/about/', 'About'], ['/faq/', 'FAQ'], ['/contact/', 'Contact']]
+  const nav = [['/explore/', 'Explore Designs'], ['/bridal-aari-blouse/', 'Bridal Aari Blouses'], ['/aari-work-trichy/', 'Visit our Trichy studio'], ['/blog/', 'Blog'], ['/about/', 'About'], ['/faq/', 'FAQ'], ['/contact/', 'Contact']]
     .map(([href, label]) => `<a href="${href}">${label}</a>`).join('<span class="footer-separator" aria-hidden="true">·</span>');
-  return `<footer><div class="footer-main"><div class="footer-signature"><a class="footer-brand" href="/">Khadeeja Designs</a><p class="footer-tagline">Boutique Aari embroidery, handcrafted in Trichy</p><p class="footer-tagline">${esc(biz.streetAddress)}, Trichy ${esc(biz.postalCode)} · <span data-studio-hours-static>${esc(config.studioHours)}</span></p></div><nav class="footer-nav" aria-label="Footer navigation">${nav}</nav><nav class="footer-social" aria-label="Social and community links"><a href="https://instagram.com/khadeeja.designs" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile of Khadeeja Designs">${ICONS.instagram}<span>Instagram</span></a><a href="https://www.reddit.com/r/AariEmbroidery/" target="_blank" rel="noopener noreferrer" aria-label="Visit the r/AariEmbroidery community">${ICONS.reddit}<span>r/AariEmbroidery</span></a><a href="https://medium.com/@khadeejadesigns" target="_blank" rel="me noopener noreferrer" aria-label="Medium articles by Khadeeja Designs">${ICONS.medium}<span>Medium</span></a></nav></div><div class="footer-bottom"><span class="footer-copy">&copy; Khadeeja Designs. All rights reserved.</span><span class="footer-bottom-separator" aria-hidden="true">·</span><div class="footer-legal"><a href="/policies/">Order &amp; refund policy</a><span class="footer-bottom-separator" aria-hidden="true">·</span><a href="/privacy/">Privacy Policy</a></div></div></footer>`;
+  return `<footer><div class="footer-main"><div class="footer-signature"><a class="footer-brand" href="/">Khadeeja Designs</a><p class="footer-tagline">Boutique Aari embroidery, handcrafted in Trichy</p><p class="footer-tagline"><a href="/aari-work-trichy/">${esc(biz.streetAddress)}, ${esc(biz.cityDisplay)} ${esc(biz.postalCode)}, Tamil Nadu</a> · <a href="tel:${esc(biz.telephone)}" data-contact-method="call">+91 86674 54391</a> · <span data-studio-hours-static>${esc(config.studioHours)}</span></p></div><nav class="footer-nav" aria-label="Footer navigation">${nav}</nav><nav class="footer-social" aria-label="Social and community links"><a href="https://instagram.com/khadeeja.designs" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile of Khadeeja Designs">${ICONS.instagram}<span>Instagram</span></a><a href="https://www.reddit.com/r/AariEmbroidery/" target="_blank" rel="noopener noreferrer" aria-label="Visit the r/AariEmbroidery community">${ICONS.reddit}<span>r/AariEmbroidery</span></a><a href="https://medium.com/@khadeejadesigns" target="_blank" rel="me noopener noreferrer" aria-label="Medium articles by Khadeeja Designs">${ICONS.medium}<span>Medium</span></a></nav></div><div class="footer-bottom"><span class="footer-copy">&copy; Khadeeja Designs. All rights reserved.</span><span class="footer-bottom-separator" aria-hidden="true">·</span><div class="footer-legal"><a href="/policies/">Order &amp; refund policy</a><span class="footer-bottom-separator" aria-hidden="true">·</span><a href="/privacy/">Privacy Policy</a></div></div></footer>`;
 }
 
 function testimonialsBlock(list = config.testimonials) {
