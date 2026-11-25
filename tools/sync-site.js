@@ -190,7 +190,7 @@ function galleryBlock(id, p) {
 
 function priceBlock(p) {
   const { price, offer, original } = productPrice(p);
-  return `<div class="price" aria-label="Embroidery from ${rupees(price)}">${offer ? `<span class="old">${rupees(original)}</span>` : ''}${rupees(price)}</div><p class="offer-note"><strong>Hand Aari work on the blouse you send us.</strong> The price covers the embroidery. The blouse and courier are not included.</p>`;
+  return `<div class="price" aria-label="Embroidery from ${rupees(price)}">${offer ? `<span class="old">${rupees(original)}</span>` : ''}${rupees(price)}</div><p class="offer-note"><strong>Hand Aari work on the blouse you send us.</strong> The price covers the embroidery. The blouse is not included; delivery is free within Trichy, and courier elsewhere is quoted.</p>`;
 }
 
 function pricingScopeBlock(p) {
@@ -232,9 +232,26 @@ function productSchema(id, p) {
       priceCurrency: 'INR',
       price,
       ...(offer ? { priceValidUntil: p.offerEndsOn } : {}),
-      availability: 'https://schema.org/MadeToOrder',
+      // Google's merchant listings reject MadeToOrder; InStock = the service can be ordered now.
+      availability: 'https://schema.org/InStock',
       itemCondition: 'https://schema.org/NewCondition',
       seller: { '@id': biz.id },
+      // Only the rate we can state honestly: free delivery to Trichy PIN codes (620xxx).
+      // Courier elsewhere varies by place, so no rate is published for it.
+      shippingDetails: {
+        '@type': 'OfferShippingDetails',
+        shippingDestination: {
+          '@type': 'DefinedRegion',
+          addressCountry: 'IN',
+          postalCodePrefix: config.policy.freeDeliveryPostcodePrefix,
+        },
+        shippingRate: { '@type': 'MonetaryAmount', value: 0, currency: 'INR' },
+        deliveryTime: {
+          '@type': 'ShippingDeliveryTime',
+          handlingTime: { '@type': 'QuantitativeValue', minValue: 14, maxValue: 21, unitCode: 'DAY' },
+          transitTime: { '@type': 'QuantitativeValue', minValue: 0, maxValue: 2, unitCode: 'DAY' },
+        },
+      },
       hasMerchantReturnPolicy: {
         '@type': 'MerchantReturnPolicy',
         applicableCountry: 'IN',
@@ -280,7 +297,7 @@ function priceTableBlock() {
     const links = list.map(p => `<a href="/explore/designs/${p.id}/">${esc(p.title.replace(/\s+Blouse$/i, ''))}</a> (${rupees(p.price)})`).join(', ');
     return `<tr><th scope="row">${name}</th><td>${range}</td><td>${scope}</td><td>${links}</td></tr>`;
   }).join('');
-  return `<div class="price-table-wrap"><table class="price-table"><caption>Khadeeja Designs Aari embroidery prices (embroidery on your blouse; blouse and courier not included)</caption><thead><tr><th scope="col">Work level</th><th scope="col">Price</th><th scope="col">Typical coverage</th><th scope="col">Our designs</th></tr></thead><tbody>${rows}</tbody></table></div>`;
+  return `<div class="price-table-wrap"><table class="price-table"><caption>Khadeeja Designs Aari embroidery prices (embroidery on your blouse; blouse not included; courier outside Trichy quoted separately)</caption><thead><tr><th scope="col">Work level</th><th scope="col">Price</th><th scope="col">Typical coverage</th><th scope="col">Our designs</th></tr></thead><tbody>${rows}</tbody></table></div>`;
 }
 
 /* ------------------------------------------------------------------ FAQ schema */

@@ -264,7 +264,7 @@ for (const [pagePath, configured] of Object.entries(metadata)) {
     if (!schema || !schema.image || !schema.description || schema.brand?.name !== 'Khadeeja Designs' ||
         typeof schema.offers?.price !== 'number' || schema.offers.price !== numericPrice ||
         schema.offers.priceCurrency !== 'INR' ||
-        !['https://schema.org/InStock', 'https://schema.org/MadeToOrder'].includes(schema.offers.availability)) {
+        schema.offers.availability !== 'https://schema.org/InStock') { // Google merchant listings reject MadeToOrder
       failures.push(`${relativePath}: Product schema is missing valid product or Offer data`);
     }
     const story = html.match(/<section class="product-story" aria-labelledby="product-story-title">([\s\S]*?)<\/section>/i);
