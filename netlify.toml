@@ -9,6 +9,10 @@
   # then publishes only public files from dist/ (no README, scripts, tools or reports).
   command = "node tools/build.js"
   publish = "dist"
+  # Save build credits: skip the build when a push only changes files that never reach the
+  # live site. Exit 0 = skip, non-zero = build. With no previous build to compare against
+  # (CACHED_COMMIT_REF empty) the test fails, so the site always builds.
+  ignore = "[ -n \"$CACHED_COMMIT_REF\" ] && git diff --quiet $CACHED_COMMIT_REF $COMMIT_REF -- . ':(exclude)README.md' ':(exclude)SEO-IMPLEMENTATION-REPORT.md' ':(exclude).github' ':(exclude)tools/make-og-images.py'"
 
 [build.environment]
   NODE_VERSION = "20"
