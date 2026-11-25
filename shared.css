@@ -499,3 +499,14 @@ footer { border-top: 1px solid var(--border); padding: 40px 52px 32px; margin-to
     transition-duration: 0.01ms !important;
   }
 }
+
+/* ── Signature divider: a hand-drawn Aari chain stitch instead of a plain gold rule ── */
+.kicker-line {
+  width: 46px;
+  height: 10px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='10' viewBox='0 0 46 10'%3E%3Cg fill='none' stroke='%23B8860B' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M1 5c2-3.6 7-3.6 9 0-2 3.6-7 3.6-9 0Z'/%3E%3Cpath d='M10 5c2-3.6 7-3.6 9 0-2 3.6-7 3.6-9 0Z'/%3E%3Cpath d='M19 5c2-3.6 7-3.6 9 0-2 3.6-7 3.6-9 0Z'/%3E%3Cpath d='M28 5c2-3.6 7-3.6 9 0-2 3.6-7 3.6-9 0Z'/%3E%3Cpath d='M37 5c2-3.6 7-3.6 8 0'/%3E%3C/g%3E%3C/svg%3E") no-repeat left center;
+}
+.ordering-steps__policy { margin-top: 16px; color: var(--t3); font: 12px/1.6 var(--sans); }
+.ordering-steps__policy a { color: var(--gold-light); }
+.footer-signature .footer-tagline + .footer-tagline { color: var(--t3); font-size: 11px; }
+.footer-legal { gap: 8px; align-items: center; }

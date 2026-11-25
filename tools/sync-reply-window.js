@@ -142,31 +142,6 @@ function syncReplyWindow(filePath, addProductNote = false) {
   fs.writeFileSync(absolutePath, html);
 }
 
-function updateMetaDescription(filePath, targetAttribute, description) {
-  const absolutePath = path.join(root, filePath);
-  let html = fs.readFileSync(absolutePath, 'utf8');
-  const marker = `${targetAttribute.name}="${targetAttribute.value}"`;
-  const markerIndex = html.indexOf(marker);
-  if (markerIndex < 0) {
-    throw new Error(`Could not find ${marker} in ${filePath}.`);
-  }
-
-  const tagStart = html.lastIndexOf('<meta', markerIndex);
-  const tagEnd = html.indexOf('>', markerIndex);
-  if (tagStart < 0 || tagEnd < 0) {
-    throw new Error(`Could not read the ${marker} meta tag in ${filePath}.`);
-  }
-
-  const tag = html.slice(tagStart, tagEnd + 1);
-  const expectedContent = `content="${escapeHtml(description)}"`;
-  const updatedTag = tag.replace(/\bcontent="[^"]*"/, expectedContent);
-  if (updatedTag === tag) {
-    if (tag.includes(expectedContent)) return;
-    throw new Error(`Could not update the content for ${marker} in ${filePath}.`);
-  }
-
-  fs.writeFileSync(absolutePath, `${html.slice(0, tagStart)}${updatedTag}${html.slice(tagEnd + 1)}`);
-}
 
 function syncProductContactMarkup(productId, product) {
   const filePath = path.join('explore', 'designs', productId, 'index.html');
@@ -180,7 +155,7 @@ function syncProductContactMarkup(productId, product) {
   const escapedTitle = escapeHtml(title);
   const actions = `<!-- product-contact-actions:start -->
 <div class="product-actions" role="group" aria-label="Enquiry options">
-  <a class="cta" href="/contact/#id=${encodeURIComponent(productId)}" aria-label="Make the ${escapedTitle} design yours">Make It Yours →</a>
+  <a class="cta" href="/contact/#id=${encodeURIComponent(productId)}" aria-label="Make the ${escapedTitle} design yours">Make It Yours</a>
   <a class="button button--ghost product-whatsapp whatsapp-link" href="${escapeHtml(whatsappUrl(message))}" aria-label="Discuss the ${escapedTitle} design on WhatsApp" data-contact-method="whatsapp"><span class="whatsapp-prefix">Discuss on</span><img class="whatsapp-icon" src="/images/whatsapp-icon.png" alt="" aria-hidden="true"></a>
 </div>
 <!-- product-contact-actions:end -->`;
@@ -230,14 +205,7 @@ syncReplyWindow(path.join('blog', 'how-to-choose-aari-embroidery-bridal-blouse',
 syncReplyWindow('thankyou/index.html');
 syncContactLinks();
 
-const shortReplyText = `We reply within ${config.replyWindow.trim()}.`;
-for (const [filePath, description] of [
-  ['contact/index.html', `Get a custom Aari blouse quote in Trichy. Share your saree and occasion with Khadeeja Designs. ${shortReplyText}`],
-  ['faq/index.html', `Answers about Aari work, pricing, custom orders and delivery from Khadeeja Designs. ${shortReplyText}`],
-]) {
-  updateMetaDescription(filePath, { name: 'name', value: 'description' }, description);
-  updateMetaDescription(filePath, { name: 'property', value: 'og:description' }, description);
-}
+// Meta descriptions come from seo-meta.json (scripts/sync-meta.js); this script no longer rewrites them.
 
 const productIds = JSON.parse(
   fs.readFileSync(path.join(root, 'explore', 'designs', 'index.json'), 'utf8'),

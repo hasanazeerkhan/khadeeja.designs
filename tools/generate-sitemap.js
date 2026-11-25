@@ -1,5 +1,6 @@
 const fs = require('node:fs');
 const path = require('node:path');
+const { execFileSync } = require('node:child_process');
 
 const root = path.resolve(__dirname, '..');
 const siteUrl = 'https://khadeejadesigns.in';
@@ -10,6 +11,8 @@ const pageRoots = [
   '/blog/',
   '/faq/',
   '/contact/',
+  '/bridal-aari-blouse/',
+  '/policies/',
 ];
 
 function xmlEscape(value) {
@@ -30,9 +33,22 @@ function normalizeUrl(urlPath) {
   return `${siteUrl}${formatted}`;
 }
 
-function latestDateFor(filePath) {
-  const stats = fs.statSync(filePath);
-  return new Date(stats.mtime).toISOString().slice(0, 10);
+/**
+ * lastmod = the date of the last commit that touched the page (or its product.json), so Google
+ * sees real content dates instead of the build date. Falls back to the file's mtime for
+ * uncommitted files or shallow clones without history.
+ */
+function latestDateFor(filePath, ...related) {
+  const files = [filePath, ...related].filter(file => fs.existsSync(file));
+  try {
+    const out = execFileSync('git', ['log', '-1', '--format=%cs', '--', ...files.map(f => path.relative(root, f))], { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    const dirty = execFileSync('git', ['status', '--porcelain', '--', ...files.map(f => path.relative(root, f))], { cwd: root, encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] }).trim();
+    if (/^\d{4}-\d{2}-\d{2}$/.test(out) && !dirty) return out;
+  } catch {
+    /* not a git checkout: fall through */
+  }
+  const newest = Math.max(...files.map(file => fs.statSync(file).mtimeMs));
+  return new Date(newest).toISOString().slice(0, 10);
 }
 
 function buildImageTag(imagePath) {
@@ -71,7 +87,7 @@ function collectProductUrls() {
 
       return {
         loc: normalizeUrl(`/explore/designs/${id}/`),
-        lastmod: latestDateFor(pagePath),
+        lastmod: latestDateFor(pagePath, productJsonPath),
         image: imagePath,
       };
     })

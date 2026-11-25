@@ -34,7 +34,7 @@ const CFG = {
   productsDir: 'explore/designs',
   categories: ['bridal', 'designer'],
   noindexPaths: ['/thankyou/', '/privacy/', '/product/', '/404.html'],
-  skipDirs: new Set(['node_modules', '.git', '.github', 'scripts']),
+  skipDirs: new Set(['node_modules', '.git', '.github', 'scripts', 'tools', 'dist']),
   staleBlogDays: 60,
   maxImageKB: 500,
 };

@@ -364,3 +364,46 @@
   .design-specs li { padding: 16px 0; }
   .design-specs span { font-size: 13px; line-height: 1.75; }
 }
+
+/* ── Offer clarity (price is for embroidery on the customer's blouse) ── */
+.product .price { margin-bottom: 10px; }
+.product .price .price-unit { color: var(--t3); font-size: 14px; font-weight: 400; }
+.product .price .old { margin-right: 10px; }
+.offer-note {
+  max-width: 52ch;
+  margin: 0 0 22px;
+  padding: 12px 14px;
+  border: 1px solid rgba(184, 134, 11, .35);
+  border-radius: var(--radius-sm);
+  background: var(--gold-dim);
+  color: var(--t2);
+  font: 13px/1.6 var(--sans);
+}
+.offer-note strong { display: block; color: var(--t1); font-weight: 500; }
+
+.how-it-works {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+  list-style: none;
+}
+.how-it-works li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+.how-it-works strong { color: var(--gold-light); font: 500 12px/1.4 var(--sans); }
+.how-it-works span { color: var(--t2); font: 12px/1.5 var(--sans); }
+.pricing-scope a { color: var(--gold-light); }
+
+.product-faqs h2 { font: 28px var(--serif); font-weight: 300; margin: 42px 0 14px; }
+
+@media (max-width: 600px) {
+  .how-it-works { grid-template-columns: 1fr; }
+  .how-it-works li { flex-direction: row; flex-wrap: wrap; column-gap: 8px; }
+}

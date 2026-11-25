@@ -11,6 +11,9 @@ on:
       - 'robots.txt'
       - 'sitemap.xml'
       - 'llms.txt'
+      - 'tools/**'
+      - 'scripts/**'
+      - 'seo-meta.json'
       - '.github/workflows/seo-compliance.yml'
   push:
     branches: [master]
@@ -23,6 +26,9 @@ on:
       - 'robots.txt'
       - 'sitemap.xml'
       - 'llms.txt'
+      - 'tools/**'
+      - 'scripts/**'
+      - 'seo-meta.json'
       - '.github/workflows/seo-compliance.yml'
   workflow_dispatch:
 
@@ -31,18 +37,23 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so sitemap lastmod uses real commit dates
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - name: Generate sitemap from current content
-        run: node ./tools/generate-sitemap.js
-      - name: Validate metadata and SEO structure
-        run: node ./scripts/check-meta.js
-      - name: Run local compliance checks
-        run: node ./seo-compliance.js
-      - name: Validate HTML structure standards
-        run: node ./tools/check-html-standards.js
-      - name: Validate analytics config
-        run: node ./tools/check-analytics-config.js
-      - name: Validate production link crawl
-        run: npx --yes linkinator "https://khadeejadesigns.in" --recurse --skip "instagram|goo.gl|reddit"
+      - name: Build exactly what Netlify deploys (sync + all checks + dist/)
+        run: node ./tools/build.js
+      - name: Fail if the committed HTML is out of sync with the data files
+        run: |
+          git diff --stat -- . ':(exclude)sitemap.xml' ':(exclude)llms-full.txt'
+          if ! git diff --quiet -- . ':(exclude)sitemap.xml' ':(exclude)llms-full.txt'; then
+            echo "::error::Generated HTML differs from the commit. Run 'node tools/build.js --no-dist' locally and commit the result."
+            exit 1
+          fi
+      - name: Crawl the built site (not production) for broken links
+        run: |
+          npx --yes http-server@14.1.1 dist -p 8080 -s &
+          sleep 3
+          npx --yes linkinator@6.1.2 "http://localhost:8080/" --recurse \
+            --skip "instagram|goo.gl|reddit|medium.com|wa.me|khadeejadesigns\\.in|facebook|google|clarity|formspree"

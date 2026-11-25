@@ -1,8 +1,7 @@
 {
   "index.html": {
     "title": "Custom Bridal Blouses & Aari Studio | Khadeeja Designs",
-    "description": "Khadeeja Designs creates custom bridal blouses and Aari embroidery in Trichy with detailed styling and wedding-ready craftsmanship for brides.",
-    "ogImage": "https://khadeejadesigns.in/explore/designs/bridal-royal-zardosi/khadeeja_designs_bridal_royal_zardosi_blouse_front.webp"
+    "description": "Khadeeja Designs creates custom bridal blouses and Aari embroidery in Trichy with detailed styling and wedding-ready craftsmanship for brides."
   },
   "explore/index.html": {
     "title": "Designs | Bridal Blouses & Aari Work | Khadeeja Designs",
@@ -27,8 +26,7 @@
   },
   "blog/index.html": {
     "title": "Bridal Aari Embroidery Guides & Tips | Khadeeja Designs",
-    "description": "Read expert guides on bridal Aari blouse designs, Kanchipuram silk saree pairings, pricing breakdowns, and blouse care tips from our Trichy studio.",
-    "ogImage": "https://khadeejadesigns.in/blog/aari-work-timeline-when-to-book-wedding/aari-work-wedding-booking-timeline_1536w.webp"
+    "description": "Read expert guides on bridal Aari blouse designs, Kanchipuram silk saree pairings, pricing breakdowns, and blouse care tips from our Trichy studio."
   },
   "blog/aari-embroidery-care-washing-guide/index.html": {
     "title": "How to Wash & Care for Aari Blouses | Khadeeja Designs",
@@ -44,7 +42,7 @@
   },
   "blog/aari-work-blouse-price-guide/index.html": {
     "title": "Aari Work Blouse Price Guide 2026 India | Khadeeja Designs",
-    "description": "Wondering how much Aari work costs? Compare pricing for simple, medium, and heavy bridal blouse designs by threadwork, stones, and motif density."
+    "description": "Aari work blouse prices for 2026: light work from ₹1,999, medium ₹4,499–₹4,999 and heavy bridal ₹6,499–₹8,499 for hand embroidery on your blouse."
   },
   "blog/aari-work-timeline-when-to-book-wedding/index.html": {
     "title": "How Long Does Aari Work Take? Timeline | Khadeeja Designs",
@@ -90,19 +88,19 @@
   "404.html": {
     "title": "Page Not Found: Aari Designs in Trichy | Khadeeja Designs",
     "description": "This page could not be found. Browse Khadeeja Designs' handcrafted Aari blouse collection or visit the blog, FAQs, and contact page for help.",
-    "robots": "noindex,follow",
-    "ogImage": "https://khadeejadesigns.in/blog/aari-vs-maggam-vs-zardosi/aari-maggam-zardosi-embroidery-comparison_1536w.webp"
-  },
-  "product/index.html": {
-    "title": "Aari Blouse Collection Now at Explore | Khadeeja Designs",
-    "description": "The Aari blouse portfolio has moved. Browse handcrafted designs, view listed prices, and open each product page to review details or send an enquiry.",
-    "robots": "noindex,follow",
-    "ogImage": "https://khadeejadesigns.in/explore/designs/sunset-garden/khadeeja_designs_sunset_garden_back.webp"
+    "robots": "noindex,follow"
   },
   "thankyou/index.html": {
     "title": "Thank You for Your Aari Blouse Enquiry | Khadeeja Designs",
     "description": "Your Aari blouse enquiry has reached Khadeeja Designs. We will review your brief and respond during studio hours with the next steps for your order.",
-    "robots": "noindex,follow",
-    "ogImage": "https://khadeejadesigns.in/explore/designs/emerald-jhumka-elegance/khadeeja_designs_emerald_jhumka_embroidered_blouse_back.webp"
+    "robots": "noindex,follow"
+  },
+  "policies/index.html": {
+    "title": "Order and Refund Policy | Aari Studio | Khadeeja Designs",
+    "description": "How ordering works: 50% advance, courier charges, 14–21 day timelines, cancellations, refunds, rework and how to pack your blouse for our Trichy studio."
+  },
+  "bridal-aari-blouse/index.html": {
+    "title": "Bridal Aari Blouse in Trichy from ₹6,499 | Khadeeja Designs",
+    "description": "Hand Aari bridal blouse embroidery in Trichy on the blouse you send us. Bridal designs from ₹6,499, ready in 14–21 days, tracked delivery across India."
   }
 }
