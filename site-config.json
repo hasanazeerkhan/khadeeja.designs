@@ -40,13 +40,19 @@
     "hasMap": "https://maps.app.goo.gl/LLfyh2Ar4wq9Twyc8",
     "sameAs": [
       "https://www.instagram.com/khadeeja.designs/"
-    ]
+    ],
+    "alternateName": [
+      "Khadeeja Designs Trichy",
+      "Khadeeja Designs Tiruchirappalli"
+    ],
+    "cityDisplay": "Tiruchirappalli (Trichy)"
   },
   "policy": {
     "advancePercent": 50,
     "turnaround": "14–21 days",
-    "shipping": "Courier charges both ways are quoted separately and shown in your quote before you pay anything.",
-    "reworkDays": 7
+    "shipping": "Delivery within Trichy is free. Courier to other places is quoted separately and shown in your quote before you pay anything.",
+    "reworkDays": 7,
+    "freeDeliveryPostcodePrefix": "620"
   },
   "analytics": {
     "clarityId": "z6cpt0zz1l",
