@@ -99,27 +99,9 @@ function syncContactLinks() {
   fs.writeFileSync(absolutePath, html);
 }
 
-function syncReplyWindow(filePath, addProductNote = false) {
+function syncReplyWindow(filePath) {
   const absolutePath = path.join(root, filePath);
   let html = fs.readFileSync(absolutePath, 'utf8');
-
-  if (addProductNote) {
-    let hasProductNote = false;
-    html = html.replace(/<p class="copy reply-window-note">[\s\S]*?<\/p>/g, () => {
-      if (hasProductNote) return '';
-      hasProductNote = true;
-      return `<p class="copy reply-window-note">We reply within <span data-reply-window-static>${replyWindow}</span>.</p>`;
-    });
-
-    if (!hasProductNote) {
-      const cta = '<a class="cta"';
-      const ctaIndex = html.indexOf(cta);
-      if (ctaIndex < 0) {
-        throw new Error(`Could not find product CTA in ${filePath}.`);
-      }
-      html = `${html.slice(0, ctaIndex)}<p class="copy reply-window-note">We reply within <span data-reply-window-static>${replyWindow}</span>.</p>${html.slice(ctaIndex)}`;
-    }
-  }
 
   const markerCounts = { replyWindow: 0, studioHours: 0 };
   html = html.replace(
@@ -158,7 +140,10 @@ function syncProductContactMarkup(productId, product) {
   <a class="cta" href="/contact/#id=${encodeURIComponent(productId)}" aria-label="Make the ${escapedTitle} design yours">Make It Yours</a>
   <a class="button button--ghost product-whatsapp whatsapp-link" href="${escapeHtml(whatsappUrl(message))}" aria-label="Discuss the ${escapedTitle} design on WhatsApp" data-contact-method="whatsapp"><span class="whatsapp-prefix">Discuss on</span><img class="whatsapp-icon" src="/images/whatsapp-icon.png" alt="" aria-hidden="true"></a>
 </div>
+<p class="reply-window-note">We reply within <span data-reply-window-static>${replyWindow}</span>.</p>
 <!-- product-contact-actions:end -->`;
+  // The reply note now sits under the buttons, inside the block above; drop the old copy that sat above them.
+  html = html.replace(/<p class="copy reply-window-note">[\s\S]*?<\/p>/g, '');
   const actionsBlock = /<!-- product-contact-actions:start -->[\s\S]*?<!-- product-contact-actions:end -->/;
   if (actionsBlock.test(html)) {
     html = html.replace(actionsBlock, actions);
@@ -218,6 +203,6 @@ for (const productId of productIds) {
   const productPath = path.join('explore', 'designs', productId, 'product.json');
   const product = JSON.parse(fs.readFileSync(path.join(root, productPath), 'utf8'));
   const pagePath = path.join('explore', 'designs', productId, 'index.html');
-  syncReplyWindow(pagePath, true);
   syncProductContactMarkup(productId, product);
+  syncReplyWindow(pagePath);
 }

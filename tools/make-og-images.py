@@ -2,6 +2,7 @@
 """Generate 1200x630 JPG share images (WhatsApp/Facebook previews are unreliable with WebP).
 
 Run after adding a design or a blog post:  python3 tools/make-og-images.py
+Also writes the 240px gallery thumbnails (<image stem>_240w.webp) for every design.
 Writes og.jpg next to each design page and blog post, plus images/og/default.jpg.
 """
 import json
@@ -42,3 +43,16 @@ for page in sorted((ROOT / 'blog').glob('*/index.html')):
     pngs = sorted(p for p in page.parent.glob('*.png'))
     if pngs:
         make(pngs[0], page.parent / 'og.jpg')
+
+# 240px gallery thumbnails (<stem>_240w.webp). Product-page thumbnails display at 96px, so the
+# 480px files were wasted bandwidth competing with the main image; tools/sync-site.js uses these.
+for pid in ids:
+    d = ROOT / 'explore/designs' / pid
+    for name in json.loads((d / 'product.json').read_text())['images']:
+        stem = Path(name).stem
+        src = d / name if (d / name).exists() else d / f'{stem}.webp'
+        thumb = Image.open(src).convert('RGB')
+        thumb.thumbnail((240, 240), Image.LANCZOS)
+        dest = d / f'{stem}_240w.webp'
+        thumb.save(dest, 'WEBP', quality=78, method=6)
+        print(f'wrote {dest.relative_to(ROOT)}')

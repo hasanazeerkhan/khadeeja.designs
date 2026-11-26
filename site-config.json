@@ -29,8 +29,8 @@
     ],
     "opens": "10:00",
     "closes": "19:00",
-    "hoursDisplay": "Mon–Sat: 10:00 AM–7:00 PM",
-    "sundayDisplay": "Sunday: By appointment",
+    "hoursDisplay": "Mon–Sat: 10 am–7 pm",
+    "sundayDisplay": "Sunday by appointment",
     "priceRange": "₹1,999–₹8,499",
     "areaServed": [
       "Tiruchirappalli",

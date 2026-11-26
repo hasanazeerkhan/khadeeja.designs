@@ -280,8 +280,14 @@
 }
 
 .pricing-scope strong { color: var(--t1); font-weight: 500; }
-.product .reply-alert { margin-top: 16px; font: 13px/1.65 var(--sans); }
-
+/* Reply-time caption under the enquiry buttons, centred on the same width as the button pair */
+.product .reply-window-note {
+  width: min(100%, 500px);
+  margin: 12px 0 0;
+  color: var(--t3);
+  font: 12px/1.6 var(--sans);
+  text-align: center;
+}
 @media (max-width: 900px) {
   .product {
     padding: 26px 24px 56px;
@@ -328,7 +334,7 @@
   .pricing-scope { margin-right: 0; padding: 14px; }
 }
 
-/* Design page spec list: saree pairings, pricing and booking at a glance. */
+/* Design page spec list: saree pairings at a glance (price and booking live in the Price & delivery accordion). */
 .design-specs {
   display: grid;
   gap: 0;

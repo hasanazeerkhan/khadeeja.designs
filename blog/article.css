@@ -75,3 +75,7 @@
 @media (max-width: 1200px) {
   .article-layout, .article-layout.article-layout--with-toc, .post-layout.article-layout--with-toc { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Pull quote */
+.article-quote{margin:32px 0;padding:4px 0 4px 24px;border-left:2px solid var(--gold)}
+.article-quote p{margin:0;color:var(--t1);font:italic 300 22px/1.5 var(--serif)}

@@ -11,7 +11,6 @@ function initPage(activePage) {
   document.querySelectorAll('.faq, .seo-faq, .contact-faq').forEach(section => {
     if (section.querySelector('details')) section.classList.add('shared-question-section');
   });
-  document.querySelectorAll('.reply-window-note').forEach(note => note.classList.add('reply-alert'));
   document.querySelectorAll('.product-contact-bar').forEach(bar => {
     bar.classList.add('mobile-contact-bar');
     bar.querySelector('.product-contact-bar__whatsapp')?.classList.add('mobile-contact-bar__whatsapp');
@@ -163,7 +162,6 @@ function addBreadcrumbSchema(activePage) {
     const SECTION_LABELS = {
       explore: 'Explore Designs',
       blog: 'Blog',
-      about: 'About Us',
       contact: 'Contact',
       faq: 'FAQ'
     };
@@ -278,7 +276,6 @@ function _toggleMobileMenu() {
     { label: 'Explore Designs', href: '/explore/'  },
     { label: 'Bridal',          href: '/bridal-aari-blouse/' },
     { label: 'Blog',            href: '/blog/'     },
-    { label: 'About',           href: '/about/'    },
     { label: 'FAQ',             href: '/faq/'      },
   ];
 

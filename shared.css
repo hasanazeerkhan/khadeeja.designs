@@ -36,6 +36,29 @@
   unicode-range: U+20B9;
 }
 
+/* Metric-matched fallbacks: until the web fonts arrive, text is set in a local font scaled to the
+   same average glyph width and vertical metrics, so nothing reflows (no layout shift) on swap.
+   Values are letter-frequency-weighted average glyph widths measured from the WOFF2 files
+   (Cormorant 0.393em, Cormorant italic 0.354em, DM Sans 0.473em; ascent/descent 0.924/0.287 and
+   0.992/0.310) against Times New Roman (0.405em), its italic (0.407em) and Arial (0.447em).
+   Liberation Serif/Sans and Tinos/Arimo share Times/Arial metrics on Linux and ChromeOS. */
+@font-face {
+  font-family: 'Cormorant Garamond Fallback';
+  src: local('Times New Roman'), local('TimesNewRomanPSMT'), local('Liberation Serif'), local('Tinos');
+  size-adjust: 97%; ascent-override: 95.3%; descent-override: 29.6%; line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Cormorant Garamond Fallback';
+  font-style: italic;
+  src: local('Times New Roman Italic'), local('TimesNewRomanPS-ItalicMT'), local('Liberation Serif Italic'), local('Tinos Italic');
+  size-adjust: 87.1%; ascent-override: 106.1%; descent-override: 33%; line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'DM Sans Fallback';
+  src: local('Arial'), local('ArialMT'), local('Liberation Sans'), local('Arimo');
+  size-adjust: 105.8%; ascent-override: 93.8%; descent-override: 29.3%; line-gap-override: 0%;
+}
+
 :root {
   --gold:       #B8860B;
   --gold-light: #D4A017;
@@ -56,8 +79,8 @@
   --t3:         #A0A0A0;
   --green:      #25D366;
   --error:      #E05555;
-  --serif:      'Cormorant Garamond', Georgia, serif;
-  --sans:       'DM Sans', -apple-system, sans-serif;
+  --serif:      'Cormorant Garamond', 'Cormorant Garamond Fallback', Georgia, serif;
+  --sans:       'DM Sans', 'DM Sans Fallback', -apple-system, sans-serif;
 }
 
 html { scroll-behavior: smooth; }
@@ -330,7 +353,7 @@ nav {
 }
 .faq details:last-child,
 .seo-faq details:last-child,
-.contact-faq details:last-child { border-bottom: 1px solid var(--border) !important; }
+.contact-faq details:last-of-type { border-bottom: 1px solid var(--border) !important; }
 .faq details summary,
 .seo-faq details summary,
 .contact-faq details summary,
@@ -420,7 +443,8 @@ footer { border-top: 1px solid var(--border); padding: 40px 52px 32px; margin-to
 .footer-signature { display: flex; flex-direction: column; align-items: center; gap: 3px; }
 .footer-brand { display: inline-block; font: 400 28px/1.1 var(--serif); color: var(--gold-pale); text-decoration: none; }
 .footer-tagline { font: 300 12px/1.6 var(--sans); color: var(--t2); }
-.footer-main nav { position: static; padding: 0; border: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+/* z-index reset matters: these navs are flex items, so the inherited z-index:100 would still apply and lift them above the fixed mobile contact bar. */
+.footer-main nav { position: static; z-index: auto; padding: 0; border: 0; background: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
 .footer-nav { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 12px; }
 .footer-nav a {
   color: var(--t2); font: 400 13px/1.6 var(--sans);
@@ -506,7 +530,46 @@ footer { border-top: 1px solid var(--border); padding: 40px 52px 32px; margin-to
   height: 10px;
   background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='46' height='10' viewBox='0 0 46 10'%3E%3Cg fill='none' stroke='%23B8860B' stroke-width='1.1' stroke-linecap='round'%3E%3Cpath d='M1 5c2-3.6 7-3.6 9 0-2 3.6-7 3.6-9 0Z'/%3E%3Cpath d='M10 5c2-3.6 7-3.6 9 0-2 3.6-7 3.6-9 0Z'/%3E%3Cpath d='M19 5c2-3.6 7-3.6 9 0-2 3.6-7 3.6-9 0Z'/%3E%3Cpath d='M28 5c2-3.6 7-3.6 9 0-2 3.6-7 3.6-9 0Z'/%3E%3Cpath d='M37 5c2-3.6 7-3.6 8 0'/%3E%3C/g%3E%3C/svg%3E") no-repeat left center;
 }
-.ordering-steps__policy { margin-top: 16px; color: var(--t3); font: 12px/1.6 var(--sans); }
-.ordering-steps__policy a { color: var(--gold-light); }
-.footer-signature .footer-tagline + .footer-tagline { color: var(--t3); font-size: 11px; }
+/* Policy note closes the steps grid: own row, divider above, centred */
+.ordering-steps .ordering-steps__policy {
+  margin-top: 28px; padding-top: 20px; border-top: 1px solid var(--border);
+  color: var(--t3); font: 300 13px/1.7 var(--sans); text-align: center;
+}
+.ordering-steps__policy a { color: var(--gold-light); text-decoration: none; border-bottom: 1px solid var(--border-mid); white-space: nowrap; }
+.ordering-steps__policy a:hover, .ordering-steps__policy a:focus-visible { color: var(--gold); border-bottom-color: var(--gold); }
+/* Studio address + phone/hours under the footer brand */
+.footer-contact {
+  display: flex; flex-direction: column; align-items: center; gap: 6px;
+  margin-top: 12px; font: normal 300 12px/1.6 var(--sans); color: var(--t3);
+}
+.footer-contact a { color: var(--t2); text-decoration: none; transition: color 0.2s; }
+.footer-contact a:hover, .footer-contact a:focus-visible { color: var(--gold-light); }
+.footer-address { display: inline-flex; flex-wrap: wrap; justify-content: center; column-gap: 0.3em; }
+.footer-address::before {
+  content: ""; width: 12px; height: 12px; margin: 0.2em 6px 0 0; flex-shrink: 0;
+  background: var(--gold-pale);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center / contain no-repeat;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 2a7 7 0 0 0-7 7c0 5.2 7 13 7 13s7-7.8 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z'/%3E%3C/svg%3E") center / contain no-repeat;
+}
+.footer-address > span { white-space: nowrap; }
+.footer-contact-line { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 2px 8px; }
+@media (max-width: 480px) {
+  /* Pin sits at the start of the street line; city drops to its own line */
+  .footer-address { display: block; text-align: center; }
+  .footer-address::before { display: inline-block; vertical-align: -1px; margin: 0 5px 0 0; }
+  .footer-address > span { white-space: normal; }
+  .footer-address > span + span { display: block; }
+}
 .footer-legal { gap: 8px; align-items: center; }
+
+/* ── TEXT LINKS ──
+   Plain links inside running text (no class of their own): gold and underlined, so they are
+   readable on the dark background, never browser blue/purple, and not distinguished by colour
+   alone. Component links (nav, buttons, cards, footer) keep their own class-based styles. */
+:where(p, li, dd, td, th, blockquote, figcaption, address, small, summary, .faq-a) a:not([class]) {
+  color: var(--gold-light);
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+:where(p, li, dd, td, th, blockquote, figcaption, address, small, summary, .faq-a) a:not([class]):hover { color: var(--t1); }

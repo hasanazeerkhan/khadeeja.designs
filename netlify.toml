@@ -69,6 +69,19 @@
   to   = "/faq/"
   status = 301
 
+# The About page was merged into Contact (its story is the #about section there)
+[[redirects]]
+  from = "/about"
+  to   = "/contact/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about/*"
+  to   = "/contact/"
+  status = 301
+  force = true
+
 # Redirect /contact to /contact/ for consistency
 [[redirects]]
   from = "/contact"

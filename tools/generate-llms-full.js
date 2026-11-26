@@ -33,6 +33,7 @@ function toText(mainHtml) {
     .replace(/<summary\b[^>]*>([\s\S]*?)<\/summary>/g, '\n\n### $1\n\n')
     .replace(/<li\b[^>]*>/g, '\n- ')
     .replace(/<tr\b[^>]*>/g, '\n- ').replace(/<\/t[hd]>/g, ' | ')
+    .replace(/(<span class="ci-type">[\s\S]*?<\/span>)/g, '$1: ')
     .replace(/<br\s*\/?>/g, '\n')
     .replace(/<\/(p|div|section|article|blockquote|figcaption|ul|ol|details|table|caption)>/g, '\n\n')
     .replace(/<[^>]+>/g, '');

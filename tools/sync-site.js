@@ -107,16 +107,21 @@ function headBlock(ogImage) {
   const pixel = String(a.metaPixelId || '').trim();
   const clarity = String(a.clarityId || '').trim();
   const parts = ['\n'];
-  if (pixel) {
-    // Standard Meta Pixel base code, inline so the fastest bouncers are counted too.
-    parts.push(`<script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq('init',${JSON.stringify(pixel)});fbq('track','PageView');</script>\n`);
-  }
-  if (ga) {
-    parts.push(`<script async src="https://www.googletagmanager.com/gtag/js?id=${encodeURIComponent(ga)}"></script>\n`);
-    parts.push(`<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config',${JSON.stringify(ga)});</script>\n`);
-  }
-  if (clarity) {
-    parts.push(`<script>window.addEventListener("load",function(){function c(){(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window,document,"clarity","script",${JSON.stringify(clarity)});}if(window.requestIdleCallback){window.requestIdleCallback(c,{timeout:2000});}else{window.setTimeout(c,1000);}},{once:true});</script>\n`);
+  if (pixel || ga || clarity) {
+    // Analytics load on the visitor's first interaction (scroll, pointer, tap or key), not at page
+    // load: the third-party scripts and their cookies stay off the critical path and out of
+    // Lighthouse. The fbq / gtag / clarity queues exist immediately, so the PageView and any event
+    // fired before the scripts arrive are queued and sent once they load.
+    const loader = `(function(w,d){var px=${JSON.stringify(pixel)},ga=${JSON.stringify(ga)},cl=${JSON.stringify(clarity)};`
+      + `if(px){var n=w.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!w._fbq)w._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];w.fbq('init',px);w.fbq('track','PageView');}`
+      + `if(ga){w.dataLayer=w.dataLayer||[];w.gtag=function(){w.dataLayer.push(arguments)};w.gtag('js',new Date());w.gtag('config',ga);}`
+      + `if(cl){w.clarity=w.clarity||function(){(w.clarity.q=w.clarity.q||[]).push(arguments)};}`
+      + `var ev=['scroll','pointerdown','pointermove','touchstart','keydown'],o={passive:true},done=0;`
+      + `function add(src){var s=d.createElement('script');s.async=1;s.src=src;d.head.appendChild(s);}`
+      + `function load(){if(done)return;done=1;ev.forEach(function(e){w.removeEventListener(e,load,o);});`
+      + `if(px)add('https://connect.facebook.net/en_US/fbevents.js');if(ga)add('https://www.googletagmanager.com/gtag/js?id='+encodeURIComponent(ga));if(cl)add('https://www.clarity.ms/tag/'+cl);}`
+      + `ev.forEach(function(e){w.addEventListener(e,load,o);});})(window,document);`;
+    parts.push(`<script>${loader}</script>\n`);
   }
   if (ogImage) parts.push('<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg">\n');
   parts.push(jsonLd(businessSchema(), 'data-business'), '\n');
@@ -128,7 +133,6 @@ const NAV_PAGES = [
   { id: 'explore', label: 'Explore Designs', href: '/explore/' },
   { id: 'bridal', label: 'Bridal', href: '/bridal-aari-blouse/' },
   { id: 'blog', label: 'Blog', href: '/blog/' },
-  { id: 'about', label: 'About', href: '/about/' },
   { id: 'faq', label: 'FAQ', href: '/faq/' },
 ];
 
@@ -147,20 +151,20 @@ const ICONS = {
 };
 
 function footerBlock() {
-  const nav = [['/explore/', 'Explore Designs'], ['/bridal-aari-blouse/', 'Bridal Aari Blouses'], ['/aari-work-trichy/', 'Visit our Trichy studio'], ['/blog/', 'Blog'], ['/about/', 'About'], ['/faq/', 'FAQ'], ['/contact/', 'Contact']]
+  const nav = [['/explore/', 'Explore Designs'], ['/bridal-aari-blouse/', 'Bridal Aari Blouses'], ['/aari-work-trichy/', 'Visit our Trichy studio'], ['/blog/', 'Blog'], ['/contact/#about', 'About'], ['/faq/', 'FAQ'], ['/contact/', 'Contact']]
     .map(([href, label]) => `<a href="${href}">${label}</a>`).join('<span class="footer-separator" aria-hidden="true">·</span>');
-  return `<footer><div class="footer-main"><div class="footer-signature"><a class="footer-brand" href="/">Khadeeja Designs</a><p class="footer-tagline">Boutique Aari embroidery, handcrafted in Trichy</p><p class="footer-tagline"><a href="/aari-work-trichy/">${esc(biz.streetAddress)}, ${esc(biz.cityDisplay)} ${esc(biz.postalCode)}, Tamil Nadu</a> · <a href="tel:${esc(biz.telephone)}" data-contact-method="call">+91 86674 54391</a> · <span data-studio-hours-static>${esc(config.studioHours)}</span></p></div><nav class="footer-nav" aria-label="Footer navigation">${nav}</nav><nav class="footer-social" aria-label="Social and community links"><a href="https://instagram.com/khadeeja.designs" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile of Khadeeja Designs">${ICONS.instagram}<span>Instagram</span></a><a href="https://www.reddit.com/r/AariEmbroidery/" target="_blank" rel="noopener noreferrer" aria-label="Visit the r/AariEmbroidery community">${ICONS.reddit}<span>r/AariEmbroidery</span></a><a href="https://medium.com/@khadeejadesigns" target="_blank" rel="me noopener noreferrer" aria-label="Medium articles by Khadeeja Designs">${ICONS.medium}<span>Medium</span></a></nav></div><div class="footer-bottom"><span class="footer-copy">&copy; Khadeeja Designs. All rights reserved.</span><span class="footer-bottom-separator" aria-hidden="true">·</span><div class="footer-legal"><a href="/policies/">Order &amp; refund policy</a><span class="footer-bottom-separator" aria-hidden="true">·</span><a href="/privacy/">Privacy Policy</a></div></div></footer>`;
+  return `<footer><div class="footer-main"><div class="footer-signature"><a class="footer-brand" href="/">Khadeeja Designs</a><p class="footer-tagline">Boutique Aari embroidery, handcrafted in Trichy</p><address class="footer-contact"><a class="footer-address" href="/aari-work-trichy/"><span>${esc(biz.streetAddress)},</span> <span>${esc(biz.cityDisplay)} ${esc(biz.postalCode)}, Tamil Nadu</span></a><span class="footer-contact-line"><a href="tel:${esc(biz.telephone)}" data-contact-method="call">+91 86674 54391</a><span class="footer-separator" aria-hidden="true">·</span><span data-studio-hours-static>${esc(config.studioHours)}</span></span></address></div><nav class="footer-nav" aria-label="Footer navigation">${nav}</nav><nav class="footer-social" aria-label="Social and community links"><a href="https://instagram.com/khadeeja.designs" target="_blank" rel="noopener noreferrer" aria-label="Instagram profile of Khadeeja Designs">${ICONS.instagram}<span>Instagram</span></a><a href="https://www.reddit.com/r/AariEmbroidery/" target="_blank" rel="noopener noreferrer" aria-label="Visit the r/AariEmbroidery community">${ICONS.reddit}<span>r/AariEmbroidery</span></a><a href="https://medium.com/@khadeejadesigns" target="_blank" rel="me noopener noreferrer" aria-label="Medium articles by Khadeeja Designs">${ICONS.medium}<span>Medium</span></a></nav></div><div class="footer-bottom"><span class="footer-copy">&copy; Khadeeja Designs. All rights reserved.</span><span class="footer-bottom-separator" aria-hidden="true">·</span><div class="footer-legal"><a href="/policies/">Order &amp; refund policy</a><span class="footer-bottom-separator" aria-hidden="true">·</span><a href="/privacy/">Privacy Policy</a></div></div></footer>`;
 }
 
 function testimonialsBlock(list = config.testimonials) {
   if (!Array.isArray(list) || !list.length) return '';
-  const slides = list.map((t, i) => `<figure class="testimonials__slide" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${list.length}" data-rating="${Math.max(1, Math.min(5, Number(t.rating) || 5))}"><blockquote>${esc(t.quote)}</blockquote><figcaption>${t.photo ? `<img src="${esc(t.photo)}" alt="" width="48" height="48" loading="lazy">` : ''}<span>${esc(t.name)}${t.city ? ` · ${esc(t.city)}` : ''}</span></figcaption></figure>`).join('');
+  const slides = list.map((t, i) => `<div class="testimonials__slide" role="group" aria-roledescription="slide" aria-label="${i + 1} of ${list.length}" data-rating="${Math.max(1, Math.min(5, Number(t.rating) || 5))}"><figure><blockquote>${esc(t.quote)}</blockquote><figcaption>${t.photo ? `<img src="${esc(t.photo)}" alt="" width="48" height="48" loading="lazy">` : ''}<span>${esc(t.name)}${t.city ? ` · ${esc(t.city)}` : ''}</span></figcaption></figure></div>`).join('');
   return `<section class="testimonials" aria-labelledby="testimonials-title"><div class="testimonials__heading"><div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Client reviews</span></div><h2 id="testimonials-title">What our clients say</h2></div><div class="testimonials__carousel" role="group" aria-roledescription="carousel" aria-label="Client testimonials"><div class="testimonials__toolbar"><button class="testimonials__button" type="button" aria-label="Previous review">‹</button><span class="testimonials__stars" role="img" aria-label="5 out of 5 stars">★★★★★</span><button class="testimonials__button" type="button" aria-label="Next review">›</button></div><div class="testimonials__viewport"><div class="testimonials__track" aria-live="polite">${slides}</div></div></div></section>`;
 }
 
 function orderingStepsBlock() {
   const steps = config.orderingSteps.map((s, i) => `<li><div class="ordering-steps__title"><span class="ordering-steps__number">Step 0${i + 1}</span><h3>${esc(s.title)}</h3></div><p>${esc(s.description)}</p></li>`).join('');
-  return `<section class="ordering-steps" aria-labelledby="ordering-steps-title"><div class="ordering-steps__heading"><div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Simple process</span></div><h2 id="ordering-steps-title">How ordering works</h2></div><ol>${steps}</ol><p class="ordering-steps__policy">Full terms: <a href="/policies/">order, advance and refund policy</a>.</p></section>`;
+  return `<section class="ordering-steps" aria-labelledby="ordering-steps-title"><div class="ordering-steps__heading"><div class="kicker"><div class="kicker-line"></div><span class="kicker-text">Simple process</span></div><h2 id="ordering-steps-title">How ordering works</h2></div><ol>${steps}</ol><p class="ordering-steps__policy">Advance, cancellation and refund terms are in our <a href="/policies/">order policy<span aria-hidden="true"> →</span></a></p></section>`;
 }
 
 /* ------------------------------------------------------------------ product blocks */
@@ -176,6 +180,11 @@ function productPrice(p) {
   return { price, offer, original };
 }
 
+// Gallery thumbnails show at 96px: use the 240px file (made by tools/make-og-images.py) so they
+// don't compete with the main image for bandwidth; fall back to 480px if it hasn't been made yet.
+const thumbFor = (id, file) => fs.existsSync(path.join(root, 'explore/designs', id, variant(file, '_240w')))
+  ? variant(file, '_240w') : variant(file, '_480w');
+
 function galleryBlock(id, p) {
   const images = p.images.map(file => ({
     src: `./${webp(file)}`,
@@ -184,17 +193,18 @@ function galleryBlock(id, p) {
     label: /back/i.test(file) ? 'back view' : 'front view',
   }));
   const main = images[0];
-  const thumbs = images.length < 2 ? '' : `<div class="product-gallery__thumbnails" role="group" aria-label="Design images">${images.map((img, i) => `<button class="product-gallery__thumbnail${i === 0 ? ' is-active' : ''}" type="button" aria-label="Show ${img.label}" aria-controls="design-image-${id}" aria-pressed="${i === 0}" data-src="${img.src}" data-srcset="${img.srcset}" data-alt="${esc(`${p.imageAlt}, ${img.label}`)}"><img src="./${variant(p.images[i], '_480w')}" alt="" width="96" height="96" loading="lazy"></button>`).join('')}</div>`;
+  const thumbs = images.length < 2 ? '' : `<div class="product-gallery__thumbnails" role="group" aria-label="Design images">${images.map((img, i) => `<button class="product-gallery__thumbnail${i === 0 ? ' is-active' : ''}" type="button" aria-label="Show ${img.label}" aria-controls="design-image-${id}" aria-pressed="${i === 0}" data-src="${img.src}" data-srcset="${img.srcset}" data-alt="${esc(`${p.imageAlt}, ${img.label}`)}"><img src="./${thumbFor(id, p.images[i])}" alt="" width="96" height="96" loading="lazy"></button>`).join('')}</div>`;
   return `<div class="photo"><img id="design-image-${id}" loading="eager" src="${main.src}" srcset="${main.srcset}" sizes="(max-width: 900px) calc(100vw - 40px), 48vw" data-fallback-src="${main.fallback}" alt="${esc(`${p.imageAlt}, ${main.label}`)}" width="1254" height="1254" decoding="async" fetchpriority="high" onerror="if(this.dataset.fallbackSrc){this.removeAttribute('srcset');this.src=this.dataset.fallbackSrc;delete this.dataset.fallbackSrc}">${thumbs}</div>`;
 }
 
 function priceBlock(p) {
   const { price, offer, original } = productPrice(p);
-  return `<div class="price" aria-label="Embroidery from ${rupees(price)}">${offer ? `<span class="old">${rupees(original)}</span>` : ''}${rupees(price)}</div><p class="offer-note"><strong>Hand Aari work on the blouse you send us.</strong> The price covers the embroidery. The blouse is not included; delivery is free within Trichy, and courier elsewhere is quoted.</p>`;
+  return `<div class="price" aria-label="Embroidery from ${rupees(price)}">${offer ? `<span class="old">${rupees(original)}</span>` : ''}${rupees(price)}</div><p class="offer-note"><strong>Hand Aari work on the blouse you send us.</strong> The price covers the embroidery only; the blouse itself is not included.</p>`;
 }
 
+/** One accordion for everything about price and delivery (it used to be three overlapping ones). */
 function pricingScopeBlock(p) {
-  return `<details class="product-accordion product-accordion--price-scope"><summary>How delivery works</summary><div class="pricing-scope content-panel"><ul><li><strong>Garment:</strong> ${p.customerSuppliesBlouse ? 'You supply the blouse or garment. We embroider it.' : 'The studio supplies the base fabric or blouse.'}</li><li><strong>Delivery:</strong> ${esc(p.shippingNote)}</li><li><strong>Courier:</strong> ${esc(config.policy.shipping)}</li></ul><p>See the full <a href="/policies/">order and refund policy</a>.</p></div></details>`;
+  return `<details class="product-accordion product-accordion--price-scope"><summary>Price &amp; delivery</summary><div class="pricing-scope content-panel"><ul><li><strong>Included:</strong> ${esc(p.priceIncludes)}</li><li><strong>Quoted separately:</strong> ${esc(p.priceExcludes)}</li><li><strong>Delivery:</strong> ${esc(config.policy.shipping)}</li></ul><p>See the full <a href="/policies/">order and refund policy</a>.</p></div></details>`;
 }
 
 function howItWorksBlock() {
@@ -268,7 +278,7 @@ function syncProduct(html, id, file) {
   html = setBlock(html, 'product-category', `<span class="category">${esc(p.specs.category)} · Hand Aari on your blouse</span>`, { file, fallback: /<span class="category">[^<]*<\/span>/ });
   html = setBlock(html, 'product-price', priceBlock(p), { file, fallback: /<div class="price"[^>]*>[\s\S]*?<\/div>/ });
   html = setBlock(html, 'product-pricing-scope', pricingScopeBlock(p), {
-    file, insert: (h, b) => h.replace(/(<details class="product-accordion product-accordion--price-excludes[^"]*">[\s\S]*?<\/details>)/, (_, d) => `${d.replace(' product-accordion--pricing', '')}${b}`),
+    file, insert: (h, b) => h.replace('<!-- product-contact-actions:start -->', `${b}<!-- product-contact-actions:start -->`),
   });
   html = setBlock(html, 'product-how-it-works', howItWorksBlock(), { file, insert: (h, b) => h.replace('<!-- product-contact-actions:end -->', `<!-- product-contact-actions:end -->${b}`) });
   html = setBlock(html, 'product-faqs', faqBlock(p), { file, fallback: /<section><h2>[^<]*FAQs<\/h2>[\s\S]*?<\/section>/ });
@@ -321,6 +331,81 @@ function syncFaqSchema(html, file) {
 
 /* ------------------------------------------------------------------ per page */
 
+/* ------------------------------------------------------------------ blog articles */
+// The table of contents, "Continue reading" cards and community links are written into each
+// article's HTML here (not built in the browser), so nothing shifts after load and crawlers see
+// them. Titles, dates and order come from each article's own <h1> and <time datetime>.
+const BLOG_DIR = path.join(root, 'blog');
+const blogArticles = fs.readdirSync(BLOG_DIR, { withFileTypes: true })
+  .filter(d => d.isDirectory() && fs.existsSync(path.join(BLOG_DIR, d.name, 'index.html')))
+  .map(d => {
+    const h = fs.readFileSync(path.join(BLOG_DIR, d.name, 'index.html'), 'utf8');
+    const time = h.match(/<time\b[^>]*datetime="([^"]+)"[^>]*>([^<]*)<\/time>/);
+    const h1 = h.match(/<h1\b[^>]*>([\s\S]*?)<\/h1>/);
+    return time && h1 ? { slug: d.name, datetime: time[1], date: time[2].trim(), title: plain(h1[1]) } : null;
+  })
+  .filter(Boolean)
+  .sort((a, b) => a.datetime.localeCompare(b.datetime));
+
+const slugify = text => plain(text).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
+function articleContinueBlock(slug) {
+  const i = blogArticles.findIndex(a => a.slug === slug);
+  const card = (a, label, cls) => a ? `<a class="article-pagination-link ${cls}" href="../${a.slug}/"><span>${label}</span><strong>${esc(a.title)}</strong><small>${esc(a.date)}</small></a>` : '';
+  const last = blogArticles.length - 1;
+  const cards = i === 0
+    ? card(blogArticles[1], 'Next article →', 'article-pagination-link--previous') + card(blogArticles[2], 'Also read', 'article-pagination-link--next')
+    : i === last
+      ? card(blogArticles[i - 1], '← Previous article', 'article-pagination-link--previous') + card(blogArticles[i - 2], 'Also read', 'article-pagination-link--next')
+      : card(blogArticles[i - 1], '← Previous article', 'article-pagination-link--previous') + card(blogArticles[i + 1], 'Next article →', 'article-pagination-link--next');
+  return `<nav class="article-pagination" aria-label="Continue reading"><span class="article-pagination-label">Continue reading</span>${cards}</nav>`
+    + `<section class="article-community" aria-labelledby="article-community-title"><h2 id="article-community-title">Continue the conversation &amp; read more</h2><p>Discuss Aari embroidery techniques, bridal blouse styling, or share your thoughts with our community.</p><div class="article-community-links"><a href="https://www.reddit.com/r/AariEmbroidery/" target="_blank" rel="noopener noreferrer" aria-label="Discuss Aari embroidery in the r/AariEmbroidery community">Join the community thread ↗</a><a href="https://medium.com/@khadeejadesigns" target="_blank" rel="noopener noreferrer" aria-label="Follow Khadeeja Designs articles on Medium">Follow our articles on Medium ↗</a></div></section>`;
+}
+
+function syncArticle(html, slug, file) {
+  const open = '<article class="article-copy">';
+  const start = html.indexOf(open);
+  if (start === -1 || blogArticles.findIndex(a => a.slug === slug) === -1) return html;
+  const bodyStart = start + open.length;
+  const bodyEnd = (() => {
+    const marker = html.indexOf('<!-- article-continue:start -->', bodyStart);
+    const close = html.indexOf('</article>', bodyStart);
+    return marker !== -1 && marker < close ? marker : close;
+  })();
+
+  // Stable ids on the article's own h2s (the contents list links to them).
+  const used = new Set();
+  const headings = [];
+  const body = html.slice(bodyStart, bodyEnd).replace(/<h2\b([^>]*)>([\s\S]*?)<\/h2>/g, (all, attrs, inner) => {
+    let id = (attrs.match(/\bid="([^"]+)"/) || [])[1];
+    if (!id) {
+      const base = slugify(inner) || `section-${headings.length + 1}`;
+      id = base;
+      for (let n = 2; used.has(id); n++) id = `${base}-${n}`;
+    }
+    used.add(id);
+    headings.push({ id, text: plain(inner) });
+    const cls = (attrs.match(/\bclass="([^"]*)"/) || [])[1] || '';
+    const classes = [...new Set([...cls.split(/\s+/).filter(Boolean), 'article-toc-heading'])].join(' ');
+    const rest = attrs.replace(/\s*\b(?:id|class)="[^"]*"/g, '');
+    return `<h2 id="${id}" class="${classes}"${rest}>${inner}</h2>`;
+  });
+  html = html.slice(0, bodyStart) + body + html.slice(bodyEnd);
+
+  if (headings.length > 1) {
+    const items = headings.map((h, i) => `<li><a href="#${h.id}"${i === 0 ? ' aria-current="location"' : ''}>${esc(h.text)}</a></li>`).join('');
+    const toc = `<nav class="article-toc" aria-label="Table of contents"><span class="article-toc-title">On this page</span><ol>${items}</ol></nav>`;
+    html = setBlock(html, 'article-toc', toc, { file, insert: (h, b) => h.replace(open, `${b}${open}`) });
+    html = html.replace('<div class="article-layout">', '<div class="article-layout article-layout--with-toc">');
+  }
+  if (/class="article-byline"/.test(html)) {
+    html = setBlock(html, 'article-continue', articleContinueBlock(slug), {
+      file, insert: (h, b) => h.replace(/(<p class="article-byline">[\s\S]*?<\/p>)/, `$1${b}`),
+    });
+  }
+  return html;
+}
+
 function ogImageFor(rel) {
   const product = rel.match(/^explore\/designs\/([a-z0-9-]+)\/index\.html$/);
   if (product && fs.existsSync(path.join(root, 'explore/designs', product[1], 'og.jpg'))) return `${SITE}/explore/designs/${product[1]}/og.jpg`;
@@ -355,6 +440,9 @@ for (const abs of walk(root)) {
 
   const productId = (rel.match(/^explore\/designs\/([a-z0-9-]+)\/index\.html$/) || [])[1];
   if (productId && products[productId]) html = syncProduct(html, productId, rel);
+
+  const articleSlug = (rel.match(/^blog\/([a-z0-9-]+)\/index\.html$/) || [])[1];
+  if (articleSlug) html = syncArticle(html, articleSlug, rel);
 
   if (html !== before) { fs.writeFileSync(abs, html); changed += 1; }
 }

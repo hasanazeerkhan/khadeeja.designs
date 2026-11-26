@@ -31,17 +31,21 @@ from. Check the live site matches GitHub with `curl https://khadeejadesigns.in/v
 Don't use Netlify drag-and-drop or `netlify deploy --prod`; push to `master` instead.
 
 After adding a design or blog post, also run `python3 tools/make-og-images.py` to create its
-1200×630 JPG share image (WhatsApp does not reliably preview WebP).
+1200×630 JPG share image (WhatsApp does not reliably preview WebP) and the 240px gallery
+thumbnails (`<image stem>_240w.webp`), then build again so the product page uses them.
 
 To switch on ad tracking, put the IDs in `site-config.json → analytics.metaPixelId` and
-`analytics.gaMeasurementId`, then build. The Pixel and GA4 load inline in every page's head.
+`analytics.gaMeasurementId`, then build. A small inline script in every page's head queues the
+PageView and events immediately, then loads the Pixel, GA4 and Clarity scripts on the visitor's
+first scroll, tap, pointer move or keypress. This keeps third-party scripts and cookies out of the
+page load (and out of Lighthouse), at the cost of not counting visitors who leave without
+interacting at all.
 
 ## File structure
 
 ```
 khadeeja-designs/
 ├── index.html            Home
-├── about/                Studio overview and brand story
 ├── explore/              Portfolio and design pages
 │   ├── index.html        Portfolio grid
 │   └── designs/

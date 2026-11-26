@@ -7,7 +7,6 @@ const siteUrl = 'https://khadeejadesigns.in';
 const pageRoots = [
   '/',
   '/explore/',
-  '/about/',
   '/blog/',
   '/faq/',
   '/contact/',
